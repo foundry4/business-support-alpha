@@ -5,12 +5,16 @@ module.exports = {
     return el.textContent
   },
   who (block) {
+    const whoDetail = module.exports.whoDetail(block)
+    if (!whoDetail) return null
+    const options = ['pre-start', 'start-up', 'established']
+    const whoDetailLower = whoDetail.toLowerCase()
+    return options.filter((option) => whoDetailLower.includes(option))
+  },
+  whoDetail (block) {
     const el = block.querySelector('.kb_w')
     if (!el) return null
-    const siblingText = getSiblingText(el)
-    return siblingText
-      .split(';')
-      .map((group) => group.trim())
+    return getSiblingText(el).trim()
   },
   eligibility (block) {
     const el = block.querySelector('.kb_e')
