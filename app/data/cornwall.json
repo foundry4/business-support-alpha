@@ -1,6 +1,7 @@
 {
-    "factsheet" : [
+  "factsheet":[
   {
+    "category": "Business Support",
     "title": "Cornwall & Isles of Scilly Growth Hub & Skills Hub",
     "who": [
       "Pre-start",
@@ -14,6 +15,7 @@
     "email": "hello@ciosgrowthhub.com"
   },
   {
+    "category": "Business Support",
     "title": "Cornwall Council",
     "who": [
       "Pre-start",
@@ -27,6 +29,7 @@
     "email": null
   },
   {
+    "category": "Business Support",
     "title": "Breakthrough: Start-up and Build",
     "who": [
       "Pre-start",
@@ -39,6 +42,7 @@
     "email": "hello@unlocking-potential.co.uk"
   },
   {
+    "category": "Business Support",
     "title": "Outset Cornwall",
     "who": [
       "Pre-start",
@@ -51,6 +55,7 @@
     "email": "cornwall@outset.org"
   },
   {
+    "category": "Business Support",
     "title": "Invest in Cornwall (Cornwall Development Company)",
     "who": [
       "Pre-start",
@@ -64,6 +69,7 @@
     "email": null
   },
   {
+    "category": "Business Support",
     "title": "Business West",
     "who": [
       "Pre-start",
@@ -77,6 +83,7 @@
     "email": null
   },
   {
+    "category": "Business Support",
     "title": "Unlocking Potential",
     "who": [
       "Pre-start",
@@ -90,6 +97,7 @@
     "email": null
   },
   {
+    "category": "Business Support",
     "title": "Plymouth PatLib Centre",
     "who": [
       "Pre-start",
@@ -103,6 +111,7 @@
     "email": "patlibplymouth@plymouth.gov.uk"
   },
   {
+    "category": "Business Support",
     "title": "Acceleration through Innovation (ATI)",
     "who": [
       "Start-up",
@@ -115,6 +124,7 @@
     "email": "ATI@plymouth.ac.uk"
   },
   {
+    "category": "Business Support",
     "title": "Ehealth Productivity and Innovation in Cornwall and the Isles of Scilly (EPIC)",
     "who": [
       "Start-up",
@@ -127,6 +137,7 @@
     "email": "epic@plymouth.ac.uk"
   },
   {
+    "category": "Business Support",
     "title": "Agri-tech Cornwall and the Isles of Scilly",
     "who": [
       "Start-up",
@@ -140,6 +151,7 @@
     "email": "info@agritechcornwall.co.uk"
   },
   {
+    "category": "Business Support",
     "title": "Access 2 Finance Cornwall",
     "who": [
       "Start-up",
@@ -152,6 +164,7 @@
     "email": "info@a2fcornwall.co.uk"
   },
   {
+    "category": "Business Support",
     "title": "DIT South West (previously known as UKTI)",
     "who": [
       "Start-up",
@@ -164,6 +177,7 @@
     "email": "DITsw@mobile.trade.gov.uk"
   },
   {
+    "category": "Business Support",
     "title": "Enterprise Europe Network (EEN) South West",
     "who": [
       "Start-up",
@@ -176,6 +190,7 @@
     "email": "contact@enterprise-europe.co.uk"
   },
   {
+    "category": "Business Support",
     "title": "Innovate2Succeed - Business West",
     "who": [
       "Start-up",
@@ -188,6 +203,7 @@
     "email": null
   },
   {
+    "category": "Business Support",
     "title": "Cornwall & Isles of Scilly Skills Hub",
     "who": [
       "Established (focus on 5+ employees)."
@@ -199,6 +215,7 @@
     "email": "hello@ciosgrowthhub.com"
   },
   {
+    "category": "Business Support",
     "title": "Local Manufacturing Advisory Programme (SWMAS)",
     "who": [
       "Established SME manufacturers (Business-to-Business and Business-to-Consumer)."
@@ -210,6 +227,7 @@
     "email": "info@swmas.co.uk"
   },
   {
+    "category": "Legal",
     "title": "Lawyers for your Business (LFYB)",
     "who": [
       "Pre-start",
@@ -222,6 +240,7 @@
     "email": "lfyb@lawsociety.org.uk"
   },
   {
+    "category": "Sources of Finance",
     "title": "Fredericks Foundation",
     "who": [
       "Pre-start",
@@ -235,6 +254,7 @@
     "email": "mail@fredericksfoundation.org"
   },
   {
+    "category": "Sources of Finance",
     "title": "Cornwall Community Foundation",
     "who": [
       "Pre-start",
@@ -248,6 +268,7 @@
     "email": null
   },
   {
+    "category": "Sources of Finance",
     "title": "SWIG Finance",
     "who": [
       "Pre-start",
@@ -261,6 +282,7 @@
     "email": "ninfo@swigfinance.co.uk"
   },
   {
+    "category": "Sources of Finance",
     "title": "Travel to Work Grant - Cornwall",
     "who": [
       "Start-up",
@@ -273,6 +295,7 @@
     "email": "traveltowork@cornwall.gov.uk"
   },
   {
+    "category": "Sources of Finance",
     "title": "Cornwall and Isles of Scilly Investment Fund",
     "who": [
       "Start-up",
@@ -285,6 +308,7 @@
     "email": "ciosif@thefsegroup.com"
   },
   {
+    "category": "Sources of Finance",
     "title": "Agri-tech Cornwall and the Isles of Scilly",
     "who": [
       "Start-up",
@@ -297,6 +321,7 @@
     "email": "info@agritechcornwall.co.uk"
   },
   {
+    "category": "Sources of Finance",
     "title": "Local Manufacturing Advisory Programme (SWMAS)",
     "who": [
       "Established SME manufacturers (Business-to-Business and Business-to-Consumer)."
@@ -308,6 +333,7 @@
     "email": "info@swmas.co.uk"
   },
   {
+    "category": "Procurement",
     "title": "Cornwall Council",
     "who": null,
     "eligibility": null,
@@ -317,6 +343,7 @@
     "email": null
   },
   {
+    "category": "Procurement",
     "title": "Supplying the South West",
     "who": null,
     "eligibility": null,
@@ -326,6 +353,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Isles of Scilly Growth & Skills Hub",
     "who": null,
     "eligibility": null,
@@ -335,6 +363,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Cornwall Chamber of Commerce",
     "who": null,
     "eligibility": null,
@@ -344,6 +373,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Institute of Directors (IoD) South West",
     "who": null,
     "eligibility": null,
@@ -353,6 +383,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Falmouth Business Club, Falmouth",
     "who": null,
     "eligibility": null,
@@ -362,6 +393,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Newquay Breakfast Club",
     "who": null,
     "eligibility": null,
@@ -371,6 +403,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "Network Cornwall",
     "who": null,
     "eligibility": null,
@@ -380,6 +413,7 @@
     "email": null
   },
   {
+    "category": "Events and Networking",
     "title": "South West Tourism Alliance",
     "who": null,
     "eligibility": null,
@@ -389,6 +423,7 @@
     "email": null
   },
   {
+    "category": "Premises",
     "title": "Cornwall Council",
     "who": null,
     "eligibility": null,
@@ -398,6 +433,7 @@
     "email": null
   },
   {
+    "category": "Premises",
     "title": "Truro, Pool, Penryn Innovation Centres",
     "who": null,
     "eligibility": null,
@@ -407,6 +443,7 @@
     "email": null
   },
   {
+    "category": "Premises",
     "title": "Aerohub at Newquay Cornwall Airport (Government Enterprise Zone)",
     "who": null,
     "eligibility": null,
@@ -416,6 +453,7 @@
     "email": null
   },
   {
+    "category": "Premises",
     "title": "Cornwall Marine Hub (Government  Enterprise Zone)",
     "who": null,
     "eligibility": null,

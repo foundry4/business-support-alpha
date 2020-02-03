@@ -40,14 +40,382 @@ Finance and support for your business
 
     </div>
     <div class="govuk-grid-column-one-third">
-      <a href='#'>Apply for a Start Up Loan for your business</a>
+      <!-- <a href='#'>Apply for a Start Up Loan for your business</a> -->
     </div>
   </div>
 
   
   <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-two-thirds">
+    <section class="brexit-checker-audience">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Your business or organisation
+        </h2>
+      </header>
+        <section class="brexit-checker-actions__group">
+          <div class="govuk-grid-row">
+            <aside class="govuk-grid-column-one-third" aria-label="business-actions-criteria">
+              <p class="govuk-body brexit-checker__critera_explaination">
+                Because you said:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li class="brexit-checker__criterion">
+                    You work in  {{ display.region_name }}
+                  </li>
+              </ul>
+            </aside>
+  
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-grid-row brexit-checker__action">
+                <div class="brexit-checker__content-wrapper">
+                  <p class="govuk-body brexit-checker__action_title">
+                    {{ display.region_name }} Growth hub
+                  </p>
+            
+                    <p class="govuk-body">
+                      Copy goes here.
+                    </p>
+            
+                    <div class="govuk-body govuk-!-font-size-16">
+                      <p>
+                        More information:
+                      </p>
+                      <p>
+                        <a href="{{display.region_url}}" target="_blank">
+                          {{ display.region_name }} Growth hub
+                        </a>
+                      </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+    </section>
+
+    
+    <section class="brexit-checker-actions">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Business Support
+        </h2>
+      </header>
+      <section class="brexit-checker-audience">
+          <section class="brexit-checker-actions__group" data-analytics-ecommerce data-ecommerce-start-index="1" data-list-title="Brexit checker results: You and your family - Visiting the EU" data-search-query>
+            <div class="govuk-grid-row">
+
+              <aside class="govuk-grid-column-one-third" aria-label="you-and-your-family-actions-group-visiting-the-eu-criteria">
+                  <h3 class="govuk-heading-m">Visiting the EU</h3>
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  Because you said:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li class="brexit-checker__criterion">
+                      You want to {{ display.aim }}
+                    </li>
+                    <li class="brexit-checker__criterion">
+                      Get help for a {{ display.businessType }}
+                    </li>
+                    <li class="brexit-checker__criterion">
+                      Something for {{ display.business_stages | capitalize }} businesses
+                    </li>
+                </ul>
+              </aside>
+    
+              <div class="govuk-grid-column-two-thirds">
+                {% for item in support %}
+                <div class="govuk-grid-row brexit-checker__action">
+                  <div class="brexit-checker__content-wrapper">
+                    <p class="govuk-body brexit-checker__action_title">
+                      {{item.title}}, {{ item.category }}
+                    </p>
+              
+                      <p class="govuk-body">
+                        {{item.description}}
+                      </p>
+              
+                      <div class="govuk-body govuk-!-font-size-16">
+                        <p>
+                          More information:
+                        </p>
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+                        {% endif %}
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        {% endif %}
+                        {% if item.telephone %}
+                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
+                        {% endif %}
+                        {% if item.email %}
+                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+                        {% endif %}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+    
+            </div>
+          </section>
+        </section>
+    </section>
+
+    
+    <section class="brexit-checker-actions">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Legal Support
+        </h2>
+      </header>
+      <section class="brexit-checker-audience">
+          <section class="brexit-checker-actions__group" data-analytics-ecommerce data-ecommerce-start-index="1" data-list-title="Brexit checker results: You and your family - Visiting the EU" data-search-query>
+            <div class="govuk-grid-row">
+
+              <aside class="govuk-grid-column-one-third" aria-label="you-and-your-family-actions-group-visiting-the-eu-criteria">
+                  <h3 class="govuk-heading-m">Visiting the EU</h3>
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  Because you said:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li class="brexit-checker__criterion">
+                      You live in the UK
+                    </li>
+                </ul>
+              </aside>
+    
+              <div class="govuk-grid-column-two-thirds">
+                {% for item in legal %}
+                <div class="govuk-grid-row brexit-checker__action">
+                  <div class="brexit-checker__content-wrapper">
+                    <p class="govuk-body brexit-checker__action_title">
+                      {{item.title}}, {{ item.category }}
+                    </p>
+              
+                      <p class="govuk-body">
+                        {{item.description}}
+                      </p>
+              
+                      <div class="govuk-body govuk-!-font-size-16">
+                        <p>
+                          More information:
+                        </p>
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+                        {% endif %}
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        {% endif %}
+                        {% if item.telephone %}
+                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
+                        {% endif %}
+                        {% if item.email %}
+                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+                        {% endif %}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+    
+            </div>
+          </section>
+        </section>
+    </section>
+
+
+    
+    <section class="brexit-checker-actions">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Sources of Finance
+        </h2>
+      </header>
+      <section class="brexit-checker-audience">
+          <section class="brexit-checker-actions__group" data-analytics-ecommerce data-ecommerce-start-index="1" data-list-title="Brexit checker results: You and your family - Visiting the EU" data-search-query>
+            <div class="govuk-grid-row">
+
+              <aside class="govuk-grid-column-one-third" aria-label="you-and-your-family-actions-group-visiting-the-eu-criteria">
+                  <h3 class="govuk-heading-m">Visiting the EU</h3>
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  Because you said:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li class="brexit-checker__criterion">
+                      You live in the UK
+                    </li>
+                </ul>
+              </aside>
+    
+              <div class="govuk-grid-column-two-thirds">
+                {% for item in finance %}
+                <div class="govuk-grid-row brexit-checker__action">
+                  <div class="brexit-checker__content-wrapper">
+                    <p class="govuk-body brexit-checker__action_title">
+                      {{item.title}}, {{ item.category }}
+                    </p>
+              
+                      <p class="govuk-body">
+                        {{item.description}}
+                      </p>
+              
+                      <div class="govuk-body govuk-!-font-size-16">
+                        <p>
+                          More information:
+                        </p>
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+                        {% endif %}
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        {% endif %}
+                        {% if item.telephone %}
+                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
+                        {% endif %}
+                        {% if item.email %}
+                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+                        {% endif %}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+    
+            </div>
+          </section>
+        </section>
+    </section>
+
+    
+    <section class="brexit-checker-actions">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Events and Networking
+        </h2>
+      </header>
+      <section class="brexit-checker-audience">
+          <section class="brexit-checker-actions__group" data-analytics-ecommerce data-ecommerce-start-index="1" data-list-title="Brexit checker results: You and your family - Visiting the EU" data-search-query>
+            <div class="govuk-grid-row">
+
+              <aside class="govuk-grid-column-one-third" aria-label="you-and-your-family-actions-group-visiting-the-eu-criteria">
+                  <h3 class="govuk-heading-m">Visiting the EU</h3>
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  Because you said:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li class="brexit-checker__criterion">
+                      You live in the UK
+                    </li>
+                </ul>
+              </aside>
+    
+              <div class="govuk-grid-column-two-thirds">
+                {% for item in events %}
+                <div class="govuk-grid-row brexit-checker__action">
+                  <div class="brexit-checker__content-wrapper">
+                    <p class="govuk-body brexit-checker__action_title">
+                      {{item.title}}, {{ item.category }}
+                    </p>
+              
+                      <p class="govuk-body">
+                        {{item.description}}
+                      </p>
+              
+                      <div class="govuk-body govuk-!-font-size-16">
+                        <p>
+                          More information:
+                        </p>
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+                        {% endif %}
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        {% endif %}
+                        {% if item.telephone %}
+                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
+                        {% endif %}
+                        {% if item.email %}
+                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+                        {% endif %}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+    
+            </div>
+          </section>
+        </section>
+    </section>
+
+
+        
+    <section class="brexit-checker-actions">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Premises
+        </h2>
+      </header>
+      <section class="brexit-checker-audience">
+          <section class="brexit-checker-actions__group" data-analytics-ecommerce data-ecommerce-start-index="1" data-list-title="Brexit checker results: You and your family - Visiting the EU" data-search-query>
+            <div class="govuk-grid-row">
+
+              <aside class="govuk-grid-column-one-third" aria-label="you-and-your-family-actions-group-visiting-the-eu-criteria">
+                  <h3 class="govuk-heading-m">Visiting the EU</h3>
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  Because you said:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li class="brexit-checker__criterion">
+                      You live in the UK
+                    </li>
+                </ul>
+              </aside>
+    
+              <div class="govuk-grid-column-two-thirds">
+                {% for item in premises %}
+                <div class="govuk-grid-row brexit-checker__action">
+                  <div class="brexit-checker__content-wrapper">
+                    <p class="govuk-body brexit-checker__action_title">
+                      {{item.title}}, {{ item.category }}
+                    </p>
+              
+                      <p class="govuk-body">
+                        {{item.description}}
+                      </p>
+              
+                      <div class="govuk-body govuk-!-font-size-16">
+                        <p>
+                          More information:
+                        </p>
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+                        {% endif %}
+                        {% if item.eligibility %}
+                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        {% endif %}
+                        {% if item.telephone %}
+                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
+                        {% endif %}
+                        {% if item.email %}
+                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+                        {% endif %}
+                      </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+    
+            </div>
+          </section>
+        </section>
+    </section>
+
+    <div class="govuk-!-padding-bottom-9"></div>
+
+    <!-- <div class="govuk-grid-column-two-thirds">
       {% if not results.length %}
       <p>No results found</p>
 
@@ -83,7 +451,7 @@ Finance and support for your business
     </div>
     <div class="govuk-grid-column-one-third">
         {% include 'includes/related_custom_content.html'%}
-    </div>
+    </div> -->
   </div>
 
 

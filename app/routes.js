@@ -360,10 +360,27 @@ global.getFacets = function (arr){
 
 
 router.get('/factsheet', function(req, res, next) {
- 
-  // then pass these to the pages to render checks and facets/chips
+
+  var results = res.app.locals.data;
+
+  var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
+  var support     = _.filter(results, function(item){ return item.category === "Business Support" });
+  var legal       = _.filter(results, function(item){ return item.category === "Legal" });
+  var finance     = _.filter(results, function(item){ return item.category === "Sources of Finance" });
+  var events      = _.filter(results, function(item){ return item.category === "Events and Networking" });
+  var premises    = _.filter(results, function(item){ return item.category === "Premises" });
+
+  console.warn("ONLY 5 RESULTS HARD CODED")
+  support = support.slice(0, 4);
+  // then pass these to the pages to render
   res.render('factsheet', {
     results: res.app.locals.data,
+    support: support,
+    legal: legal,
+    finance: finance,
+    events: events,
+    premises: premises,
+    procurement: procurement,
     display:displayNames
   });
 
