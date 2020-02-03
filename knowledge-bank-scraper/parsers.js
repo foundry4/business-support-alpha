@@ -19,7 +19,7 @@ module.exports = {
   eligibility (block) {
     const el = block.querySelector('.kb_e')
     if (!el) return null
-    return getSiblingText(el)
+    return getSiblingText(el).trim()
   },
   description (block) {
     // Description has no identifier, so find <p> tags with no class that don't
