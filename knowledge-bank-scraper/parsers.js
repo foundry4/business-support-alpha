@@ -18,10 +18,14 @@ module.exports = {
     return getSiblingText(el)
   },
   description (block) {
-    const unlabeledParagraphs = Array.from(block.querySelectorAll('p:not([class])'))
-    const el = unlabeledParagraphs.find((paragraph) => !paragraph.querySelector('span'))
-    if (!el) return null
-    return el.textContent
+    // Description has no identifier, so find <p> tags with no class that don't
+    // contain <span> tags.
+    const paragraphsWithoutClasses = Array.from(block.querySelectorAll('p:not([class])'))
+    const paragraphsWithoutSpans = paragraphsWithoutClasses.filter((paragraph) => !paragraph.querySelector('span'))
+    if (paragraphsWithoutSpans.length === 0) return null
+    return paragraphsWithoutSpans
+      .map((paragraph) => paragraph.outerHTML)
+      .join('')
   },
   website (block) {
     const el = block.querySelector('.kb_web + a')
