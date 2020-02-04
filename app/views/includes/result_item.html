@@ -7,13 +7,15 @@
                     {{item.description | safe}}
               
                       <div class="govuk-body govuk-!-font-size-16">
+                        {% if item.eligibility or item.website or item.telephone or item.email %}
                         <p>
                           More information:
                         </p>
+                        {% endif %}
                         {% if item.eligibility %}
                         <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
                         {% endif %}
-                        {% if item.eligibility %}
+                        {% if item.website %}
                         <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
                         {% endif %}
                         {% if item.telephone %}
