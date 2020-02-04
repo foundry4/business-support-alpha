@@ -85,12 +85,13 @@ router.get('/summary', function(req, res, next) {
   var aims = [
     null,
     "Buy new equipment",
-    "Set up new premises",
-    "Hire new staff",
-    "Research and Innovation",
-    "Market our products",
+    "Get new premises",
+    "Hire more staff",
+    "Research and innovate",
+    "Market products and services",
     "Improve cash flow",
   ];
+
 /* 
   to research and create a product; 
   to buy technology or equipment; 
@@ -226,7 +227,9 @@ router.get('/summary', function(req, res, next) {
   }
 
   // STAGE RADIO BUTTONS
+  // kept the stage names here as they are used in the redirect filter
   var stages = [null, 'not-yet-trading', 'start-up', 'established'];
+  var stages_display = [null, 'pre-start', 'start-up', 'established'];
   var businessStage = req.session.data['businessStage'];
   if(businessStage){
      if (params.length===0){
@@ -236,7 +239,7 @@ router.get('/summary', function(req, res, next) {
       params += "&"; 
     }
     params += "business_stages%5B%5D=" + stages[businessStage];
-    displayNames.business_stages = stages[businessStage].toLowerCase().split("-").join(" ");
+    displayNames.business_stages = stages_display[businessStage];
   }
 
   // INDUSTRY SELECT MENU
@@ -367,11 +370,12 @@ router.get('/factsheet', function(req, res, next) {
   ];
   var stageFilter = "";
 
-  /* 
+  
   // filter results 
   if(businessStage){
     stageFilter = stages[businessStage];
   }
+  console.log("filter for  ", stageFilter)
   results = _.filter(results, function(item){ 
     if (item.who){
 
@@ -384,7 +388,7 @@ router.get('/factsheet', function(req, res, next) {
   });
 
   console.log(results)
-  */
+  
 
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
@@ -474,7 +478,6 @@ router.get('/postcode', function(req, res, next) {
 
     //https://mapit.mysociety.org/postcode/SW1A1AA
 
-
     request(MYSOCIETY_API_URL + cleaned, {
       method: "GET",
       headers: {
@@ -519,15 +522,14 @@ router.get('/postcode', function(req, res, next) {
  */
             }
           } else {
-            res.send('error');
-            //res.redirect('/error');
+            res.redirect('/error');
           }
       });
  
   }else{
     res.send('no data');
-
   }
+
 });
 
 
