@@ -362,7 +362,34 @@ global.getFacets = function (arr){
 router.get('/factsheet', function(req, res, next) {
 
   var results = res.app.locals.data;
+  // some sort of filtering based on the company type
+  //var stages = [null, 'not-yet-trading', 'start-up', 'established'];
+  var stages = [
+    null,
+    "pre-start",
+    "start-up",
+    "established"
+  ];
+  var businessStage = req.session.data['businessStage'];
+  var stageFilter = "";
 
+  if(businessStage){
+    stageFilter = stages[businessStage];
+  }
+/* 
+  results = _.filter(results, function(item){ 
+    if (item.who){
+
+      for (var i=0; i<item.who.length; i++){
+        if (item.who[i]===stageFilter){
+          return item
+        }
+      }
+    }
+  });
+
+  console.log(results)
+   */
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
   var legal       = _.filter(results, function(item){ return item.category === "Legal" });
@@ -370,8 +397,13 @@ router.get('/factsheet', function(req, res, next) {
   var events      = _.filter(results, function(item){ return item.category === "Events and Networking" });
   var premises    = _.filter(results, function(item){ return item.category === "Premises" });
 
-  console.warn("ONLY 5 RESULTS HARD CODED")
-  support = support.slice(0, 4);
+  var totalSupport = 0;
+  if(support.length>5){
+    totalSupport = support.length;
+    support = support.slice(0, 5);
+    console.warn("ONLY 5 RESULTS HARD CODED")
+  }
+
   // then pass these to the pages to render
   res.render('factsheet', {
     results: res.app.locals.data,
@@ -381,7 +413,8 @@ router.get('/factsheet', function(req, res, next) {
     events: events,
     premises: premises,
     procurement: procurement,
-    display:displayNames
+    totalSupport: totalSupport,
+    display: displayNames
   });
 
 });
