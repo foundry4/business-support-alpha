@@ -37,7 +37,28 @@ Finance and support for your business
         Resources for {{display.region}}
       </h1>
 
-
+      <aside class="" role="complementary">
+        <nav class="part-navigation govuk-!-padding-bottom-3" aria-label="Pages in this guide" role="navigation" >
+          <h3 class="govuk-heading-s  govuk-!-font-size-1">Contents</h3>
+          <ul class="govuk-list govuk-!-font-size-16">
+              <li class="">
+                <a class="govuk-link " href="#business">Business Support</a>
+              </li>
+              <li class="">
+                <a class="govuk-link " href="#legal">Legal Support</a>
+              </li>
+              <li class="">
+                <a class="govuk-link "  href="#finance">Sources of Finance</a>
+              </li>
+              <li class="">
+                <a class="govuk-link " href="#events">Events nd networking</a>
+              </li>
+              <li class="">
+                <a class="govuk-link " href="#premises">Premises</a>
+              </li>
+          </ul>
+        </nav>
+        </aside>
     </div>
     <div class="govuk-grid-column-one-third">
       <!-- <a href='#'>Apply for a Start Up Loan for your business</a> -->
@@ -96,7 +117,7 @@ Finance and support for your business
     </section>
 
     
-    <section class="brexit-checker-actions">
+    <section class="brexit-checker-actions"><a name="business"></a>
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
           Business Support
@@ -128,35 +149,7 @@ Finance and support for your business
     
               <div class="govuk-grid-column-two-thirds">
                 {% for item in support %}
-                <div class="govuk-grid-row brexit-checker__action">
-                  <div class="brexit-checker__content-wrapper">
-                    <p class="govuk-body brexit-checker__action_title">
-                      {{item.title}}, {{ item.category }}, {{ item.who }}
-                    </p>
-              
-                      
-                        {{item.description | safe}}
-                      
-              
-                      <div class="govuk-body govuk-!-font-size-16">
-                        <p>
-                          More information:
-                        </p>
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
-                        {% endif %}
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
-                        {% endif %}
-                        {% if item.telephone %}
-                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
-                        {% endif %}
-                        {% if item.email %}
-                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
-                        {% endif %}
-                      </div>
-                  </div>
-                </div>
+                  {% include 'includes/result_item.html' %} 
                 {% endfor %}
               </div>
     
@@ -166,7 +159,7 @@ Finance and support for your business
     </section>
 
     
-    <section class="brexit-checker-actions">
+    <section class="brexit-checker-actions"><a name="legal"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
           Legal Support
@@ -190,33 +183,7 @@ Finance and support for your business
     
               <div class="govuk-grid-column-two-thirds">
                 {% for item in legal %}
-                <div class="govuk-grid-row brexit-checker__action">
-                  <div class="brexit-checker__content-wrapper">
-                    <p class="govuk-body brexit-checker__action_title">
-                      {{item.title}}, {{ item.category }}
-                    </p>
-              
-                      {{item.description | safe}}
-              
-                      <div class="govuk-body govuk-!-font-size-16">
-                        <p>
-                          More information:
-                        </p>
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
-                        {% endif %}
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
-                        {% endif %}
-                        {% if item.telephone %}
-                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
-                        {% endif %}
-                        {% if item.email %}
-                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
-                        {% endif %}
-                      </div>
-                  </div>
-                </div>
+                  {% include 'includes/result_item.html' %}
                 {% endfor %}
               </div>
     
@@ -227,7 +194,7 @@ Finance and support for your business
 
 
     
-    <section class="brexit-checker-actions">
+    <section class="brexit-checker-actions"><a name="finance"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
           Sources of Finance
@@ -251,33 +218,7 @@ Finance and support for your business
     
               <div class="govuk-grid-column-two-thirds">
                 {% for item in finance %}
-                <div class="govuk-grid-row brexit-checker__action">
-                  <div class="brexit-checker__content-wrapper">
-                    <p class="govuk-body brexit-checker__action_title">
-                      {{item.title}}, {{ item.category }}
-                    </p>
-              
-                    {{item.description | safe}}
-              
-                      <div class="govuk-body govuk-!-font-size-16">
-                        <p>
-                          More information:
-                        </p>
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
-                        {% endif %}
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
-                        {% endif %}
-                        {% if item.telephone %}
-                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
-                        {% endif %}
-                        {% if item.email %}
-                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
-                        {% endif %}
-                      </div>
-                  </div>
-                </div>
+                  {% include 'includes/result_item.html' %}
                 {% endfor %}
               </div>
     
@@ -287,7 +228,7 @@ Finance and support for your business
     </section>
 
     
-    <section class="brexit-checker-actions">
+    <section class="brexit-checker-actions"><a name="events"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
           Events and Networking
@@ -311,33 +252,7 @@ Finance and support for your business
     
               <div class="govuk-grid-column-two-thirds">
                 {% for item in events %}
-                <div class="govuk-grid-row brexit-checker__action">
-                  <div class="brexit-checker__content-wrapper">
-                    <p class="govuk-body brexit-checker__action_title">
-                      {{item.title}}, {{ item.category }}
-                    </p>
-              
-                    {{item.description | safe}}
-              
-                      <div class="govuk-body govuk-!-font-size-16">
-                        <p>
-                          More information:
-                        </p>
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
-                        {% endif %}
-                        {% if item.eligibility %}
-                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
-                        {% endif %}
-                        {% if item.telephone %}
-                        <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
-                        {% endif %}
-                        {% if item.email %}
-                        <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
-                        {% endif %}
-                      </div>
-                  </div>
-                </div>
+                  {% include 'includes/result_item.html' %}
                 {% endfor %}
               </div>
     
@@ -348,7 +263,7 @@ Finance and support for your business
 
 
         
-    <section class="brexit-checker-actions">
+    <section class="brexit-checker-actions"><a name="premises"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
           Premises

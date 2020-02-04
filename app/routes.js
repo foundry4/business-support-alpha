@@ -363,7 +363,7 @@ router.get('/factsheet', function(req, res, next) {
 
   var results = res.app.locals.data;
   // some sort of filtering based on the company type
-  //var stages = [null, 'not-yet-trading', 'start-up', 'established'];
+  // var stages = [null, 'not-yet-trading', 'start-up', 'established'];
   var stages = [
     null,
     "pre-start",
@@ -373,10 +373,11 @@ router.get('/factsheet', function(req, res, next) {
   var businessStage = req.session.data['businessStage'];
   var stageFilter = "";
 
+  /* 
+  // filter results 
   if(businessStage){
     stageFilter = stages[businessStage];
   }
-/* 
   results = _.filter(results, function(item){ 
     if (item.who){
 
@@ -398,12 +399,13 @@ router.get('/factsheet', function(req, res, next) {
   var premises    = _.filter(results, function(item){ return item.category === "Premises" });
 
   var totalSupport = 0;
+/*   
   if(support.length>5){
     totalSupport = support.length;
     support = support.slice(0, 5);
     console.warn("ONLY 5 RESULTS HARD CODED")
   }
-
+ */
   // then pass these to the pages to render
   res.render('factsheet', {
     results: res.app.locals.data,
