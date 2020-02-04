@@ -311,14 +311,13 @@ router.get('/summary', function(req, res, next) {
 
   });
 
-  router.get('/results', function(req, res, next) {
-    var params = req.session.data['params']
-    var url  = "https://www.gov.uk/business-finance-support?"+ params;
-    console.log("redirect to " + url);
-    //res.send(url);
-    // redirect to GOV.UK fund finder with filters
-    res.redirect(302, url);
   
+router.get('/results', function(req, res, next) {
+  var params = req.session.data['params']
+  var url  = "https://www.gov.uk/business-finance-support?"+ params;
+  console.log("redirect to " + url);
+  // redirect to GOV.UK fund finder with filters
+  res.redirect(302, url);
 });
 
 global.getFacets = function (arr){
@@ -356,7 +355,7 @@ global.getFacets = function (arr){
 
 
 router.get('/factsheet', function(req, res, next) {
-
+  var businessStage = req.session.data['businessStage'];
   var results = res.app.locals.data;
   // some sort of filtering based on the company type
   // var stages = [null, 'not-yet-trading', 'start-up', 'established'];
@@ -366,7 +365,6 @@ router.get('/factsheet', function(req, res, next) {
     "start-up",
     "established"
   ];
-  var businessStage = req.session.data['businessStage'];
   var stageFilter = "";
 
   /* 
@@ -386,7 +384,8 @@ router.get('/factsheet', function(req, res, next) {
   });
 
   console.log(results)
-   */
+  */
+
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
   var legal       = _.filter(results, function(item){ return item.category === "Legal" });
@@ -445,7 +444,6 @@ router.get('/test', function(req, res, next) {
     checks[str] = true;
   }
 
-
   // then pass these to the pages to render checks and facets/chips
   res.render('results', {
     results: sampleResults,
@@ -457,16 +455,16 @@ router.get('/test', function(req, res, next) {
 
 
 router.get('/postcode', function(req, res, next) {
-
   //console.log(req.query)
   //console.log(req.query.postcode)
 
-
-/*   if(req._parsedUrl.query){
+  /*   
+  if(req._parsedUrl.query){
     params = req._parsedUrl.query.split("&");
     len = params.length;
     facets = getFacets(params);
-  } */
+  }
+  */
 
   if(req.query.postcode){
     var str = req.query.postcode;
