@@ -52,6 +52,7 @@ var sampleResults = [
   
   ];
 
+
 router.get('/', function(req, res, next) {
   res.render('index', {  });
 });
@@ -61,15 +62,14 @@ router.get('/error', function(req, res, next) {
   res.render('error', { content : {error: {message: "Internal server error"}}});
 });
 
-router.get('/business-stage', function(req, res, next) {
 
-  
+router.get('/business-stage', function(req, res, next) {
   res.render('business-stage', 
   {  });
 });
 
 
-// for the summary page have specific strings
+// for the summary page set specific strings
 var displayNames = {
   types_of_support:[],
   business_stages:"",
@@ -81,10 +81,7 @@ var displayNames = {
 
 router.get('/summary', function(req, res, next) {
   var facets = {};
-
-
   var params = "";
-
   var aims = [
     null,
     "Buy new equipment",
@@ -116,18 +113,18 @@ router.get('/summary', function(req, res, next) {
 
     
   var aim = req.session.data['aim'];
-  console.log('summary');
-  console.log(aim);
-  console.log(aims[aim]);
+  //console.log('summary');
+  //console.log(aim);
+  //console.log(aims[aim]);
   if(aim){
-      /* if (i===0){
-        params = "";
-        //params = "?";
-      }else{
-        params += "&"; 
-      } */
-     // params += "types_of_support%5B%5D=" + typeArray[i];
-      displayNames.aim = aims[aim];
+    /* if (i===0){
+      params = "";
+      //params = "?";
+    }else{
+      params += "&"; 
+    } */
+    // params += "types_of_support%5B%5D=" + typeArray[i];
+    displayNames.aim = aims[aim];
   }
     
   //////////////////////////////
@@ -156,26 +153,25 @@ router.get('/summary', function(req, res, next) {
 
   //////////////////////////////
   var postcode = req.session.data['postcode'];
-  console.log(postcode);
+  //console.log(postcode);
  
   if(postcode){
     var cleaned = postcode.split('%20').join('');
     cleaned = cleaned.split(' ').join('');
     cleaned = cleaned.toUpperCase();
-    console.log("GOT CODE " + cleaned)
+    //console.log("GOT CODE " + cleaned)
     //dummy data
-      displayNames.region =  `Cornwall (${cleaned})`;
-      displayNames.region_name =  `Cornwall`;
-      displayNames.region_url = "https://www.cioslep.com/";
+    displayNames.region =  `Cornwall (${cleaned})`;
+    displayNames.region_name =  `Cornwall`;
+    displayNames.region_url = "https://www.cioslep.com/";
   }
     
   var businessType = req.session.data['businessType'];
-  console.log(businessType);
-  console.log(legalStructure[businessType]);
+  //console.log(businessType);
+  //console.log(legalStructure[businessType]);
   if(businessType){
       displayNames.businessType = legalStructure[businessType];
   }
-
   
 
 /* 
