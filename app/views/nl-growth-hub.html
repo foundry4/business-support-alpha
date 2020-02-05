@@ -1,0 +1,55 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Your Growth Hub
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l" id="wales">2. A growth hub for your business</h1>
+
+        <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+            <p>
+                Because you said you work in  {{ display.region_name }}
+            </p>
+            <p>
+                You can get personal support and advice for your business at 
+                <a href="https://www.lepnetwork.net/growth-hubs/" target="_blank">Growth Hub</a>
+            </p>
+      
+            <ul>
+                <li><a href="/tax-help">help with tax</a></li>
+                <li><a rel="external" href="https://www.contactus.ukti.gov.uk/office-finder/">regional help with exporting</a></li>
+                <li><a href="/write-business-plan">advice on writing a business plan</a></li>
+            </ul>
+      
+            <div role="note" aria-label="Information" class="govuk-inset-text">
+            <p>
+                It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application. 
+            </p>
+
+            </div>
+        </div>
+      
+    </div>
+
+    
+    <div class="govuk-grid-column-one-third">
+        <p>
+            Inspirational copy goes here.
+        </p>
+    </div>
+
+  </div>
+{% endblock %}

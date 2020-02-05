@@ -75,7 +75,8 @@ var displayNames = {
   business_stages:"",
   industries:[],
   business_sizes:"",
-  regions:[],
+  regions:"Cornwall",
+  region_name:"Cornwall",
   aim:""
 };
 
@@ -370,7 +371,7 @@ router.get('/factsheet', function(req, res, next) {
   ];
   var stageFilter = "";
 
-  
+   
   // filter results 
   if(businessStage){
     stageFilter = stages[businessStage];
@@ -387,8 +388,8 @@ router.get('/factsheet', function(req, res, next) {
     }
   });
 
-  console.log(results)
-  
+  //console.log(results)
+   
 
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
@@ -533,8 +534,37 @@ router.get('/postcode', function(req, res, next) {
 });
 
 
-router.get('/nl-triage', function(req, res, next) {
-  res.send( req.session.data );
+router.get('/nl-recommendations', function(req, res, next) {
+  //res.send( req.session.data );
+  res.render('nl-recommendations', {
+    display: displayNames
+  });
+});
+
+
+/* 
+
+<select name="nl_type">
+						<option value="1" >getting started</option>
+						<option value="2">a sole trader</option>
+						<option value="3" selected>a business owner</option>
+						<option value="4">a business manager</option>
+						<option value="2">a partner</option>
+
+ */
+router.get('/nl-branch', function(req, res, next) {
+  let bus_type = req.session.data['nl_type'];
+  displayNames.region_name="Cornwall"; 
+
+  // check for type of business
+  // and check for age of business?
+  if (bus_type === '1') { // getting starts
+    res.redirect('nl-pre-start');
+  } else if (bus_type === '3' || bus_type === '4') {
+    res.redirect('nl-growth-hub');
+  }else {
+    res.redirect('nl-recommendations');
+  }
 });
 
 

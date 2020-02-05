@@ -176,15 +176,22 @@ Finance and support for your business
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="brexit-checker__criterion">
-                      You live in {{ display.region_name }}
+                      Your business is {{ display.business_stages }}
                     </li>
                 </ul>
               </aside>
     
               <div class="govuk-grid-column-two-thirds">
-                {% for item in legal %}
-                  {% include 'includes/result_item.html' %}
-                {% endfor %}
+                 {% if legal.length %}
+                  {% for item in legal %}
+                    {% include 'includes/result_item.html' %}
+                  {% endfor %}
+                {% else %}
+
+                <p class="govuk-body brexit-checker__critera_explaination">
+                  No results for {{ display.business_stages }} businesses.
+                </p>
+                {% endif %}
               </div>
     
             </div>
