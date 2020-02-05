@@ -75,9 +75,11 @@ var displayNames = {
   business_stages:"",
   industries:[],
   business_sizes:"",
-  regions:"Cornwall",
+  //regions:"Cornwall", //to sort
   region_name:"Cornwall",
-  aim:""
+  region :  "Cornwall",
+  region_url : "https://www.cioslep.com/",
+  aim:"",
 };
 
 router.get('/summary', function(req, res, next) {
@@ -534,8 +536,17 @@ router.get('/postcode', function(req, res, next) {
 });
 
 
+router.get('/nl-growth-hub', function(req, res, next) {
+  //res.send( req.session.data );
+  displayNames.region_name="Cornwall"; 
+  res.render('nl-growth-hub', {
+    display: displayNames
+  });
+});
+
 router.get('/nl-recommendations', function(req, res, next) {
   //res.send( req.session.data );
+  displayNames.region_name="Cornwall"; 
   res.render('nl-recommendations', {
     display: displayNames
   });
@@ -554,13 +565,13 @@ router.get('/nl-recommendations', function(req, res, next) {
  */
 router.get('/nl-branch', function(req, res, next) {
   let bus_type = req.session.data['nl_type'];
-  displayNames.region_name="Cornwall"; 
+  
 
   // check for type of business
   // and check for age of business?
-  if (bus_type === '1') { // getting starts
+  if (bus_type === '1' || bus_type === '2') { // getting starters
     res.redirect('nl-pre-start');
-  } else if (bus_type === '3' || bus_type === '4') {
+  } else if (bus_type === '3' || bus_type === '5') {
     res.redirect('nl-growth-hub');
   }else {
     res.redirect('nl-recommendations');
