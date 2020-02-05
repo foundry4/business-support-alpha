@@ -533,5 +533,9 @@ router.get('/postcode', function(req, res, next) {
 });
 
 
+router.get('/nl-triage', function(req, res, next) {
+  res.send( req.session.data );
+});
+
 
 module.exports = router

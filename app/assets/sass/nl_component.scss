@@ -140,7 +140,7 @@
 }
 
 .nl-ti-text ul {
-	min-width: 8em;
+	min-width: 12em;
 }
 
 .nl-ti-text ul li.nl-ti-input input {
@@ -163,7 +163,7 @@
 }
 
 .nl-field-go:before {
-	content: "\e001";
+	//content: "\e001";
 	font-size: 75%;
 	color: #fff;
 	width: 100%;
@@ -201,11 +201,11 @@ input:focus::-ms-input-placeholder {
 
 /* example field below text input */
 .nl-ti-text ul li.nl-ti-example {
-	font-size: 40%;
+	font-size: 80%;
 	font-style: italic;
 	font-weight: 400;
 	padding: 0.4em 1em;
-	color: rgba(0,0,0,0.2);
+	//color: rgb(255, 255, 255, 0.9);
 	border-top: 1px dashed rgba(255,255,255,0.7);
 }
 
@@ -223,7 +223,7 @@ input:focus::-ms-input-placeholder {
 	text-transform: uppercase;
 	cursor: pointer;
 	position: relative;
-	background: #125e88;
+	background: #e5733a;
 	color: #fff;
 	//padding: 0 1em 0 0;
 	font-size: 40%;
@@ -237,16 +237,16 @@ input:focus::-ms-input-placeholder {
 	float: left;
 	padding: 0 0.7em;
 	margin: 0 0.8em 0 0;
-	background: #69B1A9;
+	background: #953f14;
 }
 
 .no-touch .nl-form .nl-submit:hover,
 .no-touch .nl-form .nl-submit:active {
-	background: #69B1A9;
+	background: #953f14;
 }
 
 .no-touch .nl-form .nl-submit:hover:before {
-	background: #58a199;
+	background: #953f14;
 }
 
 /* overlay becomes visible when a field is opened */
@@ -283,4 +283,62 @@ input:focus::-ms-input-placeholder {
 	.nl-form {
 		font-size: 2em;
 	}
+}
+
+a {
+	font-family:"Lato";
+}
+.govuk-header__link--homepage {
+	color:#fff;
+    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+}
+.govuk-header {
+	border:0;
+}
+
+.container > header span {
+    display: block;
+    font-size: 30px;
+    color: 
+    #fff;
+    padding: 0 0 0.6em 0.1em;
+}
+
+.govuk-tag {
+    display: inline-block;
+    outline: 2px solid transparent;
+	outline-offset: -2px;
+	background-color:#ffffff;
+	color:#1d70b8;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+}
+.govuk-phase-banner__content{
+	color: #fff;
+}
+
+.govuk-link:link, a:link {
+	color: #e5733a;
+    //font-weight:600;
+}
+
+.govuk-phase-banner {
+    padding-top: 4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
 }
