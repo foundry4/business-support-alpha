@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Natural Language Form</title>
+		<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
+		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		
+		<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+		<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_default.css" />
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_component.css" />
+		
+		<script src="public/javascripts/modernizr.custom.js" type="application/javascript"></script>
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<header>
+				<h1>Grow your business</h1>	
+			</header>
+
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form" action="factsheet">
+					I'm  
+					<select>
+						<option value="1" selected>getting started</option>
+						<option value="2">a sole trader</option>
+						<option value="3">a business owner</option>
+						<option value="4">a business manager</option>
+						<option value="2">an employee</option>
+					</select>
+					<br />and I'm interested in 
+					<select>
+						<option value="1" selected>growing the business</option>
+					 	<option value="1">new equipment</option>
+					 	<option value="2">new staff</option>
+					 	<option value="3">research</option>
+					 	<option value="4">marketing</option>
+					 	<option value="5">cash flow</option>
+					</select>
+
+					<br />based in
+					<input type="text" value="" placeholder="any region" data-subline="Add your postcode, eg TR1 1XU."/>
+					<br />
+					I'm feeling 
+					<select>
+						<option value="-1" >inspired</option>
+						<option value="0" selected>ok</option>
+						<option value="1">mostly on top of it</option>
+					 	<option value="2">challenged</option>
+					 	<option value="3">stressed</option>
+					 	<option value="4">overwhelmed</option>
+					 	<option value="5">lucky</option>
+					</select>
+					
+					<div class="nl-submit-wrap">
+						<button class="nl-submit" type="submit">Let's Grow!</button>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<div class="nl-overlay"></div>
+				</form>
+			</div>
+		</div><!-- /container -->
+		<script src="public/javascripts/nlform.js" type="application/javascript"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+		{% include "includes/footer.html" %}
+
+	</body>
+</html>
