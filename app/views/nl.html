@@ -28,7 +28,7 @@
 			
 
 			<header>
-				<h1>Grow your business</h1>	
+				<h1>Tell us about your business</h1>	
 			</header>
 
 			<div class="main clearfix">
@@ -41,19 +41,31 @@
 						<option value="4">a business manager</option>
 						<option value="5">a partner</option>
 					</select >
+					
+					<br />based in
+					<input type="text" name="nl-postcode" value="" placeholder="any region" data-subline="Add your postcode,<br/> eg TR1 1XU."/>.
 
-
-					<br />of a business with 
+					<br />The business has 
+					<select name="nl_age">
+						<option value="1" selected>not started trading</option>
+						<option value="2">been trading for under a year</option>
+						<option value="3">been trading for 1-2 years</option>
+						<option value="4">been trading for 2-5 years</option>
+						<option value="5">been trading for over 5 years</option>
+					</select>
+				
+					<br />and employs
 					<!-- <select>
 						<option value="1" selected>a micro (less than 10 people)</option>
-					 	<option value="1">small (10 - 49)</option>
-					 	<option value="2">medium (50 - 499)</option>
-					 	<option value="3">large (more than 500)</option>
+						 <option value="1">small (10 - 49)</option>
+						 <option value="2">medium (50 - 499)</option>
+						 <option value="3">large (more than 500)</option>
 					</select> -->
 					<input type="text" name="nl-count" value="" placeholder="some" data-subline="Add how many people work in the buiness."/>
+					people.
 					
-					people
-					<br />and I'm interested in 
+					
+					<br />I'm interested in 
 					<select name="nl_aim">
 						<option value="1" selected>growing the business</option>
 					 	<option value="1">new equipment</option>
@@ -61,12 +73,9 @@
 					 	<option value="3">research</option>
 					 	<option value="4">marketing</option>
 					 	<option value="5">cash flow</option>
-					</select >
-
-					<br />based in
-					<input type="text" name="nl-postcode" value="" placeholder="any region" data-subline="Add your postcode,<br/> eg TR1 1XU."/>
+					</select >.
 					<br />
-					I'm feeling 
+					<!-- I'm feeling 
 					<select name="nl_feeling">
 						<option value="-1" >inspired</option>
 						<option value="0" selected>ok</option>
@@ -76,7 +85,7 @@
 					 	<option value="4">overwhelmed</option>
 					 	<option value="5">lucky</option>
 					</select >
-					
+					 -->
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit">Let's Grow!</button>
 					</div>
