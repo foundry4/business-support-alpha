@@ -1,0 +1,23 @@
+{
+  "name": "knowledge-bank-scraper",
+  "version": "0.1.0",
+  "description": "Scrapes local fact sheets from Business Support Helpline knowledge bank",
+  "main": "main.js",
+  "dependencies": {
+    "get-stdin": "^7.0.0",
+    "jsdom": "^16.1.0"
+  },
+  "scripts": {
+    "scrape": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notbinary/business-support-alpha.git"
+  },
+  "author": "timwis <tim@timwis.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notbinary/business-support-alpha/issues"
+  },
+  "homepage": "https://github.com/notbinary/business-support-alpha#readme"
+}
