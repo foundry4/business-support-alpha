@@ -1,0 +1,148 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Recommendations
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l" id="wales">3. Recommendations</h1>
+
+        <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+            <p>
+                Answer to your original questions
+            </p>
+            
+            <p>
+                How many people work in your business?
+            </p>
+            <form method="post" autocomplete="off" novalidate>
+            <div class="govuk-form-group">
+            
+                <fieldset class="govuk-fieldset">
+                
+                    <legend class="govuk-fieldset__legend govuk-label--xl">
+                    <!-- <h1 class="govuk-fieldset__heading">
+                        <span class="govuk-caption-xl">Business Growth: Step 4 of 5</span>
+                         How many people work in your business?
+                    </h1> -->
+                    </legend>
+        
+                
+                    <div class="govuk-radios">
+                
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="expandSize-1" name="expandSize" type="radio" value="1" {{ checked("expandSize", "1") }}>
+                        <label class="govuk-label govuk-radios__label govuk-label--s" for="expandSize-1">
+                        Less than 10
+                        </label>
+                    </div>
+                    
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="expandSize-2" name="expandSize" type="radio" value="2" {{ checked("expandSize", "2") }}>
+                        <label class="govuk-label govuk-radios__label govuk-label--s" for="expandSize-2">
+                        10-249
+                        </label>
+                    </div>
+        
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="expandSize-3" name="expandSize" type="radio" value="3" {{ checked("expandSize", "3") }}>
+                        <label class="govuk-label govuk-radios__label govuk-label--s" for="expandSize-3">
+                        250-499
+                        </label>
+                    </div>
+            
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="expandSize-4" name="expandSize" type="radio" value="4" {{ checked("expandSize", "4") }}>
+                        <label class="govuk-label govuk-radios__label govuk-label--s" for="expandSize-4">
+                        More than 500
+                        </label>
+                    </div>
+                    
+                    </div>
+                    
+                
+                </fieldset>
+                
+            </div>
+            </form>
+
+            <div id="sizeNote-1" class="size visuallyhidden govuk-inset-text" role="note" aria-label="Information" >
+                <p >
+                    The <a href="https://www.gov.uk/growing-your-business">GOV.UK</a> site has a range of resources and support to help you set up and start a business. 
+                </p>
+            </div>
+        
+            <div id="sizeNote-2" class="size visuallyhidden govuk-inset-text" role="note" aria-label="Information" >
+                <p >
+                    The Local Enterprise Partnerships have a range of funding and support packages to help businesses lik eyours grow. 
+                </p>
+                        
+            <form id="postcode" action="business-type" method="post" class="form" novalidate>
+
+              <div class="govuk-form-group"> 
+                <fieldset class="govuk-fieldset" aria-describedby="postcode-hint">
+        <!-- 
+                  <legend class="govuk-fieldset__legend govuk-label--xl">
+                    <h1 class="govuk-fieldset__heading">
+                      <span class="govuk-caption-xl">Business Growth: Step 2 of 5</span> Where is your business located?
+                    </h1>
+                  </legend> -->
+                          
+                  <div class="">
+                    <label class="govuk-label" for="postcode">
+                      Enter your postcode
+                    </label>
+                    <span id="postcode-hint" class="govuk-hint">
+                      Enter the postcode of your business (eg TR1 1XU).
+                    </span>
+                    <input data-required="true" class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+                  </div>
+                </fieldset> 
+        
+        
+                </div>
+                <br/>
+        
+                <button type="submit" class="govuk-button" id="submit">
+                  Continue
+                </button>
+        
+              </form>
+            </div>
+    
+            <div id="sizeNote-3" class="size visuallyhidden govuk-inset-text" role="note" aria-label="Information">
+                <p >
+                    Step 3: Profit. 
+                </p>
+            </div>
+    
+            <div id="sizeNote-4" class="size visuallyhidden govuk-inset-text" role="note" aria-label="Information" >
+                <p >
+                    Stop. 
+                </p>
+            </div>
+        </div>
+      
+    </div>
+
+    
+    <div class="govuk-grid-column-one-third">
+        <p>
+            Inspirational copy goes here.
+        </p>
+    </div>
+
+  </div>
+{% endblock %}

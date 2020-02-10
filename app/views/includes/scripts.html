@@ -39,6 +39,14 @@
 
 	});
 
+  //expand sections
+  $("input:radio[name='expandSize']").click(function(){
+    // hide all 
+    $(".size").addClass("visuallyhidden");
+    // reveal
+    $("#sizeNote-"+this.value).removeClass("visuallyhidden");
+  });
+
   
   //  toggle search filters 
   $(".app-c-option-select__button").click(function(){
