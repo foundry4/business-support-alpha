@@ -52,6 +52,7 @@ var sampleResults = [
   
   ];
 
+var postcodeLocation = {};
 
 router.get('/', function(req, res, next) {
   res.render('index', {  });
@@ -442,7 +443,8 @@ router.get('/factsheet', function(req, res, next) {
     premises: premises,
     procurement: procurement,
     totalSupport: totalSupport,
-    display: displayNames
+    display: displayNames,
+    location:postcodeLocation
   });
 
 });
@@ -518,6 +520,14 @@ router.get('/postcode', function(req, res, next) {
               console.log(dataset);
 
               res.send(dataset);
+
+              // get the jsojn dataset
+
+              // loop through all the areas and look for codes that match the ""
+
+              // step back up to the parent and extarct the actual _gss_ values/
+            
+              // use this value to look up the name of the LEP
 /* 
               // sort by second property then first property
               // sort by house number as main order then flat number
@@ -564,7 +574,8 @@ router.get('/nl-growth-hub', function(req, res, next) {
   //res.send( req.session.data );
   displayNames.region_name="Cornwall"; 
   res.render('nl-growth-hub', {
-    display: displayNames
+    display: displayNames,
+    location:postcodeLocation
   });
 });
 
@@ -572,7 +583,8 @@ router.get('/nl-recommendations', function(req, res, next) {
   //res.send( req.session.data );
   displayNames.region_name="Cornwall"; 
   res.render('nl-recommendations', {
-    display: displayNames
+    display: displayNames,
+    location:postcodeLocation
   });
 });
 
@@ -589,12 +601,13 @@ var ages = [
 router.get('/nl-pre-start', function(req, res, next) {
   let bus_age = req.session.data['nl_age'];
   let bus_size = req.session.data['nl_count'];
-  console.log(req.session.data)
+  console.log("pre-start " + postcodeLocation)
   displayNames.age = ages[bus_age];
   displayNames.size = bus_size;
   //displayNames.region_name="Cornwall"; 
   res.render('nl-pre-start', {
-    display: displayNames
+    display: displayNames,
+    location:postcodeLocation
   });
 });
 
@@ -609,17 +622,102 @@ router.get('/nl-pre-start', function(req, res, next) {
 
 router.get('/nl-branch', function(req, res, next) {
   let bus_type = req.session.data['nl_type'];
+  let postcode = req.session.data['nl_postcode'];
   
+  if(postcode){
+    var str = postcode;
+    var cleaned = str.split('%20').join('');
+    cleaned = cleaned.split(' ').join('');
+    console.log("GOT CODE " + cleaned)
 
-  // check for type of business
-  // and check for age of business?
-  if (bus_type === '1' || bus_type === '2' ) {  // getting starters
-    res.redirect('nl-pre-start');
-  } else if (bus_type === '5' ) {               // getting neither (!)
-    res.redirect('factsheet');
-  } else {                                      // target audience 
-    res.redirect('nl-growth-hub');
+    //https://mapit.mysociety.org/postcode/SW1A1AA
+
+    request(MYSOCIETY_API_URL + cleaned, {
+      method: "GET",
+      headers: {
+          'Accept': 'application/json'
+        }
+      }, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            if(body) {
+              dataset = JSON.parse(body);
+              //console.log(dataset);
+
+              //res.send(dataset);
+
+              // get the json dataset
+              var areas = dataset.areas;
+              var selectedLA;
+              //console.log(areas);
+              // loop through all the areas and look for codes that match the ""
+
+              for ( var area in areas){
+                //console.log(areas[area].codes)
+                if(areas[area].codes && areas[area].codes["local-authority-eng"]){
+                  // step back up to the parent and extract the actual _gss_ values/
+                  selectedLA = areas[area].codes.gss;
+                }
+              }
+
+              console.log(" got area:" + selectedLA)
+            
+              // use this value to look up the name of the LEP
+
+              var lepDictionary= res.app.locals.dictionary;
+              postcodeLocation = lepDictionary[selectedLA]
+              console.log(postcodeLocation)
+
+
+
+               // check for type of business
+                // and check for age of business?
+                if (bus_type === '1' || bus_type === '2' ) {  // getting starters
+                  res.redirect('nl-pre-start');
+                } else if (bus_type === '5' ) {               // getting neither (!)
+                  res.redirect('factsheet');
+                } else {                                      // target audience 
+                  res.redirect('nl-growth-hub');
+                }
+ 
+
+              /* 
+              // loop through results and build a simple array
+              var lepArray= res.app.locals.lepArray;
+              var len = lepArray.length;
+              var arr = {};
+              for (var i=0;i<len;i++){
+                var code = lepArray[i].ONS;
+                if(!arr[code]){
+                  arr[code] = {
+                    "LEP": lepArray[i]['LEP'],
+                    "LA": lepArray[i]['LA'],
+                    "ONS": lepArray[i]['ONS'],
+
+                  }
+                }
+              }
+              res.send(arr);
+              */
+                
+
+              
+            } else {
+              /* 
+              res.render('find-a-report/results', {
+                addresses: []
+              });
+ */
+            }
+          } else {
+            res.redirect('/error');
+          }
+      }
+    );
   }
+
+
+ 
+  
 });
 
 

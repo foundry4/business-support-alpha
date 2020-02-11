@@ -1,0 +1,2552 @@
+{
+    "leps":[
+  {
+    "LEP": "Cumbria",
+    "LA": "Carlisle",
+    "OLD_ONS": "16UD",
+    "ONS": "E07000028",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cumbria",
+    "LA": "Allerdale",
+    "OLD_ONS": "16UB",
+    "ONS": "E07000026",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cumbria",
+    "LA": "Copeland",
+    "OLD_ONS": "16UE",
+    "ONS": "E07000029",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cumbria",
+    "LA": "South Lakeland",
+    "OLD_ONS": "16UG",
+    "ONS": "E07000031",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cumbria",
+    "LA": "Eden",
+    "OLD_ONS": "16UF",
+    "ONS": "E07000030",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cumbria",
+    "LA": "Barrow-in-Furness",
+    "OLD_ONS": "16UC",
+    "ONS": "E07000027",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Bolton",
+    "OLD_ONS": "00BL",
+    "ONS": "E08000001",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Bury",
+    "OLD_ONS": "00BM",
+    "ONS": "E08000002",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Manchester",
+    "OLD_ONS": "00BN",
+    "ONS": "E08000003",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Oldham",
+    "OLD_ONS": "00BP",
+    "ONS": "E08000004",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Rochdale",
+    "OLD_ONS": "00BQ",
+    "ONS": "E08000005",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Salford",
+    "OLD_ONS": "00BR",
+    "ONS": "E08000006",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Stockport",
+    "OLD_ONS": "00BS",
+    "ONS": "E08000007",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Tameside",
+    "OLD_ONS": "00BT",
+    "ONS": "E08000008",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Trafford",
+    "OLD_ONS": "00BU",
+    "ONS": "E08000009",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Manchester",
+    "LA": "Wigan",
+    "OLD_ONS": "00BW",
+    "ONS": "E08000010",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "Halton",
+    "OLD_ONS": "00ET",
+    "ONS": "E06000006",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "Knowsley",
+    "OLD_ONS": "00BX",
+    "ONS": "E08000011",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "Liverpool",
+    "OLD_ONS": "00BY",
+    "ONS": "E08000012",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "Sefton",
+    "OLD_ONS": "00CA",
+    "ONS": "E08000014",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "St. Helens",
+    "OLD_ONS": "00BZ",
+    "ONS": "E08000013",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Liverpool City Region",
+    "LA": "Wirral",
+    "OLD_ONS": "00CB",
+    "ONS": "E08000015",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cheshire and Warrington",
+    "LA": "Cheshire West and Chester",
+    "OLD_ONS": "00EW",
+    "ONS": "E06000050",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cheshire and Warrington",
+    "LA": "Warrington",
+    "OLD_ONS": "00EU",
+    "ONS": "E06000007",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cheshire and Warrington",
+    "LA": "Cheshire East",
+    "OLD_ONS": "00EQ",
+    "ONS": "E06000049",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Barnsley",
+    "OLD_ONS": "00CC",
+    "ONS": "E08000016",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Bradford",
+    "OLD_ONS": "00CX",
+    "ONS": "E08000032",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Calderdale",
+    "OLD_ONS": "00CY",
+    "ONS": "E08000033",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Craven",
+    "OLD_ONS": "36UB",
+    "ONS": "E07000163",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Harrogate",
+    "OLD_ONS": "36UD",
+    "ONS": "E07000165",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Kirklees",
+    "OLD_ONS": "00CZ",
+    "ONS": "E08000034",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Leeds",
+    "OLD_ONS": "00DA",
+    "ONS": "E08000035",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Selby",
+    "OLD_ONS": "36UH",
+    "ONS": "E07000169",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "Wakefield",
+    "OLD_ONS": "00DB",
+    "ONS": "E08000036",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leeds City Region",
+    "LA": "York",
+    "OLD_ONS": "00FF",
+    "ONS": "E06000014",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Rotherham",
+    "OLD_ONS": "00CF",
+    "ONS": "E08000018",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Sheffield",
+    "OLD_ONS": "00CG",
+    "ONS": "E08000019",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "North East Derbyshire",
+    "OLD_ONS": "17UJ",
+    "ONS": "E07000038",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Chesterfield",
+    "OLD_ONS": "17UD",
+    "ONS": "E07000034",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Bassetlaw",
+    "OLD_ONS": "37UC",
+    "ONS": "E07000171",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Barnsley",
+    "OLD_ONS": "00CC",
+    "ONS": "E08000016",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Bolsover",
+    "OLD_ONS": "17UC",
+    "ONS": "E07000033",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Derbyshire Dales",
+    "OLD_ONS": "17UF",
+    "ONS": "E07000035",
+    "isDuplicate": ""
+  },
+  {
+    "LEP": "Sheffield City Region",
+    "LA": "Doncaster",
+    "OLD_ONS": "00CE",
+    "ONS": "E08000017",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Derby",
+    "OLD_ONS": "00FK",
+    "ONS": "E06000015",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "South Derbyshire",
+    "OLD_ONS": "17UK",
+    "ONS": "E07000039",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Erewash",
+    "OLD_ONS": "17UG",
+    "ONS": "E07000036",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Amber Valley",
+    "OLD_ONS": "17UB",
+    "ONS": "E07000032",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "North East Derbyshire",
+    "OLD_ONS": "17UJ",
+    "ONS": "E07000038",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Chesterfield",
+    "OLD_ONS": "17UD",
+    "ONS": "E07000034",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Nottingham",
+    "OLD_ONS": "00FY",
+    "ONS": "E06000018",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Bassetlaw",
+    "OLD_ONS": "37UC",
+    "ONS": "E07000171",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Newark and Sherwood",
+    "OLD_ONS": "37UG",
+    "ONS": "E07000175",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Mansfield",
+    "OLD_ONS": "37UF",
+    "ONS": "E07000174",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Gedling",
+    "OLD_ONS": "37UE",
+    "ONS": "E07000173",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Broxtowe",
+    "OLD_ONS": "37UD",
+    "ONS": "E07000172",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Ashfield",
+    "OLD_ONS": "37UB",
+    "ONS": "E07000170",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Rushcliffe",
+    "OLD_ONS": "37UJ",
+    "ONS": "E07000176",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Bolsover",
+    "OLD_ONS": "17UC",
+    "ONS": "E07000033",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "High Peak",
+    "OLD_ONS": "17UH",
+    "ONS": "E07000037",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Derby, Derbyshire, Nottingham and Nottinghamshire,",
+    "LA": "Derbyshire Dales",
+    "OLD_ONS": "17UF",
+    "ONS": "E07000035",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Blaby",
+    "OLD_ONS": "31UB",
+    "ONS": "E07000129",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Charnwood",
+    "OLD_ONS": "31UC",
+    "ONS": "E07000130",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Harborough",
+    "OLD_ONS": "31UD",
+    "ONS": "E07000131",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Hinckley and Bosworth",
+    "OLD_ONS": "31UE",
+    "ONS": "E07000132",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Leicester",
+    "OLD_ONS": "00FN",
+    "ONS": "E06000016",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Melton",
+    "OLD_ONS": "31UG",
+    "ONS": "E07000133",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "North West Leicestershire",
+    "OLD_ONS": "31UH",
+    "ONS": "E07000134",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Leicester and Leicestershire",
+    "LA": "Oadby and Wigston",
+    "OLD_ONS": "31UJ",
+    "ONS": "E07000135",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Birmingham",
+    "OLD_ONS": "00CN",
+    "ONS": "E08000025",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "East Staffordshire",
+    "OLD_ONS": "41UC",
+    "ONS": "E07000193",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Lichfield",
+    "OLD_ONS": "41UD",
+    "ONS": "E07000194",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Solihull",
+    "OLD_ONS": "00CT",
+    "ONS": "E08000029",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Cannock Chase",
+    "OLD_ONS": "41UB",
+    "ONS": "E07000192",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Tamworth",
+    "OLD_ONS": "41UK",
+    "ONS": "E07000199",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Redditch",
+    "OLD_ONS": "47UD",
+    "ONS": "E07000236",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Bromsgrove",
+    "OLD_ONS": "47UB",
+    "ONS": "E07000234",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Birmingham and Solihull",
+    "LA": "Wyre Forest",
+    "OLD_ONS": "47UG",
+    "ONS": "E07000239",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "Coventry",
+    "OLD_ONS": "00CQ",
+    "ONS": "E08000026",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "Warwick",
+    "OLD_ONS": "44UF",
+    "ONS": "E07000222",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "Stratford-on-Avon",
+    "OLD_ONS": "44UE",
+    "ONS": "E07000221",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "North Warwickshire",
+    "OLD_ONS": "44UB",
+    "ONS": "E07000218",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "Nuneaton and Bedworth",
+    "OLD_ONS": "44UC",
+    "ONS": "E07000219",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coventry and Warwickshire",
+    "LA": "Rugby",
+    "OLD_ONS": "44UD",
+    "ONS": "E07000220",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "The Marches",
+    "LA": "Telford and Wrekin",
+    "OLD_ONS": "00GF",
+    "ONS": "E06000020",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "The Marches",
+    "LA": "Shropshire",
+    "OLD_ONS": "00GG",
+    "ONS": "E06000051",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "The Marches",
+    "LA": "Herefordshire, County of",
+    "OLD_ONS": "00GA",
+    "ONS": "E06000019",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Cambridge",
+    "OLD_ONS": "12UB",
+    "ONS": "E07000008",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Peterborough",
+    "OLD_ONS": "00JA",
+    "ONS": "E06000031",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Huntingdonshire",
+    "OLD_ONS": "12UE",
+    "ONS": "E07000011",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Fenland",
+    "OLD_ONS": "12UD",
+    "ONS": "E07000010",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "East Cambridgeshire",
+    "OLD_ONS": "12UC",
+    "ONS": "E07000009",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Rutland",
+    "OLD_ONS": "00FP",
+    "ONS": "E06000017",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "South Cambridgeshire",
+    "OLD_ONS": "12UG",
+    "ONS": "E07000012",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "King's Lynn and West Norfolk",
+    "OLD_ONS": "33UE",
+    "ONS": "E07000146",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Forest Heath",
+    "OLD_ONS": "42UC",
+    "ONS": "E07000201",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "North Hertfordshire",
+    "OLD_ONS": "26UF",
+    "ONS": "E07000099",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "St Edmundsbury",
+    "OLD_ONS": "42UF",
+    "ONS": "E07000204",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Cambridge & Greater Peterborough",
+    "LA": "Uttlesford",
+    "OLD_ONS": "22UQ",
+    "ONS": "E07000077",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Broxbourne",
+    "OLD_ONS": "26UB",
+    "ONS": "E07000095",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Dacorum",
+    "OLD_ONS": "26UC",
+    "ONS": "E07000096",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "East Hertfordshire",
+    "OLD_ONS": "26UD",
+    "ONS": "E07000097",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Hertsmere",
+    "OLD_ONS": "26UE",
+    "ONS": "E07000098",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "North Hertfordshire",
+    "OLD_ONS": "26UF",
+    "ONS": "E07000099",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "St Albans",
+    "OLD_ONS": "26UG",
+    "ONS": "E07000100",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Stevenage",
+    "OLD_ONS": "26UH",
+    "ONS": "E07000101",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Three Rivers",
+    "OLD_ONS": "26UJ",
+    "ONS": "E07000102",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Watford",
+    "OLD_ONS": "26UK",
+    "ONS": "E07000103",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Hertfordshire",
+    "LA": "Welwyn Hatfield",
+    "OLD_ONS": "26UL",
+    "ONS": "E07000104",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Oxfordshire LEP",
+    "LA": "Oxford",
+    "OLD_ONS": "38UC",
+    "ONS": "E07000178",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Oxfordshire LEP",
+    "LA": "Cherwell",
+    "OLD_ONS": "38UB",
+    "ONS": "E07000177",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Oxfordshire LEP",
+    "LA": "West Oxfordshire",
+    "OLD_ONS": "38UF",
+    "ONS": "E07000181",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Oxfordshire LEP",
+    "LA": "Vale of White Horse",
+    "OLD_ONS": "38UE",
+    "ONS": "E07000180",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Oxfordshire LEP",
+    "LA": "South Oxfordshire",
+    "OLD_ONS": "38UD",
+    "ONS": "E07000179",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "East Hampshire",
+    "OLD_ONS": "24UC",
+    "ONS": "E07000085",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Eastleigh",
+    "OLD_ONS": "24UD",
+    "ONS": "E07000086",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Fareham",
+    "OLD_ONS": "24UE",
+    "ONS": "E07000087",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Gosport",
+    "OLD_ONS": "24UF",
+    "ONS": "E07000088",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Havant",
+    "OLD_ONS": "24UH",
+    "ONS": "E07000090",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Isle of Wight",
+    "OLD_ONS": "00MW",
+    "ONS": "E06000046",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "New Forest",
+    "OLD_ONS": "24UJ",
+    "ONS": "E07000091",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Portsmouth",
+    "OLD_ONS": "00MR",
+    "ONS": "E06000044",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Southampton",
+    "OLD_ONS": "00MS",
+    "ONS": "E06000045",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Test Valley",
+    "OLD_ONS": "24UN",
+    "ONS": "E07000093",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Solent",
+    "LA": "Winchester",
+    "OLD_ONS": "24UP",
+    "ONS": "E07000094",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "West of England",
+    "LA": "South Gloucestershire",
+    "OLD_ONS": "00HD",
+    "ONS": "E06000025",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "West of England",
+    "LA": "Bristol, City of",
+    "OLD_ONS": "00HB",
+    "ONS": "E06000023",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "West of England",
+    "LA": "Bath and North East Somerset",
+    "OLD_ONS": "00HA",
+    "ONS": "E06000022",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "West of England",
+    "LA": "North Somerset",
+    "OLD_ONS": "00HC",
+    "ONS": "E06000024",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cornwall and the Isles of Scilly",
+    "LA": "Cornwall",
+    "OLD_ONS": "00HE",
+    "ONS": "E06000052",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Cornwall and the Isles of Scilly",
+    "LA": "Isles of Scilly",
+    "OLD_ONS": "00HF",
+    "ONS": "E06000053",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Tees Valley",
+    "LA": "Darlington",
+    "OLD_ONS": "00EH",
+    "ONS": "E06000005",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Tees Valley",
+    "LA": "Hartlepool",
+    "OLD_ONS": "00EB",
+    "ONS": "E06000001",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Tees Valley",
+    "LA": "Middlesbrough",
+    "OLD_ONS": "00EC",
+    "ONS": "E06000002",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Tees Valley",
+    "LA": "Redcar and Cleveland",
+    "OLD_ONS": "00EE",
+    "ONS": "E06000003",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Tees Valley",
+    "LA": "Stockton-on-Tees",
+    "OLD_ONS": "00EF",
+    "ONS": "E06000004",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "West Lindsey",
+    "OLD_ONS": "32UH",
+    "ONS": "E07000142",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "Lincoln",
+    "OLD_ONS": "32UD",
+    "ONS": "E07000138",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "East Lindsey",
+    "OLD_ONS": "32UC",
+    "ONS": "E07000137",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "North Kesteven",
+    "OLD_ONS": "32UE",
+    "ONS": "E07000139",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "Boston",
+    "OLD_ONS": "32UB",
+    "ONS": "E07000136",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "South Kesteven",
+    "OLD_ONS": "32UG",
+    "ONS": "E07000141",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "South Holland",
+    "OLD_ONS": "32UF",
+    "ONS": "E07000140",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "North Lincolnshire",
+    "OLD_ONS": "00FD",
+    "ONS": "E06000013",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Greater Lincolnshire",
+    "LA": "North East Lincolnshire",
+    "OLD_ONS": "00FC",
+    "ONS": "E06000012",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Bedford",
+    "OLD_ONS": "00KB",
+    "ONS": "E06000055",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Central Bedfordshire",
+    "OLD_ONS": "00KC",
+    "ONS": "E06000056",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Luton",
+    "OLD_ONS": "00KA",
+    "ONS": "E06000032",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Milton Keynes",
+    "OLD_ONS": "00MG",
+    "ONS": "E06000042",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Aylesbury Vale",
+    "OLD_ONS": "11UB",
+    "ONS": "E07000004",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Northampton",
+    "OLD_ONS": "34UF",
+    "ONS": "E07000154",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Kettering",
+    "OLD_ONS": "34UE",
+    "ONS": "E07000153",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Corby",
+    "OLD_ONS": "34UB",
+    "ONS": "E07000150",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "South Northamptonshire",
+    "OLD_ONS": "34UG",
+    "ONS": "E07000155",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Daventry",
+    "OLD_ONS": "34UC",
+    "ONS": "E07000151",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East Midlands",
+    "LA": "Cherwell",
+    "OLD_ONS": "38UB",
+    "ONS": "E07000177",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "Bracknell Forest",
+    "OLD_ONS": "00MA",
+    "ONS": "E06000036",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "Reading",
+    "OLD_ONS": "00MC",
+    "ONS": "E06000038",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "Windsor and Maidenhead",
+    "OLD_ONS": "00ME",
+    "ONS": "E06000040",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "Slough",
+    "OLD_ONS": "00MD",
+    "ONS": "E06000039",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "Wokingham",
+    "OLD_ONS": "00MF",
+    "ONS": "E06000041",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Thames Valley Berkshire",
+    "LA": "West Berkshire",
+    "OLD_ONS": "00MB",
+    "ONS": "E06000037",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Basildon",
+    "OLD_ONS": "22UB",
+    "ONS": "E07000066",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Braintree",
+    "OLD_ONS": "22UC",
+    "ONS": "E07000067",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Brentwood",
+    "OLD_ONS": "22UD",
+    "ONS": "E07000068",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Castle Point",
+    "OLD_ONS": "22UE",
+    "ONS": "E07000069",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Chelmsford",
+    "OLD_ONS": "22UF",
+    "ONS": "E07000070",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Colchester",
+    "OLD_ONS": "22UG",
+    "ONS": "E07000071",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Epping Forest",
+    "OLD_ONS": "22UH",
+    "ONS": "E07000072",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Harlow",
+    "OLD_ONS": "22UJ",
+    "ONS": "E07000073",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Maldon",
+    "OLD_ONS": "22UK",
+    "ONS": "E07000074",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Rochford",
+    "OLD_ONS": "22UL",
+    "ONS": "E07000075",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Southend-on-Sea",
+    "OLD_ONS": "00KF",
+    "ONS": "E06000033",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Tendring",
+    "OLD_ONS": "22UN",
+    "ONS": "E07000076",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Thurrock",
+    "OLD_ONS": "00KG",
+    "ONS": "E06000034",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Uttlesford",
+    "OLD_ONS": "22UQ",
+    "ONS": "E07000077",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "South East",
+    "LA": "Ashford",
+    "OLD_ONS": "29UB",
+    "ONS": "E07000105",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Canterbury",
+    "OLD_ONS": "29UC",
+    "ONS": "E07000106",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Dartford",
+    "OLD_ONS": "29UD",
+    "ONS": "E07000107",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Dover",
+    "OLD_ONS": "29UE",
+    "ONS": "E07000108",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Gravesham",
+    "OLD_ONS": "29UG",
+    "ONS": "E07000109",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Maidstone",
+    "OLD_ONS": "29UH",
+    "ONS": "E07000110",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Medway",
+    "OLD_ONS": "00LC",
+    "ONS": "E06000035",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Sevenoaks",
+    "OLD_ONS": "29UK",
+    "ONS": "E07000111",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Shepway",
+    "OLD_ONS": "29UL",
+    "ONS": "E07000112",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Swale",
+    "OLD_ONS": "29UM",
+    "ONS": "E07000113",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Thanet",
+    "OLD_ONS": "29UN",
+    "ONS": "E07000114",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Tonbridge and Malling",
+    "OLD_ONS": "29UP",
+    "ONS": "E07000115",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Tunbridge Wells",
+    "OLD_ONS": "29UQ",
+    "ONS": "E07000116",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Hastings",
+    "OLD_ONS": "21UD",
+    "ONS": "E07000062",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Rother",
+    "OLD_ONS": "21UG",
+    "ONS": "E07000064",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Wealden",
+    "OLD_ONS": "21UH",
+    "ONS": "E07000065",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Eastbourne",
+    "OLD_ONS": "21UC",
+    "ONS": "E07000061",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "South East",
+    "LA": "Lewes",
+    "OLD_ONS": "21UF",
+    "ONS": "E07000063",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Staffordshire Moorlands",
+    "OLD_ONS": "41UH",
+    "ONS": "E07000198",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Stoke-on-trent",
+    "OLD_ONS": "00GL",
+    "ONS": "E06000021",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Stafford",
+    "OLD_ONS": "41UG",
+    "ONS": "E07000197",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "South Staffordshire",
+    "OLD_ONS": "41UF",
+    "ONS": "E07000196",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Cannock Chase",
+    "OLD_ONS": "41UB",
+    "ONS": "E07000192",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Newcastle-under-Lyme",
+    "OLD_ONS": "41UE",
+    "ONS": "E07000195",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "East Staffordshire",
+    "OLD_ONS": "41UC",
+    "ONS": "E07000193",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Lichfield",
+    "OLD_ONS": "41UD",
+    "ONS": "E07000194",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Stoke-on-Trent and Staffordshire",
+    "LA": "Tamworth",
+    "OLD_ONS": "41UK",
+    "ONS": "E07000199",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Brighton and Hove",
+    "OLD_ONS": "00ML",
+    "ONS": "E06000043",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Chichester",
+    "OLD_ONS": "45UD",
+    "ONS": "E07000225",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Mid Sussex",
+    "OLD_ONS": "45UG",
+    "ONS": "E07000228",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Horsham",
+    "OLD_ONS": "45UF",
+    "ONS": "E07000227",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Adur",
+    "OLD_ONS": "45UB",
+    "ONS": "E07000223",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Arun",
+    "OLD_ONS": "45UC",
+    "ONS": "E07000224",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Crawley",
+    "OLD_ONS": "45UE",
+    "ONS": "E07000226",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Worthing",
+    "OLD_ONS": "45UH",
+    "ONS": "E07000229",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Croydon",
+    "OLD_ONS": "00AH",
+    "ONS": "E09000008",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Reigate and Banstead",
+    "OLD_ONS": "43UF",
+    "ONS": "E07000211",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Tandridge",
+    "OLD_ONS": "43UK",
+    "ONS": "E07000215",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Mole Valley",
+    "OLD_ONS": "43UE",
+    "ONS": "E07000210",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Lewes",
+    "OLD_ONS": "21UF",
+    "ONS": "E07000063",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Coast to Capital",
+    "LA": "Epsom and Ewell",
+    "OLD_ONS": "43UC",
+    "ONS": "E07000208",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Babergh",
+    "OLD_ONS": "42UB",
+    "ONS": "E07000200",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Broadland",
+    "OLD_ONS": "33UC",
+    "ONS": "E07000144",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Great Yarmouth",
+    "OLD_ONS": "33UD",
+    "ONS": "E07000145",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "King's Lynn and West Norfolk",
+    "OLD_ONS": "33UE",
+    "ONS": "E07000146",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "North Norfolk",
+    "OLD_ONS": "33UF",
+    "ONS": "E07000147",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "St Edmundsbury",
+    "OLD_ONS": "42UF",
+    "ONS": "E07000204",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Suffolk Coastal",
+    "OLD_ONS": "42UG",
+    "ONS": "E07000205",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Waveney",
+    "OLD_ONS": "42UH",
+    "ONS": "E07000206",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Breckland",
+    "OLD_ONS": "33UB",
+    "ONS": "E07000143",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Forest Heath",
+    "OLD_ONS": "42UC",
+    "ONS": "E07000201",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Ipswich",
+    "OLD_ONS": "42UD",
+    "ONS": "E07000202",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Mid Suffolk",
+    "OLD_ONS": "42UE",
+    "ONS": "E07000203",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "South Norfolk",
+    "OLD_ONS": "33UH",
+    "ONS": "E07000149",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "New Anglia",
+    "LA": "Norwich",
+    "OLD_ONS": "33UG",
+    "ONS": "E07000148",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Black Country",
+    "LA": "Wolverhampton",
+    "OLD_ONS": "00CW",
+    "ONS": "E08000031",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Black Country",
+    "LA": "Walsall",
+    "OLD_ONS": "00CU",
+    "ONS": "E08000030",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Black Country",
+    "LA": "Sandwell",
+    "OLD_ONS": "00CS",
+    "ONS": "E08000028",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Black Country",
+    "LA": "Dudley",
+    "OLD_ONS": "00CR",
+    "ONS": "E08000027",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Wyre Forest",
+    "OLD_ONS": "47UG",
+    "ONS": "E07000239",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Malvern Hills",
+    "OLD_ONS": "47UC",
+    "ONS": "E07000235",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Worcester",
+    "OLD_ONS": "47UE",
+    "ONS": "E07000237",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Wychavon",
+    "OLD_ONS": "47UF",
+    "ONS": "E07000238",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Bromsgrove",
+    "OLD_ONS": "47UB",
+    "ONS": "E07000234",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Worcestershire",
+    "LA": "Redditch",
+    "OLD_ONS": "47UD",
+    "ONS": "E07000236",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "County Durham",
+    "OLD_ONS": "00EJ",
+    "ONS": "E06000047",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "Gateshead",
+    "OLD_ONS": "00CH",
+    "ONS": "E08000020",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "Newcastle upon Tyne",
+    "OLD_ONS": "00CJ",
+    "ONS": "E08000021",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "North Tyneside",
+    "OLD_ONS": "00CK",
+    "ONS": "E08000022",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "Northumberland",
+    "OLD_ONS": "00EM",
+    "ONS": "E06000048",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "South Tyneside",
+    "OLD_ONS": "00CL",
+    "ONS": "E08000023",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "North Eastern",
+    "LA": "Sunderland",
+    "OLD_ONS": "00CM",
+    "ONS": "E08000024",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "York",
+    "OLD_ONS": "00FF",
+    "ONS": "E06000014",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Craven",
+    "OLD_ONS": "36UB",
+    "ONS": "E07000163",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Hambleton",
+    "OLD_ONS": "36UC",
+    "ONS": "E07000164",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Harrogate",
+    "OLD_ONS": "36UD",
+    "ONS": "E07000165",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Richmondshire",
+    "OLD_ONS": "36UE",
+    "ONS": "E07000166",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Ryedale",
+    "OLD_ONS": "36UF",
+    "ONS": "E07000167",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Scarborough",
+    "OLD_ONS": "36UG",
+    "ONS": "E07000168",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "East Riding of Yorkshire",
+    "OLD_ONS": "00FB",
+    "ONS": "E06000011",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "York and North Yorkshire",
+    "LA": "Selby",
+    "OLD_ONS": "36UH",
+    "ONS": "E07000169",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Basingstoke and Deane",
+    "OLD_ONS": "24UB",
+    "ONS": "E07000084",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Hart",
+    "OLD_ONS": "24UG",
+    "ONS": "E07000089",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Rushmoor",
+    "OLD_ONS": "24UL",
+    "ONS": "E07000092",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Surrey Heath",
+    "OLD_ONS": "43UJ",
+    "ONS": "E07000214",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Test Valley",
+    "OLD_ONS": "24UN",
+    "ONS": "E07000093",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Winchester",
+    "OLD_ONS": "24UP",
+    "ONS": "E07000094",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "East Hampshire",
+    "OLD_ONS": "24UC",
+    "ONS": "E07000085",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Woking",
+    "OLD_ONS": "43UM",
+    "ONS": "E07000217",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Guildford",
+    "OLD_ONS": "43UD",
+    "ONS": "E07000209",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Waverley",
+    "OLD_ONS": "43UL",
+    "ONS": "E07000216",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "New Forest",
+    "OLD_ONS": "24UJ",
+    "ONS": "E07000091",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Runnymede",
+    "OLD_ONS": "43UG",
+    "ONS": "E07000212",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Spelthorne",
+    "OLD_ONS": "43UH",
+    "ONS": "E07000213",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Enterprise M3",
+    "LA": "Elmbridge",
+    "OLD_ONS": "43UB",
+    "ONS": "E07000207",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Barking and Dagenham",
+    "OLD_ONS": "00AB",
+    "ONS": "E09000002",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Barnet",
+    "OLD_ONS": "00AC",
+    "ONS": "E09000003",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Bexley",
+    "OLD_ONS": "00AD",
+    "ONS": "E09000004",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Brent",
+    "OLD_ONS": "00AE",
+    "ONS": "E09000005",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Bromley",
+    "OLD_ONS": "00AF",
+    "ONS": "E09000006",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Camden",
+    "OLD_ONS": "00AG",
+    "ONS": "E09000007",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "City of London",
+    "OLD_ONS": "00AA",
+    "ONS": "E09000001",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Croydon",
+    "OLD_ONS": "00AH",
+    "ONS": "E09000008",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "London",
+    "LA": "Ealing",
+    "OLD_ONS": "00AJ",
+    "ONS": "E09000009",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Enfield",
+    "OLD_ONS": "00AK",
+    "ONS": "E09000010",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Greenwich",
+    "OLD_ONS": "00AL",
+    "ONS": "E09000011",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Hackney",
+    "OLD_ONS": "00AM",
+    "ONS": "E09000012",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Hammersmith and Fulham",
+    "OLD_ONS": "00AN",
+    "ONS": "E09000013",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Haringey",
+    "OLD_ONS": "00AP",
+    "ONS": "E09000014",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Harrow",
+    "OLD_ONS": "00AQ",
+    "ONS": "E09000015",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Havering",
+    "OLD_ONS": "00AR",
+    "ONS": "E09000016",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Hillingdon",
+    "OLD_ONS": "00AS",
+    "ONS": "E09000017",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Hounslow",
+    "OLD_ONS": "00AT",
+    "ONS": "E09000018",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Islington",
+    "OLD_ONS": "00AU",
+    "ONS": "E09000019",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Kensington and Chelsea",
+    "OLD_ONS": "00AW",
+    "ONS": "E09000020",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Kingston upon Thames",
+    "OLD_ONS": "00AX",
+    "ONS": "E09000021",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Lambeth",
+    "OLD_ONS": "00AY",
+    "ONS": "E09000022",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Lewisham",
+    "OLD_ONS": "00AZ",
+    "ONS": "E09000023",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Merton",
+    "OLD_ONS": "00BA",
+    "ONS": "E09000024",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Newham",
+    "OLD_ONS": "00BB",
+    "ONS": "E09000025",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Redbridge",
+    "OLD_ONS": "00BC",
+    "ONS": "E09000026",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Richmond upon Thames",
+    "OLD_ONS": "00BD",
+    "ONS": "E09000027",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Southwark",
+    "OLD_ONS": "00BE",
+    "ONS": "E09000028",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Sutton",
+    "OLD_ONS": "00BF",
+    "ONS": "E09000029",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Tower Hamlets",
+    "OLD_ONS": "00BG",
+    "ONS": "E09000030",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Waltham Forest",
+    "OLD_ONS": "00BH",
+    "ONS": "E09000031",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Wandsworth",
+    "OLD_ONS": "00BJ",
+    "ONS": "E09000032",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "London",
+    "LA": "Westminster",
+    "OLD_ONS": "00BK",
+    "ONS": "E09000033",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Torridge",
+    "OLD_ONS": "18UK",
+    "ONS": "E07000046",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "West Devon",
+    "OLD_ONS": "18UL",
+    "ONS": "E07000047",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "South Hams",
+    "OLD_ONS": "18UG",
+    "ONS": "E07000044",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Teignbridge",
+    "OLD_ONS": "18UH",
+    "ONS": "E07000045",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Exeter",
+    "OLD_ONS": "18UC",
+    "ONS": "E07000041",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "East Devon",
+    "OLD_ONS": "18UB",
+    "ONS": "E07000040",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Mid Devon",
+    "OLD_ONS": "18UD",
+    "ONS": "E07000042",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "North Devon",
+    "OLD_ONS": "18UE",
+    "ONS": "E07000043",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Plymouth",
+    "OLD_ONS": "00HG",
+    "ONS": "E06000026",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "West Somerset",
+    "OLD_ONS": "40UF",
+    "ONS": "E07000191",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Taunton Deane",
+    "OLD_ONS": "40UE",
+    "ONS": "E07000190",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Sedgemoor",
+    "OLD_ONS": "40UC",
+    "ONS": "E07000188",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Mendip",
+    "OLD_ONS": "40UB",
+    "ONS": "E07000187",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "South Somerset",
+    "OLD_ONS": "40UD",
+    "ONS": "E07000189",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Heart of the South West",
+    "LA": "Torbay",
+    "OLD_ONS": "00HH",
+    "ONS": "E06000027",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Blackpool",
+    "OLD_ONS": "00EY",
+    "ONS": "E06000009",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Burnley",
+    "OLD_ONS": "30UD",
+    "ONS": "E07000117",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Chorley",
+    "OLD_ONS": "30UE",
+    "ONS": "E07000118",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Fylde",
+    "OLD_ONS": "30UF",
+    "ONS": "E07000119",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Hyndburn",
+    "OLD_ONS": "30UG",
+    "ONS": "E07000120",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Lancaster",
+    "OLD_ONS": "30UH",
+    "ONS": "E07000121",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Pendle",
+    "OLD_ONS": "30UJ",
+    "ONS": "E07000122",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Preston",
+    "OLD_ONS": "30UK",
+    "ONS": "E07000123",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Ribble Valley",
+    "OLD_ONS": "30UL",
+    "ONS": "E07000124",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Rossendale",
+    "OLD_ONS": "30UM",
+    "ONS": "E07000125",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "South Ribble",
+    "OLD_ONS": "30UN",
+    "ONS": "E07000126",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "West Lancashire",
+    "OLD_ONS": "30UP",
+    "ONS": "E07000127",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Wyre",
+    "OLD_ONS": "30UQ",
+    "ONS": "E07000128",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Lancashire",
+    "LA": "Blackburn with Darwen",
+    "OLD_ONS": "00EX",
+    "ONS": "E06000008",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Cheltenham",
+    "OLD_ONS": "23UB",
+    "ONS": "E07000078",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Cotswold",
+    "OLD_ONS": "23UC",
+    "ONS": "E07000079",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Forest of Dean",
+    "OLD_ONS": "23UD",
+    "ONS": "E07000080",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Gloucester",
+    "OLD_ONS": "23UE",
+    "ONS": "E07000081",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Stroud",
+    "OLD_ONS": "23UF",
+    "ONS": "E07000082",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Gloucestershire",
+    "LA": "Tewkesbury",
+    "OLD_ONS": "23UG",
+    "ONS": "E07000083",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Humber",
+    "LA": "East Riding of Yorkshire",
+    "OLD_ONS": "00FB",
+    "ONS": "E06000011",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Humber",
+    "LA": "Kingston upon Hull, city of",
+    "OLD_ONS": "00FA",
+    "ONS": "E06000010",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Humber",
+    "LA": "North Lincolnshire",
+    "OLD_ONS": "00FD",
+    "ONS": "E06000013",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Humber",
+    "LA": "North East Lincolnshire",
+    "OLD_ONS": "00FC",
+    "ONS": "E06000012",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "Bournemouth",
+    "OLD_ONS": "00HN",
+    "ONS": "E06000028",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "Poole",
+    "OLD_ONS": "00HP",
+    "ONS": "E06000029",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "West Dorset",
+    "OLD_ONS": "19UH",
+    "ONS": "E07000052",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "North Dorset",
+    "OLD_ONS": "19UE",
+    "ONS": "E07000050",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "East Dorset",
+    "OLD_ONS": "19UD",
+    "ONS": "E07000049",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "Christchurch",
+    "OLD_ONS": "19UC",
+    "ONS": "E07000048",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "Purbeck",
+    "OLD_ONS": "19UG",
+    "ONS": "E07000051",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Dorset",
+    "LA": "Weymouth and Portland",
+    "OLD_ONS": "19UJ",
+    "ONS": "E07000053",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Swindon and Wiltshire",
+    "LA": "Swindon",
+    "OLD_ONS": "00HX",
+    "ONS": "E06000030",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Swindon and Wiltshire",
+    "LA": "Wiltshire",
+    "OLD_ONS": "00HY",
+    "ONS": "E06000054",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "Daventry",
+    "OLD_ONS": "34UC",
+    "ONS": "E07000151",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "Kettering",
+    "OLD_ONS": "34UE",
+    "ONS": "E07000153",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "Corby",
+    "OLD_ONS": "34UB",
+    "ONS": "E07000150",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "Northampton",
+    "OLD_ONS": "34UF",
+    "ONS": "E07000154",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "East Northamptonshire",
+    "OLD_ONS": "34UD",
+    "ONS": "E07000152",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "Wellingborough",
+    "OLD_ONS": "34UH",
+    "ONS": "E07000156",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Northamptonshire",
+    "LA": "South Northamptonshire",
+    "OLD_ONS": "34UG",
+    "ONS": "E07000155",
+    "isDuplicate": 1
+  },
+  {
+    "LEP": "Buckinghamshire Thames Valley",
+    "LA": "South Buckinghamshire",
+    "OLD_ONS": "11UE",
+    "ONS": "E07000006",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Buckinghamshire Thames Valley",
+    "LA": "Chiltern",
+    "OLD_ONS": "11UC",
+    "ONS": "E07000005",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Buckinghamshire Thames Valley",
+    "LA": "Wycombe",
+    "OLD_ONS": "11UF",
+    "ONS": "E07000007",
+    "isDuplicate": 0
+  },
+  {
+    "LEP": "Buckinghamshire Thames Valley",
+    "LA": "Aylesbury Vale",
+    "OLD_ONS": "11UB",
+    "ONS": "E07000004",
+    "isDuplicate": 1
+  }
+]
+}
