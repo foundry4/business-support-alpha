@@ -569,9 +569,11 @@ router.get('/nl-branch', function(req, res, next) {
 
   // check for type of business
   // and check for age of business?
-  if (bus_type === '1' ) { // getting starters
+  if (bus_type === '1' || bus_type === '2' ) {  // getting starters
     res.redirect('nl-pre-start');
-  } else {
+  } else if (bus_type === '5' ) {               // getting neither (!)
+    res.redirect('nl-recommendations');
+  } else {                                      // target audience 
     res.redirect('nl-growth-hub');
   }
 });
