@@ -79,6 +79,9 @@ var displayNames = {
   region_name:"Cornwall",
   region :  "Cornwall",
   region_url : "https://www.cioslep.com/",
+  website: "https://www.ciosgrowthhub.com/",
+  telephone: "01209 708660",
+  email: "hello@ciosgrowthhub.com",
   aim:"",
 };
 
@@ -383,7 +386,7 @@ router.get('/factsheet', function(req, res, next) {
   }else{
     stageFilter = stages[1];
   }
-  console.log("filter for ", stageFilter)
+  console.log("filter for " + stageFilter);
   results = _.filter(results, function(item){ 
     if (item.who){
 
@@ -396,19 +399,23 @@ router.get('/factsheet', function(req, res, next) {
   });
 
   //console.log(results)
-  /*  
+ 
   //AIM filters?
-			<option value="1" selected>growing the business</option>
-      <option value="1">new equipment</option>
-      <option value="2">new staff</option>
-      <option value="3">research</option>
-      <option value="4">marketing</option>
-      <option value="5">cash flow</option>
-  */
+ 
+  var aimList = [
+    null, 
+    "growing the business",
+    "new equipment",
+    "new staff",
+    "research",
+    "marketing",
+    "cash flow"
+  ];
+  displayNames.aim = aimList[aim];
 
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
-  
+
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
   var legal       = _.filter(results, function(item){ return item.category === "Legal" });

@@ -114,7 +114,7 @@
       ],
       "whoDetail": "Pre-start; start-up; established SMEs looking for support with intellectual property.",
       "eligibility": null,
-      "description": "<p>Services include:</p><p>- free assistance with patent searches by appointment</p><p>- Espacenet search service giving access to UK, European and world patents</p><p>- resources and information on&nbsp;IP including copyright, trade marks and designs</p><p>- free computer access</p><p>- enquiry service</p><p>- free public access to internet, IP information resources, databases</p><p>- referrals to other advice/service providers</p><p>- one stop ideas shop: free and confidential guidance from experts in the field of IP</p>",
+      "description": "<p>Services include:</p><ul class='govuk-list govuk-list--bullet'><li>free assistance with patent searches by appointment</li><li>Espacenet search service giving access to UK, European and world patents</li><li>resources and information on&nbsp;IP including copyright, trade marks and designs</li><li>free computer access</li><li>enquiry service</li><li>free public access to internet, IP information resources, databases</li><li>referrals to other advice/service providers</li><li>one stop ideas shop: free and confidential guidance from experts in the field of IP</li></ul>",
       "website": "https://www.plymouth.gov.uk/libraries/informationandresearch/protectyourideas",
       "telephone": "01752 306 795",
       "email": "patlibplymouth@plymouth.gov.uk"
