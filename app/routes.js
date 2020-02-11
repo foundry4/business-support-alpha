@@ -361,8 +361,11 @@ global.getFacets = function (arr){
 
 
 router.get('/factsheet', function(req, res, next) {
+  console.log("factsheet")
+  console.log("nl_aim "+ req.session.data['nl_aim']);
   var businessStage = req.session.data['businessStage'];
   var results = res.app.locals.data;
+  var aim = req.session.data['nl_aim'];
   // some sort of filtering based on the company type
   // var stages = [null, 'not-yet-trading', 'start-up', 'established'];
   var stages = [
@@ -377,8 +380,10 @@ router.get('/factsheet', function(req, res, next) {
   // filter results 
   if(businessStage){
     stageFilter = stages[businessStage];
+  }else{
+    stageFilter = stages[1];
   }
-  console.log("filter for  ", stageFilter)
+  console.log("filter for ", stageFilter)
   results = _.filter(results, function(item){ 
     if (item.who){
 
@@ -391,8 +396,19 @@ router.get('/factsheet', function(req, res, next) {
   });
 
   //console.log(results)
-   
+  /*  
+  //AIM filters?
+			<option value="1" selected>growing the business</option>
+      <option value="1">new equipment</option>
+      <option value="2">new staff</option>
+      <option value="3">research</option>
+      <option value="4">marketing</option>
+      <option value="5">cash flow</option>
+  */
 
+  // do some crude filtering based on aims?
+  // eg reset the results arrays for non-applicable results?
+  
   var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
   var support     = _.filter(results, function(item){ return item.category === "Business Support" });
   var legal       = _.filter(results, function(item){ return item.category === "Legal" });
@@ -572,7 +588,7 @@ router.get('/nl-branch', function(req, res, next) {
   if (bus_type === '1' || bus_type === '2' ) {  // getting starters
     res.redirect('nl-pre-start');
   } else if (bus_type === '5' ) {               // getting neither (!)
-    res.redirect('nl-recommendations');
+    res.redirect('factsheet');
   } else {                                      // target audience 
     res.redirect('nl-growth-hub');
   }
