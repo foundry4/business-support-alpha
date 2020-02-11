@@ -405,11 +405,12 @@ router.get('/factsheet', function(req, res, next) {
   var aimList = [
     null, 
     "growing the business",
-    "new equipment",
-    "new staff",
-    "research",
-    "marketing",
-    "cash flow"
+    "buying new equipment",
+    "getting new premises",
+    "hiring new staff",
+    "research and innovation",
+    "marketing products and services",
+    "improving cash flow"
   ];
   displayNames.aim = aimList[aim];
 
@@ -575,17 +576,37 @@ router.get('/nl-recommendations', function(req, res, next) {
   });
 });
 
+var ages = [
+  null,
+"not started trading",
+"been trading for under a year",
+"been trading for 1-2 years",
+"been trading for 2-5 years",
+"been trading for over 5 years"
+
+];
+
+router.get('/nl-pre-start', function(req, res, next) {
+  let bus_age = req.session.data['nl_age'];
+  let bus_size = req.session.data['nl_count'];
+  console.log(req.session.data)
+  displayNames.age = ages[bus_age];
+  displayNames.size = bus_size;
+  //displayNames.region_name="Cornwall"; 
+  res.render('nl-pre-start', {
+    display: displayNames
+  });
+});
+
 
 /* 
+<option value="1" >getting started</option>
+<option value="2">a sole trader</option>
+<option value="3" selected>a business owner</option>
+<option value="4">a business manager</option>
+<option value="2">a partner</option>
+*/
 
-<select name="nl_type">
-						<option value="1" >getting started</option>
-						<option value="2">a sole trader</option>
-						<option value="3" selected>a business owner</option>
-						<option value="4">a business manager</option>
-						<option value="2">a partner</option>
-
- */
 router.get('/nl-branch', function(req, res, next) {
   let bus_type = req.session.data['nl_type'];
   
@@ -600,6 +621,7 @@ router.get('/nl-branch', function(req, res, next) {
     res.redirect('nl-growth-hub');
   }
 });
+
 
 
 module.exports = router
