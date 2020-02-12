@@ -35,12 +35,12 @@
             "email": "",
             "name": "Coast to Capital"
         },
-        "Cornwall and Isles of Scilly": {
+        "Cornwall and the Isles of Scilly": {
             "url": "www.ciosgrowthhub.com",
             "contact": "",
             "telephone": "0345 678 9999",
             "email": "",
-            "name": "Cornwall and Isles of Scilly"
+            "name": "Cornwall and the Isles of Scilly"
         },
         "Coventry and Warwickshire": {
             "url": "www.cwgrowthhub.co.uk",
@@ -264,7 +264,7 @@
             "contact": "",
             "telephone": "0345 678 9999",
             "email": "",
-            "name": "York and North Yorkshir"
+            "name": "York and North Yorkshire"
         }
     }
 }
