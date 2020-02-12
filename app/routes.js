@@ -658,7 +658,11 @@ router.get('/nl-branch', function(req, res, next) {
               console.log(hub)
               postcodeLocation.url = hub.url;
               postcodeLocation.telephone = hub.telephone;
-              postcodeLocation.email = "advisor@"+hub.url;
+              if(hub.email!==""){
+                postcodeLocation.email = hub.email;
+              }else{
+                postcodeLocation.email = "advisor@"+hub.url;
+              }
               console.log(postcodeLocation)
 
 
