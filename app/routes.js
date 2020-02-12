@@ -52,7 +52,14 @@ var sampleResults = [
   
   ];
 
-var postcodeLocation = {};
+var postcodeLocation = { 
+  LEP: 'Cornwall and the Isles of Scilly',
+  LA: 'Cornwall',
+  ONS: 'E06000052',
+  url: 'www.ciosgrowthhub.com',
+  telephone: '01209 708660',
+  email: 'hello@ciosgrowthhub.com'
+};
  
 var aimList = [
   null, 
@@ -662,7 +669,7 @@ router.get('/nl-branch', function(req, res, next) {
               }else{
                 postcodeLocation.email = "advisor@"+hub.url;
               }
-              //console.log(postcodeLocation)
+              console.log(postcodeLocation)
               console.log("got "+ bus_type+", age: "+bus_age+", and count:"+ peopleCount)
               // check for type of business
                 // and check for age of business?
@@ -684,6 +691,14 @@ router.get('/nl-branch', function(req, res, next) {
           }
       }
     );
+  }else{
+    if (bus_type === '1' || bus_age < 4 ) {
+      res.redirect('nl-pre-start');         // getting starters & companies under 2 years old
+    } else if (peopleCount >= 10 && peopleCount <=49 ) {
+      res.redirect('nl-growth-hub');        // target audience 
+    } else {                                     
+      res.redirect('factsheet');            // getting neither (!)
+    }
   }
 
   
