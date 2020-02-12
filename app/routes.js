@@ -53,6 +53,25 @@ var sampleResults = [
   ];
 
 var postcodeLocation = {};
+ 
+var aimList = [
+  null, 
+  "growing the business",
+  "buying new equipment",
+  "getting new premises",
+  "hiring new staff",
+  "research and innovation",
+  "marketing products and services",
+  "improving cash flow"
+]; 
+var typeList = [
+  null, 
+  "getting started",
+  "a sole trader",
+  "a business owner",
+  "a business manager",
+  "a partner"
+];
 
 router.get('/', function(req, res, next) {
   res.render('index', {  });
@@ -89,15 +108,7 @@ var displayNames = {
 router.get('/summary', function(req, res, next) {
   var facets = {};
   var params = "";
-  var aims = [
-    null,
-    "Buy new equipment",
-    "Get new premises",
-    "Hire more staff",
-    "Research and innovate",
-    "Market products and services",
-    "Improve cash flow",
-  ];
+
 
 /* 
   to research and create a product; 
@@ -132,7 +143,7 @@ router.get('/summary', function(req, res, next) {
       params += "&"; 
     } */
     // params += "types_of_support%5B%5D=" + typeArray[i];
-    displayNames.aim = aims[aim];
+    displayNames.aim = aimList[aim];
   }
     
   //////////////////////////////
@@ -402,17 +413,6 @@ router.get('/factsheet', function(req, res, next) {
   //console.log(results)
  
   //AIM filters?
- 
-  var aimList = [
-    null, 
-    "growing the business",
-    "buying new equipment",
-    "getting new premises",
-    "hiring new staff",
-    "research and innovation",
-    "marketing products and services",
-    "improving cash flow"
-  ];
   displayNames.aim = aimList[aim];
 
   // do some crude filtering based on aims?
@@ -572,9 +572,12 @@ router.get('/postcode', function(req, res, next) {
 
 router.get('/nl-growth-hub', function(req, res, next) {
   //res.send( req.session.data );
-  displayNames.region_name="Cornwall"; 
+  //displayNames.region_name="Cornwall"; 
+  //console.log(bus_aim, bus_type)
   res.render('nl-growth-hub', {
     display: displayNames,
+    //aim:bus_aim,
+    //type:bus_type,
     location:postcodeLocation
   });
 });
@@ -626,10 +629,15 @@ router.get('/confirmation', function(req, res, next) {
 <option value="2">a partner</option>
 */
 
+
 router.get('/nl-branch', function(req, res, next) {
   let bus_type = req.session.data['nl_type'];
+  let bus_aim = req.session.data['nl_aim'];
   let postcode = req.session.data['nl_postcode'];
-  
+  displayNames.aim = aimList[bus_aim];
+  displayNames.type = typeList[bus_type];
+
+  console.log(displayNames)
   if(postcode){
     var str = postcode;
     var cleaned = str.split('%20').join('');
