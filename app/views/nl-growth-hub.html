@@ -17,14 +17,15 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l" id="">Speak to a business adviser in {{display.region_name | capitalize}}</h1>
+        <h1 class="govuk-heading-l" id="">Speak to a business adviser in {{ location.LA | capitalize}}</h1>
 
         <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
-          <p>
+          <!-- <p>
             {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
-          </p>
+          </p> -->
           <p>
-            Because you’re [i.e. a sole trader] interested in [i.e. hiring more staff], you may benefit from speaking with a free business adviser at your local Growth Hub. 
+            Because you’re {{ data.nl_type }} and interested in {{ data.nl_aim }}, 
+            you may benefit from speaking with a free business adviser at the {{ location.LEP }} Growth Hub. 
           </p>
           <p>
             Your advisor will get to know your business and make tailored recommendations to help you grow and achieve your goals. They will also help you find further support that is suitable for your business. 
@@ -32,18 +33,63 @@
           <p>
             View availability and book a meeting with your business advisor.
           </p>
-<!--             
-            <p>
-                You can get personal support and advice for your business at 
-                <a href="{{ display.region_url }}" target="_blank"> {{ display.region_name }} Growth Hub</a>.
-            </p>
- -->            
+        
             <p class="document-list__item-description">Website: <a href="https://www.ciosgrowthhub.com/" target="_blank">https://www.ciosgrowthhub.com/</a></p>
              
             <p class="document-list__item-description">Telephone: 01209 708660</p>            
             
             <p class="document-list__item-description">Email: <a href="mailto:hello@ciosgrowthhub.com">hello@ciosgrowthhub.com</a></p>
             
+            <form id="main" action="confirmation" method="post" class="form" novalidate>
+              <!-- 
+                      <div class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title " id="error-summary-title">
+                          There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                          <ul class="govuk-list govuk-error-summary__list">
+                          </ul>
+                        </div>
+                      </div>
+               -->
+                    <div class="govuk-form-group"> 
+                      <fieldset class="govuk-fieldset" aria-describedby="Email-hint">
+              
+                        <legend class="govuk-fieldset__legend govuk-label--m">
+                          <h1 class="govuk-fieldset__heading">
+                             Make an appointment with a business advisor
+                          </h1>
+                        </legend>
+                                
+                        <div class="">
+                          <label class="govuk-label" for="email">
+                            Email address or telephone
+                          </label>
+                          <span id="email-hint" class="govuk-hint">
+                            Enter your email address or contact phone number.
+                            We will email the Growth Hub with your details and one of their advisors will be in touch.
+                          </span>
+                          <!-- <span id="opt-out-email-error" class="govuk-error-message hide">
+                            Enter your property email
+                          </span> -->
+                          <input data-required="true" class="govuk-input govuk-input--width-10" id="email" name="postcode" type="text" value="{{ data['postcode'] }}">
+                          <br/>
+                          <label for="freetext" class="govuk-label">Message</label>
+                          <textarea name="freetext"
+                            placeholder="Enter your message..." id="freetext" class="govuk-textarea"
+                            aria-invalid="false"></textarea>
+                          <span class="description govuk-label"><span data-limit="180" data-type="characters">0 / 180</span></span></div>
+                      </fieldset> 
+              
+              
+                      </div>
+                      <br/>
+              
+                      <button type="submit" class="govuk-button" id="submit">
+                        Request appointment
+                      </button>
+              
+                    </form>
           
         </div>
       

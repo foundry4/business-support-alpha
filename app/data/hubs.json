@@ -1,0 +1,156 @@
+{
+    "hubs": [
+        {
+            "url": "http://www.bcgrowthhub.com/",
+            "name": "Black Country"
+        },
+        {
+            "url": "https://bbf.uk.com/",
+            "name": "Buckinghamshire"
+        },
+        {
+            "url": "http://signpost2grow.co.uk/",
+            "name": "Cambridgeshire &amp; Peterborough"
+        },
+        {
+            "url": "http://candwgrowthhub.co.uk/",
+            "name": "Cheshire &amp; Warrington"
+        },
+        {
+            "url": "http://www.c2cbusiness.org.uk/",
+            "name": "Coast to Capital"
+        },
+        {
+            "url": "http://www.ciosgrowthhub.com/",
+            "name": "Cornwall and Isles of Scilly"
+        },
+        {
+            "url": "http://www.cwgrowthhub.co.uk/",
+            "name": "Coventry and Warwickshire"
+        },
+        {
+            "url": "https://www.cumbriagrowthhub.co.uk/business-support/cumbria-catalyst",
+            "name": "Cumbria"
+        },
+        {
+            "url": "https://www.d2n2growthhub.co.uk/",
+            "name": "Derby, Derbyshire, Nottingham, Nottinghamshire"
+        },
+        {
+            "url": "https://www.dorsetlep.co.uk/dorset-gateway",
+            "name": "Dorset"
+        },
+        {
+            "url": "https://www.enterprisem3growthhub.co.uk/",
+            "name": "Enterprise M3"
+        },
+        {
+            "url": "https://www.thegrowthhub.biz/",
+            "name": "GFirst2"
+        },
+        {
+            "url": "https://www.gbslepgrowthhub.co.uk/",
+            "name": "Greater Birmingham &amp; Solihull"
+        },
+        {
+            "url": "https://www.businesslincolnshire.com",
+            "name": "Greater Lincolnshire"
+        },
+        {
+            "url": "https://www.businessgrowthhub.com/",
+            "name": "Greater Manchester"
+        },
+        {
+            "url": "https://www.heartofswgrowthhub.co.uk/",
+            "name": "Heart of the South West"
+        },
+        {
+            "url": "https://www.hertsgrowthhub.com/",
+            "name": "Hertfordshire"
+        },
+        {
+            "url": "http://hub.humberlep.org/",
+            "name": "Humber"
+        },
+        {
+            "url": "https://www.boostbusinesslancashire.co.uk/",
+            "name": "Lancashire"
+        },
+        {
+            "url": "https://www.the-lep.com/for-businesses/",
+            "name": "Leeds City Region"
+        },
+        {
+            "url": "http://www.llepbizgateway.co.uk/",
+            "name": "Leicester &amp; Leicestershire"
+        },
+        {
+            "url": "https://localgrowthhub.com/",
+            "name": "Liverpool City Region"
+        },
+        {
+            "url": "https://www.growthhub.london/",
+            "name": "London"
+        },
+        {
+            "url": "http://www.newangliagrowthhub.co.uk/",
+            "name": "New Anglia"
+        },
+        {
+            "url": "https://www.northeastgrowthhub.co.uk/",
+            "name": "North East"
+        },
+        {
+            "url": "https://www.oxfordshirelep.com/business/growth-hub",
+            "name": "Oxfordshire"
+        },
+        {
+            "url": "https://www.scrgrowthhub.co.uk/",
+            "name": "Sheffield City Region"
+        },
+        {
+            "url": "http://www.solentgrowthhub.co.uk/",
+            "name": "Solent"
+        },
+        {
+            "url": "http://www.southeastbusiness.org.uk/",
+            "name": "South East"
+        },
+        {
+            "url": "http://www.velocitybusinesssupport.com/",
+            "name": "South East Midlands"
+        },
+        {
+            "url": "http://www.stokestaffsgrowthhub.co.uk/",
+            "name": "Stoke-on-Trent and Staffordshire"
+        },
+        {
+            "url": "https://growthhub.swlep.co.uk/",
+            "name": "Swindon and Wiltshire"
+        },
+        {
+            "url": "https://www.teesbusinesscompass.co.uk/",
+            "name": "Tees Valley"
+        },
+        {
+            "url": "https://www.berkshirebusinesshub.co.uk/",
+            "name": "Thames Valley Berkshire"
+        },
+        {
+            "url": "https://www.marchesgrowthhub.co.uk/",
+            "name": "The Marches"
+        },
+        {
+            "url": "https://www.wearegrowth.co.uk/",
+            "name": "West of England"
+        },
+        {
+            "url": "http://www.business-central.co.uk/",
+            "name": "Worcestershire"
+        },
+        {
+            "url": "http://www.howsbusiness.org/",
+            "name": "York, North Yorkshire and East Riding"
+        },
+    ]
+}

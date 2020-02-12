@@ -611,6 +611,12 @@ router.get('/nl-pre-start', function(req, res, next) {
   });
 });
 
+router.get('/confirmation', function(req, res, next) {
+  res.render('confirmation', {
+    location:postcodeLocation
+  });
+});
+
 
 /* 
 <option value="1" >getting started</option>
@@ -715,8 +721,6 @@ router.get('/nl-branch', function(req, res, next) {
     );
   }
 
-
- 
   
 });
 
