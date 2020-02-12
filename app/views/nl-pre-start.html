@@ -29,7 +29,12 @@
           Advice and financial help from government-backed schemes is available in <strong>{{ location.LA }}</strong>.
         </p>
         <p>
-          Because your business has <strong>{{ display.age }}</strong> and employs <strong>{{ display.size }}</strong> people, 
+          Because your business has <strong>{{ display.age }}</strong> and employs <strong>{{ display.size }}</strong> 
+          {% if display.size==1 %}
+          person,
+          {% else %}
+          people,
+          {% endif %} 
           you may benefit from contacting the Business Support Helpline.
         </p>
         <p>
