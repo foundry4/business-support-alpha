@@ -34,11 +34,11 @@
             View availability and book a meeting with your business advisor.
           </p>
         
-            <p class="document-list__item-description">Website: <a href="https://www.ciosgrowthhub.com/" target="_blank">https://www.ciosgrowthhub.com/</a></p>
+            <p class="document-list__item-description">Website: <a href="//{{ location.url }}" target="_blank">{{ location.url }}</a></p>
              
-            <p class="document-list__item-description">Telephone: 01209 708660</p>            
+            <p class="document-list__item-description">Telephone: {{ location.telephone }}</p>            
             
-            <p class="document-list__item-description">Email: <a href="mailto:hello@ciosgrowthhub.com">hello@ciosgrowthhub.com</a></p>
+            <p class="document-list__item-description">Email: <a href="mailto:{{ location.email }}">{{ location.email }}</a></p>
             
             <form id="main" action="confirmation" method="post" class="form" novalidate>
               <!-- 

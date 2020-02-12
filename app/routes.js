@@ -521,42 +521,16 @@ router.get('/postcode', function(req, res, next) {
 
               res.send(dataset);
 
-              // get the jsojn dataset
+              // get the json dataset
 
               // loop through all the areas and look for codes that match the ""
 
               // step back up to the parent and extarct the actual _gss_ values/
             
               // use this value to look up the name of the LEP
-/* 
-              // sort by second property then first property
-              // sort by house number as main order then flat number
-              var sortedArray = _.chain(dataset.rows)
-                .sortBy('address1')
-                .sortBy('address2')
-                .value();
 
-              // loop through results and build a simple array
-              var arr = [];
-              for (var i=0;i<sortedArray.length;i++){
-                arr[i] = {
-                      "reference": sortedArray[i]['certificate-hash'],
-                      "type": sortedArray[i]['property-type'],
-                      "address": sortedArray[i].address +', '+ dataset.rows[i].postcode,
-                      "category": sortedArray[i]['current-energy-rating']
-                  }
-              }
-
-              res.render('find-a-report/results', {
-                addresses: arr
-              });
- */
             } else {
-              /* 
-              res.render('find-a-report/results', {
-                addresses: []
-              });
- */
+
             }
           } else {
             res.redirect('/error');
@@ -655,11 +629,7 @@ router.get('/nl-branch', function(req, res, next) {
           if (!error && response.statusCode == 200) {
             if(body) {
               dataset = JSON.parse(body);
-              //console.log(dataset);
-
-              //res.send(dataset);
-
-              // get the json dataset
+                // get the json dataset
               var areas = dataset.areas;
               var selectedLA;
               //console.log(areas);
@@ -678,7 +648,17 @@ router.get('/nl-branch', function(req, res, next) {
               // use this value to look up the name of the LEP
 
               var lepDictionary= res.app.locals.dictionary;
-              postcodeLocation = lepDictionary[selectedLA]
+              postcodeLocation = lepDictionary[selectedLA];
+              console.log(postcodeLocation.LEP)
+              console.log(res.app.locals.hubs)
+              var hub =  res.app.locals.hubs[postcodeLocation.LEP]
+              //do the same for LEP contacts
+              
+              
+              console.log(hub)
+              postcodeLocation.url = hub.url;
+              postcodeLocation.telephone = hub.telephone;
+              postcodeLocation.email = "advisor@"+hub.url;
               console.log(postcodeLocation)
 
 
