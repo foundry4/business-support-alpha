@@ -517,7 +517,7 @@ router.get('/postcode', function(req, res, next) {
           if (!error && response.statusCode == 200) {
             if(body) {
               dataset = JSON.parse(body);
-              console.log(dataset);
+              //console.log(dataset);
 
               res.send(dataset);
 
@@ -603,20 +603,22 @@ router.get('/confirmation', function(req, res, next) {
 <option value="2">a partner</option>
 */
 
-
+// TODO remove displayNames var and tidy up!
 router.get('/nl-branch', function(req, res, next) {
   let bus_type = req.session.data['nl_type'];
   let bus_aim = req.session.data['nl_aim'];
+  let bus_age = req.session.data['nl_age'];
   let postcode = req.session.data['nl_postcode'];
+  let peopleCount = req.session.data['nl_count'];
   displayNames.aim = aimList[bus_aim];
   displayNames.type = typeList[bus_type];
 
-  console.log(displayNames)
+  //console.log(displayNames)
   if(postcode){
     var str = postcode;
     var cleaned = str.split('%20').join('');
     cleaned = cleaned.split(' ').join('');
-    console.log("GOT CODE " + cleaned)
+    //console.log("GOT CODE " + cleaned)
 
     //https://mapit.mysociety.org/postcode/SW1A1AA
 
@@ -643,19 +645,16 @@ router.get('/nl-branch', function(req, res, next) {
                 }
               }
 
-              console.log(" got area:" + selectedLA)
+              //console.log(" got area:" + selectedLA)
             
               // use this value to look up the name of the LEP
-
               var lepDictionary= res.app.locals.dictionary;
               postcodeLocation = lepDictionary[selectedLA];
               console.log(postcodeLocation.LEP)
-              console.log(res.app.locals.hubs)
+              //console.log(res.app.locals.hubs)
               var hub =  res.app.locals.hubs[postcodeLocation.LEP]
+
               //do the same for LEP contacts
-              
-              
-              console.log(hub)
               postcodeLocation.url = hub.url;
               postcodeLocation.telephone = hub.telephone;
               if(hub.email!==""){
@@ -663,51 +662,25 @@ router.get('/nl-branch', function(req, res, next) {
               }else{
                 postcodeLocation.email = "advisor@"+hub.url;
               }
-              console.log(postcodeLocation)
-
-
-
-               // check for type of business
+              //console.log(postcodeLocation)
+              console.log("got "+ bus_type+", age: "+bus_age+", and count:"+ peopleCount)
+              // check for type of business
                 // and check for age of business?
-                if (bus_type === '1' || bus_type === '2' ) {  // getting starters
-                  res.redirect('nl-pre-start');
-                } else if (bus_type === '5' ) {               // getting neither (!)
-                  res.redirect('factsheet');
-                } else {                                      // target audience 
-                  res.redirect('nl-growth-hub');
+                if (bus_type === '1' || bus_age < 4 ) {
+                  res.redirect('nl-pre-start');         // getting starters & companies under 2 years old
+                } else if (peopleCount >= 10 && peopleCount <=49 ) {
+                  res.redirect('nl-growth-hub');        // target audience 
+                } else {                                     
+                  res.redirect('factsheet');            // getting neither (!)
                 }
- 
 
-              /* 
-              // loop through results and build a simple array
-              var lepArray= res.app.locals.lepArray;
-              var len = lepArray.length;
-              var arr = {};
-              for (var i=0;i<len;i++){
-                var code = lepArray[i].ONS;
-                if(!arr[code]){
-                  arr[code] = {
-                    "LEP": lepArray[i]['LEP'],
-                    "LA": lepArray[i]['LA'],
-                    "ONS": lepArray[i]['ONS'],
-
-                  }
-                }
-              }
-              res.send(arr);
-              */
-                
-
-              
             } else {
-              /* 
-              res.render('find-a-report/results', {
-                addresses: []
-              });
- */
+              res.redirect('/error');
+
             }
           } else {
             res.redirect('/error');
+
           }
       }
     );
