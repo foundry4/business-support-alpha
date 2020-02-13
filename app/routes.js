@@ -650,8 +650,10 @@ router.get('/nl-branch', function(req, res, next) {
   let description = req.session.data['nl_description'];
   var isReady = false;
   
-  if(description.indexOf("Innovative")>-1 || description.indexOf("Competitive")>-1 || description.indexOf("Profit-focused")>-1){
-    isReady = true;
+  if(description){
+    if(description.indexOf("Innovative")>-1 || description.indexOf("Competitive")>-1 || description.indexOf("Profit-focused")>-1){
+      isReady = true;
+    }
   }
 
   console.log(req.session.data)
@@ -710,7 +712,8 @@ router.get('/nl-branch', function(req, res, next) {
                 if ( bus_age < 3 ) {
                   res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
                 } else if (peopleCount <=5 ) {
-                  res.redirect('nl-one');                     // 'one man band' 
+                  res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+                  //res.redirect('nl-one');                     // 'one man band' 
                 } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
                   res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
                 } else {                                     
@@ -732,7 +735,8 @@ router.get('/nl-branch', function(req, res, next) {
     if ( bus_age < 3 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
     } else if (peopleCount <=5 ) {
-      res.redirect('nl-one');                     // 'one man band' 
+      res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+      //res.redirect('nl-one');                     // 'one man band' 
     } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
       res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
     } else {                                     
