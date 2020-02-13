@@ -25,9 +25,11 @@
          <!--  <p>
             {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
           </p> -->
+        {% if country=="England" %}
         <p>
           Advice and financial help from government-backed schemes is available in <strong>{{ location.LA }}</strong>.
         </p>
+        {% endif %}
         <p>
           Because your business has <strong>{{ display.age }}</strong> and employs <strong>{{ display.size }}</strong> 
           {% if display.size==1 %}
@@ -48,7 +50,7 @@
         </ul>
       
       
-      
+      {% if country=="England" %}
       <h2  class="govuk-heading-m" id="england">England</h2>
       
       <p>You can contact the government’s Business Support Helpline for free advice.</p>
@@ -71,7 +73,9 @@
         <li><a rel="external" href="https://www.facebook.com/BusinessSupportGov">Facebook</a></li>
         <li><a rel="external" href="https://www.youtube.com/user/BusinessSupportGov">YouTube</a></li>
       </ul>
+      {% endif %}
       
+      {% if country=="Scotland" %}
       <h2 class="govuk-heading-m" id="scotland">Scotland</h2>
       
       <p><a rel="external" href="http://www.bgateway.com">Get free advice from Business Gateway online</a>, or over the phone.</p>
@@ -83,7 +87,9 @@
         Monday to Friday, 8am to 6pm <br>
         <a href="/call-charges">Find out about call charges</a></p>
       </div>
-      
+      {% endif %}
+
+      {% if country=="Wales" %}
       <h2 class="govuk-heading-m" id="wales">Wales</h2>
       
       <p><a rel="external" href="http://business.wales.gov.uk/starting-business">Get help with your business online,</a> or by calling the Business Wales Helpline.</p>
@@ -94,7 +100,10 @@
         Monday to Friday, 8:30am to 5:30pm<br>
         <a href="/call-charges">Find out about call charges</a></p>
       </div>
+      {% endif %}
       
+      
+      {% if country=="Northern Ireland" %}
       <h2 class="govuk-heading-m" id="northern-ireland">Northern Ireland</h2>
       
       <p><a rel="external" href="https://www.nibusinessinfo.co.uk/start">Find advice and support for starting a business</a>. You can also contact the Invest Northern Ireland helpline.</p>
@@ -105,7 +114,7 @@
         Monday to Friday, 8:30am to 5pm<br>
         <a href="/call-charges">Find out about call charges</a></p>
       </div>
-      
+      {% endif %}
       
       
       </div>

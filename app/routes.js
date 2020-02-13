@@ -52,6 +52,8 @@ var sampleResults = [
   
   ];
 
+  var country="-";
+  
 var postcodeLocation = { 
   LEP: 'Cornwall and the Isles of Scilly',
   LA: 'Cornwall',
@@ -629,6 +631,7 @@ router.get('/nl-pre-start', function(req, res, next) {
   //displayNames.region_name="Cornwall"; 
   res.render('nl-pre-start', {
     display: displayNames,
+    country:country,
     location:postcodeLocation
   });
 });
@@ -677,7 +680,8 @@ router.get('/nl-branch', function(req, res, next) {
           if (!error && response.statusCode == 200) {
             if(body) {
               dataset = JSON.parse(body);
-                // get the json dataset
+
+              // get the json dataset
               var areas = dataset.areas;
               var selectedLA;
 
@@ -688,25 +692,31 @@ router.get('/nl-branch', function(req, res, next) {
                   selectedLA = areas[area].codes.gss;
                 }
                 //also get the country code for use on the pre-start hand off?
+                if(areas[area].country_name!=="-"){
+                  country = areas[area].country_name
+                }
               }
 
-              //console.log(" got area:" + selectedLA)
+              console.log("Got selectedLA:" + selectedLA)
+              console.log("Got country:" + country)
             
-              // use this value to look up the name of the LEP
-              var lepDictionary= res.app.locals.dictionary;
-              postcodeLocation = lepDictionary[selectedLA];
-              //console.log(postcodeLocation.LEP)
-              var hub =  res.app.locals.hubs[postcodeLocation.LEP]
-
-              //do the same for LEP contacts
-              postcodeLocation.url = hub.url;
-              postcodeLocation.telephone = hub.telephone;
-              if(hub.email!==""){
-                postcodeLocation.email = hub.email;
-              }else{
-                postcodeLocation.email = "advisor@"+hub.url;
+              if(selectedLA){
+                // use this value to look up the name of the LEP
+                var lepDictionary= res.app.locals.dictionary;
+                postcodeLocation = lepDictionary[selectedLA];
+                //console.log(postcodeLocation.LEP)
+                var hub =  res.app.locals.hubs[postcodeLocation.LEP]
+                
+                //do the same for LEP contacts
+                postcodeLocation.url = hub.url;
+                postcodeLocation.telephone = hub.telephone;
+                if(hub.email!==""){
+                  postcodeLocation.email = hub.email;
+                }else{
+                  postcodeLocation.email = "advisor@"+hub.url;
+                }
+                //console.log(postcodeLocation)
               }
-              //console.log(postcodeLocation)
 
               // TRIAGE
                 if ( bus_age < 3 ) {
@@ -719,7 +729,7 @@ router.get('/nl-branch', function(req, res, next) {
                 } else {                                     
                   res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
                 }
-
+ 
             } else {
               res.redirect('/error');
 
@@ -731,7 +741,7 @@ router.get('/nl-branch', function(req, res, next) {
       }
     );
   }else{
-
+/* 
     if ( bus_age < 3 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
     } else if (peopleCount <=5 ) {
@@ -742,7 +752,7 @@ router.get('/nl-branch', function(req, res, next) {
     } else {                                     
       res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
     }
-    
+     */
   }
   
 });

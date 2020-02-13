@@ -173,30 +173,30 @@
 
 /* custom placeholder color */
 input::-webkit-input-placeholder {
-	color: rgba(255,255,255,0.8);
+	color: rgba(0,0,0,0.8);
 }
 
 input:active::-webkit-input-placeholder ,
 input:focus::-webkit-input-placeholder {
-	color: rgba(255,255,255,0.2);
+	color: rgba(0,0,0,0.2);
 }
 
 input::-moz-placeholder {
-	color: rgba(255,255,255,0.8);
+	color: rgba(0,0,0,0.8);
 }
 
 input:active::-moz-placeholder,
 input:focus::-moz-placeholder {
-	color: rgba(255,255,255,0.2);
+	color: rgba(0,0,0,0.2);
 }
 
 input:-ms-input-placeholder {  
-	color: rgba(255,255,255,0.8);
+	color: rgba(0,0,0,0.8);
 }
 
 input:active::-ms-input-placeholder ,
 input:focus::-ms-input-placeholder {
-	color: rgba(255,255,255,0.2);
+	color: rgba(0,0,0,0.2);
 }
 
 /* example field below text input */
@@ -206,7 +206,7 @@ input:focus::-ms-input-placeholder {
 	font-weight: 400;
 	padding: 0.4em 1em;
 	//color: rgb(255, 255, 255, 0.9);
-	border-top: 1px dashed rgba(255,255,255,0.7);
+	border-top: 1px dashed rgba(0,0,0,0.7);
 }
 
 .nl-ti-text ul li.nl-ti-example em {
