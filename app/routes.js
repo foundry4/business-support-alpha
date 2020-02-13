@@ -697,7 +697,7 @@ router.get('/nl-branch', function(req, res, next) {
     } else if (peopleCount >= 10 && peopleCount <=49 ) {
       res.redirect('nl-growth-hub');        // target audience 
     } else {                                     
-      res.redirect('factsheet');            // getting neither (!)
+      res.redirect('nl-recommendations');            // getting neither (!)
     }
   }
 
