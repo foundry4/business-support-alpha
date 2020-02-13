@@ -550,6 +550,22 @@ router.get('/postcode', function(req, res, next) {
 
 });
 
+var description = [
+  "Innovative",
+  "Competitive",
+  "Profit-focused",
+  "Powered by technology",
+  "Efficient",
+  "Stable",
+  "Traditional",
+  "Powered by people",
+  "Part of the community"
+];
+router.get('/nl', function(req, res, next) {
+  res.render('nl', {
+    description: description
+  });
+});
 
 router.get('/nl-growth-hub', function(req, res, next) {
   //res.send( req.session.data );
@@ -565,11 +581,33 @@ router.get('/nl-growth-hub', function(req, res, next) {
 
 router.get('/nl-recommendations', function(req, res, next) {
   //res.send( req.session.data );
-  displayNames.region_name="Cornwall"; 
+  //displayNames.region_name="Cornwall";
+  var results = res.app.locals.data;
+  // do some crude filtering based on aims?
+  // eg reset the results arrays for non-applicable results?
+  var procurement = _.filter(results, function(item){ return item.category === "Procurement" });
+  var support     = _.filter(results, function(item){ return item.category === "Business Support" });
+  var legal       = _.filter(results, function(item){ return item.category === "Legal" });
+  var finance     = _.filter(results, function(item){ return item.category === "Sources of Finance" });
+  var events      = _.filter(results, function(item){ return item.category === "Events and Networking" });
+  var premises    = _.filter(results, function(item){ return item.category === "Premises" });
+
+  //var totalSupport = 0;
+
+  // then pass these to the pages to render
   res.render('nl-recommendations', {
-    display: displayNames,
+    results: res.app.locals.data,
+    support: support,
+    legal: legal,
+    finance: finance,
+    events: events,
+    premises: premises,
+    procurement: procurement,
+    //totalSupport: totalSupport,
+    //display: displayNames,
     location:postcodeLocation
   });
+
 });
 
 var ages = [
@@ -585,7 +623,7 @@ var ages = [
 router.get('/nl-pre-start', function(req, res, next) {
   let bus_age = req.session.data['nl_age'];
   let bus_size = req.session.data['nl_count'];
-  console.log("pre-start " + postcodeLocation)
+  //console.log("pre-start " + postcodeLocation)
   displayNames.age = ages[bus_age];
   displayNames.size = bus_size;
   //displayNames.region_name="Cornwall"; 
@@ -602,32 +640,31 @@ router.get('/confirmation', function(req, res, next) {
 });
 
 
-/* 
-<option value="1" >getting started</option>
-<option value="2">a sole trader</option>
-<option value="3" selected>a business owner</option>
-<option value="4">a business manager</option>
-<option value="2">a partner</option>
-*/
-
-// TODO remove displayNames var and tidy up!
+// 
 router.get('/nl-branch', function(req, res, next) {
-  let bus_type = req.session.data['nl_type'];
-  let bus_aim = req.session.data['nl_aim'];
   let bus_age = req.session.data['nl_age'];
   let postcode = req.session.data['nl_postcode'];
   let peopleCount = req.session.data['nl_count'];
-  displayNames.aim = aimList[bus_aim];
-  displayNames.type = typeList[bus_type];
+  let turnover = req.session.data['nl_turnover'];
+  let turnoverChange = req.session.data['nl_turnover_change'];
+  let description = req.session.data['nl_description'];
+  var isReady = false;
+  
+  if(description.indexOf("Innovative")>-1 || description.indexOf("Competitive")>-1 || description.indexOf("Profit-focused")>-1){
+    isReady = true;
+  }
 
-  //console.log(displayNames)
+  console.log(req.session.data)
+  console.log(description)
+
+
+  // TEST
+  //postcode = "TR1 1XU";
+
   if(postcode){
     var str = postcode;
     var cleaned = str.split('%20').join('');
     cleaned = cleaned.split(' ').join('');
-    //console.log("GOT CODE " + cleaned)
-
-    //https://mapit.mysociety.org/postcode/SW1A1AA
 
     request(MYSOCIETY_API_URL + cleaned, {
       method: "GET",
@@ -641,15 +678,14 @@ router.get('/nl-branch', function(req, res, next) {
                 // get the json dataset
               var areas = dataset.areas;
               var selectedLA;
-              //console.log(areas);
-              // loop through all the areas and look for codes that match the ""
 
+              // loop through all the areas and look for codes that match the ""
               for ( var area in areas){
-                //console.log(areas[area].codes)
                 if(areas[area].codes && areas[area].codes["local-authority-eng"]){
                   // step back up to the parent and extract the actual _gss_ values/
                   selectedLA = areas[area].codes.gss;
                 }
+                //also get the country code for use on the pre-start hand off?
               }
 
               //console.log(" got area:" + selectedLA)
@@ -657,8 +693,7 @@ router.get('/nl-branch', function(req, res, next) {
               // use this value to look up the name of the LEP
               var lepDictionary= res.app.locals.dictionary;
               postcodeLocation = lepDictionary[selectedLA];
-              console.log(postcodeLocation.LEP)
-              //console.log(res.app.locals.hubs)
+              //console.log(postcodeLocation.LEP)
               var hub =  res.app.locals.hubs[postcodeLocation.LEP]
 
               //do the same for LEP contacts
@@ -669,16 +704,17 @@ router.get('/nl-branch', function(req, res, next) {
               }else{
                 postcodeLocation.email = "advisor@"+hub.url;
               }
-              console.log(postcodeLocation)
-              console.log("got "+ bus_type+", age: "+bus_age+", and count:"+ peopleCount)
-              // check for type of business
-                // and check for age of business?
-                if (bus_type === '1' || bus_age < 4 ) {
-                  res.redirect('nl-pre-start');         // getting starters & companies under 2 years old
-                } else if (peopleCount >= 10 && peopleCount <=49 ) {
-                  res.redirect('nl-growth-hub');        // target audience 
+              //console.log(postcodeLocation)
+
+              // TRIAGE
+                if ( bus_age < 3 ) {
+                  res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+                } else if (peopleCount <=5 ) {
+                  res.redirect('nl-one');                     // 'one man band' 
+                } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+                  res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
                 } else {                                     
-                  res.redirect('factsheet');            // getting neither (!)
+                  res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
                 }
 
             } else {
@@ -692,15 +728,18 @@ router.get('/nl-branch', function(req, res, next) {
       }
     );
   }else{
-    if (bus_type === '1' || bus_age < 4 ) {
-      res.redirect('nl-pre-start');         // getting starters & companies under 2 years old
-    } else if (peopleCount >= 10 && peopleCount <=49 ) {
-      res.redirect('nl-growth-hub');        // target audience 
-    } else {                                     
-      res.redirect('nl-recommendations');            // getting neither (!)
-    }
-  }
 
+    if ( bus_age < 3 ) {
+      res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+    } else if (peopleCount <=5 ) {
+      res.redirect('nl-one');                     // 'one man band' 
+    } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+      res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+    } else {                                     
+      res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
+    }
+    
+  }
   
 });
 

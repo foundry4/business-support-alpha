@@ -24,8 +24,8 @@
             {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
           </p> -->
           <p>
-            Because you’re {{ display.type }} and interested in {{ display.aim }}, 
-            you may benefit from speaking with a free business adviser at the {{ location.LEP }} Growth Hub. 
+            <!-- Because you’re {{ display.type }} and interested in {{ display.aim }},  -->
+            You may benefit from speaking with a free business adviser at the {{ location.LEP }} Growth Hub. 
           </p>
           <p>
             Your advisor will get to know your business and make tailored recommendations to help you grow and achieve your goals. They will also help you find further support that is suitable for your business. 
@@ -74,12 +74,27 @@
                           </span> -->
                           <input data-required="true" class="govuk-input govuk-input--width-10" id="email" name="postcode" type="text" value="{{ data['postcode'] }}">
                           <br/>
+                              <!-- 
                           <label for="freetext" class="govuk-label">Message</label>
                           <textarea name="freetext"
                             placeholder="Enter your message..." id="freetext" class="govuk-textarea"
                             aria-invalid="false"></textarea>
                           <span class="description govuk-label"><span data-limit="180" data-type="characters">0 / 180</span></span></div>
-                      </fieldset> 
+                       -->
+                       {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+                       {{ govukCharacterCount({
+                         name: "freetext",
+                         id: "freetext",
+                         maxlength: 200,
+                         label: {
+                           text: "Enter your message..."
+                         },
+                         hint: {
+                           text: "Do not include personal or financial information."
+                         }
+                       }) }}
+                        </fieldset> 
               
               
                       </div>
@@ -97,9 +112,8 @@
 
     
     <div class="govuk-grid-column-one-third">
-        <p>
-            <!-- Inspirational copy goes here. -->
-        </p>
+      {% include 'includes/related_custom_growthHub.html' %}
+      
     </div>
 
   </div>
