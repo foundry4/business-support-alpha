@@ -37,68 +37,102 @@ Finance and support for your business
         Resources for  {{ location.LA }}
       </h1>
 
-      <aside class="" role="complementary">
-        <nav class="part-navigation govuk-!-padding-bottom-3" aria-label="Pages in this guide" role="navigation" >
-          <h3 class="govuk-heading-s  govuk-!-font-size-1">Contents</h3>
-          <ul class="govuk-list govuk-!-font-size-16">
-            {% if support.length>0 %}
-              <li class="">
-                <a class="govuk-link " href="#business">Business Support ({{ support | length }})</a>
-              </li>
-            {% endif %}
-            {% if legal.length>0 %}
-              <li class="">
-                <a class="govuk-link " href="#legal">Legal Support ({{ legal | length }})</a>
-              </li>
-            {% endif %}
-            {% if finance.length>0 %}
-              <li class="">
-                <a class="govuk-link "  href="#finance">Sources of Finance ({{ finance | length }})</a>
-              </li>
-            {% endif %}
-            {% if events.length>0 %}
-              <li class="">
-                <a class="govuk-link " href="#events">Events and networking ({{ events | length }})</a>
-              </li>
-            {% endif %}
-              {% if premises.length>0 %}
-              <li class="">
-                <a class="govuk-link " href="#premises">Premises ({{ premises | length }})</a>
-              </li>
-              {% endif %}
-          </ul>
-        </nav>
-        </aside>
     </div>
     <div class="govuk-grid-column-one-third">
-      <!-- <a href='#'>Apply for a Start Up Loan for your business</a> -->
-      <!-- {% include 'includes/custom_low.html' %} -->
+
     </div>
-          <div class="govuk-grid-column-two-thirds">
-            {% include 'includes/custom_low.html' %}
-          </div>
+
   </div>
 
   
+
+ 
+
   <div class="govuk-grid-row">
+    <section class="brexit-checker-audience">
+      <div class="govuk-grid-column-two-thirds">
+      <header>
+        <h2 class="govuk-heading-l action-audience__heading">
+          Measure your Productivity
+        </h2>
+      </header>
+
+      <div class=" brexit-checker__action">
+        <div class="brexit-checker__content-wrapper">
+
+            <p class="govuk-body">
+              If you know how well your business is performing, 
+              you can make informed decisions about the future. 
+              Find out how your productivity compares with that of similar businesses
+            </p>
+            
+            <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
+            <button type="submit" class="govuk-button" id="submit">
+              Benchmark your productivity
+            </button>
+    
+            </form>
+        </div>
+      </div>
+      </div>
+
+  </section>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include 'includes/custom_low.html' %}
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+      
+
 
     <section class="brexit-checker-audience">
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
-          {{ location.LEP }} Growth Hub
+          Further support for {{ location.LEP }}
         </h2>
       </header>
         <section class="brexit-checker-actions__group">
           <div class="govuk-grid-row">
             <aside class="govuk-grid-column-one-third" aria-label="business-actions-criteria">
-              <p class="govuk-body brexit-checker__critera_explaination">
-                Because you said:
-              </p>
-              <ul class="govuk-list govuk-list--bullet">
-                  <li class="">
-                   <!--  You are interested in {{ display.aim }} -->
-                  </li>
-              </ul>
+                   <nav class="part-navigation govuk-!-padding-bottom-3" aria-label="Pages in this guide" role="navigation" >
+                    <h3 class="govuk-heading-s  govuk-!-font-size-1">Contents</h3>
+                    <ul class="govuk-list govuk-!-font-size-16">
+                      {% if support.length>0 %}
+                        <li class="">
+                          <a class="govuk-link " href="#business">Business Support ({{ support | length }})</a>
+                        </li>
+                      {% endif %}
+                      {% if legal.length>0 %}
+                        <li class="">
+                          <a class="govuk-link " href="#legal">Legal Support ({{ legal | length }})</a>
+                        </li>
+                      {% endif %}
+                      {% if finance.length>0 %}
+                        <li class="">
+                          <a class="govuk-link "  href="#finance">Sources of Finance ({{ finance | length }})</a>
+                        </li>
+                      {% endif %}
+                      {% if events.length>0 %}
+                        <li class="">
+                          <a class="govuk-link " href="#events">Events and networking ({{ events | length }})</a>
+                        </li>
+                      {% endif %}
+                        {% if premises.length>0 %}
+                        <li class="">
+                          <a class="govuk-link " href="#premises">Premises ({{ premises | length }})</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                  </nav>
+         
             </aside>
   
             <div class="govuk-grid-column-two-thirds">
@@ -163,23 +197,19 @@ Finance and support for your business
             <div class="govuk-grid-row">
 
               <aside class="govuk-grid-column-one-third" aria-label=" ">
+                &nbsp;
+                <!-- 
                 {% if totalSupport>5 %}
                   <h3 class="govuk-heading-m">Showing 5 of {{totalSupport}} items</h3>
-                  {% endif %}
+                {% endif %}
                 <p class="govuk-body brexit-checker__critera_explaination">
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="">
-                      <!-- You are interested in {{ display.aim }} -->
+                     You are interested in {{ display.aim }}
                     </li>
-                    <!-- <li class="">
-                      Get help for a {{ display.businessType }}
-                    </li>
-                    <li class="">
-                      Something for {{ display.business_stages | capitalize }} businesses
-                    </li> -->
-                </ul>
+                </ul> -->
               </aside>
     
               <div class="govuk-grid-column-two-thirds">
@@ -206,15 +236,16 @@ Finance and support for your business
             <div class="govuk-grid-row">
 
               <aside class="govuk-grid-column-one-third" aria-label="">
-                  <h3 class="govuk-heading-m"> </h3>
+                &nbsp;
+                <!--   <h3 class="govuk-heading-m"> </h3>
                 <p class="govuk-body brexit-checker__critera_explaination">
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="">
-                      <!-- You are interested in {{ display.aim }} -->
+                      You are interested in {{ display.aim }}
                     </li>
-                </ul>
+                </ul> -->
               </aside>
     
               <div class="govuk-grid-column-two-thirds">
@@ -248,15 +279,16 @@ Finance and support for your business
             <div class="govuk-grid-row">
 
               <aside class="govuk-grid-column-one-third" aria-label=" ">
-                  <h3 class="govuk-heading-m"> </h3>
+                &nbsp;
+                <!--   <h3 class="govuk-heading-m"> </h3>
                 <p class="govuk-body brexit-checker__critera_explaination">
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="">
-                      <!-- You are interested in {{ display.aim }} -->
+                      You are interested in {{ display.aim }}
                     </li>
-                </ul>
+                </ul> -->
               </aside>
     
               <div class="govuk-grid-column-two-thirds">
@@ -283,15 +315,16 @@ Finance and support for your business
             <div class="govuk-grid-row">
 
               <aside class="govuk-grid-column-one-third" aria-label=" ">
-                  <h3 class="govuk-heading-m"> </h3>
+                &nbsp;
+                <!--   <h3 class="govuk-heading-m"> </h3>
                 <p class="govuk-body brexit-checker__critera_explaination">
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="">
-                      <!-- You are interested in {{ display.aim }} -->
+                      You are interested in {{ display.aim }}
                     </li>
-                </ul>
+                </ul> -->
               </aside>
     
               <div class="govuk-grid-column-two-thirds">
@@ -318,15 +351,16 @@ Finance and support for your business
             <div class="govuk-grid-row">
 
               <aside class="govuk-grid-column-one-third" aria-label=" ">
-                  <h3 class="govuk-heading-m"> </h3>
+                &nbsp;
+                <!--   <h3 class="govuk-heading-m"> </h3>
                 <p class="govuk-body brexit-checker__critera_explaination">
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
                     <li class="">
-                     <!--  You are interested in {{ display.aim }} -->
+                     You are interested in {{ display.aim }}
                     </li>
-                </ul>
+                </ul> -->
               </aside>
     
               <div class="govuk-grid-column-two-thirds">

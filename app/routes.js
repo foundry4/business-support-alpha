@@ -724,7 +724,7 @@ router.get('/nl-branch', function(req, res, next) {
               // TRIAGE
                 if ( bus_age < 3 ) {
                   res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-                } else if (peopleCount <=5 ) {
+                } else if (peopleCount <=4 ) {
                   res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
                   //res.redirect('nl-one');                     // 'one man band' 
                 } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
@@ -747,7 +747,7 @@ router.get('/nl-branch', function(req, res, next) {
 /* 
     if ( bus_age < 3 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-    } else if (peopleCount <=5 ) {
+    } else if (peopleCount <=4 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
       //res.redirect('nl-one');                     // 'one man band' 
     } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 

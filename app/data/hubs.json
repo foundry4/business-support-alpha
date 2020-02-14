@@ -24,7 +24,7 @@
         "Cheshire & Warrington": {
             "url": "candwgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Cheshire & Warrington"
         },
@@ -44,29 +44,29 @@
         },
         "Coventry and Warwickshire": {
             "url": "www.cwgrowthhub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.cwgrowthhub.co.uk/get-in-touch",
+            "telephone": "0300 060 3747",
+            "email": "contact@cwgrowthhub.co.uk",
             "name": "Coventry and Warwickshire"
         },
         "Cumbria": {
             "url": "www.cumbriagrowthhub.co.uk/business-support/cumbria-catalyst",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Cumbria"
         },
         "Derby, Derbyshire, Nottingham and Nottinghamshire": {
             "url": "www.d2n2growthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Derby, Derbyshire, Nottingham and Nottinghamshire"
         },
         "Dorset": {
             "url": "www.dorsetlep.co.uk/dorset-gateway",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Dorset"
         },
@@ -80,14 +80,14 @@
         "GFirst2": {
             "url": "www.thegrowthhub.biz",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "GFirst2"
         },
         "Greater Birmingham and Solihull": {
             "url": "www.gbslepgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Greater Birmingham and Solihull"
         },
@@ -108,7 +108,7 @@
         "Heart of the South West": {
             "url": "www.heartofswgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Heart of the South West"
         },
@@ -122,14 +122,14 @@
         "Humber": {
             "url": "hub.humberlep.org",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Humber"
         },
         "Lancashire": {
             "url": "www.boostbusinesslancashire.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Lancashire"
         },
@@ -143,14 +143,14 @@
         "Leicester & Leicestershire": {
             "url": "www.llepbizgateway.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Leicester & Leicestershire"
         },
         "Liverpool City Region": {
             "url": "localgrowthhub.com",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Liverpool City Region"
         },
@@ -170,8 +170,8 @@
         },
         "North East": {
             "url": "www.northeastgrowthhub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
+            "contact": "https://www.northeastgrowthhub.co.uk/contact",
+            "telephone": "0191 561 5468",
             "email": "",
             "name": "North East"
         },
@@ -192,7 +192,7 @@
         "Solent": {
             "url": "www.solentgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Solent"
         },
@@ -213,21 +213,21 @@
         "Stoke-on-Trent and Staffordshire": {
             "url": "www.stokestaffsgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Stoke-on-Trent and Staffordshire"
         },
         "Swindon and Wiltshire": {
             "url": "growthhub.swlep.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Swindon and Wiltshire"
         },
         "Tees Valley": {
             "url": "www.teesbusinesscompass.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Tees Valley"
         },
@@ -241,28 +241,28 @@
         "The Marches": {
             "url": "www.marchesgrowthhub.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "The Marches"
         },
         "West of England": {
             "url": "www.wearegrowth.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "West of England"
         },
         "Worcestershire": {
             "url": "www.business-central.co.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "Worcestershire"
         },
         "York and North Yorkshir": {
             "url": "www.howsbusiness.org",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "0345 555 0000",
             "email": "",
             "name": "York and North Yorkshire"
         }
