@@ -9,16 +9,16 @@
         },
         "Buckinghamshire": {
             "url": "bbf.uk.com",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://bbf.uk.com/contact-us",
+            "telephone": "01494 927130",
+            "email": "info@bbf.uk.com",
             "name": "Buckinghamshire"
         },
         "Cambridgeshire & Peterborough": {
             "url": "signpost2grow.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "http://signpost2grow.co.uk/contact-us/",
+            "telephone": "01480 277923",
+            "email": "hello@signpost2grow.co.uk",
             "name": "Cambridgeshire & Peterborough"
         },
         "Cheshire & Warrington": {
@@ -30,8 +30,8 @@
         },
         "Coast to Capital": {
             "url": "www.c2cbusiness.org.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
+            "contact": "https://www.c2cbusiness.org.uk/8-contact-us.html",
+            "telephone": "01293 305965",
             "email": "",
             "name": "Coast to Capital"
         },
@@ -72,8 +72,8 @@
         },
         "Enterprise M3": {
             "url": "www.enterprisem3growthhub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
+            "contact": "https://www.c2cbusiness.org.uk/8-contact-us.html",
+            "telephone": "0300 456 3565",
             "email": "",
             "name": "Enterprise M3"
         },
@@ -100,9 +100,9 @@
         },
         "Greater Manchester": {
             "url": "www.businessgrowthhub.com",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.businessgrowthhub.com/contact-us",
+            "telephone": "0161 359 3050",
+            "email": "BGH@growthco.uk",
             "name": "Greater Manchester"
         },
         "Heart of the South West": {
@@ -114,9 +114,9 @@
         },
         "Hertfordshire": {
             "url": "www.hertsgrowthhub.com",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.hertsgrowthhub.com/contact-us/",
+            "telephone": "01707 398168",
+            "email": "enquiries@hertsgrowthhub.com",
             "name": "Hertfordshire"
         },
         "Humber": {
@@ -135,9 +135,9 @@
         },
         "Leeds City Region": {
             "url": "www.the-lep.com/for-businesses",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.the-lep.com/contact/",
+            "telephone": "0113 348 1850",
+            "email": "info@the-lep.com",
             "name": "Leeds City Region"
         },
         "Leicester & Leicestershire": {
@@ -156,16 +156,16 @@
         },
         "London": {
             "url": "www.growthhub.london",
-            "contact": "",
-            "telephone": "0345 678 9999",
+            "contact": "https://www.growthhub.london/contact-us/",
+            "telephone": "0300 456 3565",
             "email": "",
             "name": "London"
         },
         "New Anglia": {
             "url": "www.newangliagrowthhub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.newangliagrowthhub.co.uk/contact/",
+            "telephone": "0300 333 6536",
+            "email": "growthhub@newanglia.co.uk",
             "name": "New Anglia"
         },
         "North East": {
@@ -177,16 +177,16 @@
         },
         "Oxfordshire": {
             "url": "www.oxfordshirelep.com/business/growth-hub",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.oxfordshirelep.com/contact",
+            "telephone": "0345 241 1196",
+            "email": "info@​oxfordshirelep.com",
             "name": "Oxfordshire"
         },
         "Sheffield City Region": {
             "url": "www.scrgrowthhub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.scrgrowthhub.co.uk/contact/",
+            "telephone": "03330 00 00 39",
+            "email": "growthhub@sheffieldcityregion.org.uk",
             "name": "Sheffield City Region"
         },
         "Solent": {
@@ -199,15 +199,15 @@
         "South East": {
             "url": "www.southeastbusiness.org.uk",
             "contact": "",
-            "telephone": "0345 678 9999",
+            "telephone": "01233 225447",
             "email": "",
             "name": "South East"
         },
         "South East Midlands": {
-            "url": "www.velocitybusinesssupport.com",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "url": "www.semlepgrowthhub.com",
+            "contact": "https://www.semlepgrowthhub.com/contact-us/",
+            "telephone": "01604 212 696",
+            "email": "growthhub@semlep.com",
             "name": "South East Midlands"
         },
         "Stoke-on-Trent and Staffordshire": {
@@ -233,9 +233,9 @@
         },
         "Thames Valley Berkshire": {
             "url": "www.berkshirebusinesshub.co.uk",
-            "contact": "",
-            "telephone": "0345 678 9999",
-            "email": "",
+            "contact": "https://www.berkshirebusinesshub.co.uk/contact",
+            "telephone": "01344 388 005",
+            "email": "info@berkshirebusinesshub.co.uk",
             "name": "Thames Valley Berkshire"
         },
         "The Marches": {
