@@ -663,8 +663,11 @@ router.get('/nl-branch', function(req, res, next) {
   console.log(description)
 
 
-  // TEST
-  //postcode = "TR1 1XU";
+  // DEFAuLT
+  if (!postcode){
+    postcode = "TR1 1XU";
+    country = "All";
+  }
 
   if(postcode){
     var str = postcode;
