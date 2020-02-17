@@ -660,8 +660,10 @@ router.get('/nl-branch', function(req, res, next) {
   }
 
   console.log(req.session.data)
-  console.log(description)
-
+  console.log(peopleCount)
+  if (peopleCount===""){
+    peopleCOunt =10;
+  }
 
   // DEFAuLT
   if (!postcode){
@@ -716,7 +718,7 @@ router.get('/nl-branch', function(req, res, next) {
                 if(hub.email!==""){
                   postcodeLocation.email = hub.email;
                 }else{
-                  postcodeLocation.email = "advisor@"+hub.url;
+                  postcodeLocation.email = "adviser@"+hub.url;
                 }
                 //console.log(postcodeLocation)
               }
