@@ -40,19 +40,9 @@
             <p class="document-list__item-description">Telephone: {{ location.telephone }}</p>            
             
             <p class="document-list__item-description">Email: <a href="mailto:{{ location.email }}">{{ location.email }}</a></p>
-            
+<!--             
             <form id="main" action="confirmation" method="post" class="form" novalidate>
-              <!-- 
-                      <div class="govuk-error-summary hidden" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
-                        <h2 class="govuk-error-summary__title " id="error-summary-title">
-                          There is a problem
-                        </h2>
-                        <div class="govuk-error-summary__body">
-                          <ul class="govuk-list govuk-error-summary__list">
-                          </ul>
-                        </div>
-                      </div>
-               -->
+              
                     <div class="govuk-form-group"> 
                       <fieldset class="govuk-fieldset" aria-describedby="Email-hint">
               
@@ -70,18 +60,10 @@
                             Enter your email address or contact phone number.
                             We will email the Growth Hub with your details and one of their advisors will be in touch.
                           </span>
-                          <!-- <span id="opt-out-email-error" class="govuk-error-message hide">
-                            Enter your property email
-                          </span> -->
+                          
                           <input data-required="true" class="govuk-input govuk-input--width-10" id="email" name="postcode" type="text" value="{{ data['postcode'] }}">
                           <br/>
-                              <!-- 
-                          <label for="freetext" class="govuk-label">Message</label>
-                          <textarea name="freetext"
-                            placeholder="Enter your message..." id="freetext" class="govuk-textarea"
-                            aria-invalid="false"></textarea>
-                          <span class="description govuk-label"><span data-limit="180" data-type="characters">0 / 180</span></span></div>
-                       -->
+                              
                        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
                        {{ govukCharacterCount({
@@ -106,7 +88,8 @@
                       </button>
               
                     </form>
-<!-- 
+                     -->
+                    <!-- 
                     <iframe src="https://calendar.google.com/calendar/embed?src=notbinary.co.uk_69rb59k6mm1bfngr6odi9sm6ik%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
            -->
         </div>
@@ -120,4 +103,6 @@
     </div>
 
   </div>
+  <iframe src="https://calendly.com/examplegrowthhub/60min?month=2020-02" style="border: 0" width="1024" height="600" frameborder="0" scrolling="no"></iframe>
+
 {% endblock %}
