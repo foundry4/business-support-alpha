@@ -61,7 +61,8 @@ var sampleResults = [
   "been trading for over 5 years"
 ];
   
-  var isDevelopment = process.env.isDevelopment;
+  var isLive = process.env.IsLive;
+  console.log("isLive " + isLive)
   var country="England";
   var businessObj = { age:ages[2], size: 5};
 
@@ -578,14 +579,14 @@ var description = [
 router.get('/nl', function(req, res, next) {
   
   res.render('nl', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     description: description
   });
 });
 
 router.get('/nl-country', function(req, res, next) {
   res.render('nl-country', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     country: country,
     business: businessObj,
     location:postcodeLocation
@@ -594,7 +595,7 @@ router.get('/nl-country', function(req, res, next) {
 
 router.get('/nl-growth-hub', function(req, res, next) {
   res.render('nl-growth-hub', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     display: displayNames,
     location:postcodeLocation
   });
@@ -615,7 +616,7 @@ router.get('/nl-recommendations', function(req, res, next) {
 
   // then pass these to the pages to render
   res.render('nl-recommendations', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     results: res.app.locals.data,
     support: support,
     legal: legal,
@@ -646,7 +647,7 @@ router.get('/nl-pre-start', function(req, res, next) {
   //console.log(businessObj);
   //displayNames.region_name="Cornwall"; 
   res.render('nl-pre-start', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     business: businessObj,
     country:country,
     location:postcodeLocation
@@ -655,7 +656,7 @@ router.get('/nl-pre-start', function(req, res, next) {
 
 router.get('/confirmation', function(req, res, next) {
   res.render('confirmation', {
-    isLive:!isDevelopment,
+    isLive:isLive,
     location:postcodeLocation
   });
 });
