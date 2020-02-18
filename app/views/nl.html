@@ -15,7 +15,9 @@
 		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_component_white.css" />
 
 		<script src="public/javascripts/modernizr.custom.js" type="application/javascript"></script>
+		{% if isLive %}
 		{% include "includes/hotjar.html" %}
+		{% endif %}
 	</head>
 	<body class="nl-blurred">
 		<div class="container demo-1">

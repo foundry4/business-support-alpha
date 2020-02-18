@@ -52,7 +52,19 @@ var sampleResults = [
   
   ];
 
-  var country="-";
+  var ages = [
+    null,
+  "not started trading",
+  "been trading for under a year",
+  "been trading for 1-2 years",
+  "been trading for 2-5 years",
+  "been trading for over 5 years"
+];
+  
+  var isDevelopment = process.env.isDevelopment;
+  var country="England";
+  var businessObj = { age:ages[2], size: 5};
+
   
 var postcodeLocation = { 
   LEP: 'Cornwall and the Isles of Scilly',
@@ -564,26 +576,22 @@ var description = [
   "Part of the community"
 ];
 router.get('/nl', function(req, res, next) {
+  
   res.render('nl', {
+    isLive:!isDevelopment,
     description: description
   });
 });
 
 router.get('/nl-growth-hub', function(req, res, next) {
-  //res.send( req.session.data );
-  //displayNames.region_name="Cornwall"; 
-  //console.log(bus_aim, bus_type)
   res.render('nl-growth-hub', {
+    isLive:!isDevelopment,
     display: displayNames,
-    //aim:bus_aim,
-    //type:bus_type,
     location:postcodeLocation
   });
 });
 
 router.get('/nl-recommendations', function(req, res, next) {
-  //res.send( req.session.data );
-  //displayNames.region_name="Cornwall";
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
@@ -598,6 +606,7 @@ router.get('/nl-recommendations', function(req, res, next) {
 
   // then pass these to the pages to render
   res.render('nl-recommendations', {
+    isLive:!isDevelopment,
     results: res.app.locals.data,
     support: support,
     legal: legal,
@@ -612,25 +621,24 @@ router.get('/nl-recommendations', function(req, res, next) {
 
 });
 
-var ages = [
-  null,
-"not started trading",
-"been trading for under a year",
-"been trading for 1-2 years",
-"been trading for 2-5 years",
-"been trading for over 5 years"
 
-];
 
 router.get('/nl-pre-start', function(req, res, next) {
+
   let bus_age = req.session.data['nl_age'];
   let bus_size = req.session.data['nl_count'];
-  //console.log("pre-start " + postcodeLocation)
-  displayNames.age = ages[bus_age];
-  displayNames.size = bus_size;
+  console.log("pre-start " + bus_size, ages[bus_age]);
+  if(bus_age){
+    businessObj.age = ages[bus_age];
+  }
+  if(bus_size){
+    businessObj.size = bus_size;
+  }
+  console.log(businessObj);
   //displayNames.region_name="Cornwall"; 
   res.render('nl-pre-start', {
-    display: displayNames,
+    isLive:!isDevelopment,
+    business: businessObj,
     country:country,
     location:postcodeLocation
   });
@@ -638,6 +646,7 @@ router.get('/nl-pre-start', function(req, res, next) {
 
 router.get('/confirmation', function(req, res, next) {
   res.render('confirmation', {
+    isLive:!isDevelopment,
     location:postcodeLocation
   });
 });
@@ -659,13 +668,11 @@ router.get('/nl-branch', function(req, res, next) {
     }
   }
 
-  console.log(req.session.data)
-  console.log(peopleCount)
   if (peopleCount===""){
     peopleCOunt =10;
   }
 
-  // DEFAuLT
+  // DEFAULT
   if (!postcode){
     postcode = "TR1 1XU";
     country = "All";

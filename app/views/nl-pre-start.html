@@ -18,21 +18,23 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l" id="wales">Starting your business</h1>
+        <h1 class="govuk-heading-l" id="start">Starting your business
+          {% if country!=="England" %}
+            in {{country}}
+          {% endif %}
+
+        </h1>
 
         <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
-    
-         <!--  <p>
-            {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
-          </p> -->
+
         {% if country=="England" %}
         <p>
           Advice and financial help from government-backed schemes is available in <strong>{{ location.LA }}</strong>.
         </p>
         {% endif %}
         <p>
-          Because your business has <strong>{{ display.age }}</strong> and employs <strong>{{ display.size }}</strong> 
-          {% if display.size==1 %}
+          Because your business has <strong>{{ business.age }}</strong> and employs <strong>{{ business.size }}</strong> 
+          {% if business.size==1 %}
           person,
           {% else %}
           people,
