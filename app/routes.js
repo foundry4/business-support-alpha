@@ -593,6 +593,15 @@ router.get('/nl-country', function(req, res, next) {
   });
 });
 
+router.get('/nl-columns', function(req, res, next) {
+  res.render('nl-columns', {
+    isLive:isLive,
+    country: country,
+    business: businessObj,
+    location:postcodeLocation
+  });
+});
+
 router.get('/nl-growth-hub', function(req, res, next) {
   res.render('nl-growth-hub', {
     isLive:isLive,
@@ -773,7 +782,24 @@ console.log("county")
 
             }
           } else {
-            res.redirect('/error');
+            console.log("API LIMITS EXCEEDED")
+            selectedLA = "Cornwall";
+            country ="England";
+
+            if ( country !== "England" ) {
+              res.redirect('nl-country');               // getting starters & companies under 1 year old
+            } else if ( businessAge < 3 ) {
+              res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+            } else if (peopleCount <=4 ) {
+              res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+              //res.redirect('nl-one');                     // 'one man band' 
+            } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+              res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+            } else {                                     
+              res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
+            }
+
+            //res.redirect('/error');
 
           }
       }
