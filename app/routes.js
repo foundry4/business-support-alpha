@@ -397,8 +397,8 @@ global.getFacets = function (arr){
 
 
 router.get('/factsheet', function(req, res, next) {
-  console.log("factsheet")
-  console.log("nl_aim "+ req.session.data['nl_aim']);
+  //console.log("factsheet")
+  //console.log("nl_aim "+ req.session.data['nl_aim']);
   var businessStage = req.session.data['businessStage'];
   var results = res.app.locals.data;
   var aim = req.session.data['nl_aim'];
@@ -419,7 +419,7 @@ router.get('/factsheet', function(req, res, next) {
   }else{
     stageFilter = stages[1];
   }
-  console.log("filter for " + stageFilter);
+  //console.log("filter for " + stageFilter);
   results = _.filter(results, function(item){ 
     if (item.who){
 
@@ -583,6 +583,15 @@ router.get('/nl', function(req, res, next) {
   });
 });
 
+router.get('/nl-country', function(req, res, next) {
+  res.render('nl-country', {
+    isLive:!isDevelopment,
+    country: country,
+    business: businessObj,
+    location:postcodeLocation
+  });
+});
+
 router.get('/nl-growth-hub', function(req, res, next) {
   res.render('nl-growth-hub', {
     isLive:!isDevelopment,
@@ -624,17 +633,17 @@ router.get('/nl-recommendations', function(req, res, next) {
 
 
 router.get('/nl-pre-start', function(req, res, next) {
-
-  let bus_age = req.session.data['nl_age'];
+/* 
+  let businessAge = req.session.data['nl_age'];
   let bus_size = req.session.data['nl_count'];
-  console.log("pre-start " + bus_size, ages[bus_age]);
-  if(bus_age){
-    businessObj.age = ages[bus_age];
+  //console.log("pre-start " + bus_size, ages[businessAge]);
+  if(businessAge){
+    businessObj.age = ages[businessAge];
   }
   if(bus_size){
     businessObj.size = bus_size;
-  }
-  console.log(businessObj);
+  } */
+  //console.log(businessObj);
   //displayNames.region_name="Cornwall"; 
   res.render('nl-pre-start', {
     isLive:!isDevelopment,
@@ -654,7 +663,7 @@ router.get('/confirmation', function(req, res, next) {
 
 // 
 router.get('/nl-branch', function(req, res, next) {
-  let bus_age = req.session.data['nl_age'];
+  let businessAge = req.session.data['nl_age'];
   let postcode = req.session.data['nl_postcode'];
   let peopleCount = req.session.data['nl_count'];
   let turnover = req.session.data['nl_turnover'];
@@ -669,7 +678,7 @@ router.get('/nl-branch', function(req, res, next) {
   }
 
   if (peopleCount===""){
-    peopleCOunt =10;
+    peopleCount = 10;
   }
 
   // DEFAULT
@@ -677,6 +686,20 @@ router.get('/nl-branch', function(req, res, next) {
     postcode = "TR1 1XU";
     country = "All";
   }
+
+  // once we've captured the form data
+  // store it for future reference inthe templates
+  if(businessAge){
+    businessObj.age = ages[businessAge];
+  }
+  if(peopleCount){
+    businessObj.size = peopleCount;
+  }
+  businessObj.postcode = postcode;
+  businessObj.peopleCount = peopleCount;
+  businessObj.description = description;
+
+
 
   if(postcode){
     var str = postcode;
@@ -729,9 +752,11 @@ router.get('/nl-branch', function(req, res, next) {
                 }
                 //console.log(postcodeLocation)
               }
-
+console.log("county")
               // TRIAGE
-                if ( bus_age < 3 ) {
+                if ( country !== "England" ) {
+                  res.redirect('nl-country');               // getting starters & companies under 1 year old
+                } else if ( businessAge < 3 ) {
                   res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
                 } else if (peopleCount <=4 ) {
                   res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
@@ -754,7 +779,7 @@ router.get('/nl-branch', function(req, res, next) {
     );
   }else{
 /* 
-    if ( bus_age < 3 ) {
+    if ( businessAge < 3 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
     } else if (peopleCount <=4 ) {
       res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
