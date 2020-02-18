@@ -61,7 +61,7 @@ var sampleResults = [
   "been trading for over 5 years"
 ];
   
-  var isLive = process.env.IsLive;
+  var isLive = process.env.isLive;
   console.log("isLive " + isLive)
   var country="England";
   var businessObj = { age:ages[2], size: 5};
