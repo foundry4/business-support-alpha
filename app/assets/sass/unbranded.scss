@@ -171,5 +171,30 @@ a:hover {
 }
 
 .version2 {
-    background-color:  govuk-colour("pink");
+    background-color:govuk-colour("pink");
+}
+
+
+.textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    border: 1;
+    border-radius: 0;
+    background-image: unset;
+    line-height: 20px;
+color:
+    #000000;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+img.card-image {
+    margin: 0;
+    width: 100%;
+    height: auto;
 }

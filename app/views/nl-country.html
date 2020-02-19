@@ -32,13 +32,23 @@
         </p>
         {% endif %}
         <p>
-          Because your business has <strong>{{ business.age }}</strong> and employs <strong>{{ business.size }}</strong> 
+          Because your business is <strong>{{ business.age }}</strong> and employs <strong>{{ business.size }}</strong> 
           {% if business.size==1 %}
           person,
           {% else %}
           people,
           {% endif %} 
-          you may benefit from contacting the Business Support Helpline.
+          you may benefit from contacting 
+          
+          {% if country=="England" %}
+          the Business Support Helpline.
+          {% elif country=="Scotland" %}
+          the Business Gateway.
+          {% elif country=="Northern Ireland" %}
+          the Invest Northern Ireland website.
+          {% else %}
+          the Business Wales website.
+          {% endif %} 
         </p>
         <p>
           It includes services such as:
@@ -79,7 +89,7 @@
       {% if country=="Scotland" %}
       <h2 class="govuk-heading-m" id="scotland">Scotland</h2>
       
-      <p><a rel="external" href="http://www.bgateway.com">Get free advice from Business Gateway online</a>, or over the phone.</p>
+      <p><a rel="external" href="http://www.bgateway.com">Get free advice from the Business Gateway website</a>, or over the phone.</p>
       
       <div class="contact">
         <p><strong>Business Gateway (Scotland)</strong><br>
@@ -93,7 +103,7 @@
       {% if country=="Wales" %}
       <h2 class="govuk-heading-m" id="wales">Wales</h2>
       
-      <p><a rel="external" href="http://business.wales.gov.uk/starting-business">Get help with your business online,</a> or by calling the Business Wales Helpline.</p>
+      <p><a rel="external" href="http://business.wales.gov.uk/starting-business">Get help with your business via the Business Wales website,</a> or by calling the Business Wales Helpline.</p>
       
       <div class="contact">
         <p><strong>Business Wales Helpline</strong><br>
@@ -107,7 +117,7 @@
       {% if country=="Northern Ireland" %}
       <h2 class="govuk-heading-m" id="northern-ireland">Northern Ireland</h2>
       
-      <p><a rel="external" href="https://www.nibusinessinfo.co.uk/start">Find advice and support for starting a business</a>. You can also contact the Invest Northern Ireland helpline.</p>
+      <p><a rel="external" href="https://www.nibusinessinfo.co.uk/start">Find advice and support for starting a business on the Invest Northern Ireland website</a>. You can also contact the contact Invest Northern Ireland helpline.</p>
       
       <div class="contact">
         <p><strong>Invest Northern Ireland</strong><br>
@@ -126,9 +136,7 @@
 
     
     <div class="govuk-grid-column-one-third">
-        <!-- <p>
-            Inspirational copy goes here.
-        </p> -->
+
     </div>
 
   </div>

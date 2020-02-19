@@ -1,10 +1,19 @@
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
 {% extends "layout_unbranded.html" %}
-
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Error: Business Support Alpha
 {% endblock %}
+
+{% block header %}
+  {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -21,7 +30,7 @@
           }
         ]
       }) }}
-      <p>Please contact <a href="mailto:business-support-alpha@notbinary.co.uk">notbinaryk</a> for support.</p>
+      <p>Please contact <a href="mailto:business-support-alpha@notbinary.co.uk">notbinary.co.uk</a> for support.</p>
     </div>
   </div>
 

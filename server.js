@@ -348,3 +348,9 @@ module.exports = app
 */
 var data = JSON.parse(fs.readFileSync(__dirname + '/app/data/cornwall.json').toString());
 app.locals.data = data.factsheet;
+//let data = JSON.parse(fs.readFileSync(__dirname + '/app/data/LEP_ONS.json').toString());
+//app.locals.lepArray = data.leps;
+data = JSON.parse(fs.readFileSync(__dirname + '/app/data/hubs.json').toString());
+app.locals.hubs = data.hubs;
+data = JSON.parse(fs.readFileSync(__dirname + '/app/data/lep_dictionary.json').toString());
+app.locals.dictionary = data.dictionary;

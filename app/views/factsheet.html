@@ -34,28 +34,38 @@ Finance and support for your business
 
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Resources for {{display.region}}
+        Resources for  {{ location.LA }}
       </h1>
 
       <aside class="" role="complementary">
         <nav class="part-navigation govuk-!-padding-bottom-3" aria-label="Pages in this guide" role="navigation" >
           <h3 class="govuk-heading-s  govuk-!-font-size-1">Contents</h3>
           <ul class="govuk-list govuk-!-font-size-16">
+            {% if support.length>0 %}
               <li class="">
                 <a class="govuk-link " href="#business">Business Support ({{ support | length }})</a>
               </li>
+            {% endif %}
+            {% if legal.length>0 %}
               <li class="">
                 <a class="govuk-link " href="#legal">Legal Support ({{ legal | length }})</a>
               </li>
+            {% endif %}
+            {% if finance.length>0 %}
               <li class="">
                 <a class="govuk-link "  href="#finance">Sources of Finance ({{ finance | length }})</a>
               </li>
+            {% endif %}
+            {% if events.length>0 %}
               <li class="">
                 <a class="govuk-link " href="#events">Events and networking ({{ events | length }})</a>
               </li>
+            {% endif %}
+              {% if premises.length>0 %}
               <li class="">
                 <a class="govuk-link " href="#premises">Premises ({{ premises | length }})</a>
               </li>
+              {% endif %}
           </ul>
         </nav>
         </aside>
@@ -71,7 +81,7 @@ Finance and support for your business
     <section class="brexit-checker-audience">
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
-          Your business or organisation
+          {{ location.LEP }} Growth Hub
         </h2>
       </header>
         <section class="brexit-checker-actions__group">
@@ -81,8 +91,8 @@ Finance and support for your business
                 Because you said:
               </p>
               <ul class="govuk-list govuk-list--bullet">
-                  <li class="brexit-checker__criterion">
-                    You work in  {{ display.region_name }}
+                  <li class="">
+                    You are interested in {{ display.aim }}
                   </li>
               </ul>
             </aside>
@@ -91,22 +101,42 @@ Finance and support for your business
               <div class="govuk-grid-row brexit-checker__action">
                 <div class="brexit-checker__content-wrapper">
                   <p class="govuk-body brexit-checker__action_title">
-                    {{ display.region_name }} Growth hub
+                    {{ location.LEP }} Growth hub
                   </p>
-            
+                  <!-- <p>
+                    {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
+                  </p> -->
                     <p class="govuk-body">
-                      Copy goes here.
+                    For pre-start, start-up and established businesses
                     </p>
-            
+                    <p class="govuk-body">
+                      {{ location.LEP }} Growth Hub & Skills Hub helps eligible businesses to identify and access the right support. The Growth Hub focuses on services for very early stage businesses, while the Skills Hub supports established companies with five or more employees.
+                      </p>
+                      <p class="govuk-body">
+                        Services include:
+                      </p>
+                      <ul class="govuk-list govuk-list--bullet">
+                       
+                        <li class="">
+                        Access to and entry into a local business directory
+                        </li>
+                        <li class="">Access to guidance on regulation and environmental sustainability
+                        </li>
+                        <li class=""> Finding training to upskill or expand a team and improve productivity (Skills Hub)
+                        </li>
+                        <li class="">Finding affordable training, workshop and recruitment providers (Skills Connectors)
+                        </li>
+                        <li class="">A business skills review and personalised template for HR processes and policies (Skills Toolkit)
+                        </li>
+                      </ul>
+                        
                     <div class="govuk-body govuk-!-font-size-16">
                       <p>
                         More information:
                       </p>
-                      <p>
-                        <a href="{{display.region_url}}" target="_blank">
-                          {{ display.region_name }} Growth hub
-                        </a>
-                      </p>
+                      <p class="document-list__item-description">Website: <a href="//{{ location.url }}" target="_blank">{{ location.url }}</a></p>
+                      <p class="document-list__item-description">Telephone: {{ location.telephone }}</p>            
+                      <p class="document-list__item-description">Email: <a href="mailto:{{ location.email }}">{{ location.email }}</a></p>
                     </div>
                 </div>
               </div>
@@ -117,6 +147,7 @@ Finance and support for your business
     </section>
 
     
+    {% if support.length>0 %}
     <section class="brexit-checker-actions"><a name="business"></a>
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
@@ -135,15 +166,15 @@ Finance and support for your business
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
-                    <li class="brexit-checker__criterion">
-                      You want to {{ display.aim }}
+                    <li class="">
+                      You are interested in {{ display.aim }}
                     </li>
-                    <li class="brexit-checker__criterion">
+                    <!-- <li class="">
                       Get help for a {{ display.businessType }}
                     </li>
-                    <li class="brexit-checker__criterion">
+                    <li class="">
                       Something for {{ display.business_stages | capitalize }} businesses
-                    </li>
+                    </li> -->
                 </ul>
               </aside>
     
@@ -157,8 +188,9 @@ Finance and support for your business
           </section>
         </section>
     </section>
-
+    {% endif %}
     
+    {% if legal.length>0 %}
     <section class="brexit-checker-actions"><a name="legal"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
@@ -175,8 +207,8 @@ Finance and support for your business
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
-                    <li class="brexit-checker__criterion">
-                      Your business is {{ display.business_stages }}
+                    <li class="">
+                      You are interested in {{ display.aim }}
                     </li>
                 </ul>
               </aside>
@@ -198,9 +230,9 @@ Finance and support for your business
           </section>
         </section>
     </section>
-
-
+    {% endif %}
     
+    {% if finance.length>0 %}
     <section class="brexit-checker-actions"><a name="finance"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
@@ -217,8 +249,8 @@ Finance and support for your business
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
-                    <li class="brexit-checker__criterion">
-                      You live in {{ display.region_name }}
+                    <li class="">
+                      You are interested in {{ display.aim }}
                     </li>
                 </ul>
               </aside>
@@ -233,8 +265,9 @@ Finance and support for your business
           </section>
         </section>
     </section>
-
+    {% endif %}
     
+    {% if events.length>0 %}
     <section class="brexit-checker-actions"><a name="events"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
@@ -251,8 +284,8 @@ Finance and support for your business
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
-                    <li class="brexit-checker__criterion">
-                      You live in {{ display.region_name }}
+                    <li class="">
+                      You are interested in {{ display.aim }}
                     </li>
                 </ul>
               </aside>
@@ -267,9 +300,9 @@ Finance and support for your business
           </section>
         </section>
     </section>
+    {% endif %}
 
-
-        
+    {% if premises.length>0 %}   
     <section class="brexit-checker-actions"><a name="premises"></a> 
       <header>
         <h2 class="govuk-heading-l action-audience__heading">
@@ -286,8 +319,8 @@ Finance and support for your business
                   Because you said:
                 </p>
                 <ul class="govuk-list govuk-list--bullet">
-                    <li class="brexit-checker__criterion">
-                      You live in {{ display.region_name }}
+                    <li class="">
+                      You are interested in {{ display.aim }}
                     </li>
                 </ul>
               </aside>
@@ -328,6 +361,8 @@ Finance and support for your business
           </section>
         </section>
     </section>
+    {% endif %}
+
 
     <div class="govuk-!-padding-bottom-9"></div>
 

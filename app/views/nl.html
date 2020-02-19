@@ -9,12 +9,15 @@
 		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		
-		<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"> 
 		<link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_default.css" />
-		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_component.css" />
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_white.css" />
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_component_white.css" />
 
 		<script src="public/javascripts/modernizr.custom.js" type="application/javascript"></script>
+		{% if (isLive == true) or (isLive == "true") %}
+		{% include "includes/hotjar.html" %}
+		{% endif %}
 	</head>
 	<body class="nl-blurred">
 		<div class="container demo-1">
@@ -33,59 +36,75 @@
 
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form" action="nl-branch">
-					I'm  
-					<select name="nl_type">
-						<option value="1" >getting started</option>
-						<option value="2">a sole trader</option>
-						<option value="3" selected>a business owner</option>
-						<option value="4">a business manager</option>
-						<option value="5">a partner</option>
-					</select >
 					
-					<br />based in
-					<input type="text" name="nl-postcode" value="" placeholder="any region" data-subline="Add your postcode,<br/> eg TR1 1XU."/>.
-
-					<br />The business has 
+					My business is based in
+					<input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode" data-subline="Enter your full postcode,<br/> eg TR1 1XU."/>.
+					
+					<br />and has 
 					<select name="nl_age">
 						<option value="1" selected>not started trading</option>
 						<option value="2">been trading for under a year</option>
 						<option value="3">been trading for 1-2 years</option>
 						<option value="4">been trading for 2-5 years</option>
 						<option value="5">been trading for over 5 years</option>
-					</select>
-				
-					<br />and employs
-					<!-- <select>
-						<option value="1" selected>a micro (less than 10 people)</option>
-						 <option value="1">small (10 - 49)</option>
-						 <option value="2">medium (50 - 499)</option>
-						 <option value="3">large (more than 500)</option>
-					</select> -->
-					<input type="text" name="nl-count" value="" placeholder="10" data-subline="Add how many people work in the buiness."/>
+					</select>.
+					
+					<br />It employs
+					<input type="text" id="nl_count" name="nl_count" value="10" placeholder="10" data-subline="How many people work in the business?"/>
 					people.
 					
-					
-					<br />I'm interested in 
-					<select name="nl_aim">
-						<option value="1" selected>growing the business</option>
-					 	<option value="1">new equipment</option>
-					 	<option value="2">new staff</option>
-					 	<option value="3">research</option>
-					 	<option value="4">marketing</option>
-					 	<option value="5">cash flow</option>
-					</select >.
-					<br />
-					<!-- I'm feeling 
-					<select name="nl_feeling">
-						<option value="-1" >inspired</option>
-						<option value="0" selected>ok</option>
-						<option value="1">mostly on top of it</option>
-					 	<option value="2">challenged</option>
-					 	<option value="3">stressed</option>
-					 	<option value="4">overwhelmed</option>
-					 	<option value="5">lucky</option>
+					It has an annual turnover of 
+					<select name="nl_turnover">
+						<option value="1" selected>under £200k</option>
+						<option value="2" >£200k-£1 million</option>
+						<option value="3" >over £1 million</option>
 					</select >
-					 -->
+					which has 
+					<select name="nl_turnover_change">
+						<option value="1" >decreased</option>
+						<option value="2" selected>stayed the same</option>
+						<option value="3" >increased</option>
+					</select >
+					 in the past year. 
+
+					<!-- <br />I’d describe my business as:
+					Select the three words or phrases that most represent your business
+					<select name="nl_aim" multiple>
+						<option value="1">Innovative</option>
+					 	<option value="2">Competitive</option>
+					 	<option value="3">Profit-focused</option>
+					 	<option value="4">Powered by technology</option>
+					 	<option value="5">Efficient</option>
+					 	<option value="6">Stable</option>
+					 	<option value="7">Traditional</option>
+					 	<option value="8">Powered by people</option>
+					 	<option value="9">Part of the community</option>
+					</select >. -->
+					<br />
+					<br />
+
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset" aria-describedby="description-hint">
+						  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								I’d describe my business as:
+							</h1>
+						  </legend>
+						  <span id="description-hint" class="govuk-hint">
+							Select the three words or phrases that most represent your business
+						  </span>
+						  <div class="govuk-checkboxes">
+							{% for item in description %}
+							<div class="govuk-checkboxes__item">
+							  <input class="govuk-checkboxes__input" id="description-{{ loop.index }}" name="nl_description" type="checkbox" value="{{ item }}">
+							  <label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
+								{{ item }}
+							  </label>
+							</div>
+							{% endfor %}
+						  </div>
+						</fieldset>
+					  </div>
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit">Let's Grow!</button>
 					</div>

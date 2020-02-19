@@ -17,7 +17,9 @@
 {% block head %}
   <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"> 
+  {% if (isLive == true) or (isLive == "true") %}
   {% include "includes/hotjar.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block header %}{% endblock %}
