@@ -762,20 +762,20 @@ router.get('/nl-branch', function(req, res, next) {
                 }
                 //console.log(postcodeLocation)
               }
-console.log("county")
+
               // TRIAGE
-                if ( country !== "England" ) {
-                  res.redirect('nl-country');               // getting starters & companies under 1 year old
-                } else if ( businessAge < 3 ) {
-                  res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-                } else if (peopleCount <=4 ) {
-                  res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-                  //res.redirect('nl-one');                     // 'one man band' 
-                } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
-                  res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
-                } else {                                     
-                  res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
-                }
+              if ( businessAge < 3 ) {
+                res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+              } else if ( country !== "England" ) {
+                res.redirect('nl-country');               // getting starters & companies under 1 year old
+              } else if (peopleCount <=4 ) {
+                res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+                //res.redirect('nl-one');                     // 'one man band' 
+              } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+                res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+              } else {                                     
+                res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
+              }
  
             } else {
               res.redirect('/error');
@@ -786,10 +786,10 @@ console.log("county")
             selectedLA = "Cornwall";
             country ="England";
 
-            if ( country !== "England" ) {
-              res.redirect('nl-country');               // getting starters & companies under 1 year old
-            } else if ( businessAge < 3 ) {
+            if ( businessAge < 3 ) {
               res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+            } else if ( country !== "England" ) {
+              res.redirect('nl-country');               // getting starters & companies under 1 year old
             } else if (peopleCount <=4 ) {
               res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
               //res.redirect('nl-one');                     // 'one man band' 
@@ -805,18 +805,7 @@ console.log("county")
       }
     );
   }else{
-/* 
-    if ( businessAge < 3 ) {
-      res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-    } else if (peopleCount <=4 ) {
-      res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
-      //res.redirect('nl-one');                     // 'one man band' 
-    } else if( turnover>1 && turnoverChange>2 && isReady){   // form vars are strings so could parseInt or turnoverChange==='3'                                 
-      res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
-    } else {                                     
-      res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
-    }
-     */
+
   }
   
 });

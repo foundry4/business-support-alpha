@@ -34,14 +34,38 @@ Finance and support for your business
 
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-            Resources for {{ location.LA }}
+            Recommendations for your business
         </h1>
+
+        <div>
+            <p class="govuk-body">
+                If you know how well your business is performing,
+                you can make informed decisions about the future.
+                Find out how your productivity compares with that of similar businesses
+            </p>
+
+            <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
+                <button type="submit" class="govuk-button" id="submit">
+                    Benchmark your productivity
+                </button>
+            </form>
+
+        </div>
+
 
     </div>
     <div class="govuk-grid-column-one-third">
-
     </div>
+</div>
+<div class="govuk-grid-row">
 
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            Further resources for {{ location.LA }}
+        </h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
 </div>
 
 
@@ -56,7 +80,8 @@ Finance and support for your business
             </div>
         </a>
         <p>
-            Take part in a 12-month course to boost your business’ growth. Learn from industry experts and build a supportive peer network on this year-long programme, designed for
+            Take part in a 12-month course to boost your business’ growth. Learn from industry experts and build a
+            supportive peer network on this year-long programme, designed for
             small business leaders.
 
             <div class="govuk-inset-text">
@@ -66,7 +91,7 @@ Finance and support for your business
         </p>
         <p class="govuk-body govuk-!-margin-bottom-9"></p>
     </div>
-    
+
     <div class="govuk-grid-column-one-third">
         <a class="card-link" href=" http://www.mentorsme.co.uk/" target="_blank">
             <img class="card-image" src="public/images/image2.jpg" alt="">
@@ -81,7 +106,7 @@ Finance and support for your business
         </p>
         <p class="govuk-body govuk-!-margin-bottom-9"></p>
     </div>
-    
+
     <div class="govuk-grid-column-one-third">
         <a class="card-link" href="//{{ location.url }}" target="_blank">
             <img class="card-image" src="public/images/image5.jpg" alt="">
