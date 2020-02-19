@@ -1,0 +1,200 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/examples/blank-unbranded
+
+// Import colour palette and applied colours so that we can use
+// $govuk-body-background-colour in our overrides below.
+// 
+// If you need to enable compatibility mode or the legacy palette, do that
+// *before* these imports.
+@import "node_modules/govuk-frontend/govuk/settings/colours-palette";
+@import "node_modules/govuk-frontend/govuk/settings/colours-applied";
+
+// Style links and paragraphs by default
+$govuk-global-styles: true;
+
+// Override the govuk-frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with
+// the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "node_modules/govuk-frontend/govuk/all";
+
+// header
+.govuk-header__container {
+    color:#000;
+    border-bottom: 2px solid govuk-colour("orange");
+}
+
+.govuk-header {
+    background-color: #fff;
+}
+
+.govuk-header__link:link, .govuk-header__link:visited {
+    color:#000;
+}
+
+.govuk-label--xl{
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+.govuk-caption-xl{
+    margin-bottom: 15px;
+}
+
+.app-related-items {
+    border-top: 2px solid 
+    #1d70b8;
+    padding-top: 10px;
+}
+
+.govuk-footer {
+    background-color: #eee;
+}
+// pagination
+.part-navigation {
+    border-bottom: 1px solid #b1b4b6;
+}
+.pagination__link {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+a:hover {
+   background-color: rgba(0,0,0,0.03);
+   -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+}
+
+.pagination__item_title {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.pagination__item {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.25;
+    list-style: none;
+}
+
+.pagination__link-title {
+    display: block;
+}
+
+.pagination__link-text {
+    font-size: 19px;
+    line-height: 1.3157894737;
+}
+
+.pagination__link-label {
+    display: inline-block;
+    margin-top: .1em;
+    text-decoration: underline;
+    margin-left: 30px;
+}
+.pagination__link-text {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-left: 10px;
+}
+
+.pagination__link-divider {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+}
+.visually-hidden, .visuallyhidden {
+    position: absolute;
+    left: -9999em;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+.document-list__item-title {
+    font-size: 24px;
+    line-height: 1.3157894737;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.document-list__item {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
+    list-style: none;
+}
+.document-list {
+    color: #0b0c0c;
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+}
+
+.brexit-checker__action_title {
+    font-weight: 900;
+    font-size:22px;
+}
+.brexit-checker__content-wrapper {
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #b1b4b6;
+}
+.action-audience__heading {
+    border-top: 3px solid #1d70b8;
+    border-bottom: 1px solid #b1b4b6;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+.version2 {
+    background-color:govuk-colour("pink");
+}
+
+
+.textarea {
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    border: 1;
+    border-radius: 0;
+    background-image: unset;
+    line-height: 20px;
+color:
+    #000000;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+img.card-image {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}

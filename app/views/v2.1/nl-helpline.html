@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Business support hotline</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+		<link href="/public/stylesheets/business_support.css" media="all" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_default.css" />
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/nl_component.css" />
+
+		<script src="public/javascripts/modernizr.custom.js" type="application/javascript"></script>
+    </head>
+    
+    
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			{% block header %}
+				{% include "includes/header.html" %}
+			{% endblock %}
+
+			<div class="govuk-width-container ">
+				{% include "includes/banner_alpha_2.html" %}
+			</div>
+			
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h2 class="">No help for pre starts</h2>
+                    <p>
+                        Try calling the helpdesk
+                    </p>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    context menu
+                </div>
+            </div>
+
+            
+		</div><!-- /container -->
+		<script src="public/javascripts/nlform.js" type="application/javascript"></script>
+		<script>
+			
+		</script>
+		{% include "includes/footer.html" %}
+
+	</body>
+</html>

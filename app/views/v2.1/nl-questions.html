@@ -1,0 +1,91 @@
+{% extends "layout_business_support.html" %}
+
+
+{% block pageTitle %}
+  Add your business size
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <header>
+				<h1>Grow your business</h1>	
+			</header>
+
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form" action="nl-triage">
+					I'm  
+					<select name="nl_type">
+						<option value="1" >getting started</option>
+						<option value="2">a sole trader</option>
+						<option value="3" selected>a business owner</option>
+						<option value="4">a business manager</option>
+						<option value="2">a partner</option>
+					</select name="industryType">
+
+
+					<br />of a business with 
+					<!-- <select>
+						<option value="1" selected>a micro (less than 10 people)</option>
+					 	<option value="1">small (10 - 49)</option>
+					 	<option value="2">medium (50 - 499)</option>
+					 	<option value="3">large (more than 500)</option>
+					</select> -->
+					<input type="text" name="nl-count" value="" placeholder="some" data-subline="Add how many people work in the buiness."/>
+					
+					people
+					<br />and I'm interested in 
+					<select name="nl_aim">
+						<option value="1" selected>growing the business</option>
+					 	<option value="1">new equipment</option>
+					 	<option value="2">new staff</option>
+					 	<option value="3">research</option>
+					 	<option value="4">marketing</option>
+					 	<option value="5">cash flow</option>
+					</select name="nl_type">
+
+					<br />based in
+					<input type="text" name="nl-postcode" value="" placeholder="any region" data-subline="Add your postcode,<br/> eg TR1 1XU."/>
+					<br />
+					I'm feeling 
+					<select name="nl_feeling">
+						<option value="-1" >inspired</option>
+						<option value="0" selected>ok</option>
+						<option value="1">mostly on top of it</option>
+					 	<option value="2">challenged</option>
+					 	<option value="3">stressed</option>
+					 	<option value="4">overwhelmed</option>
+					 	<option value="5">lucky</option>
+					</select name="nl_type">
+					
+					<div class="nl-submit-wrap">
+						<button class="nl-submit" type="submit">Let's Grow!</button>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<div class="nl-overlay"></div>
+				</form>
+			</div>
+      
+    </div>
+
+    
+    <div class="govuk-grid-column-one-third">
+      {% include 'includes/related_content.html'%}
+    </div>
+
+  </div>
+{% endblock %}

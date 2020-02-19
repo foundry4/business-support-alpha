@@ -1,0 +1,127 @@
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% extends "layout_business_support.html" %}
+
+{% block pageTitle %}
+Finance and support for your business
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.html" %}
+{{ super() }}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/">Home</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/">Business and self-employed</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link">Recommendations</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Recommendations for your business
+        </h1>
+
+        <div>
+            <p class="govuk-body">
+                If you know how well your business is performing,
+                you can make informed decisions about the future.
+                Find out how your productivity compares with that of similar businesses
+            </p>
+
+            <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
+                <button type="submit" class="govuk-button" id="submit">
+                    Benchmark your productivity
+                </button>
+            </form>
+
+        </div>
+
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+</div>
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            Further resources for {{ location.LA }}
+        </h2>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+        <a class="card-link" href="https://www.bethebusiness.com/group-event/productivity-through-people/
+        " target="_blank">
+            <img class="card-image" src="../public/images/image1.jpg" alt="">
+            <div class="card-inner">
+                <h3 class="heading-large">Learn from industry</h3>
+            </div>
+        </a>
+        <p>
+            Take part in a 12-month course to boost your business’ growth. Learn from industry experts and build a
+            supportive peer network on this year-long programme, designed for
+            small business leaders.
+
+            <div class="govuk-inset-text">
+                “The win from this is better working as a team. If you’re better as a team, you will deliver and the
+                people you’re working with will enjoy work.” Spencer Fereday, Mann Williams
+            </div>
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <a class="card-link" href=" http://www.mentorsme.co.uk/" target="_blank">
+            <img class="card-image" src="../public/images/image2.jpg" alt="">
+            <div class="card-inner">
+                <h3 class="heading-large">Find a business mentor</h3>
+            </div>
+        </a>
+
+        <p>
+            Working with a business mentor can fast-track your professional development. Find a mentor with experience,
+            skills and contacts that will benefit you and your business.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <a class="card-link" href="//{{ location.url }}" target="_blank">
+            <img class="card-image" src="../public/images/image5.jpg" alt="">
+            <div class="card-inner">
+                <h3 class="heading-large">Join a local business leaders’ network</h3>
+            </div>
+        </a>
+
+        <p>
+            Share your experiences and learn from others’ expertise through a professional network. Find a local
+            business leaders’ network through your Growth Hub.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+
+</div>
+
+{% endblock %}

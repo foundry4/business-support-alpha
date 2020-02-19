@@ -535,6 +535,21 @@ router.get('/postcode', function (req, res, next) {
 });
 
 
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////
+//
+// Version 2.0 prototype
+//
+//////////////////////////////////////////////////////////////////
+
 router.get('/nl', function (req, res, next) {
   res.render('nl', {
     isLive: isLive,
@@ -751,6 +766,231 @@ router.get('/nl-branch', function (req, res, next) {
 
 });
 
+
+
+
+
+//////////////////////////////////////////////////////////////////
+//
+// Version 2.1 prototype
+//
+//////////////////////////////////////////////////////////////////
+
+router.get('/v2.1/nl', function (req, res, next) {
+  res.render('v2.1/nl', {
+    isLive: isLive,
+    description: description
+  });
+});
+
+
+router.get('/v2.1/nl-country', function (req, res, next) {
+  res.render('v2.1/nl-country', {
+    isLive: isLive,
+    country: country,
+    business: businessObj,
+    location: postcodeLocation
+  });
+});
+
+
+router.get('/v2.1/nl-columns', function (req, res, next) {
+  res.render('v2.1/nl-columns', {
+    isLive: isLive,
+    country: country,
+    business: businessObj,
+    location: postcodeLocation
+  });
+});
+
+
+router.get('/v2.1/nl-growth-hub', function (req, res, next) {
+  res.render('v2.1/nl-growth-hub', {
+    isLive: isLive,
+    display: displayNames,
+    location: postcodeLocation
+  });
+});
+
+
+router.get('/v2.1/nl-recommendations', function (req, res, next) {
+  var results = res.app.locals.data;
+  // do some crude filtering based on aims?
+  // eg reset the results arrays for non-applicable results?
+  var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
+  var support = _.filter(results, function (item) { return item.category === "Business Support" });
+  var legal = _.filter(results, function (item) { return item.category === "Legal" });
+  var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
+  var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
+  var premises = _.filter(results, function (item) { return item.category === "Premises" });
+  //var totalSupport = 0;
+
+  // then pass these to the pages to render
+  res.render('v2.1/nl-recommendations', {
+    isLive: isLive,
+    results: res.app.locals.data,
+    support: support,
+    legal: legal,
+    finance: finance,
+    events: events,
+    premises: premises,
+    procurement: procurement,
+    //totalSupport: totalSupport,
+    //display: displayNames,
+    location: postcodeLocation
+  });
+
+});
+
+
+router.get('/v2.1/nl-pre-start', function (req, res, next) {
+  res.render('v2.1/nl-pre-start', {
+    isLive: isLive,
+    business: businessObj,
+    country: country,
+    location: postcodeLocation
+  });
+});
+
+
+router.get('/v2.1/confirmation', function (req, res, next) {
+  res.render('v2.1/confirmation', {
+    isLive: isLive,
+    location: postcodeLocation
+  });
+});
+
+
+router.get('/v2.1/nl-branch', function (req, res, next) {
+  let businessAge = req.session.data['nl_age'];
+  let postcode = req.session.data['nl_postcode'];
+  let peopleCount = req.session.data['nl_count'];
+  let turnover = req.session.data['nl_turnover'];
+  let turnoverChange = req.session.data['nl_turnover_change'];
+  let description = req.session.data['nl_description'];
+  var isReady = false;
+
+  if (description) {
+    if (description.indexOf("Innovative") > -1 || description.indexOf("Competitive") > -1 || description.indexOf("Profit-focused") > -1) {
+      isReady = true;
+    }
+  }
+
+  // SET SOME DEFAULTs
+  if (peopleCount === "") {
+    peopleCount = 10;
+  }
+  if (!postcode) {
+    postcode = "TR1 1XU";
+    country = "All";
+  }
+
+  // once we've captured the form data
+  // store it for future reference in the templates
+  if (businessAge) {
+    businessObj.age = ages[businessAge];
+  }
+  if (peopleCount) {
+    businessObj.size = peopleCount;
+  }
+  businessObj.postcode = postcode;
+  businessObj.peopleCount = peopleCount;
+  businessObj.description = description;
+
+  if (postcode) {
+    var str = postcode;
+    var cleaned = str.split('%20').join('');
+    cleaned = cleaned.split(' ').join('');
+
+    request(MYSOCIETY_API_URL + cleaned, {
+      method: "GET",
+      headers: {
+        'Accept': 'application/json'
+      }
+    }, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        if (body) {
+          dataset = JSON.parse(body);
+
+          // get the json dataset
+          var areas = dataset.areas;
+          var selectedLA;
+
+          // loop through all the areas and look for codes that match the ""
+          for (var area in areas) {
+            if (areas[area].codes && areas[area].codes["local-authority-eng"]) {
+              // step back up to the parent and extract the actual _gss_ values/
+              selectedLA = areas[area].codes.gss;
+            }
+            //also get the country code for use on the pre-start hand off?
+            if (areas[area].country_name !== "-") {
+              country = areas[area].country_name
+            }
+          }
+
+          if (selectedLA) {
+            // use this value to look up the name of the LEP
+            var lepDictionary = res.app.locals.dictionary;
+            postcodeLocation = lepDictionary[selectedLA];
+            var hub = res.app.locals.hubs[postcodeLocation.LEP]
+
+            // do the same for LEP contacts
+            postcodeLocation.url = hub.url;
+            postcodeLocation.telephone = hub.telephone;
+            if (hub.email !== "") {
+              postcodeLocation.email = hub.email;
+            } else {
+              postcodeLocation.email = "adviser@" + hub.url;
+            }
+          }
+
+          // TRIAGE
+          if (businessAge < 3) {
+            res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+          } else if (country !== "England") {
+            res.redirect('nl-country');                 // getting starters & companies under 1 year old
+          } else if (peopleCount <= 4) {
+            res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+            //res.redirect('nl-one');                     // 'one man band' 
+          } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+            res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+          } else {
+            res.redirect('nl-columns');                 // LOW_PRODUCTIVE: getting neither (!)
+          }
+
+        } else {
+          res.redirect('/error');
+
+        }
+      } else {
+        // res.render('error', { content : {error: {message: "There has been an issue with the postcode look-up"}}});
+
+        // Repeat the triage process here with a defaault response to provide a meaningful response
+        console.log("API LIMITS EXCEEDED")
+        selectedLA = "Cornwall";
+        country = "England";
+
+        if (businessAge < 3) {
+          res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+        } else if (country !== "England") {
+          res.redirect('nl-country');               // getting starters & companies under 1 year old
+        } else if (peopleCount <= 4) {
+          res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+          //res.redirect('nl-one');                     // 'one man band' 
+        } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
+          res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+        } else {
+          res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
+        }
+
+      }
+    }
+    );
+  } else {
+
+  }
+
+});
 
 
 module.exports = router
