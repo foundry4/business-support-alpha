@@ -24,9 +24,23 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import "node_modules/govuk-frontend/govuk/all";
 
 // header
+.govuk-phase-banner {
+    background: #24135f;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid 
+    #b1b4b6;
+}
+.govuk-phase-banner__content {
+    color:#fff;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
 .govuk-header__container {
-    color:#000;
-    border-bottom: 2px solid govuk-colour("orange");
+    color:#fff;
+    border-bottom: 5px solid #24135f;
 }
 
 .govuk-header {
@@ -171,7 +185,7 @@ a:hover {
 }
 
 .version2 {
-    background-color:govuk-colour("pink");
+    background-color:#ab2328;
 }
 
 
@@ -197,4 +211,17 @@ img.card-image {
     margin: 0;
     width: 100%;
     height: auto;
+}
+
+header.banner .header-right {
+    width: 30%;
+    float: right;
+}
+.govuk-header__link:link, .govuk-header__link:visited {
+    color: 
+    #24135f;
+}
+
+.govuk-heading-xl, .govuk-heading-l{
+    color:#ab2328;
 }
