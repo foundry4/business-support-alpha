@@ -36,6 +36,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
+    padding-left:10px;
 }
 
 .govuk-header__container {
@@ -50,6 +51,26 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 .govuk-header__link:link, .govuk-header__link:visited {
     color:#000;
 }
+a.phone{
+    color: #1d70b8;
+
+    background: url('../images/icon-phone.svg') bottom left no-repeat;
+    background-size: auto;
+background-size: 17px 17px;
+text-decoration: none;
+}
+a.phone::before {
+    content: '';
+    color:red;
+    width: 18px;
+    height: 18px;
+    background: url('public/images/icon-phone.svg') bottom left no-repeat;
+        background-size: auto;
+    background-size: 17px 17px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
 
 .govuk-label--xl{
     margin-top: 15px;
@@ -185,9 +206,18 @@ a:hover {
 }
 
 .version2 {
-    background-color:#ab2328;
+    color:#ab2328;
+    background-color:#fff;
 }
 
+a.feedback.govuk-link {
+    color: 
+    #ddd;
+}
+a.feedback:hover {
+    color: 
+    red;
+}
 
 .textarea {
     width: 100%;
@@ -220,6 +250,7 @@ header.banner .header-right {
 .govuk-header__link:link, .govuk-header__link:visited {
     color: 
     #24135f;
+    font-size:2rem;
 }
 
 .govuk-heading-xl, .govuk-heading-l{
