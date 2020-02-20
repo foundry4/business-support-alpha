@@ -52,20 +52,16 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     color:#000;
 }
 a.phone{
-    color: #1d70b8;
+    text-decoration: none;
 
-    background: url('../images/icon-phone.svg') bottom left no-repeat;
-    background-size: auto;
-background-size: 17px 17px;
-text-decoration: none;
 }
+
 a.phone::before {
     content: '';
-    color:red;
     width: 18px;
     height: 18px;
-    background: url('public/images/icon-phone.svg') bottom left no-repeat;
-        background-size: auto;
+    background: url('../images/icon-phone.svg') bottom left no-repeat;
+    background-size: auto;
     background-size: 17px 17px;
     display: inline-block;
     margin: 0 10px 0 0;
@@ -274,6 +270,7 @@ header.banner .header-right {
     border-radius: 0;
 }
 .search-form .input-group .form-control {
+    box-sizing: border-box;
     height: auto;
     min-height: 33px;
     -webkit-border-radius: 0;
@@ -320,9 +317,7 @@ color:
     margin-bottom: 0;
 }
 
-.form-inline .input-group .input-group-addon, .form-inline .input-group .input-group-btn, .form-inline .input-group .form-control {
-    width: auto;
-}
+
 .input-group-btn {
     position: relative;
     font-size: 0;
@@ -336,6 +331,7 @@ color:
 .input-group-addon, .input-group-btn, .input-group .form-control {
     display: table-cell;
 }
+
 .search-form .input-group .input-group-btn .btn {
     min-height: 33px;
     -webkit-border-radius: 0;
@@ -410,8 +406,9 @@ background:
     display: table;
     border-collapse: separate;
 }
-.form-inline .input-group > .form-control {
-    width: 70%;
+
+.search-box{
+    margin:-26px 10px 1px 1px;
 }
 .input-group .form-control {
     position: relative;
@@ -431,4 +428,84 @@ input[type="search"] {
     box-sizing: border-box;
     -webkit-appearance: none;
     appearance: none;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: 
+    #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -webkit-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    -moz-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    -o-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: 
+    #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -webkit-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    -moz-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    -o-transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+    transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.govuk-phase-banner {
+padding-bottom: 0;
+
+}
+h1.brand a {
+    width: 590px;
+    height: 35px;
+    display: block;
+    background: url('../images/business-support-logo-small.png');
+    background: url('../images/business-support-logo.svg');
+    background-repeat: no-repeat;
 }
