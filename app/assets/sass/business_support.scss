@@ -509,3 +509,23 @@ h1.brand a {
     background: url('../images/business-support-logo.svg');
     background-repeat: no-repeat;
 }
+
+.nl-dd ul li.nl-dd-checked {
+	color: #1d70b8;
+}
+
+.no-touch .nl-dd ul li:hover:active {
+	color: #1d70b8;
+}
+.nl-form .nl-submit {
+	background: #1d70b8;
+}
+
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+	background: #24135f;
+}
+
+.no-touch .nl-form .nl-submit:hover:before {
+	background: #24135f;
+}
