@@ -1064,9 +1064,7 @@ router.get('/v2.2/nl-recommendations', function (req, res, next) {
     events: events,
     premises: premises,
     procurement: procurement,
-    //totalSupport: totalSupport,
-    //display: displayNames,
-    location: postcodeLocation
+     location: postcodeLocation
   });
 
 });
@@ -1184,7 +1182,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
           } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
             res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
           } else {
-            res.redirect('nl-columns');                 // LOW_PRODUCTIVE: getting neither (!)
+            res.redirect('nl-recommendations');                 // LOW_PRODUCTIVE: getting neither (!)
           }
 
         } else {

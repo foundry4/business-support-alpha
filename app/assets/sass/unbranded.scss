@@ -198,3 +198,15 @@ img.card-image {
     width: 100%;
     height: auto;
 }
+.main, .container > header {
+    margin: 0 auto;
+    padding: 1em;
+}
+
+body {
+	font-family: "Titillium Web", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+	background: #fff;
+	color: #0c3f5b;
+	font-weight: 300;
+	overflow-x: hidden;
+}
