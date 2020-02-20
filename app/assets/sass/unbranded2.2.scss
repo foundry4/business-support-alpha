@@ -15,7 +15,7 @@
 $govuk-global-styles: true;
 
 // Override the govuk-frontend font stack
-$govuk-font-family: "Titillium Web", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+$govuk-font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
 // Override the canvas background colour, which is normally grey to blend with
 // the GOV.UK footer.
@@ -200,12 +200,120 @@ img.card-image {
 }
 .main, .container > header {
     margin: 0 auto;
-    padding: 1em;
+    padding: 0 1em;
 }
 body {
-	font-family: "Titillium+Web", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+	font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 	background: #fff;
 	color: #0c3f5b;
 	font-weight: 300;
 	overflow-x: hidden;
+}
+.featured-header {
+    box-sizing: border-box;
+    height:240px;
+    padding-bottom: 30%;
+    margin-bottom: 50px;
+    background: url('../images/possible-Growth-hub-picture-3.jpg');
+    background-position: 120px 555px; 
+}
+
+.lead {
+    font-weight: bold;
+    color: #414757;
+    font-size: 120%;
+}
+
+.footer-bar {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.footer-bar {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+.footer-bar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: 
+#414757;
+color:
+    #FEFEFE;
+    text-align: center;
+}
+article, aside, footer, header, nav, section {
+    display: block;
+}
+h3.footer-bar__title {
+    font-size: 3rem;
+}
+.footer-bar .footer-bar__tagline {
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+}
+.footer-bar__tagline p{
+    width:70%;
+    margin: 0 auto;
+    color: 
+    #FEFEFE;
+}
+.footer-bar .footer-bar__tagline {
+    width: 100%;
+    float: left;
+    padding-right: .625rem;
+    padding-left: .625rem;
+}
+.footer-bar .footer-bar__telephone {
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+}
+.footer-bar .footer-bar__telephone {
+    width: 100%;
+    float: left;
+    padding-right: .625rem;
+    padding-left: .625rem;
+    color: 
+    #FEFEFE;
+    margin-bottom: 1rem;
+}
+h5 {
+    font-size: 1.5625rem;
+}
+h5 {
+    font-size: 1.125rem;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}.footer-bar .button.secondary {
+    color: 
+    #FEFEFE;
+}
+.footer-bar {
+    color: 
+    #FEFEFE;
+    text-align: center;
+}
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid 
+    transparent;
+    border-radius: 3px;
+    transition: background-color 0.25s ease-out,color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #5B325F;
+    color: #FEFEFE;
+}
+
+.button.secondary {
+    background-color: 
+    #799C4B;
+    color: #0A0A0A;
 }
