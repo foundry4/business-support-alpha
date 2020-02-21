@@ -946,10 +946,7 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
               selectedLA = areas[area].codes.gss;
             }
             // get the region
-            console.log(areas[area]);
-            
             if (areas[area].type_name === "European region") {
-              console.log(areas[area].name);
               region = areas[area].name;
             }
             //also get the country code for use on the pre-start hand off?
