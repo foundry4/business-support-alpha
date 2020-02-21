@@ -83,7 +83,12 @@ var postcodeLocation = {
   ONS: 'E06000052',
   url: 'www.ciosgrowthhub.com',
   telephone: '01209 708660',
-  email: 'hello@ciosgrowthhub.com'
+  email: 'hello@ciosgrowthhub.com',
+  blurb: `Established.
+  (Online portal support for all business stages including Pre-starts and Start up;
+  one-to-one support for established businesses through team of Growth Hub Connectors
+  - ideally 3 years trading but younger will be considered where there is clear growth ambition.)`
+        
 };
 
 var aimList = [
@@ -1197,6 +1202,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
             postcodeLocation = lepDictionary[selectedLA];
             var hub = res.app.locals.hubs[postcodeLocation.LEP]
 
+            postcodeLocation.blurb = "Established. (Online portal support for all business stages including Pre-starts and Start up; one-to-one support for established businesses through team of Growth Hub Connectors - ideally 3 years trading but younger will be considered where there is clear growth ambition.)";
             // do the same for LEP contacts
             postcodeLocation.url = hub.url;
             postcodeLocation.telephone = hub.telephone;
@@ -1232,7 +1238,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
         console.log("API LIMITS EXCEEDED")
         selectedLA = "Cornwall";
         country = "England";
-
+            
         if (businessAge < 3) {
           res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
         } else if (country !== "England") {

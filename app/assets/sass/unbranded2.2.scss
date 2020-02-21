@@ -206,7 +206,7 @@ body {
 	font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 	background: #fff;
 	color: #0c3f5b;
-	font-weight: 300;
+	//font-weight: 300;
 	overflow-x: hidden;
 }
 .featured-header {
@@ -331,9 +331,20 @@ h5 {
     border-radius: 0 6px 6px 0;
 }
 
-h4 {
+.page-sidebar h4 {
+    font-family:"Raleway";
+    margin: 20px;
+    padding: 4px;
     line-height: 0.9;
     font-size: 2rem;
     color: 
     #414757;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:"Raleway";
+}
+
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-header__logotype-text {
+    font-family:"Raleway";
 }
