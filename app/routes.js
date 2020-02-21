@@ -62,15 +62,15 @@ var ages = [
 ];
 
 var description = [
-  "Innovative",
-  "Competitive",
-  "Profit-focused",
-  "Powered by technology",
   "Efficient",
-  "Stable",
+  "Innovative",
   "Traditional",
+  "Competitive",
+  "Stable",
+  "Profit-focused",
+  "Part of the community",
   "Powered by people",
-  "Part of the community"
+  "Powered by technology"
 ];
 
 var isLive = process.env.isLive;
@@ -795,11 +795,30 @@ router.get('/v2.1/nl-country', function (req, res, next) {
 
 
 router.get('/v2.1/nl-columns', function (req, res, next) {
+  var results = res.app.locals.data;
+  // do some crude filtering based on aims?
+  // eg reset the results arrays for non-applicable results?
+  var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
+  var support = _.filter(results, function (item) { return item.category === "Business Support" });
+  var legal = _.filter(results, function (item) { return item.category === "Legal" });
+  var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
+  var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
+  var premises = _.filter(results, function (item) { return item.category === "Premises" });
+
+
+  // then pass these to the pages to render
   res.render('v2.1/nl-columns', {
     isLive: isLive,
+    results: res.app.locals.data,
+    support: support,
+    legal: legal,
+    finance: finance,
+    events: events,
+    premises: premises,
+    procurement: procurement,
+    location: postcodeLocation,
     country: country,
-    business: businessObj,
-    location: postcodeLocation
+    business: businessObj
   });
 });
 
@@ -915,12 +934,21 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
           // get the json dataset
           var areas = dataset.areas;
           var selectedLA;
+       
+          var region = "your area";
 
           // loop through all the areas and look for codes that match the ""
           for (var area in areas) {
             if (areas[area].codes && areas[area].codes["local-authority-eng"]) {
               // step back up to the parent and extract the actual _gss_ values/
               selectedLA = areas[area].codes.gss;
+            }
+            // get the region
+            console.log(areas[area]);
+            
+            if (areas[area].type_name === "European region") {
+              console.log(areas[area].name);
+              region = areas[area].name;
             }
             //also get the country code for use on the pre-start hand off?
             if (areas[area].country_name !== "-") {
@@ -943,6 +971,7 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
               postcodeLocation.email = "adviser@" + hub.url;
             }
           }
+          postcodeLocation.region = region;
 
           // TRIAGE
           if (businessAge < 3) {
@@ -967,7 +996,8 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
 
         // Repeat the triage process here with a defaault response to provide a meaningful response
         console.log("API LIMITS EXCEEDED")
-        selectedLA = "Cornwall";
+        selectedLA = "Cornwall"; 
+        region = "Cornwall"; 
         country = "England";
 
         if (businessAge < 3) {
@@ -980,7 +1010,7 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
         } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
           res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
         } else {
-          res.redirect('nl-recommendations');         // LOW_PRODUCTIVE: getting neither (!)
+          res.redirect('nl-columns');         // LOW_PRODUCTIVE: getting neither (!)
         }
 
       }

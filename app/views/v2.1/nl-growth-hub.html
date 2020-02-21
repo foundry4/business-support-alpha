@@ -17,15 +17,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l" id="">Speak to a business adviser in {{ location.LA | capitalize}}</h1>
+        <h1 class="govuk-heading-l" id="">Speak to a business adviser <!-- in {{ location.region }} --></h1>
 
         <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
-          <!-- <p>
-            {{ location.LEP }} | {{ location.LA }} |  {{ location.ONS }}
-          </p> -->
+
           <p>
-            Because you've been been trading for over a year, 
-            and because your turnover is over £200k and has increased, 
+            Because you've been <strong>trading for over a year</strong>, 
+            and because your turnover is <strong>over £200k</strong> and has <strong>increased</strong>, 
             you may benefit from speaking with a free business adviser at the {{ location.LEP }} Growth Hub. 
           </p>
           <p>
@@ -98,7 +96,7 @@
 
     
     <div class="govuk-grid-column-one-third">
-      {% include 'includes/related_custom_growthHub.html' %}
+      {% include 'includes/related_custom_growthHub2.1.html' %}
       
     </div>
 
