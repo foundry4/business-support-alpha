@@ -863,6 +863,8 @@ router.get('/v2.1/nl-recommendations', function (req, res, next) {
 
 
 router.get('/v2.1/nl-pre-start', function (req, res, next) {
+  //country= "Wales";
+  //postcodeLocation.LA =country;
   res.render('v2.1/nl-pre-start', {
     isLive: isLive,
     business: businessObj,
@@ -973,6 +975,10 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
           }
           postcodeLocation.region = region;
 
+          // catch other countries
+          if (country !== "England") {
+            postcodeLocation.LA = country;
+          }
           // TRIAGE
           if (businessAge < 3) {
             res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
@@ -994,12 +1000,15 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
       } else {
         // res.render('error', { content : {error: {message: "There has been an issue with the postcode look-up"}}});
 
-        // Repeat the triage process here with a defaault response to provide a meaningful response
+        // Repeat the triage process here with a default response to provide a meaningful response
         console.log("API LIMITS EXCEEDED")
         selectedLA = "Cornwall"; 
         region = "Cornwall"; 
         country = "England";
-
+        // catch other countries
+        if (country !== "England") {
+          postcodeLocation.LA = country;
+        }
         if (businessAge < 3) {
           res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
         } else if (country !== "England") {
