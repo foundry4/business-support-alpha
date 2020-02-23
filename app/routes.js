@@ -84,10 +84,22 @@ var postcodeLocation = {
   url: 'www.ciosgrowthhub.com',
   telephone: '01209 708660',
   email: 'hello@ciosgrowthhub.com',
-  blurb: `Established.
+  blurb: `Examples of eligible businesses include: 
+  <br/>
+  retail,
+  <br/> hospitality & tourism (B&Bs, hotels, cafes, restaurants, etc),
+  <br/> health & beauty (hairdressers, beauticians, aesthetics, personal trainers, gyms, etc) 
+  <br/> and agriculture (farming, forestry and fisheries).
+  <br/>
+  <br/>
+  This isn’t an exhaustive list. 
+  If you’re not sure if your business is eligible, 
+  please contact us on FREE* on 0844 257 84 50. 
+  If it’s not we’ll link you into other support where it’s available.`
+/*   Established.
   (Online portal support for all business stages including Pre-starts and Start up;
   one-to-one support for established businesses through team of Growth Hub Connectors
-  - ideally 3 years trading but younger will be considered where there is clear growth ambition.)`
+  - ideally 3 years trading but younger will be considered where there is clear growth ambition.) */
         
 };
 
@@ -564,6 +576,7 @@ router.get('/nl', function (req, res, next) {
 
 
 router.get('/nl-country', function (req, res, next) {
+  country = "Wales";
   res.render('nl-country', {
     isLive: isLive,
     country: country,
@@ -790,6 +803,7 @@ router.get('/v2.1/nl', function (req, res, next) {
 
 
 router.get('/v2.1/nl-country', function (req, res, next) {
+  country = "Scotland";
   res.render('v2.1/nl-country', {
     isLive: isLive,
     country: country,
@@ -1055,6 +1069,7 @@ router.get('/v2.2/nl', function (req, res, next) {
 
 
 router.get('/v2.2/nl-country', function (req, res, next) {
+  country = "Northern Ireland";
   res.render('v2.2/nl-country', {
     isLive: isLive,
     country: country,
