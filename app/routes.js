@@ -813,7 +813,7 @@ router.get('/v2.1/nl', function (req, res, next) {
 
 
 router.get('/v2.1/nl-country', function (req, res, next) {
-  country = "Scotland";
+  //country = "Scotland";
   res.render('v2.1/nl-country', {
     isLive: isLive,
     country: country,
@@ -1115,7 +1115,7 @@ router.get('/v2.2/nl-growth-hub-details', function (req, res, next) {
 
 
 router.get('/v2.2/nl-country', function (req, res, next) {
-  country = "Northern Ireland";
+  //country = "Northern Ireland";
   res.render('v2.2/nl-country', {
     isLive: isLive,
     country: country,
@@ -1260,6 +1260,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
 
           // loop through all the areas and look for codes that match the ""
           for (var area in areas) {
+            
             if (areas[area].codes && areas[area].codes["local-authority-eng"]) {
               // step back up to the parent and extract the actual _gss_ values/
               selectedLA = areas[area].codes.gss;
@@ -1290,9 +1291,9 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
             }
           }
 
-          res.redirect('nl-growth-hub-details');              // READY TO SCALE: target audience 
+          //res.redirect('nl-growth-hub-details');              // READY TO SCALE: target audience 
 
-          /* 
+          
           // TRIAGE
           if (businessAge < 3) {
             res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
@@ -1306,7 +1307,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
           } else {
             res.redirect('nl-recommendations');                 // LOW_PRODUCTIVE: getting neither (!)
           }
- */
+ 
         } else {
           res.redirect('/error');
 
