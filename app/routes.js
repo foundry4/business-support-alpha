@@ -1077,7 +1077,7 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
 //////////////////////////////////////////////////////////////////
 
 router.get('/v2.2/nl', function (req, res, next) {
-  res.render('v2.2/nl-landing', { /****************************** NB LANDING ***********/
+  res.render('v2.2/nl', { /****************************** NB LANDING ***********/
     isLive: isLive,
     industries:industries,
     description: description

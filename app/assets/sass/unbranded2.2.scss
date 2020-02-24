@@ -285,7 +285,8 @@ h5 {
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: .5rem;
-}.footer-bar .button.secondary {
+}
+.footer-bar .button.secondary {
     color: 
     #FEFEFE;
 }
@@ -310,6 +311,7 @@ h5 {
     cursor: pointer;
     background-color: #5B325F;
     color: #FEFEFE;
+    text-decoration:none;
 }
 
 .button.secondary {
@@ -328,10 +330,25 @@ h5 {
     border: 1px solid 
     #eee;
     padding: 1rem;
-    border-radius: 0 6px 6px 0;
+    border-radius: 6px;
+}
+
+.bookmark {
+    background-color: 
+    #d53880;
+    color:
+    #eee;
+    word-break: break-word;
+    border: 1px solid 
+    #eee;
+    padding: 1rem;
+    border-radius:  6px;
+    margin:0 auto;
+    text-align:center;
 }
 
 .page-sidebar h4 {
+    text-align:center;
     font-family:"PT Sans Narrow";
     text-transform: uppercase;
     margin: 20px;
@@ -345,6 +362,7 @@ h5 {
 h1, h2, h3, h4, h5 {
     font-family:"PT Sans Narrow";
 }
+
 
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-header__logotype-text {
     font-family:"PT Sans Narrow";

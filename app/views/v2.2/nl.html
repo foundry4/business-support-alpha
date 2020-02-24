@@ -43,31 +43,7 @@
 					
 					My business is based in
 					<input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode" data-subline="Enter your full postcode,<br/> eg TR1 1XU."/>.
-					<br />
-					The industry type is 
-					<select name="nl_industry">
-		    
-						<option value="0" selected>Not set</option>     
-						<option value="1">Agriculture and food</option>     
-						<option value="2">Business and finance</option>     
-						<option value="3">Construction</option>     
-						<option value="4">Education</option>     
-						<option value="5">Health</option>     
-						<option value="6" >Hospitality and catering</option>     
-						<option value="7">IT, digital and creative</option>     
-						<option value="8">Life Sciences</option>     
-						<option value="9">Manufacturing</option>     
-						<option value="10">Mining</option>     
-						<option value="11">Real estate and property</option>     
-						<option value="12">Science and technology</option>     
-						<option value="13">Service industries</option>     
-						<option value="14">Transport and distribution</option>     
-						<option value="15">Travel and leisure</option>     
-						<option value="16">Utilities providers</option>     
-						<option value="17">Wholesale and retail</option>
-					  </select>
 
-					  <!-- 
 					  <br />and has 
 					  <select name="nl_age">
 						  <option value="1" selected>not started trading</option>
@@ -94,7 +70,28 @@
 						<option value="3" >increased</option>
 					</select >
 					 in the past year. 
- -->
+
+					 The industry type is 
+					<select name="nl_industry">
+						<option value="0" selected>not set</option>     
+						<option value="1">Agriculture and food</option>     
+						<option value="2">Business and finance</option>     
+						<option value="3">Construction</option>     
+						<option value="4">Education</option>     
+						<option value="5">Health</option>     
+						<option value="6" >Hospitality and catering</option>     
+						<option value="7">IT, digital and creative</option>     
+						<option value="8">Life Sciences</option>     
+						<option value="9">Manufacturing</option>     
+						<option value="10">Mining</option>     
+						<option value="11">Real estate and property</option>     
+						<option value="12">Science and technology</option>     
+						<option value="13">Service industries</option>     
+						<option value="14">Transport and distribution</option>     
+						<option value="15">Travel and leisure</option>     
+						<option value="16">Utilities providers</option>     
+						<option value="17">Wholesale and retail</option>
+					  </select>
 					<!-- <br />I’d describe my business as:
 					Select the three words or phrases that most represent your business
 					<select name="nl_aim" multiple>
@@ -146,7 +143,7 @@
 		</div><!-- /container -->
 		<script src="../public/javascripts/nlform.js" type="application/javascript"></script>
 		<script>
-			//var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
 		</script>
 		{% include "../includes/footer.html" %}
 
