@@ -1,0 +1,152 @@
+{% extends "layout_unbranded2.2.html" %}
+
+{% block pageTitle %}
+  Your Growth Hub
+{% endblock %}
+
+{% block header %}
+  {% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.2.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l" id="">Details of support in {{ location.LA }}</h1>
+
+        <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+  
+           <p>
+            {{ location.LEP }} Growth Hub offers a free business check up and your sector qualifies you for 
+            12 hours of tailored, 1-2-1 support with one or more advisers.</p>
+
+            <p> This advice may cover areas such as leadership development, investment potential, 
+            developing funding applications, IT/digital, marketing, sales, HR and business and financial management and more.
+          <p>
+            {{ location.LEP }} Growth Hub's criteria is 
+            <div class="govuk-inset-text">
+              “<i>{{ location.blurb | safe }}</i> ” 
+          </div>
+   
+            
+          </p>
+          <p> Some filtering here to refine: <a href="nl-growth-hub" target="">GROWTH HUB</a>   </p>
+          <p>
+            You can book an appointment directly using the calendar below, 
+            visit <a href="//{{ location.url }}" target="_blank">the growth hub website</a>
+            or browse more <a href="nl-recommendations" target="_blank">recommendations</a> for your business.
+          </p>
+<!--
+          <p>
+            Your adviser will get to know your business and make tailored recommendations to help you grow and achieve your goals. 
+            They will also help you find further support that is suitable for your business. 
+          </p>
+             <p>
+            View availability and book a meeting with your business adviser.
+          </p>
+        
+            <p class="document-list__item-description">Website: <a href="//{{ location.url }}" target="_blank">{{ location.url }}</a></p>
+             
+            <p class="document-list__item-description">Telephone: {{ location.telephone }}</p>            
+            
+            <p class="document-list__item-description">Email: 
+              <a href="mailto:{{ location.email }}">{{ location.email }}</a></p>
+ -->
+        </div>
+      
+    </div>
+
+    
+    <div class="govuk-grid-column-one-third">  
+      <div class="page-sidebar">
+        <section id="text-5" class="widget widget_text">
+          <h4 class="widget-title">Checklist</h4>
+          <div class="textwidget">
+            <ul>
+              <li>Assess your <strong>business plan</strong></li>
+              <li>Are your <strong>products/services</strong> in demand?</li>
+              <li>Conduct <strong>market research</strong>.</li>
+              <li>Try to sell more to <strong>existing customers</strong></li>
+
+              <li>Review whether you could start <strong>selling online</strong>.</li>
+              <li>Consider your use of<strong> social media marketing</strong>.</li>
+              <li>Consider if there are any factors that are <strong>restricting your potential</strong>. </li>
+              <li>Consider talking to <strong>a mentor</strong>. </li>
+              <li>Can you work with other related or rival businesses to <strong>pool expertise</strong>, manufacturing capability or market knowledge and customer intelligence?</li>
+              </ul>
+          </div>
+        </section>
+      </div>
+  <!-- 
+      {% include 'includes/related_custom_growthHub.html' %}
+     -->  
+    </div>
+
+  </div>
+<!--   <iframe src="https://calendly.com/examplegrowthhub/60min?month=2020-02" style="border: 0" width="1024" height="740" frameborder="0" scrolling="no"></iframe>
+
+ -->
+  <div class="govuk-grid-row">
+    <h2 class="govuk-heading-l" id="subsection-title">
+      Recommendations for your business 
+    </h2>
+    <div class="govuk-grid-column-one-third">
+      <div class="side-crop">
+        <a class="card-link" href="https://www.great.gov.uk/export-opportunities/" target="_blank">
+            <img class="card-image" src="../public/images/image3.png" alt="">
+            <div class="card-inner">
+                <h3 class="heading-large">Find exporting opportunities</h3>
+            </div>
+          </a>
+        </div>
+        <p>
+          Overseas buyers are looking for products and services from the UK. 
+          Use this tool to find the right export opportunities for your business.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <div class="side-crop">
+        <a class="card-link" href="https://www.axa.co.uk/business-insurance/business-guardian-angel/sme-guide-to-landing-public-sector-contracts/" target="_blank">
+          <img class="card-image" src="../public/images/image1.png" alt="">
+          <div class="card-inner">
+            <h3 class="heading-large">Sell to the Public Sector</h3>
+          </div>
+        </a>
+      </div>
+        
+        <p>
+          The UK Government is committed to awarding public sector contracts to small businesses.
+          Learn how to research, price and write winning bids.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+      <div class="side-crop">
+        <a class="card-link" href="https://www.great.gov.uk/export-opportunities/" target="_blank">
+            <img class="card-image" src="../public/images/image2.png" alt="">
+            <div class="card-inner">
+                <h3 class="heading-large">Find talent in your area</h3>
+            </div>
+        </a>
+
+      </div>
+        <p>
+          Build a team of motivated, skilled individuals by offering apprenticeships.
+          Financial support is available for small businesses like yours.
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-9"></p>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -349,3 +349,39 @@ h1, h2, h3, h4, h5 {
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-header__logotype-text {
     font-family:"PT Sans Narrow";
 }
+
+.nl-submit-wrap {
+	margin-top: 0.4em;
+}
+
+.nl-form .nl-submit {
+	line-height: 3;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	background: #d53880;
+	color: #fff;
+	//padding: 0 1em 0 0;
+	//font-size: 40%;
+	font-weight: bold;
+	letter-spacing: 3px;
+}
+
+.nl-submit:before {
+	content: " ";
+	color: #fff;
+	float: left;
+	padding: 0 0.7em;
+	margin: 0 0.8em 0 0;
+	background: #c72f76;
+}
+
+.no-touch .nl-form .nl-submit:hover,
+.no-touch .nl-form .nl-submit:active {
+	background: #c72f76;
+}
+
+.no-touch .nl-form .nl-submit:hover:before {
+	background: #c72f76;
+}
+

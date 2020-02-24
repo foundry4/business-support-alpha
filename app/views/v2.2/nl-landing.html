@@ -1,0 +1,153 @@
+{% extends "layout_unbranded2.2.html" %}
+
+{% block pageTitle %}
+Your Growth Hub
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.2.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l" id="">Tell us about your business</h1>
+
+        <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+            <p>
+				To help us identify specific support for your business, tell us a little bit more about it
+    		</p>
+ 
+
+            <form id="nl-form" class="nl-form" action="nl-branch">
+             <!--    
+                <input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode" data-subline="Enter your full postcode,<br/> eg TR1 1XU."/>.
+                 -->
+                <fieldset class="govuk-fieldset" aria-describedby="postcode-hint">
+
+                    <legend class="govuk-fieldset__legend govuk-label--xl">
+                     </legend>
+                            
+                    <div class="">
+                      <label class="govuk-label" for="postcode">
+                        My business is based in
+                      </label>
+                      <span id="postcode-hint" class="govuk-hint">
+                        Enter the postcode of your business (for example TR1 1XU).
+                      </span>
+                      <input data-required="true" class="govuk-input govuk-input--width-10" id="nl_postcode" name="nl_postcode" type="text" value="{{ data['postcode'] }}">
+                    </div>
+                  </fieldset>                 
+                <br />
+                <p>
+                    The industry type is 
+                </p>
+                <select  class="govuk-select" name="nl_industry">
+        
+                    <option value="0" selected>Not set</option>     
+                    <option value="1">Agriculture and food</option>     
+                    <option value="2">Business and finance</option>     
+                    <option value="3">Construction</option>     
+                    <option value="4">Education</option>     
+                    <option value="5">Health</option>     
+                    <option value="6" >Hospitality and catering</option>     
+                    <option value="7">IT, digital and creative</option>     
+                    <option value="8">Life Sciences</option>     
+                    <option value="9">Manufacturing</option>     
+                    <option value="10">Mining</option>     
+                    <option value="11">Real estate and property</option>     
+                    <option value="12">Science and technology</option>     
+                    <option value="13">Service industries</option>     
+                    <option value="14">Transport and distribution</option>     
+                    <option value="15">Travel and leisure</option>     
+                    <option value="16">Utilities providers</option>     
+                    <option value="17">Wholesale and retail</option>
+                  </select>
+
+                  <!-- 
+                  <br />and has 
+                  <select name="nl_age">
+                      <option value="1" selected>not started trading</option>
+                      <option value="2">been trading for under a year</option>
+                      <option value="3">been trading for 1-2 years</option>
+                      <option value="4">been trading for 2-5 years</option>
+                      <option value="5">been trading for over 5 years</option>
+                    </select>.
+                
+                <br />It employs
+                <input type="text" id="nl_count" name="nl_count" value="10" placeholder="10" data-subline="How many people work in the business?"/>
+                people.
+                
+                It has an annual turnover of 
+                <select name="nl_turnover">
+                    <option value="1" selected>under £200k</option>
+                    <option value="2" >£200k-£1 million</option>
+                    <option value="3" >over £1 million</option>
+                </select >
+                which has 
+                <select name="nl_turnover_change">
+                    <option value="1" >decreased</option>
+                    <option value="2" selected>stayed the same</option>
+                    <option value="3" >increased</option>
+                </select >
+                 in the past year. 
+-->
+
+                <br />
+                <br />
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="description-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            I’d describe my business as:
+                        </h1>
+                      </legend>
+                      <span id="description-hint" class="govuk-hint">
+                        Select the three words or phrases that most represent your business
+                      </span>
+                      <div class="govuk-checkboxes">
+                        {% for item in description %}
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="description-{{ loop.index }}" name="nl_description" type="checkbox" value="{{ item }}">
+                          <label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
+                            {{ item }}
+                          </label>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </fieldset>
+                  </div>
+                   
+                <div class="nl-submit-wrap">
+                    <button class="nl-submit" type="submit">Let's Grow!</button>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div class="nl-overlay"></div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <div class="govuk-grid-column-one-third">
+    </div>
+
+</div>
+
+
+<div class="govuk-grid-row">
+</div>
+
+
+
+{% endblock %}
