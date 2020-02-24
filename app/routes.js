@@ -723,20 +723,25 @@ router.get('/nl-branch', function (req, res, next) {
           }
 
           if (selectedLA) {
+            console.log(selectedLA);
+            
             // use this value to look up the name of the LEP
             var lepDictionary = res.app.locals.dictionary;
             postcodeLocation = lepDictionary[selectedLA];
             var hub = res.app.locals.hubs[postcodeLocation.LEP]
 
-            // do the same for LEP contacts
-            postcodeLocation.url = hub.url;
+              if(postcodeLocation && hub){
+                // do the same for LEP contacts
+                postcodeLocation.url = hub.url;
+    
+                postcodeLocation.telephone = hub.telephone;
+                if (hub.email !== "") {
+                  postcodeLocation.email = hub.email;
+                } else {
+                  postcodeLocation.email = "adviser@" + hub.url;
+                }
 
-            postcodeLocation.telephone = hub.telephone;
-            if (hub.email !== "") {
-              postcodeLocation.email = hub.email;
-            } else {
-              postcodeLocation.email = "adviser@" + hub.url;
-            }
+              }
           }
 
           // TRIAGE
@@ -985,13 +990,17 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
             postcodeLocation = lepDictionary[selectedLA];
             var hub = res.app.locals.hubs[postcodeLocation.LEP]
 
-            // do the same for LEP contacts
-            postcodeLocation.url = hub.url;
-            postcodeLocation.telephone = hub.telephone;
-            if (hub.email !== "") {
-              postcodeLocation.email = hub.email;
-            } else {
-              postcodeLocation.email = "adviser@" + hub.url;
+            if(postcodeLocation && hub){
+              // do the same for LEP contacts
+              postcodeLocation.url = hub.url;
+  
+              postcodeLocation.telephone = hub.telephone;
+              if (hub.email !== "") {
+                postcodeLocation.email = hub.email;
+              } else {
+                postcodeLocation.email = "adviser@" + hub.url;
+              }
+
             }
           }
           postcodeLocation.region = region;
@@ -1267,13 +1276,17 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
             postcodeLocation = lepDictionary[selectedLA];
             var hub = res.app.locals.hubs[postcodeLocation.LEP]
 
-            // do the same for LEP contacts
-            postcodeLocation.url = hub.url;
-            postcodeLocation.telephone = hub.telephone;
-            if (hub.email !== "") {
-              postcodeLocation.email = hub.email;
-            } else {
-              postcodeLocation.email = "adviser@" + hub.url;
+            if(postcodeLocation && hub){
+              // do the same for LEP contacts
+              postcodeLocation.url = hub.url;
+  
+              postcodeLocation.telephone = hub.telephone;
+              if (hub.email !== "") {
+                postcodeLocation.email = hub.email;
+              } else {
+                postcodeLocation.email = "adviser@" + hub.url;
+              }
+
             }
           }
 
