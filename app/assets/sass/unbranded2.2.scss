@@ -15,7 +15,7 @@
 $govuk-global-styles: true;
 
 // Override the govuk-frontend font stack
-$govuk-font-family: "Lato", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+$govuk-font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
 // Override the canvas background colour, which is normally grey to blend with
 // the GOV.UK footer.
@@ -332,7 +332,8 @@ h5 {
 }
 
 .page-sidebar h4 {
-    font-family:"Raleway";
+    font-family:"PT Sans Narrow";
+    text-transform: uppercase;
     margin: 20px;
     padding: 4px;
     line-height: 0.9;
@@ -342,9 +343,9 @@ h5 {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family:"Raleway";
+    font-family:"PT Sans Narrow";
 }
 
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-header__logotype-text {
-    font-family:"Raleway";
+    font-family:"PT Sans Narrow";
 }

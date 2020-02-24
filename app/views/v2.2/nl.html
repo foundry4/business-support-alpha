@@ -9,7 +9,7 @@
 		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		
-		<link href="https://fonts.googleapis.com/css?family=Lato|Raleway&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Open+sans|PT+Sans+Narrow&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_white.css" />
 		<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_component_white.css" />
 		<link href="../public/stylesheets/unbranded2.2.css" media="all" rel="stylesheet" type="text/css">
@@ -39,15 +39,39 @@
 					
 					My business is based in
 					<input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode" data-subline="Enter your full postcode,<br/> eg TR1 1XU."/>.
-					
-					<br />and has 
-					<select name="nl_age">
-						<option value="1" selected>not started trading</option>
-						<option value="2">been trading for under a year</option>
-						<option value="3">been trading for 1-2 years</option>
-						<option value="4">been trading for 2-5 years</option>
-						<option value="5">been trading for over 5 years</option>
-					</select>.
+					<br />
+					The industry type is 
+					<select name="nl_industry">
+		    
+						<option value="0" selected>Not set</option>     
+						<option value="1">Agriculture and food</option>     
+						<option value="2">Business and finance</option>     
+						<option value="3">Construction</option>     
+						<option value="4">Education</option>     
+						<option value="5">Health</option>     
+						<option value="6" >Hospitality and catering</option>     
+						<option value="7">IT, digital and creative</option>     
+						<option value="8">Life Sciences</option>     
+						<option value="9">Manufacturing</option>     
+						<option value="10">Mining</option>     
+						<option value="11">Real estate and property</option>     
+						<option value="12">Science and technology</option>     
+						<option value="13">Service industries</option>     
+						<option value="14">Transport and distribution</option>     
+						<option value="15">Travel and leisure</option>     
+						<option value="16">Utilities providers</option>     
+						<option value="17">Wholesale and retail</option>
+					  </select>
+
+					  <!-- 
+					  <br />and has 
+					  <select name="nl_age">
+						  <option value="1" selected>not started trading</option>
+						  <option value="2">been trading for under a year</option>
+						  <option value="3">been trading for 1-2 years</option>
+						  <option value="4">been trading for 2-5 years</option>
+						  <option value="5">been trading for over 5 years</option>
+						</select>.
 					
 					<br />It employs
 					<input type="text" id="nl_count" name="nl_count" value="10" placeholder="10" data-subline="How many people work in the business?"/>
@@ -66,7 +90,7 @@
 						<option value="3" >increased</option>
 					</select >
 					 in the past year. 
-
+ -->
 					<!-- <br />I’d describe my business as:
 					Select the three words or phrases that most represent your business
 					<select name="nl_aim" multiple>
@@ -82,7 +106,7 @@
 					</select >. -->
 					<br />
 					<br />
-
+<!-- 
 					<div class="govuk-form-group">
 						<fieldset class="govuk-fieldset" aria-describedby="description-hint">
 						  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -105,6 +129,7 @@
 						  </div>
 						</fieldset>
 					  </div>
+					   -->
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit">Let's Grow!</button>
 					</div>

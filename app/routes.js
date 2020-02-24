@@ -73,6 +73,28 @@ var description = [
   "Powered by technology"
 ];
 
+  // INDUSTRY SELECT MENU
+  var industries = [
+    null,
+    'agriculture-and-food',
+    'business-and-finance',
+    'construction',
+    'education',
+    'health',
+    'hospitality-and-catering',
+    'information-technology-digital-and-creative',
+    'life-sciences',
+    'manufacturing',
+    'mining',
+    'real-estate-and-property',
+    'science-and-technology',
+    'service-industries',
+    'transport-and-distribution',
+    'travel-and-leisure',
+    'utilities-providers',
+    'wholesale-and-retail'
+  ];
+
 var isLive = process.env.isLive;
 var country = "England";
 var businessObj = { age: ages[2], size: 5 };
@@ -304,27 +326,7 @@ router.get('/summary', function (req, res, next) {
     displayNames.business_stages = stages_display[businessStage];
   }
 
-  // INDUSTRY SELECT MENU
-  var industries = [
-    null,
-    'agriculture-and-food',
-    'business-and-finance',
-    'construction',
-    'education',
-    'health',
-    'hospitality-and-catering',
-    'information-technology-digital-and-creative',
-    'life-sciences',
-    'manufacturing',
-    'mining',
-    'real-estate-and-property',
-    'science-and-technology',
-    'service-industries',
-    'transport-and-distribution',
-    'travel-and-leisure',
-    'utilities-providers',
-    'wholesale-and-retail'
-  ];
+
 
   var industryType = req.session.data['industryType'];
   var industryArray = [];
@@ -728,6 +730,20 @@ router.get('/nl-branch', function (req, res, next) {
 
             // do the same for LEP contacts
             postcodeLocation.url = hub.url;
+            postcodeLocation.blurb = `Examples of eligible businesses include: 
+            <br/>
+            retail,
+            <br/> hospitality & tourism (B&Bs, hotels, cafes, restaurants, etc),
+            <br/> health & beauty (hairdressers, beauticians, aesthetics, personal trainers, gyms, etc) 
+            <br/> and agriculture (farming, forestry and fisheries).
+            <br/>
+            <br/>
+            This isn’t an exhaustive list. 
+            If you’re not sure if your business is eligible, 
+            please contact us on FREE* on 0844 257 84 50. 
+            If it’s not we’ll link you into other support where it’s available.`;
+
+
             postcodeLocation.telephone = hub.telephone;
             if (hub.email !== "") {
               postcodeLocation.email = hub.email;
@@ -1063,6 +1079,7 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
 router.get('/v2.2/nl', function (req, res, next) {
   res.render('v2.2/nl', {
     isLive: isLive,
+    industries:industries,
     description: description
   });
 });
@@ -1087,7 +1104,7 @@ router.get('/v2.2/nl-columns', function (req, res, next) {
     location: postcodeLocation
   });
 });
-
+ 
 
 router.get('/v2.2/nl-growth-hub', function (req, res, next) {
   res.render('v2.2/nl-growth-hub', {
@@ -1217,7 +1234,6 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
             postcodeLocation = lepDictionary[selectedLA];
             var hub = res.app.locals.hubs[postcodeLocation.LEP]
 
-            postcodeLocation.blurb = "Established. (Online portal support for all business stages including Pre-starts and Start up; one-to-one support for established businesses through team of Growth Hub Connectors - ideally 3 years trading but younger will be considered where there is clear growth ambition.)";
             // do the same for LEP contacts
             postcodeLocation.url = hub.url;
             postcodeLocation.telephone = hub.telephone;
@@ -1228,6 +1244,9 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
             }
           }
 
+          res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
+
+          /* 
           // TRIAGE
           if (businessAge < 3) {
             res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
@@ -1241,7 +1260,7 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
           } else {
             res.redirect('nl-recommendations');                 // LOW_PRODUCTIVE: getting neither (!)
           }
-
+ */
         } else {
           res.redirect('/error');
 
