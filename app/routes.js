@@ -730,19 +730,6 @@ router.get('/nl-branch', function (req, res, next) {
 
             // do the same for LEP contacts
             postcodeLocation.url = hub.url;
-            postcodeLocation.blurb = `Examples of eligible businesses include: 
-            <br/>
-            retail,
-            <br/> hospitality & tourism (B&Bs, hotels, cafes, restaurants, etc),
-            <br/> health & beauty (hairdressers, beauticians, aesthetics, personal trainers, gyms, etc) 
-            <br/> and agriculture (farming, forestry and fisheries).
-            <br/>
-            <br/>
-            This isn’t an exhaustive list. 
-            If you’re not sure if your business is eligible, 
-            please contact us on FREE* on 0844 257 84 50. 
-            If it’s not we’ll link you into other support where it’s available.`;
-
 
             postcodeLocation.telephone = hub.telephone;
             if (hub.email !== "") {
@@ -758,7 +745,8 @@ router.get('/nl-branch', function (req, res, next) {
           } else if (country !== "England") {
             res.redirect('nl-country');               // getting starters & companies under 1 year old
           } else if (peopleCount <= 4) {
-            res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+            res.redirect('nl-recommendations');           // companies over 1 year old
+            //res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
             //res.redirect('nl-one');                     // 'one man band' 
           } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
             res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
@@ -783,7 +771,8 @@ router.get('/nl-branch', function (req, res, next) {
         } else if (country !== "England") {
           res.redirect('nl-country');               // getting starters & companies under 1 year old
         } else if (peopleCount <= 4) {
-          res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+          res.redirect('nl-recommendations');               // getting starters & companies under 1 year old
+          //res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
           //res.redirect('nl-one');                     // 'one man band' 
         } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
           res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
@@ -1017,7 +1006,8 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
           } else if (country !== "England") {
             res.redirect('nl-country');                 // getting starters & companies under 1 year old
           } else if (peopleCount <= 4) {
-            res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+            res.redirect('nl-recommendations');               // getting starters & companies under 1 year old
+            //res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
             //res.redirect('nl-one');                     // 'one man band' 
           } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
             res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
@@ -1046,7 +1036,8 @@ router.get('/v2.1/nl-branch', function (req, res, next) {
         } else if (country !== "England") {
           res.redirect('nl-country');               // getting starters & companies under 1 year old
         } else if (peopleCount <= 4) {
-          res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+          res.redirect('nl-recommendations');               // getting starters & companies under 1 year old
+          //res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
           //res.redirect('nl-one');                     // 'one man band' 
         } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
           res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
@@ -1107,6 +1098,19 @@ router.get('/v2.2/nl-columns', function (req, res, next) {
  
 
 router.get('/v2.2/nl-growth-hub', function (req, res, next) {
+  postcodeLocation.blurb = `Examples of eligible businesses include: 
+  <br/>
+  retail,
+  <br/> hospitality & tourism (B&Bs, hotels, cafes, restaurants, etc),
+  <br/> health & beauty (hairdressers, beauticians, aesthetics, personal trainers, gyms, etc) 
+  <br/> and agriculture (farming, forestry and fisheries).
+  <br/>
+  <br/>
+  This isn’t an exhaustive list. 
+  If you’re not sure if your business is eligible, 
+  please contact us on FREE* on 0844 257 84 50. 
+  If it’s not we’ll link you into other support where it’s available.`;
+
   res.render('v2.2/nl-growth-hub', {
     isLive: isLive,
     display: displayNames,
@@ -1278,7 +1282,8 @@ router.get('/v2.2/nl-branch', function (req, res, next) {
         } else if (country !== "England") {
           res.redirect('nl-country');               // getting starters & companies under 1 year old
         } else if (peopleCount <= 4) {
-          res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
+          res.redirect('nl-recommendations');               // getting starters & companies under 1 year old
+          //res.redirect('nl-pre-start');               // getting starters & companies under 1 year old
           //res.redirect('nl-one');                     // 'one man band' 
         } else if (turnover > 1 && turnoverChange > 2 && isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
           res.redirect('nl-growth-hub');              // READY TO SCALE: target audience 
