@@ -27,8 +27,9 @@
           </p>
            
 
-            <p> This advice may cover areas such as leadership development, investment potential, 
-            developing funding applications, IT/digital, marketing, sales, HR and business and financial management and more.
+            <p> 
+
+            </p> 
 <!--           <p>
             {{ location.LEP }} Growth Hub's criteria is 
             <div class="govuk-inset-text">
@@ -43,14 +44,14 @@
               <fieldset class="govuk-fieldset" aria-describedby="description-hint">
 						  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 							<h1 class="govuk-fieldset__heading">
-                Growth Hub support criteria:
+                Growth Hub support:
 							</h1>
             </legend>
 						  <span id="description-hint" class="govuk-hint">
-                Examples of eligible businesses include:  
+               Pick the type of support you are interested in:  
               </span>
 						  <div class="govuk-checkboxes">
-							{% for item in location.criteria %}
+							{% for item in location.interest %}
 							<div class="govuk-checkboxes__item">
 							  <input class="govuk-checkboxes__input" id="description-{{ loop.index }}" name="nl_description" type="checkbox" value="{{ item }}">
 							  <label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
@@ -61,15 +62,15 @@
             </div>
           </fieldset>
         </div>
-            <p>
+            <!-- <p>
               This isn’t an exhaustive list. 
     If you’re not sure if your business is eligible, 
     please contact us FREE* on 0844 257 84 50. 
     If it’s not we’ll link you into other support where it’s available.
-            </p>
+            </p> -->
         
         <div class="nl-submit-wrap">
-          <button class="nl-submit" type="submit">Let's Grow!</button>
+          <button class="nl-submit" type="submit">Get custom support</button>
         </div>
         
       </form>
@@ -132,6 +133,20 @@
           </div>
         </section>
       </div>
+
+      <br/>
+      <br/>
+      <div class="page-sidebar">
+        <section id="text-5" class="widget widget_text">
+          <h4 class="widget-title">Contact The Growth Hub</h4>
+          <div class="textwidget">
+            <p>To speak to one of our advisors, call:</p>
+            <h4>{{ location.telephone }}</h4>
+            <p>or email:<br>
+              <a href="mailto:{{ location.email }}">{{ location.email }}</a></p>
+          </div>
+        </section>
+      </div>
   <!-- 
       {% include 'includes/related_custom_growthHub.html' %}
      -->  
@@ -142,7 +157,7 @@
 
  -->
  <p class="govuk-body govuk-!-margin-bottom-9"></p>
- 
+<!-- 
   <div class="govuk-grid-row">
     <h2 class="govuk-heading-l" id="subsection-title">
       Recommendations for your business 
@@ -199,6 +214,6 @@
 
 </div>
 
-
+ -->
 
 {% endblock %}

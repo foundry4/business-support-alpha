@@ -712,8 +712,8 @@ router.get('/nl-branch', function (req, res, next) {
 
           // loop through all the areas and look for codes that match the ""
           for (var area in areas) {
-            console.log(area);
-            console.log(area.codes);
+            console.log("area "+area);
+            console.log(areas[area].codes);
             
             if (areas[area].codes && areas[area].codes["local-authority-eng"]) {
               // step back up to the parent and extract the actual _gss_ values/
@@ -1109,12 +1109,16 @@ router.get('/v2.2/nl-growth-hub-details', function (req, res, next) {
   please contact us FREE* on 0844 257 84 50. 
   If it’s not we’ll link you into other support where it’s available.`;
 
-  postcodeLocation.criteria = [
-    "retail",
-    "hospitality & tourism",
-    "health & beauty",
-    "agriculture",
-    "nuclear supply chain"
+  postcodeLocation.interest = [
+    "leadership development",
+    "investment potential",
+    "developing funding applications",
+    "IT/digital",
+    "marketing",
+    "sales",
+    "human resources",
+    "business management",
+    "financial management"
   ];
 
   res.render('v2.2/nl-growth-hub-details', {
