@@ -29,16 +29,56 @@
 
             <p> This advice may cover areas such as leadership development, investment potential, 
             developing funding applications, IT/digital, marketing, sales, HR and business and financial management and more.
-          <p>
+<!--           <p>
             {{ location.LEP }} Growth Hub's criteria is 
             <div class="govuk-inset-text">
               “<i>{{ location.blurb | safe }}</i> ” 
           </div>
    
             
-          </p>
+          </p> -->
+          <form id="nl-form" class="nl-form" action="nl-growth-hub">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="description-hint">
+						  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+                Growth Hub support criteria:
+							</h1>
+            </legend>
+						  <span id="description-hint" class="govuk-hint">
+                Examples of eligible businesses include:  
+              </span>
+						  <div class="govuk-checkboxes">
+							{% for item in location.criteria %}
+							<div class="govuk-checkboxes__item">
+							  <input class="govuk-checkboxes__input" id="description-{{ loop.index }}" name="nl_description" type="checkbox" value="{{ item }}">
+							  <label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
+                  {{ item }}
+							  </label>
+							</div>
+							{% endfor %}
+            </div>
+          </fieldset>
+        </div>
+            <p>
+              This isn’t an exhaustive list. 
+    If you’re not sure if your business is eligible, 
+    please contact us FREE* on 0844 257 84 50. 
+    If it’s not we’ll link you into other support where it’s available.
+            </p>
+        
+        <div class="nl-submit-wrap">
+          <button class="nl-submit" type="submit">Let's Grow!</button>
+        </div>
+        
+      </form>
+<!-- 
           <p> Some filtering here to refine: <a href="nl-growth-hub" target="">GROWTH HUB</a>   </p>
-<!--           <p>
+
+ -->
+
+          <!--           <p>
             You can book an appointment directly using the calendar below, 
             visit <a href="//{{ location.url }}" target="_blank">the growth hub website</a>
             or browse more <a href="nl-recommendations" target="_blank">recommendations</a> for your business.
@@ -101,6 +141,8 @@
 <!--   <iframe src="https://calendly.com/examplegrowthhub/60min?month=2020-02" style="border: 0" width="1024" height="740" frameborder="0" scrolling="no"></iframe>
 
  -->
+ <p class="govuk-body govuk-!-margin-bottom-9"></p>
+ 
   <div class="govuk-grid-row">
     <h2 class="govuk-heading-l" id="subsection-title">
       Recommendations for your business 

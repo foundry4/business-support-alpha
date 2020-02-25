@@ -116,7 +116,7 @@ var postcodeLocation = {
   <br/>
   This isn’t an exhaustive list. 
   If you’re not sure if your business is eligible, 
-  please contact us on FREE* on 0844 257 84 50. 
+  please contact us FREE* on 0844 257 84 50. 
   If it’s not we’ll link you into other support where it’s available.`
 /*   Established.
   (Online portal support for all business stages including Pre-starts and Start up;
@@ -712,6 +712,9 @@ router.get('/nl-branch', function (req, res, next) {
 
           // loop through all the areas and look for codes that match the ""
           for (var area in areas) {
+            console.log(area);
+            console.log(area.codes);
+            
             if (areas[area].codes && areas[area].codes["local-authority-eng"]) {
               // step back up to the parent and extract the actual _gss_ values/
               selectedLA = areas[area].codes.gss;
@@ -1103,8 +1106,17 @@ router.get('/v2.2/nl-growth-hub-details', function (req, res, next) {
   <br/>
   This isn’t an exhaustive list. 
   If you’re not sure if your business is eligible, 
-  please contact us on FREE* on 0844 257 84 50. 
+  please contact us FREE* on 0844 257 84 50. 
   If it’s not we’ll link you into other support where it’s available.`;
+
+  postcodeLocation.criteria = [
+    "retail",
+    "hospitality & tourism",
+    "health & beauty",
+    "agriculture",
+    "nuclear supply chain"
+  ];
+
   res.render('v2.2/nl-growth-hub-details', {
     isLive: isLive,
     industries:industries,
@@ -1136,18 +1148,6 @@ router.get('/v2.2/nl-columns', function (req, res, next) {
  
 
 router.get('/v2.2/nl-growth-hub', function (req, res, next) {
-  postcodeLocation.blurb = `Examples of eligible businesses include: 
-  <br/>
-  retail,
-  <br/> hospitality & tourism (B&Bs, hotels, cafes, restaurants, etc),
-  <br/> health & beauty (hairdressers, beauticians, aesthetics, personal trainers, gyms, etc) 
-  <br/> and agriculture (farming, forestry and fisheries).
-  <br/>
-  <br/>
-  This isn’t an exhaustive list. 
-  If you’re not sure if your business is eligible, 
-  please contact us on FREE* on 0844 257 84 50. 
-  If it’s not we’ll link you into other support where it’s available.`;
 
   res.render('v2.2/nl-growth-hub', {
     isLive: isLive,
