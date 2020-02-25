@@ -77,8 +77,8 @@ a.phone::before {
 }
 
 .app-related-items {
-    border-top: 2px solid 
-    #1d70b8;
+   /*  border-top: 2px solid 
+    #1d70b8; */
     padding-top: 10px;
 }
 
@@ -534,4 +534,27 @@ h1.brand a {
 	line-height: 1.3;
 	margin: 0;
 	font-weight: 600;
+}
+
+
+.bookmark {
+    background-color: 
+    #24135f;
+    color:
+    #eee;
+    word-break: break-word;
+    border: 1px solid 
+    #eee;
+    padding: 1rem;
+    border-radius:  6px;
+    margin:0 auto;
+    text-align:center;
+}
+
+h5 {
+    font-size: 1.5625rem;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica";
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: .5rem;
 }
