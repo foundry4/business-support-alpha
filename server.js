@@ -25,6 +25,7 @@ const packageJson = require('./package.json')
 const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
+const routesOld = require('./app/routesOld.js')
 
 // Variables for v6 backwards compatibility
 // Set false by default, then turn on if we find /app/v6/routes.js
@@ -257,8 +258,12 @@ if (typeof (routes) !== 'function') {
   console.log(routes.bind)
   console.log('Warning: the use of bind in routes is deprecated - please check the Prototype Kit documentation for writing routes.')
   routes.bind(app)
+  console.log("Loading routes from  previous prototypes");
+  
+  routesOld.bind(app)
 } else {
   app.use('/', routes)
+  app.use('/', routesOld)
 }
 
 if (useDocumentation) {

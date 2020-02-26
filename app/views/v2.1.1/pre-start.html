@@ -1,0 +1,165 @@
+{% extends "layout_business_support.html" %}
+
+{% block pageTitle %}
+Starting your business
+{% endblock %}
+
+{% block header %}
+{% include "includes/header_business_support.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.1.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l" id="start">Starting your business
+      {% if business.country!=="England" %}
+      in {{ business.country }}
+      {% endif %}
+    </h1>
+
+    <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+
+
+      <p>
+        Advice and financial help from government-backed schemes is available in {{ location.LA }}.
+      </p>
+
+      <p>
+        Because your business has <strong>{{ business.age }}</strong> and employs <strong>{{ business.size }}</strong>
+        {% if business.size==1 %}
+        person,
+        {% else %}
+        people,
+        {% endif %}
+        you may benefit from contacting
+
+        {% if business.country=="England" %}
+        the <a href="https://www.businesssupport.gov.uk/">Business Support Helpline</a>.
+      </p>
+      <p>
+        The Business Support Helpline’s free services include:
+      </p>
+      {% endif %}
+
+      {% if business.country=="Scotland" %}
+      <a rel="external" href="http://www.bgateway.com">Business Gateway</a> (Scotland).
+      </p>
+      <p>
+        Business Gateway’s free services include:
+      </p>
+      {% endif %}
+
+      {% if business.country=="Wales" %}
+      <a href="http://business.wales.gov.uk/starting-business">Business Wales</a>.
+      </p>
+      <p>
+        Business Wales’s free services include:
+      </p>
+      {% endif %}
+
+      {% if business.country=="Northern Ireland" %}
+      <a href="https://www.nibusinessinfo.co.uk/start">Invest Northern Ireland</a>.
+      </p>
+      <p>
+        Invest Northern Ireland’s free services include:
+      </p>
+      {% endif %}
+
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>help with tax</li>
+        <li>advice on writing a business plan</li>
+        <li>guidance on hiring and paying staff</li>
+      </ul>
+
+
+      {% if business.country=="England" %}
+
+      <div class="contact">
+        <p><strong>Business Support Helpline (England)</strong>
+          <br>
+          <br>
+          <a href="mailto:enquiries@businesssupporthelpline.org">enquiries@businesssupporthelpline.org</a><br>
+          Telephone: 0300 456 3565
+          <br>
+          Monday to Friday, 9am to 6pm<br>
+      </div>
+
+      <p>The Business Support Helpline for England is also on:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a rel="external" href="https://lc.chat/now/10701242/">web chat</a></li>
+        <li><a rel="external" href="https://twitter.com/BusinessGov">Twitter</a></li>
+        <li><a rel="external" href="https://www.facebook.com/BusinessSupportGov">Facebook</a></li>
+        <li><a rel="external" href="https://www.youtube.com/user/BusinessSupportGov">YouTube</a></li>
+      </ul>
+      <p>
+        You can also find free support, advice and sources of finance
+        through your <a href="http://www.lepnetwork.net/growth-hubs/">local Growth Hub</a>.
+      </p>
+      {% endif %}
+
+
+
+      {% if business.country=="Scotland" %}
+      <div class="contact">
+        <p><strong>Business Gateway (Scotland)</strong>
+          <br>
+          <br>
+          Telephone: 0300 013 4753<br>
+          Textphone: 0800 023 2071<br>
+          Monday to Friday, 8am to 6pm<br>
+      </div>
+      {% endif %}
+
+
+
+      {% if business.country=="Wales" %}
+      <div class="contact">
+        <p>
+          <strong>Business Wales Helpline</strong>
+          <br>
+          <br>
+          Telephone: 0300 060 3000<br>
+          Monday to Friday, 8:30am to 5:30pm<br>
+      </div>
+      {% endif %}
+
+
+
+      {% if business.country=="Northern Ireland" %}
+      <div class="contact">
+        <p><strong>Invest Northern Ireland</strong>
+          <br>
+          <br>
+          Telephone: 0800 181 4422<br>
+          Monday to Friday, 8:30am to 5pm<br>
+      </div>
+      {% endif %}
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <!-- <p>
+            Inspirational copy goes here.
+        </p> -->
+  </div>
+
+</div>
+{% endblock %}

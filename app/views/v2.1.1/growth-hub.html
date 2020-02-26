@@ -1,0 +1,119 @@
+{% extends "layout_business_support.html" %}
+
+{% block pageTitle %}
+Your Growth Hub
+{% endblock %}
+
+{% block header %}
+{% include "includes/header_business_support.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_2.1.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l" id="">Speak to a business adviser
+      <!-- in {{ location.region }} -->
+    </h1>
+
+    <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+
+      <p>
+        Because you've been <strong>trading for over a year</strong>,
+        and because your turnover is <strong>over £200k</strong> and has <strong>increased</strong>,
+        you may benefit from speaking with a free business adviser at the {{ location.LEP }} Growth Hub.
+      </p>
+      <p>
+        Your adviser will get to know your business and make tailored recommendations to help you grow and achieve your
+        goals. They will also help you find further support that is suitable for your business.
+      </p>
+      <p>
+        View availability and book a meeting with your business adviser.
+      </p>
+
+      <p class="document-list__item-description">Website: <a href="//{{ location.url }}"
+          target="_blank">{{ location.url }}</a></p>
+
+      <p class="document-list__item-description">Telephone: {{ location.telephone }}</p>
+
+      <p class="document-list__item-description">Email: <a href="mailto:{{ location.email }}">{{ location.email }}</a>
+      </p>
+      <!--             
+            <form id="main" action="confirmation" method="post" class="form" novalidate>
+              
+                    <div class="govuk-form-group"> 
+                      <fieldset class="govuk-fieldset" aria-describedby="Email-hint">
+              
+                        <legend class="govuk-fieldset__legend govuk-label--m">
+                          <h1 class="govuk-fieldset__heading">
+                             Make an appointment with a business adviser
+                          </h1>
+                        </legend>
+                                
+                        <div class="">
+                          <label class="govuk-label" for="email">
+                            Email address or telephone
+                          </label>
+                          <span id="email-hint" class="govuk-hint">
+                            Enter your email address or contact phone number.
+                            We will email the Growth Hub with your details and one of their advisers will be in touch.
+                          </span>
+                          
+                          <input data-required="true" class="govuk-input govuk-input--width-10" id="email" name="postcode" type="text" value="{{ data['postcode'] }}">
+                          <br/>
+                              
+                       {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+                       {{ govukCharacterCount({
+                         name: "freetext",
+                         id: "freetext",
+                         maxlength: 200,
+                         label: {
+                           text: "Enter your message..."
+                         },
+                         hint: {
+                           text: "Do not include personal or financial information."
+                         }
+                       }) }}
+                        </fieldset> 
+              
+              
+                      </div>
+                      <br/>
+              
+                      <button type="submit" class="govuk-button" id="submit">
+                        Request appointment
+                      </button>
+              
+                    </form>
+                     -->
+      <!-- 
+                    <iframe src="https://calendar.google.com/calendar/embed?src=notbinary.co.uk_69rb59k6mm1bfngr6odi9sm6ik%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+           -->
+    </div>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+    <div class="bookmark">
+      <section id="text-5" class="widget widget_text">
+        <h5 class="widget-title">Bookmark this page</h5>
+
+      </section>
+    </div>
+
+    {% include 'includes/related_custom_growthHub2.1.html' %}
+
+  </div>
+
+</div>
+<iframe src="https://calendly.com/examplegrowthhub/60min?month=2020-02" style="border: 0" width="1024" height="740"
+  frameborder="0" scrolling="no"></iframe>
+
+{% endblock %}
