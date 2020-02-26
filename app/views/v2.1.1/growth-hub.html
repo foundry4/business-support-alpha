@@ -43,58 +43,7 @@ Your Growth Hub
 
       <p class="document-list__item-description">Email: <a href="mailto:{{ location.email }}">{{ location.email }}</a>
       </p>
-      <!--             
-            <form id="main" action="confirmation" method="post" class="form" novalidate>
-              
-                    <div class="govuk-form-group"> 
-                      <fieldset class="govuk-fieldset" aria-describedby="Email-hint">
-              
-                        <legend class="govuk-fieldset__legend govuk-label--m">
-                          <h1 class="govuk-fieldset__heading">
-                             Make an appointment with a business adviser
-                          </h1>
-                        </legend>
-                                
-                        <div class="">
-                          <label class="govuk-label" for="email">
-                            Email address or telephone
-                          </label>
-                          <span id="email-hint" class="govuk-hint">
-                            Enter your email address or contact phone number.
-                            We will email the Growth Hub with your details and one of their advisers will be in touch.
-                          </span>
-                          
-                          <input data-required="true" class="govuk-input govuk-input--width-10" id="email" name="postcode" type="text" value="{{ data['postcode'] }}">
-                          <br/>
-                              
-                       {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-                       {{ govukCharacterCount({
-                         name: "freetext",
-                         id: "freetext",
-                         maxlength: 200,
-                         label: {
-                           text: "Enter your message..."
-                         },
-                         hint: {
-                           text: "Do not include personal or financial information."
-                         }
-                       }) }}
-                        </fieldset> 
-              
-              
-                      </div>
-                      <br/>
-              
-                      <button type="submit" class="govuk-button" id="submit">
-                        Request appointment
-                      </button>
-              
-                    </form>
-                     -->
-      <!-- 
-                    <iframe src="https://calendar.google.com/calendar/embed?src=notbinary.co.uk_69rb59k6mm1bfngr6odi9sm6ik%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-           -->
     </div>
 
   </div>
@@ -108,12 +57,52 @@ Your Growth Hub
       </section>
     </div>
 
-    {% include 'includes/related_custom_growthHub2.1.html' %}
+<!--     {% include 'includes/related_custom_growthHub2.1.html' %} -->
 
   </div>
 
 </div>
 <iframe src="https://calendly.com/examplegrowthhub/60min?month=2020-02" style="border: 0" width="1024" height="740"
   frameborder="0" scrolling="no"></iframe>
+
+  <div class="govuk-grid-row">
+
+    <form id="nl-form" class="nl-form" action="results">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="description-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Growth Hub support:
+        </h1>
+      </legend>
+        <span id="description-hint" class="govuk-hint">
+         Pick the type of support you are interested in:  
+        </span>
+        <div class="govuk-checkboxes">
+        {% for item in location.interest %}
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="description-{{ loop.index }}" name="nl_description" type="checkbox" value="{{ item }}">
+          <label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
+            {{ item }}
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+    </fieldset>
+  </div>
+      <!-- <p>
+        This isn’t an exhaustive list. 
+If you’re not sure if your business is eligible, 
+please contact us FREE* on 0844 257 84 50. 
+If it’s not we’ll link you into other support where it’s available.
+      </p> -->
+  
+  <div class="nl-submit-wrap">
+    <button class="nl-submit" type="submit">Get custom support</button>
+  </div>
+  
+</form>
+  </div>
 
 {% endblock %}

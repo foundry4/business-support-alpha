@@ -45,6 +45,17 @@ var hubLocation = {
   url: 'www.ciosgrowthhub.com',
   telephone: '01209 708660',
   email: 'hello@ciosgrowthhub.com',
+  interest : [
+      "leadership development",
+      "investment potential",
+      "developing funding applications",
+      "IT/digital",
+      "marketing",
+      "sales",
+      "human resources",
+      "business management",
+      "financial management"
+    ],
   blurb: `Examples of eligible businesses include: 
   <br/>
   retail,
@@ -57,11 +68,6 @@ var hubLocation = {
   If you’re not sure if your business is eligible, 
   please contact us FREE* on 0844 257 84 50. 
   If it’s not we’ll link you into other support where it’s available.`
-  /*   Established.
-    (Online portal support for all business stages including Pre-starts and Start up;
-    one-to-one support for established businesses through team of Growth Hub Connectors
-    - ideally 3 years trading but younger will be considered where there is clear growth ambition.) */
-
 };
 
 // have archived previous versions of prototype to routesOld.js
@@ -106,6 +112,63 @@ router.get('/v2.1.1/growth-hub', function (req, res, next) {
     isLive: isLive,
     business: businessProfile,
     location: hubLocation
+  });
+});
+
+
+// growth hub filter
+router.get('/v2.1.1/results', function (req, res, next) {
+  var results = res.app.locals.data;
+  // do some crude filtering based on aims?
+  // eg reset the results arrays for non-applicable results?
+  var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
+  var support = _.filter(results, function (item) { return item.category === "Business Support" });
+  var legal = _.filter(results, function (item) { return item.category === "Legal" });
+  var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
+  var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
+  var premises = _.filter(results, function (item) { return item.category === "Premises" });
+  
+  // get the description
+  var selfDescription =  req.session.data["nl_description"] ;
+  var responses = [support, legal, finance, events, premises, procurement, support, legal, finance, events, premises];
+  var links = [ "business", "legal", "finance", "events", "premises", "procurement", "business", "legal", "finance", "events", "premises"];
+  var response = [];
+  var title = "";
+  console.log(selfDescription);
+  // loop through the description nad populate results
+  if(selfDescription.length>0){
+    title = selfDescription[0];
+    for ( var i=0; i<selfDescription.length; i++){
+      response.push({name: selfDescription[i], result:responses[i], link: links[i]})
+      if(i>0){
+        if(i===selfDescription.length-1){
+          title += " and " + selfDescription[i];
+        }else{
+          title += ", " + selfDescription[i];
+        }
+      }
+    }
+  }else{
+    title = "No specific topic"
+  }
+
+  
+  
+
+  // then pass these to the pages to render
+  res.render('v2.1.1/results', {
+    isLive: isLive,
+    results: res.app.locals.data,
+    support: support,
+    legal: legal,
+    finance: finance,
+    events: events,
+    premises: premises,
+    procurement: procurement, 
+    response:response,
+    location: hubLocation,
+    business: businessProfile,
+    description:title
   });
 });
 
