@@ -133,7 +133,6 @@ router.get('/v2.1.1/recommendations', function (req, res, next) {
     premises: premises,
     procurement: procurement,
     location: hubLocation,
-    country: country,
     business: businessProfile
   });
 });
@@ -149,7 +148,7 @@ router.get('/v2.1.1/country', function (req, res, next) {
 });
 
 
-// other?
+// other? finance?
 
 // branch
 router.get('/v2.1.1/branch', function (req, res, next) {
