@@ -349,8 +349,7 @@ global.redirectToBranch = function (res){
   } else if (businessProfile.country !== "England") {
     res.redirect('country');                  // getting other countries
   } else if (businessProfile.size <= 4) {
-    res.redirect('recommendations');          // small companies
-    //res.redirect('pre-start');              // getting starters & companies under 1 year old
+    res.redirect('small');                    // small/micro companies
   } else if (businessProfile.turnover > 1 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
     res.redirect('growth-hub');               // READY TO SCALE: target audience 
   } else {
