@@ -118,6 +118,26 @@ router.get('/v2.1.1/growth-hub', function (req, res, next) {
 
 // growth hub filter
 router.get('/v2.1.1/results', function (req, res, next) {
+  //get checkbox
+  if (req._parsedUrl.query) {
+    params = req._parsedUrl.query.split("&");
+    var len = params.length;
+    var selfDescription = [];
+    // loop through params and split out type and values
+     for (var i = 0; i < len; i++) {
+       if(params[i].indexOf("nl_description")>-1){
+         console.log(params[i]);
+         var param = params[i].split("=");
+         if(param[1]!=="_unchecked"){
+          selfDescription.push(param[1].split("+").join(" "));
+         }
+
+        }
+     }
+       
+  }
+console.log(selfDescription);
+
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
@@ -129,11 +149,12 @@ router.get('/v2.1.1/results', function (req, res, next) {
   var premises = _.filter(results, function (item) { return item.category === "Premises" });
   
   // get the description
-  var selfDescription =  req.session.data["nl_description"] ;
+  //var selfDescription =  req.session.data["nl_description"] ;
   var responses = [support, legal, finance, events, premises, procurement, support, legal, finance, events, premises];
   var links = [ "business", "legal", "finance", "events", "premises", "procurement", "business", "legal", "finance", "events", "premises"];
   var response = [];
   var title = "";
+
   console.log(selfDescription);
   // loop through the description nad populate results
   if(selfDescription.length>0){
