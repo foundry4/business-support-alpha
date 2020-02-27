@@ -1,5 +1,5 @@
 {% if isGOVUK %}
-{% extends "layout_unbranded.html" %}
+{% extends "layout.html" %}
 {% else %}
 {% extends "layout_business_support.html" %}
 {% endif %}
@@ -11,7 +11,7 @@ Starting your business
 
 {% block header %}
 {% if isGOVUK %}
-{% include "includes/header.html" %}
+{% include "includes/headerGOV.html" %}
 {% else %}
 {% include "includes/header_business_support.html" %}
 {% endif %}

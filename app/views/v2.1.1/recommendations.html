@@ -1,7 +1,7 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% if isGOVUK %}
-{% extends "layout_unbranded.html" %}
+{% extends "layout.html" %}
 {% else %}
 {% extends "layout_business_support.html" %}
 {% endif %}
@@ -12,7 +12,7 @@ Finance and support for your business
 
 {% block header %}
 {% if isGOVUK %}
-{% include "includes/header.html" %}
+{% include "includes/headerGOV.html" %}
 {% else %}
 {% include "includes/header_business_support.html" %}
 {% endif %}
@@ -90,8 +90,13 @@ Finance and support for your business
   <div class="govuk-grid-column-one-third">
     <a class="card-link" href="https://www.bethebusiness.com/group-event/productivity-through-people/
         " target="_blank">
+      {% if isGOVUK %}
+
+      {% else %}
       <img class="card-image" src="../public/images/btb_logo.png" alt="">
       <img class="card-image" src="../public/images/image1.jpg" alt="">
+      {% endif %}
+
       <div class="card-inner">
         <h3 class="heading-large">Learn from industry</h3>
       </div>
@@ -106,8 +111,13 @@ Finance and support for your business
 
   <div class="govuk-grid-column-one-third">
     <a class="card-link" href=" http://www.mentorsme.co.uk/" target="_blank">
+      {% if isGOVUK %}
+
+      {% else %}
       <img class="card-image" src="../public/images/mentors.png" alt="">
       <img class="card-image" src="../public/images/image2.jpg" alt="">
+      {% endif %}
+
       <div class="card-inner">
         <h3 class="heading-large">Find a business mentor</h3>
       </div>
@@ -122,8 +132,13 @@ Finance and support for your business
 
   <div class="govuk-grid-column-one-third">
     <a class="card-link" href="//{{ location.url }}" target="_blank">
-      <img class="card-image" src="../public/images/lincoln2.png" alt="">
+      {% if isGOVUK %}
+
+      {% else %}
       <img class="card-image" src="../public/images/image5.jpg" alt="">
+      <img class="card-image" src="../public/images/lincoln2.png" alt="">
+      {% endif %}
+
       <div class="card-inner">
         <h3 class="heading-large">Join a local business leaders’ network</h3>
       </div>
