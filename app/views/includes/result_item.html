@@ -16,7 +16,7 @@
                         <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
                         {% endif %}
                         {% if item.website %}
-                        <p class="document-list__item-description">Website: <a href="{{item.website}}" target="_blank">{{item.website}}</a></p>
+                        <p class="document-list__item-description">Website: <a href="{{item.website | lower }}" target="_blank">{{item.website | lower }}</a></p>
                         {% endif %}
                         {% if item.telephone %}
                         <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
