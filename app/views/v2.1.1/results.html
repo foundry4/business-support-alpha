@@ -1,17 +1,17 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
-{% extends "layout_unbranded.html" %}
+{% extends "layout_business_support.html" %}
 
 {% block pageTitle %}
-Finance and support for your business
+Support for your business
 {% endblock %}
 
 {% block header %}
-{% include "includes/header.html" %}
+{% include "includes/header_business_support.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/banner_alpha.html" %}
+{% include "includes/banner_alpha_2.1.html" %}
 {{ super() }}
 <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
@@ -36,7 +36,7 @@ Finance and support for your business
         <h1 class="govuk-heading-xl">
             Resources for {{ location.LA }} tailored to {{ description }}
         </h1>
-
+{{ checkboxes }}
         <aside class="" role="complementary">
             <nav class="part-navigation govuk-!-padding-bottom-3" aria-label="Pages in this guide" role="navigation">
                 <h3 class="govuk-heading-s  govuk-!-font-size-1">Contents</h3>
@@ -46,37 +46,13 @@ Finance and support for your business
                         <a class="govuk-link " href="#{{item.link}}">{{item.name | capitalize }} ({{ item.result | length }})</a>
                     </li>
                     {% endfor %}
- <!--                    {% if support.length>0 %}
-                    <li class="">
-                        <a class="govuk-link " href="#business">Business Support ({{ support | length }})</a>
-                    </li>
-                    {% endif %}
-                    {% if legal.length>0 %}
-                    <li class="">
-                        <a class="govuk-link " href="#legal">Legal Support ({{ legal | length }})</a>
-                    </li>
-                    {% endif %}
-                    {% if finance.length>0 %}
-                    <li class="">
-                        <a class="govuk-link " href="#finance">Sources of Finance ({{ finance | length }})</a>
-                    </li>
-                    {% endif %}
-                    {% if events.length>0 %}
-                    <li class="">
-                        <a class="govuk-link " href="#events">Events and networking ({{ events | length }})</a>
-                    </li>
-                    {% endif %}
-                    {% if premises.length>0 %}
-                    <li class="">
-                        <a class="govuk-link " href="#premises">Premises ({{ premises | length }})</a>
-                    </li>
-                    {% endif %} -->
+
                 </ul>
             </nav>
         </aside>
     </div>
     <div class="govuk-grid-column-one-third">
-        <!-- <a href='#'>Apply for a Start Up Loan for your business</a> -->
+
     </div>
 </div>
 
@@ -88,7 +64,7 @@ Finance and support for your business
     <section class="brexit-checker-actions"><a name="business"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
-                Business Support
+                {{ response[0].name | capitalize }}
             </h2>
         </header>
         <section class="brexit-checker-audience">
@@ -126,7 +102,7 @@ Finance and support for your business
     <section class="brexit-checker-actions"><a name="legal"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
-                Legal Support
+                {{ response[1].name | capitalize }}
             </h2>
         </header>
         <section class="brexit-checker-audience">
@@ -169,7 +145,7 @@ Finance and support for your business
     <section class="brexit-checker-actions"><a name="finance"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
-                Sources of Finance
+                {{ response[2].name | capitalize }}
             </h2>
         </header>
         <section class="brexit-checker-audience">
@@ -205,7 +181,7 @@ Finance and support for your business
     <section class="brexit-checker-actions"><a name="events"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
-                Events and Networking
+                {{ response[3].name | capitalize }}
             </h2>
         </header>
         <section class="brexit-checker-audience">
@@ -241,7 +217,7 @@ Finance and support for your business
     <section class="brexit-checker-actions"><a name="premises"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
-                Premises
+                {{ response[4].name | capitalize }}
             </h2>
         </header>
         <section class="brexit-checker-audience">

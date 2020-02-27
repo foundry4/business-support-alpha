@@ -136,7 +136,6 @@ router.get('/v2.1.1/results', function (req, res, next) {
      }
        
   }
-console.log(selfDescription);
 
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
@@ -155,7 +154,6 @@ console.log(selfDescription);
   var response = [];
   var title = "";
 
-  console.log(selfDescription);
   // loop through the description nad populate results
   if(selfDescription.length>0){
     title = selfDescription[0];
@@ -186,10 +184,10 @@ console.log(selfDescription);
     events: events,
     premises: premises,
     procurement: procurement, 
-    response:response,
     location: hubLocation,
     business: businessProfile,
-    description:title
+    description:title,
+    response:response
   });
 });
 
