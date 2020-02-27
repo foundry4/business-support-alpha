@@ -39,8 +39,8 @@ var businessProfile = {
 
 // hubLocations information
 var hubLocation = {
-  LEP: 'Cornwall and the Isles of Scilly',
-  LA: 'Cornwall',
+  LEP: 'Camberwick Green',
+  LA: 'Camberwick Green',
   ONS: 'E06000052',
   url: 'www.ciosgrowthhub.com',
   telephone: '01209 708660',
@@ -215,6 +215,8 @@ router.get('/v2.1.1/country', function (req, res, next) {
 
 // branch
 router.get('/v2.1.1/branch', function (req, res, next) {
+  console.log('branch');
+  
   let businessAge = req.session.data['nl_age'];
   let postcode = req.session.data['nl_postcode'];
   let peopleCount = req.session.data['nl_count'];
@@ -228,31 +230,33 @@ router.get('/v2.1.1/branch', function (req, res, next) {
       businessProfile.isReady = true;
     }
   }
+console.log('part1');
 
-  // SET SOME DEFAULTs
-  if (peopleCount === "") {
-    peopleCount = 10;
-  }
-  if (!postcode) {
-    businessProfile.postcode = "TR1 1XU";
-    businessProfile.country = "England";
-  }
+// SET SOME DEFAULTs
+if (peopleCount === "") {
+  peopleCount = 10;
+}
+if (!postcode) {
+  businessProfile.postcode = "TR1 1XU";
+  businessProfile.country = "England";
+}
 
-  // once we've captured the form data
-  // store it for future reference in the templates
-  if (businessAge) {
-    businessProfile.age = ages[businessAge];
-  }
-  businessProfile.size = peopleCount;
-  businessProfile.postcode = postcode;
-  //businessProfile.peopleCount = peopleCount;
-  businessProfile.description = description;
-  businessProfile.turnover = turnover;
-  businessProfile.turnoverChange = turnoverChange;
+// once we've captured the form data
+// store it for future reference in the templates
+if (businessAge) {
+  businessProfile.age = ages[businessAge];
+}
+businessProfile.size = peopleCount;
+businessProfile.postcode = postcode;
+//businessProfile.peopleCount = peopleCount;
+businessProfile.description = description;
+businessProfile.turnover = turnover;
+businessProfile.turnoverChange = turnoverChange;
 
-  if (postcode) {
-    var str = postcode;
-    var cleaned = str.split('%20').join('');
+if (postcode) {
+  console.log('postcode');
+  var str = postcode;
+  var cleaned = str.split('%20').join('');
     cleaned = cleaned.split(' ').join('');
 
     request(MYSOCIETY_API_URL + cleaned, {
@@ -312,9 +316,11 @@ router.get('/v2.1.1/branch', function (req, res, next) {
             hubLocation.LA = businessProfile.country;
           }
 
+          console.log("to brranch")
           redirectToBranch(res);
 
         } else {
+          console.log("error")
           res.redirect('/error');
 
         }
@@ -322,9 +328,9 @@ router.get('/v2.1.1/branch', function (req, res, next) {
         // res.render('error', { content : {error: {message: "There has been an issue with the postcode look-up"}}});
 
         // Repeat the triage process here with a default response to provide a meaningful response
-        //console.log("API LIMITS EXCEEDED")
-        selectedLA = "Cornwall";
-        region = "Cornwall";
+        console.log("API LIMITS EXCEEDED")
+        selectedLA = "Camberwick Green";
+        region = "Camberwick Green";
         country = "England";
         // catch other countries
         if (country !== "England") {
@@ -332,11 +338,13 @@ router.get('/v2.1.1/branch', function (req, res, next) {
         }
 
         redirectToBranch(res);
-
+        
       }
     }
     );
   } else {
+    console.log('no code');
+    redirectToBranch(res);
 
   }
 
@@ -344,6 +352,8 @@ router.get('/v2.1.1/branch', function (req, res, next) {
 
 
 global.redirectToBranch = function (res){
+  console.log('toberanch....');
+  
   if (businessProfile.age < 3) {
     res.redirect('pre-start');                // getting starters & companies under 1 year old
   } else if (businessProfile.country !== "England") {

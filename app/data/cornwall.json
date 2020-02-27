@@ -3,7 +3,7 @@
   [
     {
       "category": "Business Support",
-      "title": "Cornwall & Isles of Scilly Growth Hub & Skills Hub",
+      "title": "{{ location }} Growth Hub & Skills Hub",
       "who": [
         "pre-start",
         "start-up",
@@ -18,7 +18,7 @@
     },
     {
       "category": "Business Support",
-      "title": "Cornwall Council",
+      "title": "{{ location }} Council",
       "who": [
         "pre-start",
         "start-up",
@@ -27,7 +27,7 @@
       "whoDetail": "Pre-start; start-up; established.",
       "eligibility": null,
       "description": "<p>Signposting to organisations offering business support. Information and advice on business rates, licensing, environmental health, trading standards, planning, commercial premises, markets, street trading and procurement.</p>",
-      "website": "http://www.cornwall.gov.uk/business/",
+      "website": "http://www.{{ location }}.gov.uk/business/",
       "telephone": "0300 123 4100",
       "email": null
     },
@@ -47,7 +47,7 @@
     },
     {
       "category": "Business Support",
-      "title": "Outset Cornwall",
+      "title": "Outset {{ location }}",
       "who": [
         "pre-start",
         "start-up"
@@ -55,13 +55,13 @@
       "whoDetail": "Pre-start; start-up.",
       "eligibility": null,
       "description": "<p>Offers 12-24 hours of specialist workshop or expert business coaching support to help you focus your ideas and then start, run and grow&nbsp;your own business.</p>",
-      "website": "https://www.outset.org/cornwall/",
+      "website": "https://www.outset.org/{{ location }}/",
       "telephone": "01209 311063",
-      "email": "cornwall@outset.org"
+      "email": "{{ location }}@outset.org"
     },
     {
       "category": "Business Support",
-      "title": "Invest in Cornwall (Cornwall Development Company)",
+      "title": "Invest in {{ location }} ({{ location }} Development Company)",
       "who": [
         "pre-start",
         "start-up",
@@ -69,8 +69,8 @@
       ],
       "whoDetail": "Pre-start; start-up; established.",
       "eligibility": null,
-      "description": "<p>For businesses wishing to locate or re-locate to the Cornwall area through the Invest in Cornwall service*. Offer includes hosted visits to Cornwall with leading businesses, property searches, recruitment advice, industry insights, and&nbsp;access to market specialists.</p>",
-      "website": "http://www.investincornwall.com/",
+      "description": "<p>For businesses wishing to locate or re-locate to the {{ location }} area through the Invest in {{ location }} service*. Offer includes hosted visits to {{ location }} with leading businesses, property searches, recruitment advice, industry insights, and&nbsp;access to market specialists.</p>",
+      "website": "http://www.investin{{ location }}.com/",
       "telephone": "01872 326727",
       "email": null
     },
@@ -99,14 +99,14 @@
       ],
       "whoDetail": "Pre-start; start-up; established.",
       "eligibility": null,
-      "description": "<p>Delivers a range of services&nbsp;in Cornwall and the Isles of Scilly. This includes business start-up support, business development, recruitment, graduate and professional jobs, networking events and mentoring. Run&nbsp;the&nbsp;Future Focus Programme which gives business leaders&nbsp;the tools, resources and networks to innovate and prosper. The programme consists of three main components: Future Focus Events, Future Focus Labs and Future Focus Resources.&nbsp; Contact the programme organiser for further details on eligibility.</p>",
+      "description": "<p>Delivers a range of services&nbsp;in {{ location }}. This includes business start-up support, business development, recruitment, graduate and professional jobs, networking events and mentoring. Run&nbsp;the&nbsp;Future Focus Programme which gives business leaders&nbsp;the tools, resources and networks to innovate and prosper. The programme consists of three main components: Future Focus Events, Future Focus Labs and Future Focus Resources.&nbsp; Contact the programme organiser for further details on eligibility.</p>",
       "website": "http://www.unlocking-potential.co.uk/",
       "telephone": "0845 600 3660",
       "email": null
     },
     {
       "category": "Business Support",
-      "title": "Plymouth PatLib Centre",
+      "title": "{{ location }} Patent Library",
       "who": [
         "pre-start",
         "start-up",
@@ -115,9 +115,9 @@
       "whoDetail": "Pre-start; start-up; established SMEs looking for support with intellectual property.",
       "eligibility": null,
       "description": "<p>Services include:</p><ul class='govuk-list govuk-list--bullet'><li>free assistance with patent searches by appointment</li><li>Espacenet search service giving access to UK, European and world patents</li><li>resources and information on&nbsp;IP including copyright, trade marks and designs</li><li>free computer access</li><li>enquiry service</li><li>free public access to internet, IP information resources, databases</li><li>referrals to other advice/service providers</li><li>one stop ideas shop: free and confidential guidance from experts in the field of IP</li></ul>",
-      "website": "https://www.plymouth.gov.uk/libraries/informationandresearch/protectyourideas",
+      "website": "https://www.{{ location }}.gov.uk/libraries/informationandresearch/protectyourideas",
       "telephone": "01752 306 795",
-      "email": "patlibplymouth@plymouth.gov.uk"
+      "email": "patlib{{ location }}@{{ location }}.gov.uk"
     },
     {
       "category": "Business Support",
@@ -129,13 +129,13 @@
       "whoDetail": "Start-up; established (trading businesses only).",
       "eligibility": "Ineligible sectors include: fishery and aquaculture, primary production, processing and marketing of agricultural products, coal, steel and shipbuilding sectors, synthetic fibres, generalised education, banking, accountants and insurance companies, medical, construction, hotels and accommodation and retail businesses.",
       "description": "<p>Provides intensive support to businesses who are ‘innovation ready’.&nbsp;Helps to bring&nbsp;new products/processes/services to market&nbsp;which drive up growth and productivity. Support includes initial diagnosis of needs, masterclasses, 1-2-1 and pop up clinics.</p>",
-      "website": "https://www.plymouth.ac.uk/research/acceleration-through-innovation-ati",
+      "website": "https://www.{{ location }}.ac.uk/research/acceleration-through-innovation-ati",
       "telephone": "01209 705166",
-      "email": "ATI@plymouth.ac.uk"
+      "email": "ATI@{{ location }}.ac.uk"
     },
     {
       "category": "Business Support",
-      "title": "Ehealth Productivity and Innovation in Cornwall and the Isles of Scilly (EPIC)",
+      "title": "Ehealth Productivity and Innovation in {{ location }} ",
       "who": [
         "start-up",
         "established"
@@ -143,27 +143,27 @@
       "whoDetail": "Start-up; established.",
       "eligibility": "Covers a range of technologies, including Apps, communication devices, websites, robotics and sensory/image based innovations that enhance health and social care provision.",
       "description": "<p>Offers one-to-one business support from specialists from the eHealth and digital sectors,&nbsp;webinars&nbsp;and support with applications to the £600,000 Challenge Fund. This includes access to experts in research areas critical for the development of eHealth products and services.</p>",
-      "website": "https://www.plymouth.ac.uk/research/epic",
+      "website": "https://www.{{ location }}.ac.uk/research/epic",
       "telephone": "01752 586997",
-      "email": "epic@plymouth.ac.uk"
+      "email": "epic@{{ location }}.ac.uk"
     },
     {
       "category": "Business Support",
-      "title": "Agri-tech Cornwall and the Isles of Scilly",
+      "title": "Agri-tech {{ location }}",
       "who": [
         "start-up",
         "established"
       ],
       "whoDetail": "Start-up; established; SMEs.",
       "eligibility": null,
-      "description": "<p>Offers collaborative Research, Development and Innovation (RDI) projects with partner research institutions.&nbsp;&nbsp;Grants – for projects from £2,500 to £25,000, providing funding towards consultancy costs, feasibility studies or to commission specialists. Graduate Placement programme – to help the business deliver an agreed RDI project – the programme can support the research and recruitment of the graduate, in addition to a salary subsidy of £1,500 (6 months) or £2,250 (9 months).&nbsp;&nbsp;Businesses from any sector can apply so long as the research, development and innovation supports growth, productivity or market development in ‘Agri-tech’ i.e. the sector providing innovative goods and services for the agriculture, horticulture and food sectors. Agri-tech Cornwall &amp; the Isles of Scilly is part-funded by the European Regional Development Fund.</p>",
-      "website": "https://www.agritechcornwall.co.uk/",
+      "description": "<p>Offers collaborative Research, Development and Innovation (RDI) projects with partner research institutions.&nbsp;&nbsp;Grants – for projects from £2,500 to £25,000, providing funding towards consultancy costs, feasibility studies or to commission specialists. Graduate Placement programme – to help the business deliver an agreed RDI project – the programme can support the research and recruitment of the graduate, in addition to a salary subsidy of £1,500 (6 months) or £2,250 (9 months).&nbsp;&nbsp;Businesses from any sector can apply so long as the research, development and innovation supports growth, productivity or market development in ‘Agri-tech’ i.e. the sector providing innovative goods and services for the agriculture, horticulture and food sectors. Agri-tech {{ location }} &amp; is part-funded by the European Regional Development Fund.</p>",
+      "website": "https://www.agritech{{ location }}.co.uk/",
       "telephone": "0845 458 7485",
-      "email": "info@agritechcornwall.co.uk"
+      "email": "info@agritech{{ location }}.co.uk"
     },
     {
       "category": "Business Support",
-      "title": "Access 2 Finance Cornwall",
+      "title": "Access 2 Finance {{ location }}",
       "who": [
         "start-up",
         "established"
@@ -171,9 +171,9 @@
       "whoDetail": "Start-up; established.",
       "eligibility": "Ineligible sectors Professional services, Healthcare, Mining, Farming, Primary agricultural products, Fishing.",
       "description": "<p>Free programme aimed at businesses that wish to raise finance for their business, support is available through workshops and one-to-one support to help them access the right type of finance to meet their business needs.</p>",
-      "website": "http://a2fcornwall.co.uk/",
+      "website": "http://a2f{{ location }}.co.uk/",
       "telephone": "01872 300386",
-      "email": "info@a2fcornwall.co.uk"
+      "email": "info@a2f{{ location }}.co.uk"
     },
     {
       "category": "Business Support",
@@ -219,13 +219,13 @@
     },
     {
       "category": "Business Support",
-      "title": "Cornwall & Isles of Scilly Skills Hub",
+      "title": "{{ location }} Skills Hub",
       "who": [
         "established"
       ],
       "whoDetail": "Established (focus on 5+ employees).",
       "eligibility": null,
-      "description": "<p>The Skills Hub service, run by Cornwall and Isles of Scilly Growth Hub, connects your business to skills and training to upskill or expand your team, identify skills gaps or areas of under-performance to fuel&nbsp;productivity and smarter working.&nbsp; Through a free, independent and impartial skills review for the business, the Skills Connectors get to know your company and use in-depth knowledge of the skills and training arena to find cost effective training provision, workshops or recruitment solutions.</p><p>You can also use the <a href=\"http://www.ciosgrowthhub.com/skills-toolkit\" target=\"_blank\">Skills Toolkit</a> to undertake a skills review for your business and compile personalised&nbsp;templates for key HR policies and processes.</p>",
+      "description": "<p>The Skills Hub service, run by {{ location }} Growth Hub, connects your business to skills and training to upskill or expand your team, identify skills gaps or areas of under-performance to fuel&nbsp;productivity and smarter working.&nbsp; Through a free, independent and impartial skills review for the business, the Skills Connectors get to know your company and use in-depth knowledge of the skills and training arena to find cost effective training provision, workshops or recruitment solutions.</p><p>You can also use the <a href=\"http://www.ciosgrowthhub.com/skills-toolkit\" target=\"_blank\">Skills Toolkit</a> to undertake a skills review for your business and compile personalised&nbsp;templates for key HR policies and processes.</p>",
       "website": "https://www.ciosgrowthhub.com/the-skills-hub",
       "telephone": "01209 708660",
       "email": "hello@ciosgrowthhub.com"
@@ -274,7 +274,7 @@
     },
     {
       "category": "Sources of Finance",
-      "title": "Cornwall Community Foundation",
+      "title": "{{ location }} Community Foundation",
       "who": [
         "pre-start",
         "start-up",
@@ -282,8 +282,8 @@
       ],
       "whoDetail": "Pre-start; start-up; established.",
       "eligibility": "Charities, community and voluntary organisations.",
-      "description": "<p>Small grants for local charities, community and voluntary groups based in Cornwall and the Isles of Scilly&nbsp;making a positive impact in their area. - conditions apply.&nbsp;&nbsp;</p>",
-      "website": "https://www.cornwallcommunityfoundation.com/",
+      "description": "<p>Small grants for local charities, community and voluntary groups based in {{ location }}&nbsp;making a positive impact in their area. - conditions apply.&nbsp;&nbsp;</p>",
+      "website": "https://www.{{ location }}communityfoundation.com/",
       "telephone": "01566 779 333 / 01566 779865",
       "email": null
     },
@@ -297,14 +297,14 @@
       ],
       "whoDetail": "Pre-start; start-up; established.",
       "eligibility": "Varies depending on scheme.",
-      "description": "<p>Provides a range of business loans to the South West for businesses at different stages and operating in different sectors. With finance sourced from both the public sector, via local authorities, European funds, central government and the private sector, SWIG invests loan finance from offices in Truro and Bristol into South West businesses which are either just starting up or seeking to grow and need funds to get things moving.</p>",
+      "description": "<p>Provides a range of business loans to the South West for businesses at different stages and operating in different sectors. With finance sourced from both the public sector, via local authorities, European funds, central government and the private sector, SWIG invests loan finance from offices in {{ location }} and Bristol into South West businesses which are either just starting up or seeking to grow and need funds to get things moving.</p>",
       "website": "https://www.swigfinance.co.uk/funds-available/",
       "telephone": "01872 223883",
       "email": "ninfo@swigfinance.co.uk"
     },
     {
       "category": "Sources of Finance",
-      "title": "Travel to Work Grant - Cornwall",
+      "title": "Travel to Work Grant - {{ location }}",
       "who": [
         "start-up",
         "established"
@@ -312,37 +312,37 @@
       "whoDetail": "Start-up; established SMEs.",
       "eligibility": null,
       "description": "<p>Funding to support sustainable travel measures at the workplace. Businesses can apply for a grant of a minimum of £100 per workplace. A minimum of 25% of the total cost must be met by the applicant (exclusive of any reclaimable VAT). Applications need to be supported by evidence that shows there is a need for the facilities/equipment (surveys, mileage, photographs). The grant can be used for the following: dedicated car share parking spaces, pool bikes or electric pool bikes, electric car charging points, showering / changing area facilities, remodelling car park layout, marked parking spaces, pedestrian routes and signage.</p>",
-      "website": "https://www.cornwall.gov.uk/traveltoworkgrant",
+      "website": "https://www.{{ location }}.gov.uk/traveltoworkgrant",
       "telephone": null,
-      "email": "traveltowork@cornwall.gov.uk"
+      "email": "traveltowork@{{ location }}.gov.uk"
     },
     {
       "category": "Sources of Finance",
-      "title": "Cornwall and Isles of Scilly Investment Fund",
+      "title": "{{ location }} Investment Fund",
       "who": [
         "start-up",
         "established"
       ],
       "whoDetail": "Start-up; established SMEs.",
       "eligibility": "Excluded sectors - property development, ship building and agriculture. ERDF sector restrictions apply.",
-      "description": "<p>Debt finance (£25,000 - £1million) and equity finance (£50,000 - £2 million) options, to start, scale-up and grow small businesses across the Cornwall and Isles of Scilly region. The scheme aims to overcome barriers to accessing finance for SMEs by providing access to start-up, early stage and development capital. Financial support is available towards a range of purposes including employing new staff, new machinery and equipment, exporting and premises expansion. It can also provide a capital injection to achieve ambitious growth plans through innovation. For all fund options you must be able to demonstrate growth potential.&nbsp;&nbsp;To make an enquiry on the eligibility of your project, please see the scheme website.&nbsp;&nbsp;It is part funded by the European Regional Development Fund (ERDF)</p>",
+      "description": "<p>Debt finance (£25,000 - £1million) and equity finance (£50,000 - £2 million) options, to start, scale-up and grow small businesses across the {{ location }} region. The scheme aims to overcome barriers to accessing finance for SMEs by providing access to start-up, early stage and development capital. Financial support is available towards a range of purposes including employing new staff, new machinery and equipment, exporting and premises expansion. It can also provide a capital injection to achieve ambitious growth plans through innovation. For all fund options you must be able to demonstrate growth potential.&nbsp;&nbsp;To make an enquiry on the eligibility of your project, please see the scheme website.&nbsp;&nbsp;It is part funded by the European Regional Development Fund (ERDF)</p>",
       "website": "http://www.ciosif.co.uk",
       "telephone": "01276 608510",
       "email": "ciosif@thefsegroup.com"
     },
     {
       "category": "Sources of Finance",
-      "title": "Agri-tech Cornwall and the Isles of Scilly",
+      "title": "Agri-tech {{ location }}",
       "who": [
         "start-up",
         "established"
       ],
       "whoDetail": "Start-up; established SMEs.",
       "eligibility": null,
-      "description": "<p>Offers collaborative Research, Development and Innovation (RDI) projects with partner research institutions. Grants – for projects from £2,500 to £50,000, providing funding towards consultancy costs, feasibility studies or to commission specialists. Graduate Placement programme – to help the business deliver an agreed RDI project – the programme can support the research and recruitment of the graduate, in addition to a salary subsidy of £1,500 (6 months) or £2,250 (9 months).&nbsp;&nbsp;Businesses from any sector can apply so long as the research, development and innovation supports growth, productivity or market development in ‘Agri-tech’ i.e. the sector providing innovative goods and services for the agriculture, horticulture and food sectors. Agri-tech Cornwall &amp; the Isles of Scilly is&nbsp;part-funded by the European Regional Development Fund.</p>",
-      "website": "https://www.agritechcornwall.co.uk/",
+      "description": "<p>Offers collaborative Research, Development and Innovation (RDI) projects with partner research institutions. Grants – for projects from £2,500 to £50,000, providing funding towards consultancy costs, feasibility studies or to commission specialists. Graduate Placement programme – to help the business deliver an agreed RDI project – the programme can support the research and recruitment of the graduate, in addition to a salary subsidy of £1,500 (6 months) or £2,250 (9 months).&nbsp;&nbsp;Businesses from any sector can apply so long as the research, development and innovation supports growth, productivity or market development in ‘Agri-tech’ i.e. the sector providing innovative goods and services for the agriculture, horticulture and food sectors. Agri-tech {{ location }} is&nbsp;part-funded by the European Regional Development Fund.</p>",
+      "website": "https://www.agritech{{ location }}.co.uk/",
       "telephone": "0845 458 7485",
-      "email": "info@agritechcornwall.co.uk"
+      "email": "info@agritech{{ location }}.co.uk"
     },
     {
       "category": "Sources of Finance",
@@ -359,12 +359,12 @@
     },
     {
       "category": "Procurement",
-      "title": "Cornwall Council",
+      "title": "{{ location }} Council",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
       "description": null,
-      "website": "https://www.cornwall.gov.uk/business/commercial-services-and-selling-to-the-council/?page=9853&page=9853",
+      "website": "https://www.{{ location }}.gov.uk/business/commercial-services-and-selling-to-the-council/?page=9853&page=9853",
       "telephone": "01872 323 779",
       "email": null
     },
@@ -381,7 +381,7 @@
     },
     {
       "category": "Events and Networking",
-      "title": "Isles of Scilly Growth & Skills Hub",
+      "title": "{{ location }} Growth & Skills Hub",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
@@ -392,11 +392,11 @@
     },
     {
       "category": "Events and Networking",
-      "title": "Cornwall Chamber of Commerce",
+      "title": "{{ location }} Chamber of Commerce",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p><a href=\"http://www.cornwallchamber.co.uk\" target=\"_blank\">http://www.cornwallchamber.co.uk</a></p>",
+      "description": "<p><a href=\"http://www.{{ location }}chamber.co.uk\" target=\"_blank\">http://www.{{ location }}chamber.co.uk</a></p>",
       "website": null,
       "telephone": null,
       "email": null
@@ -414,33 +414,33 @@
     },
     {
       "category": "Events and Networking",
-      "title": "Falmouth Business Club, Falmouth",
+      "title": "{{ location }} Business Club, {{ location }}",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p><a href=\"http://www.falmouthbusinessclub.co.uk\" target=\"_blank\">http://www.falmouthbusinessclub.co.uk</a></p>",
+      "description": "<p><a href=\"http://www.{{ location }}businessclub.co.uk\" target=\"_blank\">http://www.{{ location }}businessclub.co.uk</a></p>",
       "website": null,
       "telephone": null,
       "email": null
     },
     {
       "category": "Events and Networking",
-      "title": "Newquay Breakfast Club",
+      "title": "{{ location }} Breakfast Club",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p>Do not have a dedicated website but list their events on the Business Cornwall</p><p><a href=\"https://www.businesscornwall.co.uk/events-networking-in-cornwall/cornwall-business-networking-calendar/%c2%a0\" target=\"_blank\">https://www.businesscornwall.co.uk/events-networking-in-cornwall/cornwall-business-networking-calendar/&nbsp;</a></p>",
+      "description": "<p>Do not have a dedicated website but list their events on the Business {{ location }}</p><p><a href=\"https://www.business{{ location }}.co.uk/events-networking-in-{{ location }}/{{ location }}-business-networking-calendar/%c2%a0\" target=\"_blank\">https://www.business{{ location }}.co.uk/events-networking-in-{{ location }}/{{ location }}-business-networking-calendar/&nbsp;</a></p>",
       "website": null,
       "telephone": null,
       "email": null
     },
     {
       "category": "Events and Networking",
-      "title": "Network Cornwall",
+      "title": "Network {{ location }}",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p>Networking events and online community for women only.</p><p><a href=\"http://www.networkcornwall.net\" target=\"_blank\">http://www.networkcornwall.net</a></p>",
+      "description": "<p>Networking events and online community for women only.</p><p><a href=\"http://www.network{{ location }}.net\" target=\"_blank\">http://www.network{{ location }}.net</a></p>",
       "website": null,
       "telephone": null,
       "email": null
@@ -458,29 +458,29 @@
     },
     {
       "category": "Premises",
-      "title": "Cornwall Council",
+      "title": "{{ location }} Council",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
       "description": null,
-      "website": "https://www.cornwall.gov.uk/environment-and-planning/land-and-property/estates-management/",
+      "website": "https://www.{{ location }}.gov.uk/environment-and-planning/land-and-property/estates-management/",
       "telephone": "0300 123 4100",
       "email": null
     },
     {
       "category": "Premises",
-      "title": "Truro, Pool, Penryn Innovation Centres",
+      "title": "{{ location }} Innovation Centres",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p>-The Pool Innovation Centre (start-up and existing businesses from a range of sectors)</p><p>-Tremough Innovation Centre (creative, media, eco and environmental science sectors)</p><p>-The Health &amp; Wellbeing Innovation Centre based at Treliske in Truro (welcomes knowledge based businesses within sectors that support health and wellbeing)</p>",
-      "website": "www.cornwallinnovation.co.uk",
+      "description": "<p>-The Pool Innovation Centre (start-up and existing businesses from a range of sectors)</p><p>-{{ location }} Innovation Centre (creative, media, eco and environmental science sectors)</p><p>-The Health &amp; Wellbeing Innovation Centre based  in {{ location }} (welcomes knowledge based businesses within sectors that support health and wellbeing)</p>",
+      "website": "www.{{ location }}innovation.co.uk",
       "telephone": null,
       "email": null
     },
     {
       "category": "Premises",
-      "title": "Aerohub at Newquay Cornwall Airport (Government Enterprise Zone)",
+      "title": "Aerohub at {{ location }} Airport (Government Enterprise Zone)",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
@@ -491,14 +491,14 @@
     },
     {
       "category": "Premises",
-      "title": "Cornwall Marine Hub (Government  Enterprise Zone)",
+      "title": "{{ location }} Marine Hub (Government  Enterprise Zone)",
       "who": null,
       "whoDetail": null,
       "eligibility": null,
-      "description": "<p>The Marine Hub Cornwall Enterprise Zone offers purpose-built office and industrial business space available for immediate occupation at the Hayle Marine Renewables Business Park, as well as water side and land-based sites available for development.</p>",
-      "website": "https://marinehubcornwall.co.uk/our-four-plus-points/infrastructure/enterprise-zone",
+      "description": "<p>The Marine Hub {{ location }} Enterprise Zone offers purpose-built office and industrial business space available for immediate occupation at the Hayle Marine Renewables Business Park, as well as water side and land-based sites available for development.</p>",
+      "website": "https://marinehub{{ location }}.co.uk/our-four-plus-points/infrastructure/enterprise-zone",
       "telephone": "01872 322119",
-      "email": "info@marinehubcornwall.co.uk"
+      "email": "info@marinehub{{ location }}.co.uk"
     }
   ]
   

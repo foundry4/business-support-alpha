@@ -348,13 +348,17 @@ console.log('\nNOTICE: the kit is for building prototypes, do not use it for pro
 
 module.exports = app
 
-/*
-  Load sample factsheet data from JSON.
-*/
-var data = JSON.parse(fs.readFileSync(__dirname + '/app/data/cornwall.json').toString());
+
+// Load sample factsheet data from JSON.
+var location = "Camberwick Green";
+// read as a string
+var data = fs.readFileSync(__dirname + '/app/data/cornwall.json').toString();
+// replace the location placholder
+data = data.split("{{ location }}").join(location);
+// to JSON
+data = JSON.parse(data);
 app.locals.data = data.factsheet;
-//let data = JSON.parse(fs.readFileSync(__dirname + '/app/data/LEP_ONS.json').toString());
-//app.locals.lepArray = data.leps;
+
 data = JSON.parse(fs.readFileSync(__dirname + '/app/data/hubs.json').toString());
 app.locals.hubs = data.hubs;
 data = JSON.parse(fs.readFileSync(__dirname + '/app/data/lep_dictionary.json').toString());
