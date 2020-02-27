@@ -13,7 +13,12 @@
 
 	<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_white.css" />
 	<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_component_white.css" />
+	{% if isGOVUK %}
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"> 
+	<link href="../public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+	{% else %}
 	<link href="../public/stylesheets/business_support.css" media="all" rel="stylesheet" type="text/css">
+	{% endif %}
 
 	<script src="../public/javascripts/modernizr.custom.js" type="application/javascript"></script>
 	{% if (isLive == true) or (isLive == "true") %}
@@ -24,11 +29,19 @@
 <body class="nl-blurred">
 	<div class="container demo-1">
 		{% block header %}
-		{% include "../includes/header_business_support.html" %}
+		{% if isGOVUK %}
+		{% include "includes/header.html" %}
+		{% else %}
+		{% include "includes/header_business_support.html" %}
+		{% endif %}
 		{% endblock %}
 
 		<div class="govuk-width-container ">
-			{% include "../includes/banner_alpha_2.1.html" %}
+			{% if isGOVUK %}
+			{% include "includes/banner_alpha_2.html" %}
+			{% else %}
+			{% include "includes/banner_alpha_2.1.html" %}
+			{% endif %}
 		</div>
 
 

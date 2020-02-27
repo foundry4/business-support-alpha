@@ -1,15 +1,27 @@
+{% if isGOVUK %}
+{% extends "layout_unbranded.html" %}
+{% else %}
 {% extends "layout_business_support.html" %}
+{% endif %}
 
 {% block pageTitle %}
 Your Growth Hub
 {% endblock %}
 
 {% block header %}
+{% if isGOVUK %}
+{% include "includes/header.html" %}
+{% else %}
 {% include "includes/header_business_support.html" %}
+{% endif %}
 {% endblock %}
 
 {% block beforeContent %}
+{% if isGOVUK %}
+{% include "includes/banner_alpha_2.html" %}
+{% else %}
 {% include "includes/banner_alpha_2.1.html" %}
+{% endif %}
 <a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
 {% endblock %}
 

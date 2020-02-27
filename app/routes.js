@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const request = require('request');
-const _ = require('underscore');
+const request = require("request");
+const _ = require("underscore");
 
 const MYSOCIETY_API_URL = "https://mapit.mysociety.org/postcode/";
 const isLive = process.env.isLive;
@@ -39,12 +39,12 @@ var businessProfile = {
 
 // hubLocations information
 var hubLocation = {
-  LEP: 'Camberwick Green',
-  LA: 'Camberwick Green',
-  ONS: 'E06000052',
-  url: 'www.ciosgrowthhub.com',
-  telephone: '01209 708660',
-  email: 'hello@ciosgrowthhub.com',
+  LEP: "Camberwick Green",
+  LA: "Camberwick Green",
+  ONS: "E06000052",
+  url: "www.ciosgrowthhub.com",
+  telephone: "01209 708660",
+  email: "hello@ciosgrowthhub.com",
   interest : [
       "leadership development",
       "investment potential",
@@ -81,119 +81,108 @@ var hubLocation = {
 //////////////////////////////////////////////////////////////////
 
 // index
-router.get('/', function (req, res, next) {
-  res.render('index', {});
+router.get("/", function (req, res, next) {
+  res.render("index", {});
+});
+
+// landing page
+router.get("/v2.1.1/", function (req, res, next) {
+  renderLandingPage(req, res, false);
+});
+router.get("/gov/", function (req, res, next) {
+  renderLandingPage(req, res, true);
+});
+
+// pre-start
+router.get("/v2.1.1/pre-start", function (req, res, next) {
+  renderStart(req, res, false);
+});
+router.get("/gov/pre-start", function (req, res, next) {
+  renderStart(req, res, true);
+});
+
+// target: growth hub
+router.get("/v2.1.1/growth-hub", function (req, res, next) {
+  renderGrowthHub(req, res, false);
+});
+router.get("/gov/growth-hub", function (req, res, next) {
+  renderGrowthHub(req, res, true);
+});
+
+// growth hub filter
+router.get("/v2.1.1/results", function (req, res, next) {
+  renderResults(req, res, false);
+});
+router.get("/gov/results", function (req, res, next) {
+  renderResults(req, res, true);
+});
+
+// recommendations
+router.get("/v2.1.1/recommendations", function (req, res, next) {
+  renderRecommendations(req, res, false);
+});
+router.get("/gov/recommendations", function (req, res, next) {
+  renderRecommendations(req, res, true);
+});
+
+// country
+router.get("/v2.1.1/country", function (req, res, next) {
+  renderCountry(req, res, false);
+});
+router.get("/gov/country", function (req, res, next) {
+  renderCountry(req, res, true);
+});
+
+// branch
+router.get("/v2.1.1/branch", function (req, res, next) {
+  renderBranches(req, res, false)
+});
+router.get("/gov/branch", function (req, res, next) {
+  renderBranches(req, res, true)
 });
 
 
-// landing page
-router.get('/v2.1.1/', function (req, res, next) {
-  res.render('v2.1.1/landing', {
+//////////////////////////////////////////////////////////////////
+//
+// Render functions used to re-use templates with different styles
+//
+//////////////////////////////////////////////////////////////////
+
+renderLandingPage = function (req, res, isGOV){
+  res.render("v2.1.1/landing", {
+    isGOVUK: isGOV,
     isLive: isLive,
     description: selfDescription
   });
-});
-
-
-// pre-start
-router.get('/v2.1.1/pre-start', function (req, res, next) {
-  //hubLocation.LA =country;
-  res.render('v2.1.1/pre-start', {
+}
+renderStart = function (req, res, isGOV){
+  res.render("v2.1.1/pre-start", {
+    isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
     location: hubLocation
   });
-});
+}
 
+renderCountry = function (req, res, isGOV){
+  res.render("v2.1.1/country", {
+    isGOVUK: isGOV,
+      isLive: isLive,
+      business: businessProfile,
+      location: hubLocation
+    });
+}
 
-// target: growth hub
-router.get('/v2.1.1/growth-hub', function (req, res, next) {
-  res.render('v2.1.1/growth-hub', {
+renderGrowthHub = function (req, res, isGOV){
+  res.render("v2.1.1/growth-hub", {
+    isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
     location: hubLocation
   });
-});
+}
 
-
-// growth hub filter
-router.get('/v2.1.1/results', function (req, res, next) {
-  //get checkbox
-  if (req._parsedUrl.query) {
-    params = req._parsedUrl.query.split("&");
-    var len = params.length;
-    var selfDescription = [];
-    // loop through params and split out type and values
-     for (var i = 0; i < len; i++) {
-       if(params[i].indexOf("nl_description")>-1){
-         console.log(params[i]);
-         var param = params[i].split("=");
-         if(param[1]!=="_unchecked"){
-          selfDescription.push(param[1].split("+").join(" "));
-         }
-
-        }
-     }
-       
-  }
-
-  var results = res.app.locals.data;
-  // do some crude filtering based on aims?
-  // eg reset the results arrays for non-applicable results?
-  var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
-  var support = _.filter(results, function (item) { return item.category === "Business Support" });
-  var legal = _.filter(results, function (item) { return item.category === "Legal" });
-  var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
-  var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
-  var premises = _.filter(results, function (item) { return item.category === "Premises" });
-  
-  // get the description
-  //var selfDescription =  req.session.data["nl_description"] ;
-  var responses = [support, legal, finance, events, premises, procurement, support, legal, finance, events, premises];
-  var links = [ "business", "legal", "finance", "events", "premises", "procurement", "business", "legal", "finance", "events", "premises"];
-  var response = [];
-  var title = "";
-
-  // loop through the description nad populate results
-  if(selfDescription.length>0){
-    title = selfDescription[0];
-    for ( var i=0; i<selfDescription.length; i++){
-      response.push({name: selfDescription[i], result:responses[i], link: links[i]})
-      if(i>0){
-        if(i===selfDescription.length-1){
-          title += " and " + selfDescription[i];
-        }else{
-          title += ", " + selfDescription[i];
-        }
-      }
-    }
-  }else{
-    title = "No specific topic"
-  }
-
-  
-  
-
-  // then pass these to the pages to render
-  res.render('v2.1.1/results', {
-    isLive: isLive,
-    results: res.app.locals.data,
-    support: support,
-    legal: legal,
-    finance: finance,
-    events: events,
-    premises: premises,
-    procurement: procurement, 
-    location: hubLocation,
-    business: businessProfile,
-    description:title,
-    response:response
-  });
-});
-
-
-// recommendations
-router.get('/v2.1.1/recommendations', function (req, res, next) {
+renderRecommendations = function (req, res, isGOV){
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
@@ -205,7 +194,8 @@ router.get('/v2.1.1/recommendations', function (req, res, next) {
   var premises = _.filter(results, function (item) { return item.category === "Premises" });
 
   // then pass these to the pages to render
-  res.render('v2.1.1/recommendations', {
+  res.render("v2.1.1/recommendations", {
+    isGOVUK: isGOV,
     isLive: isLive,
     results: res.app.locals.data,
     support: support,
@@ -217,31 +207,88 @@ router.get('/v2.1.1/recommendations', function (req, res, next) {
     location: hubLocation,
     business: businessProfile
   });
-});
+}
 
 
-// country
-router.get('/v2.1.1/country', function (req, res, next) {
-  res.render('v2.1.1/country', {
-    isLive: isLive,
-    business: businessProfile,
-    location: hubLocation
-  });
-});
-
-
-// other? finance?
-
-// branch
-router.get('/v2.1.1/branch', function (req, res, next) {
-  console.log('branch');
+renderResults = function (req, res, isGOV){
+    var results = res.app.locals.data;
+    //get checkbox
+    var selfDescription = [];
+    
+    if (req._parsedUrl.query) {
+      params = req._parsedUrl.query.split("&");
+      var len = params.length;
+      // loop through params and split out type and values
+       for (var i = 0; i < len; i++) {
+         if(params[i].indexOf("nl_description")>-1){
+            var param = params[i].split("=");
+            if(param[1]!=="_unchecked"){
+              param[1] = param[1].split("+").join(" ");
+              param[1] = param[1].split("%2F").join("/");
+              selfDescription.push(param[1]);
+            }
+          }
+       }
+    }
   
-  let businessAge = req.session.data['nl_age'];
-  let postcode = req.session.data['nl_postcode'];
-  let peopleCount = req.session.data['nl_count'];
-  let turnover = req.session.data['nl_turnover'];
-  let turnoverChange = req.session.data['nl_turnover_change'];
-  let description = req.session.data['nl_description'];
+    // do some crude filtering based on aims?
+    // eg reset the results arrays for non-applicable results?
+    var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
+    var support = _.filter(results, function (item) { return item.category === "Business Support" });
+    var legal = _.filter(results, function (item) { return item.category === "Legal" });
+    var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
+    var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
+    var premises = _.filter(results, function (item) { return item.category === "Premises" });
+    
+    // get the description
+    var responses = [support, legal, finance, events, premises, procurement, support, legal, finance, events, premises];
+    var links = [ "business", "legal", "finance", "events", "premises", "procurement", "business", "legal", "finance", "events", "premises"];
+    var response = [];
+    var title = "";
+  
+    // loop through the description nad populate results
+    if(selfDescription.length>0){
+      title = selfDescription[0];
+      for ( var i=0; i<selfDescription.length; i++){
+        response.push({name: selfDescription[i], result:responses[i], link: links[i]})
+        if(i>0){
+          if(i===selfDescription.length-1){
+            title += " and " + selfDescription[i];
+          }else{
+            title += ", " + selfDescription[i];
+          }
+        }
+      }
+    }else{
+      title = "No specific topic"
+    }
+  
+    // then pass these to the pages to render
+    res.render("v2.1.1/results", {
+      isGOVUK: isGOV,
+      isLive: isLive,
+      results: res.app.locals.data,
+      support: support,
+      legal: legal,
+      finance: finance,
+      events: events,
+      premises: premises,
+      procurement: procurement, 
+      location: hubLocation,
+      business: businessProfile,
+      description:title,
+      response:response
+    });
+}
+
+renderBranches = function (req, res, isGOV){
+
+  let businessAge = req.session.data["nl_age"];
+  let postcode = req.session.data["nl_postcode"];
+  let peopleCount = req.session.data["nl_count"];
+  let turnover = req.session.data["nl_turnover"];
+  let turnoverChange = req.session.data["nl_turnover_change"];
+  let description = req.session.data["nl_description"];
   businessProfile.isReady = false;
 
   if (description) {
@@ -249,7 +296,6 @@ router.get('/v2.1.1/branch', function (req, res, next) {
       businessProfile.isReady = true;
     }
   }
-console.log('part1');
 
 // SET SOME DEFAULTs
 if (peopleCount === "") {
@@ -260,28 +306,26 @@ if (!postcode) {
   businessProfile.country = "England";
 }
 
-// once we've captured the form data
+// once we"ve captured the form data
 // store it for future reference in the templates
 if (businessAge) {
   businessProfile.age = ages[businessAge];
 }
 businessProfile.size = peopleCount;
 businessProfile.postcode = postcode;
-//businessProfile.peopleCount = peopleCount;
 businessProfile.description = description;
 businessProfile.turnover = turnover;
 businessProfile.turnoverChange = turnoverChange;
 
 if (postcode) {
-  console.log('postcode');
   var str = postcode;
-  var cleaned = str.split('%20').join('');
-    cleaned = cleaned.split(' ').join('');
+  var cleaned = str.split("%20").join("");
+    cleaned = cleaned.split(" ").join("");
 
     request(MYSOCIETY_API_URL + cleaned, {
       method: "GET",
       headers: {
-        'Accept': 'application/json'
+        "Accept": "application/json"
       }
     }, function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -340,12 +384,10 @@ if (postcode) {
 
         } else {
           console.log("error")
-          res.redirect('/error');
+          res.redirect("/error");
 
         }
       } else {
-        // res.render('error', { content : {error: {message: "There has been an issue with the postcode look-up"}}});
-
         // Repeat the triage process here with a default response to provide a meaningful response
         console.log("API LIMITS EXCEEDED")
         selectedLA = "Camberwick Green";
@@ -355,34 +397,30 @@ if (postcode) {
         if (country !== "England") {
           hubLocation.LA = country;
         }
-
         redirectToBranch(res);
         
       }
     }
     );
   } else {
-    console.log('no code');
     redirectToBranch(res);
-
   }
 
-});
+}
 
-
-global.redirectToBranch = function (res){
-  console.log('toberanch....');
-  
+// the the subfolder will be the same as the referring page
+// eg gov or v2.1.1 etc
+redirectToBranch = function (res){
   if (businessProfile.age < 3) {
-    res.redirect('pre-start');                // getting starters & companies under 1 year old
+    res.redirect("pre-start");                // getting starters & companies under 1 year old
   } else if (businessProfile.country !== "England") {
-    res.redirect('country');                  // getting other countries
+    res.redirect("country");                  // getting other countries
   } else if (businessProfile.size <= 4) {
-    res.redirect('small');                    // small/micro companies
-  } else if (businessProfile.turnover > 1 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==='3'                                 
-    res.redirect('growth-hub');               // READY TO SCALE: target audience 
+    res.redirect("small");                    // small/micro companies
+  } else if (businessProfile.turnover > 1 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==="3"                                 
+    res.redirect("growth-hub");               // READY TO SCALE: target audience 
   } else {
-    res.redirect('recommendations');          // LOW_PRODUCTIVE: getting neither (!)
+    res.redirect("recommendations");          // LOW_PRODUCTIVE: getting neither (!)
   }
 }
 
