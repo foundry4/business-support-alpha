@@ -61,9 +61,9 @@ var hubLocation = {
   LEP: "Camberwick Green",
   LA: "Camberwick Green",
   ONS: "E06000052",
-  url: "www.ciosgrowthhub.com",
-  telephone: "01209 708660",
-  email: "hello@ciosgrowthhub.com",
+  url: "www.camberwick.com",
+  telephone: "01209 123 456",
+  email: "hello@camberwickb.com",
   interest : [
       "leadership development",
       "investment potential",
