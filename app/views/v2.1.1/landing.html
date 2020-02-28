@@ -29,7 +29,7 @@ Your Growth Hub
 
 <div class="govuk-grid-row">
 	<div class="main clearfix govuk-grid-column-two-thirds">
-	
+
 		<header>
 			<h1 class="govuk-heading-l">Access free support to grow your business</h1>
 		</header>
@@ -38,78 +38,83 @@ Your Growth Hub
 			information to find out which services will suit your business best.
 		</p>
 		<h1 class="govuk-heading-l">Tell us about your business</h1>
-		<div class="govuk" >
-			
-			
+		<div class="govuk">
+
+
 			<form id="nl-form" class="nl-form" action="branch">
-				
+
 				<p>
-				My business is based in
-				<input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode"
-					data-subline="Enter your full postcode,<br/> for example TR1 1XU." />,
+					My business is based in
+					<input type="text" id="nl_postcode" name="nl_postcode" value="" placeholder="any postcode"
+						data-subline="Enter your full postcode,<br/> for example TR1 1XU." />,
 
-				and has
-				<select name="nl_age">
-					<option value="1" selected>not started trading</option>
-					<option value="2">been trading for under a year</option>
-					<option value="3">been trading for 1-2 years</option>
-					<option value="4">been trading for 2-5 years</option>
-					<option value="5">been trading for over 5 years</option>
-				</select>.
+					and has
+					<select name="nl_age">
+						<option value="1" selected>not started trading</option>
+						<option value="2">been trading for under a year</option>
+						<option value="3">been trading for 1-2 years</option>
+						<option value="4">been trading for 2-5 years</option>
+						<option value="5">been trading for over 5 years</option>
+					</select>.
 
-				<br />It employs
-				<input type="text" id="nl_count" name="nl_count" value="10" placeholder="10"
-					data-subline="How many people work in the business?" />
-				people,
+					<br />It employs
+					<input type="text" id="nl_count" name="nl_count" value="10" placeholder="10"
+						data-subline="How many people work in the business?" />
+					people,
 
-				and has an annual turnover of
-				<select name="nl_turnover">
-					<option value="1" selected>under £200k</option>
-					<option value="2">£200k-£1 million</option>
-					<option value="3">over £1 million</option>
-				</select>
-				which has
-				<select name="nl_turnover_change">
-					<option value="1">decreased</option>
-					<option value="2" selected>stayed the same</option>
-					<option value="3">increased</option>
-				</select>
-				in the past year.
+					and has an annual turnover of
+					<select name="nl_turnover">
+						<option value="1" selected>under £200k</option>
+						<option value="2">£200k-£1 million</option>
+						<option value="3">over £1 million</option>
+					</select>
+					which has
+					<select name="nl_turnover_change">
+						<option value="1">decreased</option>
+						<option value="2" selected>stayed the same</option>
+						<option value="3">increased</option>
+					</select>
+					in the past year.
 
-				<br />
-				<br />
+					<br />
+					<br />
 
-				<div class="govuk-form-group">
-					<fieldset class="govuk-fieldset" aria-describedby="description-hint">
-						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							<h1 class="govuk-fieldset__heading">
-								I’d describe my business as:
-							</h1>
-						</legend>
-						<span id="description-hint" class="govuk-hint">
-							Select the three words or phrases that most represent your business
-						</span>
-						<div class="govuk-checkboxes">
-							{% for item in description %}
-							<div class="govuk-checkboxes__item">
-								<input class="govuk-checkboxes__input" id="description-{{ loop.index }}"
-									name="nl_description" type="checkbox" value="{{ item }}">
-								<label class="govuk-label govuk-checkboxes__label" for="description-{{ loop.index }}">
-									{{ item }}
-								</label>
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset" aria-describedby="description-hint">
+							<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+								<h1 class="govuk-fieldset__heading">
+									I’d describe my business as:
+								</h1>
+							</legend>
+							<span id="description-hint" class="govuk-hint">
+								Select the three words or phrases that most represent your business
+							</span>
+							<div class="govuk-checkboxes">
+								{% for item in description %}
+								<div class="govuk-checkboxes__item">
+									<input class="govuk-checkboxes__input" id="description-{{ loop.index }}"
+										name="nl_description" type="checkbox" value="{{ item }}">
+									<label class="govuk-label govuk-checkboxes__label"
+										for="description-{{ loop.index }}">
+										{{ item }}
+									</label>
+								</div>
+								{% endfor %}
 							</div>
-							{% endfor %}
-						</div>
-					</fieldset>
-				</div>
-				<div class="nl-submit-wrap">
-					<button class="nl-submit govuk-button" type="submit">Let's Grow!</button>
-				</div>
-				<br />
-				<br />
-				<br />
-				<div class="nl-overlay"></div>
-			</p>
+						</fieldset>
+					</div>
+					<div class="nl-submit-wrap">
+						{% if isGOVUK %}
+						<button class="govuk-button" type="submit">Get business support</button>
+						{% else %}
+						<button class="nl-submit" type="submit">Let's Grow!</button>
+						{% endif %}
+					</div>
+					<br />
+					<br />
+					<br />
+					<div class="nl-overlay"></div>
+				</p>
 			</form>
 
 

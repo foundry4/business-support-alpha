@@ -309,8 +309,11 @@ if (!postcode) {
 // once we"ve captured the form data
 // store it for future reference in the templates
 if (businessAge) {
-  businessProfile.age = ages[businessAge];
+  businessProfile.age = businessAge;
+  businessProfile.displayAge = ages[businessAge];
 }
+console.log(businessProfile.age);
+
 businessProfile.size = peopleCount;
 businessProfile.postcode = postcode;
 businessProfile.description = description;
