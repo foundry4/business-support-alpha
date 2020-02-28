@@ -71,44 +71,28 @@ Support for your business
 
 <div class="govuk-grid-row">
 
-
+    <div class="govuk-grid-column-two-thirds">
     {% if support.length>0 %}
-    <section class="brexit-checker-actions"><a name="business"></a>
+    <a name="business"></a>
         <header>
             <h2 class="govuk-heading-l action-audience__heading">
                 {{ response[0].name | capitalize }}
             </h2>
         </header>
-        <section class="brexit-checker-audience">
-            <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
 
-                    <aside class="govuk-grid-column-one-third" aria-label=" ">
-                        {% if totalSupport>5 %}
-                        <h3 class="govuk-heading-m">Showing 5 of {{totalSupport}} items</h3>
-                        {% endif %}
-                        &nbsp;
-                        <!-- <p class="govuk-body brexit-checker__critera_explaination">
-                            Because you said:
-                        </p>
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li class="">
-                                You are interested in {{ display.aim }}
-                            </li>
-                        </ul> -->
-                    </aside>
+ 
 
-                    <div class="govuk-grid-column-two-thirds">
-                        {% for item in support %}
-                        {% include 'includes/result_item.html' %}
-                        {% endfor %}
-                    </div>
+            <div class="">
+                {% for item in support %}
+                {% include 'includes/result_item.html' %}
+                {% endfor %}
+            </div>
 
-                </div>
-            </section>
-        </section>
-    </section>
+   
+
     {% endif %}
+    </div>
+</div>
 
     {% if legal.length>0 %}
     <section class="brexit-checker-actions"><a name="legal"></a>

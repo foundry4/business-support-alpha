@@ -45,9 +45,14 @@ $govuk-assets-path: '/govuk/assets/';
     padding: 0;
 }
 
-
 .app-related-items {
     border-top: 2px solid 
     #1d70b8;
     padding-top: 10px;
+}
+
+.result__item{
+    border-bottom: 1px solid #b1b4b6;
+    padding: 20px 0;
+    margin-bottom: 10px;
 }
