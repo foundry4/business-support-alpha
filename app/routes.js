@@ -28,6 +28,25 @@ var selfDescription = [
   "Powered by technology"
 ];
 
+var countryData = {
+  "England":{
+    name:"Business Support",
+    url: "https://www.businesssupport.gov.uk/"
+  },
+  "Northern Ireland":{
+    name:"Invest Northern Ireland",
+    url: "https://www.nibusinessinfo.co.uk/start"
+  },
+  "Scotland":{
+    name:"Business Gateway",
+    url: "https://www.bgateway.com/"
+  },
+  "Wales":{
+    name:"Business Wales",
+    url: "https://businesswales.gov.wales/starting-up/"
+  },
+};
+
 // create business object to store profile
 // TODO map out profile with properties
 var businessProfile = {
@@ -160,7 +179,8 @@ renderStart = function (req, res, isGOV){
     isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
-    location: hubLocation
+    location: hubLocation,
+    country:countryData[businessProfile.country]
   });
 }
 
