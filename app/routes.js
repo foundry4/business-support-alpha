@@ -56,6 +56,18 @@ var businessProfile = {
   country: "Scotland",
 };
 
+var interest = [
+  "leadership development",
+  "investment potential",
+  "developing funding applications",
+  "IT/digital",
+  "marketing",
+  "sales",
+  "human resources",
+  "business management",
+  "financial management"
+]
+
 // hubLocations information
 var hubLocation = {
   LEP: "Camberwick Green",
@@ -63,18 +75,8 @@ var hubLocation = {
   ONS: "E06000052",
   url: "www.camberwick.com",
   telephone: "01209 123 456",
-  email: "hello@camberwickb.com",
-  interest : [
-      "leadership development",
-      "investment potential",
-      "developing funding applications",
-      "IT/digital",
-      "marketing",
-      "sales",
-      "human resources",
-      "business management",
-      "financial management"
-    ],
+  email: "hello@camberwick.com",
+  interest : interest,
   blurb: `Examples of eligible businesses include: 
   <br/>
   retail,
@@ -396,6 +398,7 @@ if (postcode) {
             }
           }
           hubLocation.region = region;
+          hubLocation.interest = interest;
 
           // catch other countries
           if (businessProfile.country !== "England") {

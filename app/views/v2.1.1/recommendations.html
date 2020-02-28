@@ -45,15 +45,14 @@ Finance and support for your business
 <div class="govuk-grid-row">
 
   <h1 class="govuk-heading-xl">
-    Recommendations for your business
+    Improve the performance of your business
   </h1>
   <div class="govuk-grid-column-two-thirds">
 
     <div>
       <p class="govuk-body">
-        If you know how well your business is performing,
-        you can make informed decisions about the future.
-        Find out how your productivity compares with that of similar businesses.
+        Productivity directly affects the turnover, growth and general performance of your business.
+        Find out how your productivity compares with the rest of the UK, and what you can do to improve it.
       </p>
 
 
@@ -62,6 +61,11 @@ Finance and support for your business
 
   </div>
   <div class="govuk-grid-column-one-third">
+    {% if isGOVUK %}
+
+      {% else %}
+      <img class="card-image-half" src="../public/images/dial.png" alt="">
+      {% endif %}
     <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
       <button type="submit" class="govuk-button" id="submit">
         Benchmark your productivity
@@ -76,8 +80,7 @@ Finance and support for your business
 
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">
-      Further resources
-      <!-- {{ location.LA }} -->
+      Further recommendations
     </h2>
   </div>
   <div class="govuk-grid-column-one-third">
@@ -85,8 +88,9 @@ Finance and support for your business
 </div>
 
 
+<!--  ROW ONE  -->
 <div class="govuk-grid-row">
-
+  
   <div class="govuk-grid-column-one-third">
     <a class="card-link" href="https://www.bethebusiness.com/group-event/productivity-through-people/
         " target="_blank">
@@ -94,7 +98,7 @@ Finance and support for your business
 
       {% else %}
       <img class="card-image" src="../public/images/btb_logo.png" alt="">
-      <img class="card-image" src="../public/images/image1.jpg" alt="">
+      <!-- <img class="card-image" src="../public/images/image1.jpg" alt=""> -->
       {% endif %}
 
       <div class="card-inner">
@@ -110,33 +114,82 @@ Finance and support for your business
   </div>
 
   <div class="govuk-grid-column-one-third">
-    <a class="card-link" href=" http://www.mentorsme.co.uk/" target="_blank">
+    <a class="card-link" href="https://www.great.gov.uk/export-opportunities/" target="_blank">
       {% if isGOVUK %}
 
       {% else %}
       <img class="card-image" src="../public/images/mentors.png" alt="">
-      <img class="card-image" src="../public/images/image2.jpg" alt="">
+      <!-- <img class="card-image" src="../public/images/image2.jpg" alt=""> -->
       {% endif %}
 
       <div class="card-inner">
-        <h3 class="heading-large">Find a business mentor</h3>
+        <h3 class="heading-large">Find talent in your area</h3>
       </div>
     </a>
 
     <p>
-      Working with a business mentor can fast-track your professional development. Find a mentor with experience,
-      skills and contacts that will benefit you and your business.
+      Build a team of motivated, skilled individuals by offering apprenticeships.
+      Financial support is available for small businesses like yours.
     </p>
     <p class="govuk-body govuk-!-margin-bottom-9"></p>
   </div>
 
   <div class="govuk-grid-column-one-third">
+    <a class="card-link" href="https://www.axa.co.uk/business-insurance/business-guardian-angel/sme-guide-to-landing-public-sector-contracts/" target="_blank">
+      {% if isGOVUK %}
+
+      {% else %}
+      <img class="axa-logo" src="../public/images/axa_logo.svg" alt="">
+     <!--  <img class="card-image" src="../public/images/image5.jpg" alt=""> -->
+      {% endif %}
+
+      <div class="card-inner">
+        <h3 class="heading-large">Sell to the Public Sector</h3>
+      </div>
+    </a>
+
+    <p>
+      The UK Government is committed to awarding public sector contracts to small businesses.
+      Learn how to research, price and write winning bids.
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-9"></p>
+  </div>
+
+</div>
+
+
+
+<!--  ROW TWO  -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <a class="card-link" href="https://www.great.gov.uk/export-opportunities/"  target="_blank">
+      {% if isGOVUK %}
+
+      {% else %}
+      <img class="card-image" src="../public/images/exporting.png" alt="">
+      <!-- <img class="card-image" src="../public/images/image1.jpg" alt=""> -->
+      {% endif %}
+
+      <div class="card-inner">
+        <h3 class="heading-large">Find exporting opportunities</h3>
+      </div>
+    </a>
+    <p>
+      Overseas buyers are looking for products and services from the UK. 
+      Use this tool to find the right export opportunities for your business.
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-9"></p>
+  </div>
+
+  
+  <div class="govuk-grid-column-one-third">
     <a class="card-link" href="//{{ location.url }}" target="_blank">
       {% if isGOVUK %}
 
       {% else %}
-      <img class="card-image" src="../public/images/image5.jpg" alt="">
       <img class="card-image" src="../public/images/lincoln2.png" alt="">
+      <!-- <img class="card-image" src="../public/images/image5.jpg" alt=""> -->
       {% endif %}
 
       <div class="card-inner">
@@ -151,7 +204,40 @@ Finance and support for your business
     <p class="govuk-body govuk-!-margin-bottom-9"></p>
   </div>
 
+
+  <div class="govuk-grid-column-one-third">
+    <a class="card-link" href="http://www.mentorsme.co.uk/" target="_blank">
+      {% if isGOVUK %}
+
+      {% else %}
+      <img class="card-image" src="../public/images/mentors.png" alt="">
+      <!-- <img class="card-image" src="../public/images/image2.jpg" alt=""> -->
+      {% endif %}
+
+      <div class="card-inner">
+        <h3 class="heading-large">Find a business mentor</h3>
+      </div>
+    </a>
+
+    <p>
+      Working with a business mentor can fast-track your professional development. Find a mentor with experience,
+      skills and contacts that will benefit you and your business.
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-9"></p>
+  </div>
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
 
 <div class="govuk-grid-row">
 

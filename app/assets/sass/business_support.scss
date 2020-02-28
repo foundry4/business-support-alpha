@@ -234,9 +234,12 @@ color:
 }
 
 img.card-image {
+    display: block;
     margin: 0;
     width: 100%;
-    height: auto;
+    height: 120px;
+    min-height: 120px;
+    overflow:hidden;
 }
 
 header.banner .header-right {
@@ -568,4 +571,16 @@ p.landing{
     border-bottom: 1px solid #b1b4b6;
     padding: 20px 0;
     margin-bottom: 10px;
+}
+.card-image-half{
+    height:100px;
+    width:100px;
+    margin:auto;
+    padding-left: 75px;1
+}
+.axa-logo {
+    vertical-align: middle;
+    height: 140px;
+    margin: 25px;
+    padding: 25px;
 }
