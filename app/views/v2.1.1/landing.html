@@ -1,62 +1,44 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+{% if isGOVUK %}
+{% extends "layout.html" %}
+{% else %}
+{% extends "layout_business_support_landing.html" %}
+{% endif %}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Business Support Alpha</title>
-	<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
-	<meta name="keywords"
-		content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
-	<link rel="shortcut icon" href="../favicon.ico">
+{% block pageTitle %}
+Your Growth Hub
+{% endblock %}
 
-	<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_white.css" />
-	<link rel="stylesheet" type="text/css" href="../public/stylesheets/nl_component_white.css" />
-	{% if isGOVUK %}
-	<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"> 
-	<link href="../public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
-	{% else %}
-	<link href="../public/stylesheets/business_support.css" media="all" rel="stylesheet" type="text/css">
-	{% endif %}
+{% block header %}
+{% if isGOVUK %}
+{% include "includes/headerGOV.html" %}
+{% else %}
+{% include "includes/header_business_support.html" %}
+{% endif %}
+{% endblock %}
 
-	<script src="../public/javascripts/modernizr.custom.js" type="application/javascript"></script>
-	{% if (isLive == true) or (isLive == "true") %}
-	{% include "../includes/hotjar.html" %}
-	{% endif %}
-</head>
+{% block beforeContent %}
+{% if isGOVUK %}
+{% include "includes/banner_alpha_2.html" %}
+{% else %}
+{% include "includes/banner_alpha_2.1.html" %}
+{% endif %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
 
-<body class="nl-blurred">
-	<div class="container demo-1">
-		{% block header %}
-		{% if isGOVUK %}
-		{% include "includes/header.html" %}
-		{% else %}
-		{% include "includes/header_business_support.html" %}
-		{% endif %}
-		{% endblock %}
+{% block content %}
 
-		<div class="govuk-width-container ">
-			{% if isGOVUK %}
-			{% include "includes/banner_alpha_2.html" %}
-			{% else %}
-			{% include "includes/banner_alpha_2.1.html" %}
-			{% endif %}
-		</div>
-
-
-
-		<div class="main clearfix">
-			<p class="govuk-body govuk-!-margin-bottom-9"></p>
-
-			<header>
-				<h1 class="govuk-heading-l">Access free support to grow your business</h1>
-			</header>
-			<p class="landing">
-				Small businesses are eligible for all different kinds of support from the government. Share some basic
-				information to find out which services will suit your business best.
-			</p>
-			<h1 class="govuk-heading-l">Tell us about your business</h1>
+<div class="govuk-grid-row">
+	<div class="main clearfix govuk-grid-column-two-thirds">
+	
+		<header>
+			<h1 class="govuk-heading-l">Access free support to grow your business</h1>
+		</header>
+		<p class="landing">
+			Small businesses are eligible for all different kinds of support from the government. Share some basic
+			information to find out which services will suit your business best.
+		</p>
+		<h1 class="govuk-heading-l">Tell us about your business</h1>
+		<div class="" >
 			<form id="nl-form" class="nl-form" action="branch">
 
 				My business is based in
@@ -91,19 +73,6 @@
 				</select>
 				in the past year.
 
-				<!-- <br />I’d describe my business as:
-					Select the three words or phrases that most represent your business
-					<select name="nl_aim" multiple>
-						<option value="1">Innovative</option>
-					 	<option value="2">Competitive</option>
-					 	<option value="3">Profit-focused</option>
-					 	<option value="4">Powered by technology</option>
-					 	<option value="5">Efficient</option>
-					 	<option value="6">Stable</option>
-					 	<option value="7">Traditional</option>
-					 	<option value="8">Powered by people</option>
-					 	<option value="9">Part of the community</option>
-					</select >. -->
 				<br />
 				<br />
 
@@ -138,14 +107,26 @@
 				<br />
 				<div class="nl-overlay"></div>
 			</form>
+
+
 		</div>
-	</div><!-- /container -->
-	<script src="../public/javascripts/nlform.js" type="application/javascript"></script>
-	<script>
-		var nlform = new NLForm(document.getElementById('nl-form'));
-	</script>
-	{% include "../includes/footer.html" %}
 
-</body>
+	</div>
 
-</html>
+
+	<div class="govuk-grid-column-one-third">
+		<!--{% include 'includes/related_custom_growthHub2.1.html' %} -->
+	</div>
+
+</div>
+
+{% if isGOVUK %}
+{% else %}
+<script src="../public/javascripts/nlform.js" type="application/javascript"></script>
+<script>
+	var nlform = new NLForm(document.getElementById('nl-form'));
+</script>
+{% endif %}
+
+
+{% endblock %}
