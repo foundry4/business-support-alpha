@@ -34,7 +34,9 @@ Starting your business
     <h1 class="govuk-heading-l" id="start">Working in {{ business.country }}</h1>
 
     <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
-
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
       {% if country=="England" %}
       <p>
         Advice and financial help from government-backed schemes is available in
@@ -42,7 +44,7 @@ Starting your business
       </p>
       {% endif %}
       <p>
-        Because your business is <strong>{{ business.age }}</strong> and employs <strong>{{ business.size }}</strong>
+        Because your business is <strong>{{ business.displayAge }}</strong> and employs <strong>{{ business.size }}</strong>
         {% if business.size==1 %}
         person,
         {% else %}

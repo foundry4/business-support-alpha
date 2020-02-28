@@ -304,7 +304,7 @@ renderResults = function (req, res, isGOV){
 }
 
 renderBranches = function (req, res, isGOV){
-
+  
   let businessAge = req.session.data["nl_age"];
   let postcode = req.session.data["nl_postcode"];
   let peopleCount = req.session.data["nl_count"];
@@ -312,6 +312,7 @@ renderBranches = function (req, res, isGOV){
   let turnoverChange = req.session.data["nl_turnover_change"];
   let description = req.session.data["nl_description"];
   businessProfile.isReady = false;
+  console.log(postcode);
 
   if (description) {
     if (description.indexOf("Innovative") > -1 || description.indexOf("Competitive") > -1 || description.indexOf("Profit-focused") > -1) {
@@ -375,6 +376,8 @@ if (postcode) {
             //also get the country code for use on the pre-start hand off?
             if (areas[area].country_name !== "-") {
               businessProfile.country = areas[area].country_name
+              console.log(businessProfile.country);
+              
             }
           }
 
@@ -437,6 +440,8 @@ if (postcode) {
 // the the subfolder will be the same as the referring page
 // eg gov or v2.1.1 etc
 redirectToBranch = function (res){
+  console.log(businessProfile);
+  
   if (businessProfile.age < 3) {
     res.redirect("pre-start");                // getting starters & companies under 1 year old
   } else if (businessProfile.country !== "England") {
