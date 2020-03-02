@@ -122,6 +122,14 @@ router.get("/gov/pre-start", function (req, res, next) {
   renderStart(req, res, true);
 });
 
+// small
+router.get("/v2.1.1/small", function (req, res, next) {
+  renderStart(req, res, false);
+});
+router.get("/gov/small", function (req, res, next) {
+  renderStart(req, res, true);
+});
+
 // target: growth hub
 router.get("/v2.1.1/growth-hub", function (req, res, next) {
   renderGrowthHub(req, res, false);
