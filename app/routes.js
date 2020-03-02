@@ -70,12 +70,12 @@ var interest = [
 
 // hubLocations information
 var hubLocation = {
-  LEP: "Camberwick Green",
-  LA: "Camberwick Green",
+  LEP: "Emmerdale",
+  LA: "Emmerdale",
   ONS: "E06000052",
-  url: "www.camberwick.com",
+  url: "https://www.growthhub.london/",
   telephone: "01209 123 456",
-  email: "hello@camberwick.com",
+  email: "hello@emmerdale.com",
   interest : interest,
   blurb: `Examples of eligible businesses include: 
   <br/>
@@ -147,7 +147,7 @@ router.get("/gov/results", function (req, res, next) {
 });
 
 // recommendations
-router.get("/v2.1.1/recommendations", function (req, res, next) {
+router.get("/v2.1.1/recommendations", function (req, res, next) { 
   renderRecommendations(req, res, false);
 });
 router.get("/gov/recommendations", function (req, res, next) {
@@ -178,8 +178,6 @@ router.get("/gov/branch", function (req, res, next) {
 //////////////////////////////////////////////////////////////////
 
 renderLandingPage = function (req, res, isGOV){
-  console.log(req);
-  
   res.render("v2.1.1/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
@@ -187,6 +185,7 @@ renderLandingPage = function (req, res, isGOV){
     url:req.url
   });
 }
+
 renderStart = function (req, res, isGOV){
   res.render("v2.1.1/pre-start", {
     isGOVUK: isGOV,
@@ -204,6 +203,7 @@ renderCountry = function (req, res, isGOV){
       isLive: isLive,
       business: businessProfile,
       location: hubLocation,
+      country:countryData[businessProfile.country],
       url:req.url
     });
 }
@@ -283,7 +283,7 @@ renderResults = function (req, res, isGOV){
     var response = [];
     var title = "";
   
-    // loop through the description nad populate results
+    // loop through the description and populate results
     if(selfDescription.length>0){
       title = selfDescription[0];
       for ( var i=0; i<selfDescription.length; i++){
@@ -435,8 +435,8 @@ if (postcode) {
       } else {
         // Repeat the triage process here with a default response to provide a meaningful response
         console.log("API LIMITS EXCEEDED")
-        selectedLA = "Camberwick Green";
-        region = "Camberwick Green";
+        selectedLA = "Emmerdale";
+        region = "Emmerdale";
         country = "England";
         // catch other countries
         if (country !== "England") {

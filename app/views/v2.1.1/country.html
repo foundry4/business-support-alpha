@@ -4,7 +4,6 @@
 {% extends "layout_business_support.html" %}
 {% endif %}
 
-
 {% block pageTitle %}
 Starting your business
 {% endblock %}
@@ -31,62 +30,48 @@ Starting your business
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l" id="start">Working in {{ business.country }}</h1>
+    <h1 class="govuk-heading-l" id="start">Working in {{ business.country }}
+    </h1>
+  </div>
+</div>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
     <div class="govuk-govspeak direction-ltr disable-youtube" data-module="govspeak">
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-      {% if country=="England" %}
       <p>
-        Advice and financial help from government-backed schemes is available in
-        <strong>{{ business.country }}</strong>.
+        Take the first steps to starting your business with free support from {{ country.name }}.
       </p>
-      {% endif %}
-      <p>
-        Because your business is <strong>{{ business.displayAge }}</strong> and employs <strong>{{ business.size }}</strong>
-        {% if business.size==1 %}
-        person,
-        {% else %}
-        people,
-        {% endif %}
-        you may benefit from contacting
 
-        {% if business.country=="England" %}
-        the Business Support Helpline.
-        {% elif business.country=="Scotland" %}
-        the Business Gateway.
-        {% elif business.country=="Northern Ireland" %}
-        the Invest Northern Ireland website.
-        {% else %}
-        the Business Wales website.
-        {% endif %}
-      </p>
       <p>
-        It includes services such as:
+        {{ country.name }} is a fully funded, government-backed scheme that can help set you and your business up for
+        success.
+      </p>
+
+      <p>
+        Contact {{ country.name }} online or speak with an advisor on the phone to get support with the essentials, such
+        as:
       </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="#p">Help with tax</a></li>
-        <li><a rel="external" href="#">Advice on writing a business plan</a></li>
-        <li><a href="#">Guidance on hiring and paying staff</a></li>
+        <li>Tax and legal compliance</li>
+        <li>Writing a business plan</li>
+        <li>Hiring and paying staff</li>
       </ul>
 
 
       {% if business.country=="England" %}
-      <h2 class="govuk-heading-m" id="england">England</h2>
-
-      <p>You can contact the government’s Business Support Helpline for free advice.</p>
-
-      <p>You can also find free support, advice and sources of finance through your <a rel="external"
-          href="http://www.lepnetwork.net/growth-hubs/">local ‘growth hub’</a>.</p>
-
       <div class="contact">
-        <p><strong>Business Support Helpline (England)</strong><br>
-          Telephone: 0300 456 3565 <br>
+        <p><strong>Business Support Helpline (England)</strong>
+          <br>
+          <br>
           <a href="mailto:enquiries@businesssupporthelpline.org">enquiries@businesssupporthelpline.org</a><br>
+          Telephone: 0300 456 3565
+          <br>
           Monday to Friday, 9am to 6pm<br>
-          <a href="/call-charges">Find out about call charges</a></p>
       </div>
 
       <p>The Business Support Helpline for England is also on:</p>
@@ -97,60 +82,64 @@ Starting your business
         <li><a rel="external" href="https://www.facebook.com/BusinessSupportGov">Facebook</a></li>
         <li><a rel="external" href="https://www.youtube.com/user/BusinessSupportGov">YouTube</a></li>
       </ul>
+      <p>
+        You can also find free support, advice and sources of finance
+        through your <a href="http://www.lepnetwork.net/growth-hubs/">local Growth Hub</a>.
+      </p>
       {% endif %}
-
+      
+      
+      
       {% if business.country=="Scotland" %}
-      <h2 class="govuk-heading-m" id="scotland">Scotland</h2>
-
-      <p><a rel="external" href="http://www.bgateway.com">Get free advice from the Business Gateway website</a>, or over
-        the phone.</p>
-
       <div class="contact">
-        <p><strong>Business Gateway (Scotland)</strong><br>
-          Telephone: 0300 013 4753 <br>
+        <p><strong>Business Gateway (Scotland)</strong>
+          <br>
+          <br>
+          Website: <a rel="external" href="{{ country.url }}">{{ country.url }}</a><br>
+          <br>
+          Telephone: 0300 013 4753<br>
           Textphone: 0800 023 2071<br>
-          Monday to Friday, 8am to 6pm <br>
-          <a href="/call-charges">Find out about call charges</a></p>
+          Monday to Friday, 8am to 6pm<br>
       </div>
       {% endif %}
+
+
 
       {% if business.country=="Wales" %}
-      <h2 class="govuk-heading-m" id="wales">Wales</h2>
-
-      <p><a rel="external" href="http://business.wales.gov.uk/starting-business">Get help with your business via the
-          Business Wales website,</a> or by calling the Business Wales Helpline.</p>
-
       <div class="contact">
-        <p><strong>Business Wales Helpline</strong><br>
+        <p>
+          <strong>Business Wales Helpline</strong>
+          <br>
+          <br>
+          Website: <a rel="external" href="{{ country.url }}">{{ country.url }}</a><br>
+          <br>
           Telephone: 0300 060 3000<br>
           Monday to Friday, 8:30am to 5:30pm<br>
-          <a href="/call-charges">Find out about call charges</a></p>
       </div>
       {% endif %}
+
 
 
       {% if business.country=="Northern Ireland" %}
-      <h2 class="govuk-heading-m" id="northern-ireland">Northern Ireland</h2>
-
-      <p><a rel="external" href="https://www.nibusinessinfo.co.uk/start">Find advice and support for starting a business
-          on the Invest Northern Ireland website</a>. You can also contact the contact Invest Northern Ireland helpline.
-      </p>
-
       <div class="contact">
-        <p><strong>Invest Northern Ireland</strong><br>
+        <p><strong>Invest Northern Ireland</strong>
+          <br>
+          <br>
+          Website: <a rel="external" href="{{ country.url }}">{{ country.url }}</a><br>
+          <br>
           Telephone: 0800 181 4422<br>
           Monday to Friday, 8:30am to 5pm<br>
-          <a href="/call-charges">Find out about call charges</a></p>
       </div>
       {% endif %}
 
-    </div>
 
+
+    </div>
   </div>
 
 
   <div class="govuk-grid-column-one-third">
-
+    {% include 'includes/custom_pre_start.html' %}
   </div>
 
 </div>

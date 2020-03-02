@@ -350,7 +350,7 @@ module.exports = app
 
 
 // Load sample factsheet data from JSON.
-var location = "Camberwick Green";
+var location = "Emmerdale";
 // read as a string
 var data = fs.readFileSync(__dirname + '/app/data/cornwall.json').toString();
 // replace the location placholder
