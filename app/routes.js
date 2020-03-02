@@ -170,10 +170,13 @@ router.get("/gov/branch", function (req, res, next) {
 //////////////////////////////////////////////////////////////////
 
 renderLandingPage = function (req, res, isGOV){
+  console.log(req);
+  
   res.render("v2.1.1/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
-    description: selfDescription
+    description: selfDescription,
+    url:req.url
   });
 }
 renderStart = function (req, res, isGOV){
@@ -182,7 +185,8 @@ renderStart = function (req, res, isGOV){
     isLive: isLive,
     business: businessProfile,
     location: hubLocation,
-    country:countryData[businessProfile.country]
+    country:countryData[businessProfile.country],
+    url:req.url
   });
 }
 
@@ -191,7 +195,8 @@ renderCountry = function (req, res, isGOV){
     isGOVUK: isGOV,
       isLive: isLive,
       business: businessProfile,
-      location: hubLocation
+      location: hubLocation,
+      url:req.url
     });
 }
 
@@ -200,7 +205,8 @@ renderGrowthHub = function (req, res, isGOV){
     isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
-    location: hubLocation
+    location: hubLocation,
+    url:req.url
   });
 }
 
@@ -227,7 +233,8 @@ renderRecommendations = function (req, res, isGOV){
     premises: premises,
     procurement: procurement,
     location: hubLocation,
-    business: businessProfile
+    business: businessProfile,
+    url:req.url
   });
 }
 
@@ -299,7 +306,8 @@ renderResults = function (req, res, isGOV){
       location: hubLocation,
       business: businessProfile,
       description:title,
-      response:response
+      response:response,
+      url:req.url
     });
 }
 
