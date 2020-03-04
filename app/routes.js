@@ -68,6 +68,28 @@ var interest = [
   "financial management"
 ]
 
+// VERSION 3 CATEGORIES
+var support_types = [
+  "Exporting",
+  "Funding",
+  "Productivity",
+  "Performance",
+  "Mentoring",
+  "Hiring",
+  "Innovation",
+  "Marketing",
+  "Online Sales",
+  "Late Payments",
+  "Manufacturing",
+  "Technology",
+  "Consultancy",
+  "Government frameworks",
+  "Agriculture",
+  "Brexit",
+  "Apprentices",
+  "Intellectual property"
+]
+
 // hubLocations information
 var hubLocation = {
   LEP: "Emmerdale",
@@ -94,6 +116,33 @@ var hubLocation = {
 // have archived previous versions of prototype to routesOld.js
 // starting with a clean slate...
 
+
+//////////////////////////////////////////////////////////////////
+//
+// Version 3 prototype
+//
+//////////////////////////////////////////////////////////////////
+
+// index
+router.get("/", function (req, res, next) {
+  res.render("index", {});
+});
+
+// landing page
+router.get("/v3/", function (req, res, next) {
+  renderLandingPageV3(req, res, false);
+});
+router.get("/gov3/", function (req, res, next) {
+  renderLandingPageV3(req, res, true);
+});
+
+// results
+router.get("/v3/results", function (req, res, next) {
+  renderResultsV3(req, res, false);
+});
+router.get("/gov3/results", function (req, res, next) {
+  renderResultsV3(req, res, true);
+});
 
 //////////////////////////////////////////////////////////////////
 //
@@ -173,6 +222,42 @@ router.get("/gov/branch", function (req, res, next) {
 
 //////////////////////////////////////////////////////////////////
 //
+// VERSION 3
+// Render functions used to re-use templates with different styles
+//
+//////////////////////////////////////////////////////////////////
+
+renderLandingPageV3 = function (req, res, isGOV){
+  res.render("v3.0/landing", {
+    isGOVUK: isGOV,
+    isLive: isLive,
+    description: support_types,
+    url:req.url
+  });
+}
+
+
+renderResultsV3 = function (req, res, isGOV){
+  //console.log(req)
+  var support = req.session.data["support_type"];
+  var support_text = support_types[support-1];
+  var results = res.app.locals.data;
+  var filteredResults = _.filter(results, function (item) { return item.category === "Premises" });
+
+  res.render("v3.0/results", {
+    isGOVUK: isGOV,
+    isLive: isLive,
+    description: support_types,
+    support_text:support_text,
+    response:filteredResults
+  });
+}
+
+
+
+//////////////////////////////////////////////////////////////////
+//
+// VERSION 2.1.1
 // Render functions used to re-use templates with different styles
 //
 //////////////////////////////////////////////////////////////////

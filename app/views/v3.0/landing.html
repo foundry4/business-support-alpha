@@ -1,0 +1,82 @@
+{% if isGOVUK %}
+{% extends "layout.html" %}
+{% else %}
+{% extends "layout_business_support_landing.html" %}
+{% endif %}
+
+{% block pageTitle %}
+Your Growth Hub
+{% endblock %}
+
+{% block header %}
+{% if isGOVUK %}
+{% include "includes/headerGOV.html" %}
+{% else %}
+{% include "includes/header_business_support.html" %}
+{% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/banner_alpha_3.0.html" %}
+<a href="javascript:window.history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="">
+
+		<header>
+			<h1 class="govuk-heading-xl">BUSINESS SUPPORT FINDER</h1>
+		</header>
+
+		
+		
+		<div class="govuk">
+			<form id="form" class="nl-form" action="results">
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset" aria-describedby="description-hint">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h2 class="govuk-fieldset__heading">
+								What are you interested in or want help with?
+							</h2>
+						</legend>
+						<span id="description-hint" class="govuk-hint">
+							<!-- Select the three words or phrases that most represent your business -->
+						</span>
+						<select class="govuk-select" name="support_type">
+							{% for item in description %}
+							<option value="{{ loop.index }}" selected>{{ item }}</option>
+							{% endfor %}
+						</select>
+					</fieldset>
+				</div>
+				<div class="nl-submit-wrap">
+					{% if isGOVUK %}
+					<button class="govuk-button" type="submit">Find support</button>
+					{% else %}
+					<button class="nl-submit" type="submit">Find support</button>
+					
+					{% endif %}
+				</div>
+				
+			</form>
+			
+		</div>
+		<p>Other business owners are searching for support with:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>hiring without bias</li>
+        <li>exporting to the EU</li>
+        <li>free business mentor</li>
+      </ul>
+		
+	</div>
+
+</div>
+{% endblock %}
+
+
+{% block footer %}
+{% include "includes/footer3.0.html" %}
+{% endblock %}
