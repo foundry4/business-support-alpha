@@ -3,27 +3,29 @@
     {{item.title}}
     </h4>
 
-    {{item.description | safe}}
+    <p>
+      {{item.description | safe}}
+    </p>
 
     <div class="govuk-body govuk-!-font-size-16">
-      {% if item.eligibility or item.website or item.telephone or item.email %}
+ 
+      {% if item.cta %}
       <p>
-        More information:
+        {{item.cta | safe}}
       </p>
       {% endif %}
-      {% if item.eligibility %}
-      <p class="document-list__item-description">Eligibility: {{item.eligibility}}</p>
+<!-- 
+      {% if item.url %}
+      <p class="document-list__item-description">Website: <a href="{{item.url | lower }}"
+          target="_blank">{{item.url | lower }}</a></p>
       {% endif %}
-      {% if item.website %}
-      <p class="document-list__item-description">Website: <a href="{{item.website | lower }}"
-          target="_blank">{{item.website | lower }}</a></p>
-      {% endif %}
-      {% if item.telephone %}
-      <p class="document-list__item-description">Telephone: {{item.telephone}}</p>
-      {% endif %}
-      {% if item.email %}
-      <p class="document-list__item-description">Email: <a href="mailto:{{item.email}}">{{item.email}}</a></p>
+
+ -->
+      {% if item.logo %}
+      
       {% endif %}
     </div>
 
 </div>
+
+

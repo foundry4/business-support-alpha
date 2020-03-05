@@ -363,3 +363,7 @@ data = JSON.parse(fs.readFileSync(__dirname + '/app/data/hubs.json').toString())
 app.locals.hubs = data.hubs;
 data = JSON.parse(fs.readFileSync(__dirname + '/app/data/lep_dictionary.json').toString());
 app.locals.dictionary = data.dictionary;
+
+//version 3 support text
+data = JSON.parse(fs.readFileSync(__dirname + '/app/data/support_data.json').toString());
+app.locals.support = data.support;

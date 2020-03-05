@@ -1,0 +1,33 @@
+{
+    "support": {
+        "exporting": {
+            "title": "Exporting advice from Emmerdale Council",
+            "logo": null,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "cta": "<p>This is a <strong>free</strong> service provided by <a href=''>Emmerdale Council</a></p>",
+            "url": "https://www.emmerdale.gov.uk/environment-and-planning/land-and-property/estates-management/"
+        },
+        "funding": {
+            "title": "Funding at the Emmerdale Innovation Centre",
+            "logo": null,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "cta": "<p><a href=''>Go to site</a></p>",
+            "url": "www.emmerdaleinnovation.co.uk"
+        },
+        "productivity": {
+            "title": "Productivity with Aerohub at Emmerdale Airport (Government Enterprise Zone)",
+            "logo": null,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "cta": "<p><a href=''>See case study</a></p>",
+            "url": "http://www.aerohub.co.uk/"
+        },
+        "performance": {
+            "title": "Performance at Emmerdale Marine Hub (Government  Enterprise Zone)",
+            "logo": null,
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "cta": "<p>This is a <strong>free</strong> service provided by <a href=''>Emmerdale Marine Hub</a></p>",
+            "url": "https://emmerdale.co.uk/our-four-plus-points/infrastructure/enterprise-zone"
+
+        }
+    }
+}

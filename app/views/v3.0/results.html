@@ -79,19 +79,33 @@ Support for your business
 
 
 <div class="govuk-grid-row">
-
+    
     <div class="govuk-grid-column-two-thirds">
-
+        
         <div class="">
-            {% for item in response %}
+            {% for item in supportObj %}
             {% include 'includes/v3_result_item.html' %}
             {% endfor %}
         </div>
-
+        
     </div>
-
+    
 </div>
+<div class="govuk-grid-row">
+    <div class="govuk-!-padding-bottom-4"></div>
+		<!-- <h2 class="govuk-heading-m">Popular advice</h2>
+		<p>Other business owners are searching for support with:</p>
+		
+		<ul class="govuk-list govuk-list--bullet">
+			<li>hiring without bias</li>
+			<li>exporting to the EU</li>
+			<li>free business mentor</li>
 
+		</ul>
+		 -->
+		<p>Not what you are looking for?</p>
+		<p><a href="">Try &ldquo;Get £££ for {{ support_text }}&rdquo;</a></p>
+</div>
 {% endblock %}
 
 {% block footer %}
