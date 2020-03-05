@@ -674,11 +674,7 @@ p.landing{
     margin: 0;
 
 }
-*, ::after, ::before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+
 .form-inline{
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     font-size: 1.5rem;
@@ -686,3 +682,11 @@ p.landing{
 }
 
 
+.left {
+    float: left;
+    padding: 0 10px 10px 0;
+   }
+   
+.half-image{
+    width:150px;
+}

@@ -238,20 +238,14 @@ renderLandingPageV3 = function (req, res, isGOV){
 
 
 renderResultsV3 = function (req, res, isGOV){
-  //console.log(req)
   var support = req.session.data["support_type"];
   if(support === undefined){
     support = 1;
   }
   var supportText = supportTypes[support-1];
-  //var results = res.app.locals.data;
- // var filteredResults = _.filter(results, function (item) { return item.category === "Premises" });
- console.log(supportText);
   
   var supportData = res.app.locals.support;
   var supportObj = supportData[supportText.toLowerCase()];
-console.log(supportData);
-console.log(supportObj);
 
   res.render("v3.0/results", {
     isGOVUK: isGOV,
@@ -259,8 +253,7 @@ console.log(supportObj);
     url:req.url,
     description: supportTypes,
     support_text:supportText,
-    supportObj:[supportObj],
-    //response:filteredResults
+    supportObj:[supportObj]
   });
 }
 
