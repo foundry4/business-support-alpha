@@ -129,18 +129,18 @@ router.get("/", function (req, res, next) {
 });
 
 // landing page
-router.get("/v3/", function (req, res, next) {
+router.get("/expt_3/", function (req, res, next) {
   renderLandingPageV3(req, res, false);
 });
-router.get("/gov3/", function (req, res, next) {
+router.get("/expt_gov_3/", function (req, res, next) {
   renderLandingPageV3(req, res, true);
 });
 
 // results
-router.get("/v3/results", function (req, res, next) {
+router.get("/expt_3/results", function (req, res, next) {
   renderResultsV3(req, res, false);
 });
-router.get("/gov3/results", function (req, res, next) {
+router.get("/expt_gov_3/results", function (req, res, next) {
   renderResultsV3(req, res, true);
 });
 
@@ -228,7 +228,7 @@ router.get("/gov/branch", function (req, res, next) {
 //////////////////////////////////////////////////////////////////
 
 renderLandingPageV3 = function (req, res, isGOV){
-  res.render("v3.0/landing", {
+  res.render("expt3/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
     description: supportTypes,
@@ -247,7 +247,7 @@ renderResultsV3 = function (req, res, isGOV){
   var supportData = res.app.locals.support;
   var supportObj = supportData[supportText.toLowerCase()];
 
-  res.render("v3.0/results", {
+  res.render("expt3/results", {
     isGOVUK: isGOV,
     isLive: isLive,
     url:req.url,
