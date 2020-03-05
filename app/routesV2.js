@@ -68,7 +68,7 @@ var interest = [
   "financial management"
 ]
 
-// VERSION 3 CATEGORIES
+// VERSION EXPT CATEGORIES
 var supportTypes = [
   "Exporting",
   "Funding",
@@ -118,53 +118,25 @@ var hubLocation = {
 
 //////////////////////////////////////////////////////////////////
 //
-// Version 3.0 prototype
+// Version EXPT prototype
 //
 //////////////////////////////////////////////////////////////////
 
 // landing page
-router.get("/v3/", function (req, res, next) {
-  renderLandingPageV3(req, res, false);
+router.get("/expt_3/", function (req, res, next) {
+  renderLandingPageX3(req, res, false);
 });
-router.get("/gov3/", function (req, res, next) {
-  renderLandingPageV3(req, res, true);
-});
-
-
-// target: growth hub
-router.get("/v3/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, false);
-});
-router.get("/gov3/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, true);
+router.get("/expt_gov_3/", function (req, res, next) {
+  renderLandingPageX3(req, res, true);
 });
 
-// growth hub filter
-router.get("/v3/results", function (req, res, next) {
-  renderResults(req, res, false);
+// results
+router.get("/expt_3/results", function (req, res, next) {
+  renderResultsX3(req, res, false);
 });
-router.get("/gov3/results", function (req, res, next) {
-  renderResults(req, res, true);
+router.get("/expt_gov_3/results", function (req, res, next) {
+  renderResultsX3(req, res, true);
 });
-
-// recommendations
-router.get("/v3/recommendations", function (req, res, next) { 
-  renderRecommendations(req, res, false);
-});
-router.get("/gov3/recommendations", function (req, res, next) {
-  renderRecommendations(req, res, true);
-});
-
-
-// branch
-router.get("/v3/branch", function (req, res, next) {
-  renderBranches(req, res, false)
-});
-router.get("/gov3/branch", function (req, res, next) {
-  renderBranches(req, res, true)
-});
-
-
 
 //////////////////////////////////////////////////////////////////
 //
@@ -244,13 +216,13 @@ router.get("/gov/branch", function (req, res, next) {
 
 //////////////////////////////////////////////////////////////////
 //
-// VERSION 3
+// VERSION EXPT
 // Render functions used to re-use templates with different styles
 //
 //////////////////////////////////////////////////////////////////
 
-renderLandingPageV3 = function (req, res, isGOV){
-  res.render("v3.0/landing", {
+renderLandingPageX3 = function (req, res, isGOV){
+  res.render("expt3/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
     description: supportTypes,
@@ -259,7 +231,7 @@ renderLandingPageV3 = function (req, res, isGOV){
 }
 
 
-renderResultsV3 = function (req, res, isGOV){
+renderResultsX3 = function (req, res, isGOV){
   var support = req.session.data["support_type"];
   if(support === undefined){
     support = 1;
@@ -269,7 +241,7 @@ renderResultsV3 = function (req, res, isGOV){
   var supportData = res.app.locals.support;
   var supportObj = supportData[supportText.toLowerCase()];
 
-  res.render("v3.0/results", {
+  res.render("expt3/results", {
     isGOVUK: isGOV,
     isLive: isLive,
     url:req.url,
@@ -278,8 +250,6 @@ renderResultsV3 = function (req, res, isGOV){
     supportObj:[supportObj]
   });
 }
-
-
 
 //////////////////////////////////////////////////////////////////
 //

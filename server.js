@@ -26,6 +26,7 @@ const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const routesOld = require('./app/routesOld.js')
+const routesV2 = require('./app/routesV2.js')
 
 // Variables for v6 backwards compatibility
 // Set false by default, then turn on if we find /app/v6/routes.js
@@ -261,9 +262,11 @@ if (typeof (routes) !== 'function') {
   console.log("Loading routes from  previous prototypes");
   
   routesOld.bind(app)
+  routesV2.bind(app)
 } else {
   app.use('/', routes)
   app.use('/', routesOld)
+  app.use('/', routesV2)
 }
 
 if (useDocumentation) {
