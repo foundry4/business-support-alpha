@@ -19,11 +19,7 @@ Support for your business
 {% endblock %}
 
 {% block beforeContent %}
-{% if isGOVUK %}
-{% include "includes/banner_alpha_2.html" %}
-{% else %}
-{% include "includes/banner_alpha_2.1.html" %}
-{% endif %}
+{% include "includes/banner_alpha_3.0.html" %}
 {{ super() }}
 <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
@@ -109,5 +105,5 @@ Support for your business
 {% endblock %}
 
 {% block footer %}
-{% include "includes/footer2.1.1.html" %}
+{% include "includes/footer3.0.html" %}
 {% endblock %}
