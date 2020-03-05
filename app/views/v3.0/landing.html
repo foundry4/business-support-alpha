@@ -24,54 +24,52 @@ Your Growth Hub
 {% block content %}
 
 <div class="govuk-grid-row">
-	<div class="">
 
-		<header>
-			<h1 class="govuk-heading-xl">BUSINESS SUPPORT FINDER</h1>
-		</header>
 
-		
-		
-		<div class="govuk">
-			<form id="form" class="nl-form" action="results">
-				<div class="govuk-form-group">
-					<fieldset class="govuk-fieldset" aria-describedby="description-hint">
-						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							<h2 class="govuk-fieldset__heading">
-								What are you interested in or want help with?
-							</h2>
-						</legend>
-						<span id="description-hint" class="govuk-hint">
-							<!-- Select the three words or phrases that most represent your business -->
-						</span>
-						<select class="govuk-select" name="support_type">
-							{% for item in description %}
-							<option value="{{ loop.index }}" selected>{{ item }}</option>
-							{% endfor %}
-						</select>
-					</fieldset>
-				</div>
-				<div class="nl-submit-wrap">
-					{% if isGOVUK %}
+
+	<div class="govuk-grid-column-three-quarters">
+			<h1 class="govuk-heading-l">BUSINESS SUPPORT FINDER</h1>
+
+			<h2 class="govuk-heading-m">
+				What are you interested in or want help with?
+			</h2>
+			<form class="form-inline" action="results">
+				<select class="govuk-select" name="support_type">
+					{% for item in description %}
+					<option value="{{ loop.index }}" 
+                    {% if (support_text===item) %}
+                    selected
+                    {% endif %}
+                    >
+                    {{ item }}</option>
+					{% endfor %}
+				</select>
+				
+				{% if isGOVUK %}
 					<button class="govuk-button" type="submit">Find support</button>
 					{% else %}
 					<button class="nl-submit" type="submit">Find support</button>
-					
-					{% endif %}
-				</div>
-				
-			</form>
-			
-		</div>
-		<p>Other business owners are searching for support with:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>hiring without bias</li>
-        <li>exporting to the EU</li>
-        <li>free business mentor</li>
-      </ul>
+					{% endif %}
+			  </form> 
+
+		<div class="govuk-!-padding-bottom-4"></div>
+		<h2 class="govuk-heading-m">Popular advice</h2>
+		<p>Other business owners are searching for support with:</p>
 		
+		<ul class="govuk-list govuk-list--bullet">
+			<li>hiring without bias</li>
+			<li>exporting to the EU</li>
+			<li>free business mentor</li>
+
+		</ul>
+		
+		<p>These are the most popular topics on our site in the past month.</p>
+		<p><a href="">See what else people are searching for</a></p>
+
 	</div>
+
+
 
 </div>
 {% endblock %}

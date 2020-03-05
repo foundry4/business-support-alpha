@@ -588,3 +588,101 @@ p.landing{
     margin:auto;
     padding: 25px;
 }
+ /* Style the form - display items horizontally */
+ .form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  
+  /* Add some margins for each label */
+  .form-inline label {
+    margin: 5px 10px 5px 0;
+  }
+   
+  /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+  @media (max-width: 800px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+  
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+ 
+  .no-touch .nl-dd ul li:hover:active {
+	color: #1d70b8;
+}
+
+.no-touch .form-inline .nl-submit:hover,
+.no-touch .form-inline .nl-submit:active {
+    background: #24135f;
+}
+
+.no-touch .form-inline .nl-submit:hover:before {
+    background: #24135f;
+}
+
+/* submit button */
+.nl-submit-wrap {
+    margin-top: 0.4em;
+}
+
+.form-inline .nl-submit {
+    background: #1d70b8;
+	line-height: 3;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	font-size: 40%;
+	font-weight: bold;
+	letter-spacing: 3px;
+}
+
+.form-inline .nl-submit:before {
+	content: " ";
+	color: #fff;
+	float: left;
+	padding: 0 0.7em;
+	margin: 0 0.8em 0 0;
+}
+
+.form-inline .nl-submit {
+    line-height: 3;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    background: #1d70b8;
+    color: 
+    #fff;
+    font-size: 60%;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.form-inline select, .form-inline button {
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+}
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-inline{
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+
