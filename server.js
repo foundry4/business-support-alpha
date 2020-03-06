@@ -258,15 +258,15 @@ if (promoMode === 'true') {
 if (typeof (routes) !== 'function') {
   console.log(routes.bind)
   console.log('Warning: the use of bind in routes is deprecated - please check the Prototype Kit documentation for writing routes.')
+  routesV2.bind(app)
+  routesV1.bind(app)
   routes.bind(app)
   console.log("Loading routes from  previous prototypes");
   
-  routesV1.bind(app)
-  routesV2.bind(app)
 } else {
-  app.use('/', routes)
   app.use('/', routesV1)
   app.use('/', routesV2)
+  app.use('/', routes)
 }
 
 if (useDocumentation) {

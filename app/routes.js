@@ -90,6 +90,26 @@ var supportTypes = [
   "Intellectual property"
 ]
 
+  // INDUSTRY SELECT MENU
+var industry = [
+    'agriculture-and-food',
+    'business-and-finance',
+    'construction',
+    'education',
+    'health',
+    'hospitality-and-catering',
+    'information-technology-digital-and-creative',
+    'life-sciences',
+    'manufacturing',
+    'mining',
+    'real-estate-and-property',
+    'science-and-technology',
+    'service-industries',
+    'transport-and-distribution',
+    'travel-and-leisure',
+    'utilities-providers',
+    'wholesale-and-retail'
+  ];
 // hubLocations information
 var hubLocation = {
   LEP: "Emmerdale",
@@ -115,13 +135,13 @@ var hubLocation = {
 
 // have archived previous versions of prototype to routesOld.js
 // starting with a clean slate...
+// urgh: re-name functions to avoid v2 collisions!
 
 //////////////////////////////////////////////////////////////////
 //
 // Version 3.0 prototype
 //
 //////////////////////////////////////////////////////////////////
-
 // landing page
 router.get("/v3/", function (req, res, next) {
   renderLandingPageV3(req, res, false);
@@ -130,115 +150,60 @@ router.get("/gov3/", function (req, res, next) {
   renderLandingPageV3(req, res, true);
 });
 
+// pre-start
+router.get("/v3/pre-start", function (req, res, next) {
+  renderStartV3(req, res, false);
+});
+router.get("/gov3/pre-start", function (req, res, next) {
+  renderStartV3(req, res, true);
+});
+
+// small
+router.get("/v3/small", function (req, res, next) {
+  renderStartV3(req, res, false);
+});
+router.get("/gov3/small", function (req, res, next) {
+  renderStartV3(req, res, true);
+});
 
 // target: growth hub
 router.get("/v3/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, false);
+  renderGrowthHubV3(req, res, false);
 });
 router.get("/gov3/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, true);
+  renderGrowthHubV3(req, res, true);
 });
 
 // growth hub filter
 router.get("/v3/results", function (req, res, next) {
-  renderResults(req, res, false);
+  renderResultsV3(req, res, false);
 });
 router.get("/gov3/results", function (req, res, next) {
-  renderResults(req, res, true);
+  renderResultsV3(req, res, true);
 });
 
 // recommendations
 router.get("/v3/recommendations", function (req, res, next) { 
-  renderRecommendations(req, res, false);
+  renderRecommendationsV3(req, res, false);
 });
 router.get("/gov3/recommendations", function (req, res, next) {
-  renderRecommendations(req, res, true);
-});
-
-
-// branch
-router.get("/v3/branch", function (req, res, next) {
-  renderBranches(req, res, false)
-});
-router.get("/gov3/branch", function (req, res, next) {
-  renderBranches(req, res, true)
-});
-
-
-
-//////////////////////////////////////////////////////////////////
-//
-// Version 2.1.1 prototype
-//
-//////////////////////////////////////////////////////////////////
-
-// index
-router.get("/", function (req, res, next) {
-  res.render("index", {});
-});
-
-// landing page
-router.get("/v2.1.1/", function (req, res, next) {
-  renderLandingPage(req, res, false);
-});
-router.get("/gov/", function (req, res, next) {
-  renderLandingPage(req, res, true);
-});
-
-// pre-start
-router.get("/v2.1.1/pre-start", function (req, res, next) {
-  renderStart(req, res, false);
-});
-router.get("/gov/pre-start", function (req, res, next) {
-  renderStart(req, res, true);
-});
-
-// small
-router.get("/v2.1.1/small", function (req, res, next) {
-  renderStart(req, res, false);
-});
-router.get("/gov/small", function (req, res, next) {
-  renderStart(req, res, true);
-});
-
-// target: growth hub
-router.get("/v2.1.1/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, false);
-});
-router.get("/gov/growth-hub", function (req, res, next) {
-  renderGrowthHub(req, res, true);
-});
-
-// growth hub filter
-router.get("/v2.1.1/results", function (req, res, next) {
-  renderResults(req, res, false);
-});
-router.get("/gov/results", function (req, res, next) {
-  renderResults(req, res, true);
-});
-
-// recommendations
-router.get("/v2.1.1/recommendations", function (req, res, next) { 
-  renderRecommendations(req, res, false);
-});
-router.get("/gov/recommendations", function (req, res, next) {
-  renderRecommendations(req, res, true);
+  renderRecommendationsV3(req, res, true);
 });
 
 // country
-router.get("/v2.1.1/country", function (req, res, next) {
-  renderCountry(req, res, false);
+router.get("/v3/country", function (req, res, next) {
+  renderCountryV3(req, res, false);
 });
-router.get("/gov/country", function (req, res, next) {
-  renderCountry(req, res, true);
+router.get("/gov3/country", function (req, res, next) {
+  renderCountryV3(req, res, true);
 });
 
 // branch
-router.get("/v2.1.1/branch", function (req, res, next) {
-  renderBranches(req, res, false)
+router.get("/v3/branch", function (req, res, next) {
+  renderBranchesV3(req, res, false)
 });
-router.get("/gov/branch", function (req, res, next) {
-  renderBranches(req, res, true)
+router.get("/gov3/branch", function (req, res, next) {
+  renderBranchesV3(req, res, true)
 });
 
 
@@ -253,51 +218,13 @@ renderLandingPageV3 = function (req, res, isGOV){
   res.render("v3.0/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
+    industry:industry,
     description: selfDescription,
     url:req.url
   });
 }
 
-
-renderResultsV3 = function (req, res, isGOV){
-  var support = req.session.data["support_type"];
-  if(support === undefined){
-    support = 1;
-  }
-  var supportText = supportTypes[support-1];
-  
-  var supportData = res.app.locals.support;
-  var supportObj = supportData[supportText.toLowerCase()];
-
-  res.render("v3.0/results", {
-    isGOVUK: isGOV,
-    isLive: isLive,
-    url:req.url,
-    description: supportTypes,
-    support_text:supportText,
-    supportObj:[supportObj]
-  });
-}
-
-
-
-//////////////////////////////////////////////////////////////////
-//
-// VERSION 2.1.1
-// Render functions used to re-use templates with different styles
-//
-//////////////////////////////////////////////////////////////////
-
-renderLandingPage = function (req, res, isGOV){
-  res.render("v2.1.1/landing", {
-    isGOVUK: isGOV,
-    isLive: isLive,
-    description: selfDescription,
-    url:req.url
-  });
-}
-
-renderStart = function (req, res, isGOV){
+renderStartV3 = function (req, res, isGOV){
   res.render("v2.1.1/pre-start", {
     isGOVUK: isGOV,
     isLive: isLive,
@@ -308,7 +235,7 @@ renderStart = function (req, res, isGOV){
   });
 }
 
-renderCountry = function (req, res, isGOV){
+renderCountryV3 = function (req, res, isGOV){
   res.render("v2.1.1/country", {
     isGOVUK: isGOV,
       isLive: isLive,
@@ -319,7 +246,7 @@ renderCountry = function (req, res, isGOV){
     });
 }
 
-renderGrowthHub = function (req, res, isGOV){
+renderGrowthHubV3 = function (req, res, isGOV){
   res.render("v2.1.1/growth-hub", {
     isGOVUK: isGOV,
     isLive: isLive,
@@ -329,7 +256,7 @@ renderGrowthHub = function (req, res, isGOV){
   });
 }
 
-renderRecommendations = function (req, res, isGOV){
+renderRecommendationsV3 = function (req, res, isGOV){
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
@@ -358,7 +285,7 @@ renderRecommendations = function (req, res, isGOV){
 }
 
 
-renderResults = function (req, res, isGOV){
+renderResultsV3 = function (req, res, isGOV){
     var results = res.app.locals.data;
     //get checkbox
     var selfDescription = [];
@@ -430,7 +357,8 @@ renderResults = function (req, res, isGOV){
     });
 }
 
-renderBranches = function (req, res, isGOV){
+renderBranchesV3 = function (req, res, isGOV){
+  console.log('render branch...');
   
   let businessAge = req.session.data["nl_age"];
   let postcode = req.session.data["nl_postcode"];
@@ -438,8 +366,15 @@ renderBranches = function (req, res, isGOV){
   let turnover = req.session.data["nl_turnover"];
   let turnoverChange = req.session.data["nl_turnover_change"];
   let description = req.session.data["nl_description"];
+  let industryIndex = req.session.data["selected_industry"];
   businessProfile.isReady = false;
-  console.log(postcode);
+
+  businessAge = parseInt(businessAge);
+  // remove spaces, commas
+  turnover = turnover.split(" ").join("");
+  turnover = turnover.split(",").join("");
+  turnover = turnover.split(".")[0];
+
 
   if (description) {
     if (description.indexOf("Innovative") > -1 || description.indexOf("Competitive") > -1 || description.indexOf("Profit-focused") > -1) {
@@ -447,14 +382,14 @@ renderBranches = function (req, res, isGOV){
     }
   }
 
-// SET SOME DEFAULTs
-if (peopleCount === "") {
-  peopleCount = 10;
-}
-if (!postcode) {
-  businessProfile.postcode = "TR1 1XU";
-  businessProfile.country = "England";
-}
+  // SET SOME DEFAULTs
+  if (peopleCount === "") {
+    peopleCount = 10;
+  }
+  if (!postcode) {
+    businessProfile.postcode = "TR1 1XU";
+    businessProfile.country = "England";
+  }
 
 // once we"ve captured the form data
 // store it for future reference in the templates
@@ -467,8 +402,10 @@ console.log(businessProfile.age);
 businessProfile.size = peopleCount;
 businessProfile.postcode = postcode;
 businessProfile.description = description;
-businessProfile.turnover = turnover;
+businessProfile.turnover = parseInt(turnover);
 businessProfile.turnoverChange = turnoverChange;
+businessProfile.industry = industry[industryIndex-1];
+console.log(businessProfile);
 
 if (postcode) {
   var str = postcode;
@@ -504,7 +441,6 @@ if (postcode) {
             if (areas[area].country_name !== "-") {
               businessProfile.country = areas[area].country_name
               console.log(businessProfile.country);
-              
             }
           }
 
@@ -535,8 +471,9 @@ if (postcode) {
             hubLocation.LA = businessProfile.country;
           }
 
-          console.log("to brranch")
-          redirectToBranch(res);
+          console.log("to branch")
+          console.log(businessProfile)
+          redirectToBranchV3(res);
 
         } else {
           console.log("error")
@@ -553,20 +490,22 @@ if (postcode) {
         if (country !== "England") {
           hubLocation.LA = country;
         }
-        redirectToBranch(res);
+        redirectToBranchV3(res);
         
       }
     }
     );
   } else {
-    redirectToBranch(res);
+    redirectToBranchV3(res);
   }
 
 }
 
 // the the subfolder will be the same as the referring page
 // eg gov or v2.1.1 etc
-redirectToBranch = function (res){
+redirectToBranchV3 = function (res){
+  console.log("redirect");
+  
   console.log(businessProfile);
   
   if (businessProfile.age < 3) {
@@ -575,7 +514,7 @@ redirectToBranch = function (res){
     res.redirect("country");                  // getting other countries
   } else if (businessProfile.size <= 4) {
     res.redirect("small");                    // small/micro companies
-  } else if (businessProfile.turnover > 1 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==="3"                                 
+  } else if (businessProfile.turnover > 200000 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==="3"                                 
     res.redirect("growth-hub");               // READY TO SCALE: target audience 
   } else {
     res.redirect("recommendations");          // LOW_PRODUCTIVE: getting neither (!)

@@ -66,7 +66,7 @@ Your Growth Hub
 					people,
 					<br />
 					and has an annual turnover of £
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_turnover" name="nl_turnover" value="10" placeholder="10"
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_turnover" name="nl_turnover" value="250 000" placeholder="250 000"
 						data-subline="How many people work in the business?" />
 						<br />which has
 					<select class="govuk-select" name="nl_turnover_change">
@@ -75,6 +75,20 @@ Your Growth Hub
 						<option value="3">increased</option>
 					</select>
 					in the past year.
+
+					<br />
+					<br />We are in the 
+					<select class="govuk-select" name="selected_industry">
+						{% for item in industry %}
+						<option value="{{ loop.index }}" 
+						{% if (selected_industry===item) %}
+						selected
+						{% endif %}
+						>
+						{{ item }}</option>
+						{% endfor %}
+					</select>
+					sector.
 
 					<br />
 					<br />
