@@ -21,13 +21,13 @@
                 </li>
                 {% if isGOVUK %}
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="{{ url | replace('expt_gov_3', 'expt_3') }}">
+                  <a class="govuk-footer__link" href="{{ url | replace('gov_3', 'v3') }}">
                     BIZ
                   </a>
                 </li>
                 {% else %}
                 <li class="govuk-footer__inline-list-item">
-                  <a class="govuk-footer__link" href="{{ url | replace('expt_3', 'expt_gov_3') }}">
+                  <a class="govuk-footer__link" href="{{ url | replace('v3', 'gov_3') }}">
                     GOV
                   </a>
                 </li>

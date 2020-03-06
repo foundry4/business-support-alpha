@@ -55,23 +55,41 @@ Finance and support for your business
         Find out how your productivity compares with the rest of the UK, and what you can do to improve it.
       </p>
 
+      {% if isGOVUK %}
+    
+        {% else %}
+        <img class="card-image-half" src="../public/images/dial.png" alt="">
+        {% endif %}
+      <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
+        <button type="submit" class="govuk-button" id="submit">
+          Benchmark your productivity
+        </button>
+      </form>
 
     </div>
 
 
   </div>
   <div class="govuk-grid-column-one-third">
-    {% if isGOVUK %}
+    <div class="bookmark">
+   
+        <h5 class="govuk-heading-m">Sign up to our newsletter</h5>
+        <form id="main" action="" class="form" novalidate>
+          <input class="govuk-input govuk-input--width-10" type="text" id="email" name="email" value="name@biz.co.uk" placeholder="name@biz.co.uk"/>
+          <br/>
+          <br/>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          </p>
 
-      {% else %}
-      <img class="card-image-half" src="../public/images/dial.png" alt="">
-      {% endif %}
-    <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
-      <button type="submit" class="govuk-button" id="submit">
-        Benchmark your productivity
-      </button>
-    </form>
+          <button type="submit" class="govuk-button" id="submit">
+            Subscribe
+          </button>
+        </form>
+   
+    </div>
   </div>
+
 </div>
 
 <p class="govuk-body govuk-!-margin-bottom-9"></p>
@@ -427,5 +445,5 @@ Finance and support for your business
 {% endblock %}
 
 {% block footer %}
-  {% include "includes/footer2.1.1.html" %}
+  {% include "includes/footer3.0.html" %}
 {% endblock %}

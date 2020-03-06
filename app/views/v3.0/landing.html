@@ -78,10 +78,25 @@ Your Growth Hub
 
 					<br />
 					<br />We are in the 
-					<select class="govuk-select" name="selected_industry">
+					<select class="govuk-select" name="selected_industry" >
 						{% for item in industry %}
 						<option value="{{ loop.index }}" 
 						{% if (selected_industry===item) %}
+						selected
+						{% endif %}
+						>
+						{{ item }}</option>
+						{% endfor %}
+					</select>
+					sector.
+
+					<br />
+					<br />
+					We are interested in  
+					<select class="govuk-select multiple" name="interest" multiple>
+						{% for item in interest %}
+						<option value="{{ loop.index }}" 
+						{% if (support_text===item) %}
 						selected
 						{% endif %}
 						>

@@ -64,3 +64,7 @@ $govuk-assets-path: '/govuk/assets/';
     background-color: govuk-colour("light-purple");
     color:#fff;
 }
+
+.govuk-select.multiple {
+    height: 3em;
+}

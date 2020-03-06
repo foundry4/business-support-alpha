@@ -219,13 +219,14 @@ renderLandingPageV3 = function (req, res, isGOV){
     isGOVUK: isGOV,
     isLive: isLive,
     industry:industry,
+    interest: interest,
     description: selfDescription,
     url:req.url
   });
 }
 
 renderStartV3 = function (req, res, isGOV){
-  res.render("v2.1.1/pre-start", {
+  res.render("v3.0/pre-start", {
     isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
@@ -236,7 +237,7 @@ renderStartV3 = function (req, res, isGOV){
 }
 
 renderCountryV3 = function (req, res, isGOV){
-  res.render("v2.1.1/country", {
+  res.render("v3.0/country", {
     isGOVUK: isGOV,
       isLive: isLive,
       business: businessProfile,
@@ -247,7 +248,7 @@ renderCountryV3 = function (req, res, isGOV){
 }
 
 renderGrowthHubV3 = function (req, res, isGOV){
-  res.render("v2.1.1/growth-hub", {
+  res.render("v3.0/growth-hub", {
     isGOVUK: isGOV,
     isLive: isLive,
     business: businessProfile,
@@ -268,7 +269,7 @@ renderRecommendationsV3 = function (req, res, isGOV){
   var premises = _.filter(results, function (item) { return item.category === "Premises" });
 
   // then pass these to the pages to render
-  res.render("v2.1.1/recommendations", {
+  res.render("v3.0/recommendations", {
     isGOVUK: isGOV,
     isLive: isLive,
     results: res.app.locals.data,
@@ -339,7 +340,7 @@ renderResultsV3 = function (req, res, isGOV){
     }
   
     // then pass these to the pages to render
-    res.render("v2.1.1/results", {
+    res.render("v3.0/results", {
       isGOVUK: isGOV,
       isLive: isLive,
       results: res.app.locals.data,
@@ -367,6 +368,11 @@ renderBranchesV3 = function (req, res, isGOV){
   let turnoverChange = req.session.data["nl_turnover_change"];
   let description = req.session.data["nl_description"];
   let industryIndex = req.session.data["selected_industry"];
+  let interest = req.session.data["interest"];
+  console.log("interest", interest);
+  
+  //TODO convert array of indeices to values?
+  
   businessProfile.isReady = false;
 
   businessAge = parseInt(businessAge);
@@ -502,12 +508,14 @@ if (postcode) {
 }
 
 // the the subfolder will be the same as the referring page
-// eg gov or v2.1.1 etc
+// eg gov or v3.0 etc
 redirectToBranchV3 = function (res){
   console.log("redirect");
   
   console.log(businessProfile);
-  
+
+  res.redirect("recommendations"); 
+  /* 
   if (businessProfile.age < 3) {
     res.redirect("pre-start");                // getting starters & companies under 1 year old
   } else if (businessProfile.country !== "England") {
@@ -518,7 +526,9 @@ redirectToBranchV3 = function (res){
     res.redirect("growth-hub");               // READY TO SCALE: target audience 
   } else {
     res.redirect("recommendations");          // LOW_PRODUCTIVE: getting neither (!)
-  }
+  } 
+  */
+
 }
 
 
