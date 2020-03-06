@@ -32,16 +32,16 @@ Your Growth Hub
 		<p class="landing">
 			Small businesses all over the UK are eligible for support from the government. 
 		</p>
-		<p class="landing">
+		<p class="">
 			Growth looks different for every business; you might be launching a new market,
 			 upskilling your workforce, increasing your revenue – or something else entirely. 
 			The government is committed to providing small business owners with the tools they need to achieve their goals, for free.
 		</p>
-		<p class="landing">
+		<p class="">
 			Finding a business mentor, growing your network of peers, attending workshops, taking an online course, 
 			securing a loan or grant: these are just some of the ways you can develop your business through government-backed schemes. 
 		</p>
-		<p class="landing">
+		<p class="">
 			No two businesses are the same, so no two businesses need the same support. 
 			View results tailored to your individual requirements and take the next step to growing your business today. 
 		</p>
@@ -57,7 +57,7 @@ Your Growth Hub
 						data-subline="Enter your full postcode,<br/> for example TR1 1XU." />,
 						<br />
 					and has been trading for 
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_age" name="nl_age" value="0" placeholder="0"
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_age" name="nl_age" value="X" placeholder="X"
 						 /> years.
 
 					<br />It employs
@@ -68,16 +68,8 @@ Your Growth Hub
 					and has an annual turnover of £
 					<input class="govuk-input govuk-input--width-10" type="text" id="nl_turnover" name="nl_turnover" value="250 000" placeholder="250 000"
 						data-subline="How many people work in the business?" />
-						<br />which has
-					<select class="govuk-select" name="nl_turnover_change">
-						<option value="1">decreased</option>
-						<option value="2" selected>stayed the same</option>
-						<option value="3">increased</option>
-					</select>
-					in the past year.
 
-					<br />
-					<br />We are in the 
+					<br />The business is in the 
 					<select class="govuk-select" name="selected_industry" >
 						{% for item in industry %}
 						<option value="{{ loop.index }}" 
@@ -88,8 +80,14 @@ Your Growth Hub
 						{{ item }}</option>
 						{% endfor %}
 					</select>
-					sector.
-
+					sector, and is
+					<select class="govuk-select" name="business_change">
+						<option value="1">growing rapidly</option>
+						<option value="2">growing steadily</option>
+						<option value="3" selected>keeping steady</option>
+						<option value="4">winding down</option>
+					</select>.
+<!-- 
 					<br />
 					<br />
 					We are interested in  
@@ -104,34 +102,10 @@ Your Growth Hub
 						{% endfor %}
 					</select>
 					sector.
+ -->
+					<br />
+					<br />
 
-					<br />
-					<br />
-<!-- 
-					<div class="govuk-form-group">
-						<fieldset class="govuk-fieldset" aria-describedby="description-hint">
-							<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-								<h1 class="govuk-fieldset__heading">
-									I’d describe my business as:
-								</h1>
-							</legend>
-							<span id="description-hint" class="govuk-hint">
-								Select the three words or phrases that most represent your business
-							</span>
-							<div class="govuk-checkboxes">
-								{% for item in description %}
-								<div class="govuk-checkboxes__item">
-									<input class="govuk-checkboxes__input" id="description-{{ loop.index }}"
-										name="nl_description" type="checkbox" value="{{ item }}">
-									<label class="govuk-label govuk-checkboxes__label"
-										for="description-{{ loop.index }}">
-										{{ item }}
-									</label>
-								</div>
-								{% endfor %}
-							</div>
-						</fieldset>
-					</div> -->
 					<div class="nl-submit-wrap">
 						{% if isGOVUK %}
 						<button class="govuk-button" type="submit">Get business support</button>
@@ -145,7 +119,9 @@ Your Growth Hub
 					<div class="nl-overlay"></div>
 				</p>
 			</form>
-
+			<p class="">
+				We won't steal your data.
+			</p>
 
 		</div>
 

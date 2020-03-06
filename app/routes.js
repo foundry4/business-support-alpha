@@ -133,6 +133,11 @@ var hubLocation = {
   If it’s not we’ll link you into other support where it’s available.`
 };
 
+var stage = ["early", "mature", "fast"];
+var stageText = ["Early stage", "Mature", "Fast growing"];
+var stageIndex = 0;
+
+
 // have archived previous versions of prototype to routesOld.js
 // starting with a clean slate...
 // urgh: re-name functions to avoid v2 collisions!
@@ -258,34 +263,18 @@ renderGrowthHubV3 = function (req, res, isGOV){
 }
 
 renderRecommendationsV3 = function (req, res, isGOV){
-  var results = res.app.locals.data;
-  // do some crude filtering based on aims?
-  // eg reset the results arrays for non-applicable results?
-  var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
-  var support = _.filter(results, function (item) { return item.category === "Business Support" });
-  var legal = _.filter(results, function (item) { return item.category === "Legal" });
-  var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
-  var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
-  var premises = _.filter(results, function (item) { return item.category === "Premises" });
 
   // then pass these to the pages to render
   res.render("v3.0/recommendations", {
     isGOVUK: isGOV,
     isLive: isLive,
-    results: res.app.locals.data,
-    support: support,
-    legal: legal,
-    finance: finance,
-    events: events,
-    premises: premises,
-    procurement: procurement,
     location: hubLocation,
     business: businessProfile,
     url:req.url
   });
 }
 
-
+/* 
 renderResultsV3 = function (req, res, isGOV){
     var results = res.app.locals.data;
     //get checkbox
@@ -357,7 +346,7 @@ renderResultsV3 = function (req, res, isGOV){
       url:req.url
     });
 }
-
+ */
 renderBranchesV3 = function (req, res, isGOV){
   console.log('render branch...');
   
@@ -365,29 +354,33 @@ renderBranchesV3 = function (req, res, isGOV){
   let postcode = req.session.data["nl_postcode"];
   let peopleCount = req.session.data["nl_count"];
   let turnover = req.session.data["nl_turnover"];
-  let turnoverChange = req.session.data["nl_turnover_change"];
+  let change = req.session.data["business_change"];
   let description = req.session.data["nl_description"];
   let industryIndex = req.session.data["selected_industry"];
   let interestIndex = req.session.data["interest"];
-  console.log("interest", interest);
+/*   
+  console.log("interest", interestIndex);
   var interestList = [];
   //convert array of indices to values?
-  if(interest.length>1){
-    for (var i=0; i<interestIndex.length; i++){
-      var itm = interestIndex[i]
-      interestList.push(interest[itm])
+  if(interestIndex ){
+    if(interestIndex.length>1){
+      for (var i=0; i<interestIndex.length; i++){
+        var itm = interestIndex[i];
+        interestList.push(interest[itm]);
+      }
       
+    }else{
+      interestList.push(interest[interestIndex])
     }
-  }else{
-    interestList.push(interest[interestIndex])
   }
   console.log("interest", interestList);
-  
   businessProfile.interest = interestList;
+*/
   businessProfile.isReady = false;
 
   businessAge = parseInt(businessAge);
   // remove spaces, commas
+  turnover = turnover.split("£").join("");
   turnover = turnover.split(" ").join("");
   turnover = turnover.split(",").join("");
   turnover = turnover.split(".")[0];
@@ -420,7 +413,7 @@ businessProfile.size = peopleCount;
 businessProfile.postcode = postcode;
 businessProfile.description = description;
 businessProfile.turnover = parseInt(turnover);
-businessProfile.turnoverChange = turnoverChange;
+businessProfile.change = change;
 businessProfile.industry = industry[industryIndex-1];
 console.log(businessProfile);
 
@@ -525,20 +518,28 @@ redirectToBranchV3 = function (res){
   
   console.log(businessProfile);
 
-  res.redirect("recommendations"); 
-  /* 
-  if (businessProfile.age < 3) {
-    res.redirect("pre-start");                // getting starters & companies under 1 year old
-  } else if (businessProfile.country !== "England") {
-    res.redirect("country");                  // getting other countries
-  } else if (businessProfile.size <= 4) {
-    res.redirect("small");                    // small/micro companies
-  } else if (businessProfile.turnover > 200000 && businessProfile.turnoverChange > 2 && businessProfile.isReady) {   // form vars are strings so could parseInt or turnoverChange==="3"                                 
-    res.redirect("growth-hub");               // READY TO SCALE: target audience 
-  } else {
-    res.redirect("recommendations");          // LOW_PRODUCTIVE: getting neither (!)
+  
+  // stageIndex: 0, 1, 2
+  // default  = steady
+  stageIndex = 1;
+  
+  if (businessProfile.age <= 2) {
+    stageIndex = 0;
+  } else if (businessProfile.turnover > 200000 ){
+    stageIndex = 1;
+    if(businessProfile.change==='1') {
+      stageIndex = 2;
+    }                                   
+ // } else if (businessProfile.size <= 4) {
+    
+    
+//  } else {
+    
   } 
-  */
+  businessProfile.stage= stage[stageIndex];
+  businessProfile.stageText= stageText[stageIndex];
+
+res.redirect("recommendations#"+businessProfile.stage); 
 
 }
 
