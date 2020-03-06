@@ -136,6 +136,7 @@ var hubLocation = {
 var stage = ["early", "mature", "fast"];
 var stageText = ["Early stage", "Mature", "Fast growing"];
 var stageIndex = 0;
+var reason = "";
 
 
 // have archived previous versions of prototype to routesOld.js
@@ -263,6 +264,7 @@ renderGrowthHubV3 = function (req, res, isGOV){
 }
 
 renderRecommendationsV3 = function (req, res, isGOV){
+console.log(businessProfile);
 
   // then pass these to the pages to render
   res.render("v3.0/recommendations", {
@@ -270,6 +272,7 @@ renderRecommendationsV3 = function (req, res, isGOV){
     isLive: isLive,
     location: hubLocation,
     business: businessProfile,
+    reason:reason,
     url:req.url
   });
 }
@@ -357,8 +360,10 @@ renderBranchesV3 = function (req, res, isGOV){
   let change = req.session.data["business_change"];
   let description = req.session.data["nl_description"];
   let industryIndex = req.session.data["selected_industry"];
+  console.log(industryIndex);
+  
+  /*   
   let interestIndex = req.session.data["interest"];
-/*   
   console.log("interest", interestIndex);
   var interestList = [];
   //convert array of indices to values?
@@ -407,7 +412,6 @@ if (businessAge) {
   businessProfile.age = businessAge;
   //businessProfile.displayAge = ages[businessAge];
 }
-console.log(businessProfile.age);
 
 businessProfile.size = peopleCount;
 businessProfile.postcode = postcode;
@@ -415,7 +419,7 @@ businessProfile.description = description;
 businessProfile.turnover = parseInt(turnover);
 businessProfile.change = change;
 businessProfile.industry = industry[industryIndex-1];
-console.log(businessProfile);
+
 
 if (postcode) {
   var str = postcode;
@@ -511,35 +515,28 @@ if (postcode) {
 
 }
 
-// the the subfolder will be the same as the referring page
+// the subfolder will be the same as the referring page
 // eg gov or v3.0 etc
 redirectToBranchV3 = function (res){
   console.log("redirect");
-  
-  console.log(businessProfile);
 
-  
   // stageIndex: 0, 1, 2
   // default  = steady
   stageIndex = 1;
+  reason = `you have ${businessProfile.size} staff`;
   
   if (businessProfile.age <= 2) {
     stageIndex = 0;
-  } else if (businessProfile.turnover > 200000 ){
-    stageIndex = 1;
-    if(businessProfile.change==='1') {
-      stageIndex = 2;
-    }                                   
- // } else if (businessProfile.size <= 4) {
-    
-    
-//  } else {
-    
+    reason = "you are a young company";
+  } else if (businessProfile.turnover > 200000 && businessProfile.change==='1') {
+    reason = "your turnover is greater tham £200k pa and you are growing rapidly";
+    stageIndex = 2;
   } 
+    
   businessProfile.stage= stage[stageIndex];
   businessProfile.stageText= stageText[stageIndex];
 
-res.redirect("recommendations#"+businessProfile.stage); 
+  res.redirect("recommendations#"+businessProfile.stage); 
 
 }
 

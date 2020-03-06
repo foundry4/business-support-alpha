@@ -19,11 +19,8 @@ Finance and support for your business
 {% endblock %}
 
 {% block beforeContent %}
-{% if isGOVUK %}
-{% include "includes/banner_alpha_2.html" %}
-{% else %}
-{% include "includes/banner_alpha_2.1.html" %}
-{% endif %}
+{% include "includes/banner_alpha_3.0.html" %}
+
 {{ super() }}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
@@ -74,10 +71,10 @@ Finance and support for your business
       </ul>
 
       <section class="govuk-tabs__panel" id="early">
-        <h2 class="govuk-heading-l">Early Stage</h2>
+        <h2 class="govuk-heading-l">Early Stage {{ business.industry | replace("-", " ")}}</h2>
         
         <p class="govuk-body-l">
-          Because you said _____________, we're suggesting support for early stage business.
+         For young businesses, we're suggesting support for early stage businesses.
         </p>
         
         <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
@@ -98,14 +95,46 @@ Finance and support for your business
     
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
-        <h2 class="govuk-heading-l">Mature</h2>
+        <h2 class="govuk-heading-l">Mature {{ business.industry | replace("-", " ") }}</h2>
 
-    
+        <p class="govuk-body-l">
+          For businesses with a turnover of £{{ business.turnover }} that are {{ business.age }} years old, we're suggesting support for mature businesses.
+        </p>
+        
+        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Setting up a business</a></li>
+          <li><a class="" href="">Mentor</a></li>
+          <li><a class="" href="">BSH</a></li>
+        </ul>
+        
+        <p class="govuk-body">Grow your local network</p>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Local Growth Hub</a></li>
+        </ul>
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
-        <h2 class="govuk-heading-l">Fast growing</h2>
+        <h2 class="govuk-heading-l">Fast growing {{ business.industry | replace("-", " ") }}</h2>
 
-    
+        <p class="govuk-body-l">
+          For businesses with a turnover greater than £200k pa that are growing rapidly, we're suggesting support for fast growing businesses.
+        </p>
+        
+        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Setting up a business</a></li>
+          <li><a class="" href="">Mentor</a></li>
+          <li><a class="" href="">BSH</a></li>
+        </ul>
+        
+        <p class="govuk-body">Grow your local network</p>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Local Growth Hub</a></li>
+        </ul>
       </section>
 
     </div>
