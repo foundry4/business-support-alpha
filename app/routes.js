@@ -253,7 +253,7 @@ renderLandingPageV3 = function (req, res, isGOV){
   res.render("v3.0/landing", {
     isGOVUK: isGOV,
     isLive: isLive,
-    description: supportTypes,
+    description: selfDescription,
     url:req.url
   });
 }
