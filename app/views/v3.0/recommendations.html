@@ -47,33 +47,80 @@ Finance and support for your business
   <h1 class="govuk-heading-xl">
    Improve the performance of your business
   </h1>
-  <div class="govuk-grid-column-two-thirds">
 
-    <div>
-      <p class="govuk-body">
-        Productivity directly affects the turnover, growth and general performance of your business.
-        Find out how your productivity compares with the rest of the UK, and what you can do to improve it.
-      </p>
 
-      {% if isGOVUK %}
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#early">
+            Early Stage
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#mature">
+            Mature
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#fast">
+            Fast growing
+          </a>
+        </li>
+      </ul>
+
+      <section class="govuk-tabs__panel" id="early">
+        <h2 class="govuk-heading-l">Early Stage</h2>
+        
+        <p class="govuk-body-l">
+          Because you said _____________, we're suggesting support for early stage business.
+        </p>
+        
+        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Setting up a business</a></li>
+          <li><a class="" href="">Mentor</a></li>
+          <li><a class="" href="">BSH</a></li>
+        </ul>
+        
+        <p class="govuk-body">Grow your local network</p>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a class="" href="">Local Growth Hub</a></li>
+        </ul>
+
+        <p class="govuk-body">What else are you looking for? 
+          <form id="main" action="" class="form" novalidate>
+            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value="" placeholder=""/>
+            <button type="submit" class="govuk-button" id="submit">
+              >
+            </button>
+          </form>
+        </p>
     
-        {% else %}
-        <img class="card-image-half" src="../public/images/dial.png" alt="">
-        {% endif %}
-      <form id="main" action="https://app2.bethebusiness.com/benchmark" method="post" class="form" novalidate>
-        <button type="submit" class="govuk-button" id="submit">
-          Benchmark your productivity
-        </button>
-      </form>
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
+        <h2 class="govuk-heading-l">Mature</h2>
+
+    
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
+        <h2 class="govuk-heading-l">Fast growing</h2>
+
+    
+      </section>
 
     </div>
 
 
-  </div>
-  <div class="govuk-grid-column-one-third">
     <div class="bookmark">
    
-        <h5 class="govuk-heading-m">Sign up to our newsletter</h5>
+        <h5 class="govuk-heading-m">Sign up to our newsletter for {{ stage }} businesses</h5>
         <form id="main" action="" class="form" novalidate>
           <input class="govuk-input govuk-input--width-10" type="text" id="email" name="email" value="name@biz.co.uk" placeholder="name@biz.co.uk"/>
           <br/>
@@ -88,7 +135,7 @@ Finance and support for your business
         </form>
    
     </div>
-  </div>
+
 
 </div>
 
@@ -98,351 +145,15 @@ Finance and support for your business
 
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">
-      Further recommendations
+     <!--  Further recommendations -->
     </h2>
   </div>
   <div class="govuk-grid-column-one-third">
   </div>
 </div>
-
-
-<!--  ROW ONE  -->
-<div class="govuk-grid-row">
-  
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="https://www.bethebusiness.com/group-event/productivity-through-people/
-        " target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="card-image" src="../public/images/btb_logo.png" alt="">
-      <!-- <img class="card-image" src="../public/images/image1.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Learn from industry</h3>
-      </div>
-    </a>
-    <p>
-      Take part in a 12-month course to boost your business’ growth. Learn from industry experts and build a
-      supportive peer network on this year-long programme, designed for
-      small business leaders.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="https://www.apprenticeships.gov.uk/employer/how-much-is-it-going-to-cost" target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="card-image" src="../public/images/apprentice.png" alt="">
-      <!-- <img class="card-image" src="../public/images/image2.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Find talent in your area</h3>
-      </div>
-    </a>
-
-    <p>
-      Build a team of motivated, skilled individuals by offering apprenticeships.
-      Financial support is available for small businesses like yours.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="https://www.axa.co.uk/business-insurance/business-guardian-angel/sme-guide-to-landing-public-sector-contracts/" target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="axa-logo" src="../public/images/AXA_Logo.svg" alt="">
-     <!--  <img class="card-image" src="../public/images/image5.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Sell to the Public Sector</h3>
-      </div>
-    </a>
-
-    <p>
-      The UK Government is committed to awarding public sector contracts to small businesses.
-      Learn how to research, price and write winning bids.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-</div>
-
-
-
-<!--  ROW TWO  -->
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="https://www.great.gov.uk/export-opportunities/"  target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="card-image" src="../public/images/exporting.png" alt="">
-      <!-- <img class="card-image" src="../public/images/image1.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Find exporting opportunities</h3>
-      </div>
-    </a>
-    <p>
-      Overseas buyers are looking for products and services from the UK. 
-      Use this tool to find the right export opportunities for your business.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-  
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="//{{ location.url }}" target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="card-image" src="../public/images/lincoln2.png" alt="">
-      <!-- <img class="card-image" src="../public/images/image5.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Join a local business leaders’ network</h3>
-      </div>
-    </a>
-
-    <p>
-      Share your experiences and learn from others’ expertise through a professional network. Find a local
-      business leaders’ network through your Growth Hub.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-
-  <div class="govuk-grid-column-one-third">
-    <a class="card-link" href="http://www.mentorsme.co.uk/" target="_blank">
-      {% if isGOVUK %}
-
-      {% else %}
-      <img class="card-image" src="../public/images/mentors.png" alt="">
-      <!-- <img class="card-image" src="../public/images/image2.jpg" alt=""> -->
-      {% endif %}
-
-      <div class="card-inner">
-        <h3 class="heading-large">Find a business mentor</h3>
-      </div>
-    </a>
-
-    <p>
-      Working with a business mentor can fast-track your professional development. Find a mentor with experience,
-      skills and contacts that will benefit you and your business.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-9"></p>
-  </div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div class="govuk-grid-row">
-
-  <div class="">
-    <h2 class="govuk-heading-l">
-      Business support in {{ location.LEP }}
-    </h2>
-
-    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-              Finance ({{ finance | length }})
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-1">
-          {% if finance.length>0 %}
-          <section class="brexit-checker-actions"><a name="business"></a>
-            <section class="brexit-checker-audience">
-              <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
-
-                  <aside class="govuk-grid-column-one-third" aria-label=" ">
-                    &nbsp;
-
-                  </aside>
-
-                  <div class="govuk-grid-column-two-thirds">
-                    {% for item in finance %}
-                    {% include 'includes/result_item.html' %}
-                    {% endfor %}
-                  </div>
-
-                </div>
-              </section>
-            </section>
-          </section>
-          {% endif %}
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-              Legal ({{ legal | length }})
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-2" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-2">
-          {% if legal.length>0 %}
-          <section class="brexit-checker-actions"><a name="business"></a>
-            <section class="brexit-checker-audience">
-              <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
-
-                  <aside class="govuk-grid-column-one-third" aria-label=" ">
-                    &nbsp;
-
-                  </aside>
-
-                  <div class="govuk-grid-column-two-thirds">
-                    {% for item in legal %}
-                    {% include 'includes/result_item.html' %}
-                    {% endfor %}
-                  </div>
-
-                </div>
-              </section>
-            </section>
-          </section>
-          {% endif %}
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-              Events ({{ events | length }})
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-3">
-          {% if events.length>0 %}
-          <section class="brexit-checker-actions"><a name="business"></a>
-            <section class="brexit-checker-audience">
-              <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
-
-                  <aside class="govuk-grid-column-one-third" aria-label=" ">
-                    &nbsp;
-
-                  </aside>
-
-                  <div class="govuk-grid-column-two-thirds">
-                    {% for item in events %}
-                    {% include 'includes/result_item.html' %}
-                    {% endfor %}
-                  </div>
-
-                </div>
-              </section>
-            </section>
-          </section>
-          {% endif %}
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-              Premises ({{ premises | length }})
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-4" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-4">
-          {% if premises.length>0 %}
-          <section class="brexit-checker-actions"><a name="business"></a>
-            <section class="brexit-checker-audience">
-              <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
-
-                  <aside class="govuk-grid-column-one-third" aria-label=" ">
-                    &nbsp;
-
-                  </aside>
-
-                  <div class="govuk-grid-column-two-thirds">
-                    {% for item in premises %}
-                    {% include 'includes/result_item.html' %}
-                    {% endfor %}
-                  </div>
-
-                </div>
-              </section>
-            </section>
-          </section>
-          {% endif %}
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h2 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-              General Support ({{ support | length }})
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-4" class="govuk-accordion__section-content"
-          aria-labelledby="accordion-default-heading-4">
-          {% if support.length>0 %}
-          <section class="brexit-checker-actions"><a name="business"></a>
-            <section class="brexit-checker-audience">
-              <section class="brexit-checker-actions__group">
-                <div class="govuk-grid-row">
-
-                  <aside class="govuk-grid-column-one-third" aria-label=" ">
-                    &nbsp;
-
-                  </aside>
-
-                  <div class="govuk-grid-column-two-thirds">
-                    {% for item in support %}
-                    {% include 'includes/result_item.html' %}
-                    {% endfor %}
-                  </div>
-
-                </div>
-              </section>
-            </section>
-          </section>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
 
 {% endblock %}
+
 
 {% block footer %}
   {% include "includes/footer3.0.html" %}
