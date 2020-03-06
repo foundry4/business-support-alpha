@@ -368,11 +368,22 @@ renderBranchesV3 = function (req, res, isGOV){
   let turnoverChange = req.session.data["nl_turnover_change"];
   let description = req.session.data["nl_description"];
   let industryIndex = req.session.data["selected_industry"];
-  let interest = req.session.data["interest"];
+  let interestIndex = req.session.data["interest"];
   console.log("interest", interest);
+  var interestList = [];
+  //convert array of indices to values?
+  if(interest.length>1){
+    for (var i=0; i<interestIndex.length; i++){
+      var itm = interestIndex[i]
+      interestList.push(interest[itm])
+      
+    }
+  }else{
+    interestList.push(interest[interestIndex])
+  }
+  console.log("interest", interestList);
   
-  //TODO convert array of indeices to values?
-  
+  businessProfile.interest = interestList;
   businessProfile.isReady = false;
 
   businessAge = parseInt(businessAge);
@@ -401,7 +412,7 @@ renderBranchesV3 = function (req, res, isGOV){
 // store it for future reference in the templates
 if (businessAge) {
   businessProfile.age = businessAge;
-  businessProfile.displayAge = ages[businessAge];
+  //businessProfile.displayAge = ages[businessAge];
 }
 console.log(businessProfile.age);
 
