@@ -147,15 +147,42 @@ var typeList = [
 router.get('/', function (req, res, next) {
   res.render('index', {});
 });
+*/
 
- */
 router.get('/error', function (req, res, next) {
   res.render('error', { content: { error: { message: "Internal server error" } } });
 });
 
-
-router.get('/business-stage', function (req, res, next) {
-  res.render('business-stage',
+router.get('/v1.1/business-stage', function (req, res, next) {
+  res.render('v1.1/business-stage',
+    {});
+});
+router.get('/v1.1/business-size', function (req, res, next) {
+  res.render('v1.1/business-size',
+    {});
+});
+router.get('/v1.1/business-type', function (req, res, next) {
+  res.render('v1.1/business-type',
+    {});
+});
+router.get('/v1.1/find-address', function (req, res, next) {
+  res.render('v1.1/find-address',
+    {});
+});
+router.get('/v1.1/business-funding-aim', function (req, res, next) {
+  res.render('v1.1/business-funding-aim',
+    {});
+});
+router.get('/v1.1/growing-your-business', function (req, res, next) {
+  res.render('v1.1/growing-your-business',
+    {});
+});
+router.get('/v1.1/get-extra-funding', function (req, res, next) {
+  res.render('v1.1/get-extra-funding',
+    {});
+});
+router.get('/v1.1/increase-sales-to-existing-customers', function (req, res, next) {
+  res.render('v1.1/increase-sales-to-existing-customers',
     {});
 });
 
@@ -175,7 +202,7 @@ var displayNames = {
   aim: "",
 };
 
-router.get('/summary', function (req, res, next) {
+router.get('/v1.1/summary', function (req, res, next) {
   var facets = {};
   var params = "";
   /* 
@@ -368,7 +395,7 @@ router.get('/summary', function (req, res, next) {
   }
 
   // then pass these to the pages to render checks and facets/chips
-  res.render('summary', {
+  res.render('v1.1/summary', {
     facets: facets,
     display: displayNames,
     copy: "copy<br/>goes<br/>here...",
@@ -379,7 +406,7 @@ router.get('/summary', function (req, res, next) {
 });
 
 
-router.get('/results', function (req, res, next) {
+router.get('/v1.1/results', function (req, res, next) {
   var params = req.session.data['params']
   var url = "https://www.gov.uk/business-finance-support?" + params;
   //console.log("redirect to " + url);
@@ -422,7 +449,9 @@ global.getFacets = function (arr) {
 }
 
 
-router.get('/factsheet', function (req, res, next) {
+router.get('/v1.1/factsheet', function (req, res, next) {
+  console.log("fact");
+  
   var businessStage = req.session.data['businessStage'];
   var results = res.app.locals.data;
   var aim = req.session.data['nl_aim'];
@@ -469,7 +498,7 @@ router.get('/factsheet', function (req, res, next) {
   var totalSupport = 0;
 
   // then pass these to the pages to render
-  res.render('factsheet', {
+  res.render('v1.1/factsheet', {
     results: res.app.locals.data,
     support: support,
     legal: legal,
@@ -486,7 +515,7 @@ router.get('/factsheet', function (req, res, next) {
 
 
 // custom filtered result page
-router.get('/test', function (req, res, next) {
+router.get('/v1.1/test', function (req, res, next) {
 
   // render a local version of the results
   var len;
@@ -512,7 +541,7 @@ router.get('/test', function (req, res, next) {
   }
 
   // then pass these to the pages to render checks and facets/chips
-  res.render('results', {
+  res.render('v1.1/results', {
     results: sampleResults,
     checks: checks,
     facets: facets
@@ -521,7 +550,7 @@ router.get('/test', function (req, res, next) {
 });
 
 
-router.get('/postcode', function (req, res, next) {
+router.get('/v1.1/postcode', function (req, res, next) {
 
   if (req.query.postcode) {
     var str = req.query.postcode;
