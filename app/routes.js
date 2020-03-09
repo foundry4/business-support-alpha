@@ -155,7 +155,7 @@ router.get("/v3/", function (req, res, next) {
 router.get("/gov3/", function (req, res, next) {
   renderLandingPageV3(req, res, true);
 });
-
+/* 
 // pre-start
 router.get("/v3/pre-start", function (req, res, next) {
   renderStartV3(req, res, false);
@@ -187,7 +187,7 @@ router.get("/v3/results", function (req, res, next) {
 router.get("/gov3/results", function (req, res, next) {
   renderResultsV3(req, res, true);
 });
-
+ */
 // recommendations
 router.get("/v3/recommendations", function (req, res, next) { 
   renderRecommendationsV3(req, res, false);
@@ -195,7 +195,7 @@ router.get("/v3/recommendations", function (req, res, next) {
 router.get("/gov3/recommendations", function (req, res, next) {
   renderRecommendationsV3(req, res, true);
 });
-
+/* 
 // country
 router.get("/v3/country", function (req, res, next) {
   renderCountryV3(req, res, false);
@@ -203,7 +203,7 @@ router.get("/v3/country", function (req, res, next) {
 router.get("/gov3/country", function (req, res, next) {
   renderCountryV3(req, res, true);
 });
-
+ */
 // branch
 router.get("/v3/branch", function (req, res, next) {
   renderBranchesV3(req, res, false)
@@ -230,7 +230,7 @@ renderLandingPageV3 = function (req, res, isGOV){
     url:req.url
   });
 }
-
+/* 
 renderStartV3 = function (req, res, isGOV){
   res.render("v3.0/pre-start", {
     isGOVUK: isGOV,
@@ -262,11 +262,9 @@ renderGrowthHubV3 = function (req, res, isGOV){
     url:req.url
   });
 }
+ */
 
 renderRecommendationsV3 = function (req, res, isGOV){
-console.log(businessProfile);
-
-  // then pass these to the pages to render
   res.render("v3.0/recommendations", {
     isGOVUK: isGOV,
     isLive: isLive,
@@ -360,7 +358,6 @@ renderBranchesV3 = function (req, res, isGOV){
   let change = req.session.data["business_change"];
   let description = req.session.data["nl_description"];
   let industryIndex = req.session.data["selected_industry"];
-  console.log(industryIndex);
   
   /*   
   let interestIndex = req.session.data["interest"];
@@ -454,7 +451,7 @@ if (postcode) {
             //also get the country code for use on the pre-start hand off?
             if (areas[area].country_name !== "-") {
               businessProfile.country = areas[area].country_name
-              console.log(businessProfile.country);
+              //console.log(businessProfile.country);
             }
           }
 
@@ -485,8 +482,8 @@ if (postcode) {
             hubLocation.LA = businessProfile.country;
           }
 
-          console.log("to branch")
-          console.log(businessProfile)
+          //console.log("to branch")
+          //console.log(businessProfile)
           redirectToBranchV3(res);
 
         } else {
