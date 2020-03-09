@@ -89,27 +89,55 @@ var supportTypes = [
   "Apprentices",
   "Intellectual property"
 ]
-
+/* 
   // INDUSTRY SELECT MENU
 var industry = [
-    'agriculture-and-food',
-    'business-and-finance',
-    'construction',
-    'education',
-    'health',
-    'hospitality-and-catering',
-    'information-technology-digital-and-creative',
-    'life-sciences',
-    'manufacturing',
-    'mining',
-    'real-estate-and-property',
-    'science-and-technology',
-    'service-industries',
-    'transport-and-distribution',
-    'travel-and-leisure',
-    'utilities-providers',
-    'wholesale-and-retail'
-  ];
+  'agriculture-and-food',
+  'business-and-finance',
+  'construction',
+  'education',
+  'health',
+  'hospitality-and-catering',
+  'information-technology-digital-and-creative',
+  'life-sciences',
+  'manufacturing',
+  'mining',
+  'real-estate-and-property',
+  'science-and-technology',
+  'service-industries',
+  'transport-and-distribution',
+  'travel-and-leisure',
+  'utilities-providers',
+  'wholesale-and-retail'
+];
+ */
+// ONS
+// https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/ukbusinessactivitysizeandlocation/2019
+// https://en.wikipedia.org/wiki/United_Kingdom_Standard_Industrial_Classification_of_Economic_Activities
+var industry = [
+  'Agriculture forestry and fishing',
+  'Production',
+  'Mining quarrying and utilities',
+  'Manufacturing',
+  'Construction',
+ // 'Wholesale and retail repair; of motor vehicles',
+  'Motor trades',
+  'Wholesale',
+  'Retail',
+  'Transport and storage (inc. postal)',
+  'Accommodation and food services',
+  'Information and communication',
+  'Finance and insurance',
+  'Property',
+  'Professional scientific and technical',
+  'Business administration and support services',
+  'Public administration and defence',
+  'Education',
+  'Health',
+  'Arts entertainment recreation and other services'
+  
+];
+
 // hubLocations information
 var hubLocation = {
   LEP: "Emmerdale",

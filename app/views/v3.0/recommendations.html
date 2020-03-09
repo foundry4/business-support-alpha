@@ -98,7 +98,13 @@ Finance and support for your business
         <h2 class="govuk-heading-l">Mature {{ business.industry | replace("-", " ") }}</h2>
 
         <p class="govuk-body-l">
-          For businesses with a turnover of £{{ business.turnover }} that are {{ business.age }} years old, we're suggesting support for mature businesses.
+          For businesses with a turnover of £{{ business.turnover }} that are over
+          {% if business.age<=2 %}
+           two years old,
+           {% else %}
+           {{ business.age }} years old,
+           {% endif %}
+           we're suggesting support for mature businesses.
         </p>
         
         <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
