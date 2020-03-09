@@ -569,17 +569,27 @@ router.get('/postcode', function (req, res, next) {
 //
 //////////////////////////////////////////////////////////////////
 
-router.get('/nl', function (req, res, next) {
-  res.render('nl', {
+router.get('/v2.0/nl', function (req, res, next) {
+  res.render('v2.0/nl', {
     isLive: isLive,
     description: description
   });
 });
 
+router.get('/v2.0/hmrc_ad', function (req, res, next) {
+  res.render('v2.0/hmrc_ad', { content: { error: { message: "Internal server error" } } });
+});
+router.get('/v2.0/google_ad', function (req, res, next) {
+  res.render('v2.0/google_ad', { content: { error: { message: "Internal server error" } } });
+});
+router.get('/v2.0/companiesHouse_ad', function (req, res, next) {
+  res.render('v2.0/companiesHouse_ad', { content: { error: { message: "Internal server error" } } });
+});
 
-router.get('/nl-country', function (req, res, next) {
+
+router.get('/v2.0/nl-country', function (req, res, next) {
   country = "Wales";
-  res.render('nl-country', {
+  res.render('v2.0/nl-country', {
     isLive: isLive,
     country: country,
     business: businessObj,
@@ -588,8 +598,8 @@ router.get('/nl-country', function (req, res, next) {
 });
 
 
-router.get('/nl-columns', function (req, res, next) {
-  res.render('nl-columns', {
+router.get('/v2.0/nl-columns', function (req, res, next) {
+  res.render('v2.0/nl-columns', {
     isLive: isLive,
     country: country,
     business: businessObj,
@@ -598,8 +608,8 @@ router.get('/nl-columns', function (req, res, next) {
 });
 
 
-router.get('/nl-growth-hub', function (req, res, next) {
-  res.render('nl-growth-hub', {
+router.get('/v2.0/nl-growth-hub', function (req, res, next) {
+  res.render('v2.0/nl-growth-hub', {
     isLive: isLive,
     display: displayNames,
     location: postcodeLocation
@@ -607,7 +617,7 @@ router.get('/nl-growth-hub', function (req, res, next) {
 });
 
 
-router.get('/nl-recommendations', function (req, res, next) {
+router.get('/v2.0/nl-recommendations', function (req, res, next) {
   var results = res.app.locals.data;
   // do some crude filtering based on aims?
   // eg reset the results arrays for non-applicable results?
@@ -620,7 +630,7 @@ router.get('/nl-recommendations', function (req, res, next) {
   //var totalSupport = 0;
 
   // then pass these to the pages to render
-  res.render('nl-recommendations', {
+  res.render('v2.0/nl-recommendations', {
     isLive: isLive,
     results: res.app.locals.data,
     support: support,
@@ -637,8 +647,8 @@ router.get('/nl-recommendations', function (req, res, next) {
 });
 
 
-router.get('/nl-pre-start', function (req, res, next) {
-  res.render('nl-pre-start', {
+router.get('/v2.0/nl-pre-start', function (req, res, next) {
+  res.render('v2.0/nl-pre-start', {
     isLive: isLive,
     business: businessObj,
     country: country,
@@ -647,15 +657,15 @@ router.get('/nl-pre-start', function (req, res, next) {
 });
 
 
-router.get('/confirmation', function (req, res, next) {
-  res.render('confirmation', {
+router.get('/v2.0/confirmation', function (req, res, next) {
+  res.render('v2.0/confirmation', {
     isLive: isLive,
     location: postcodeLocation
   });
 });
 
 
-router.get('/nl-branch', function (req, res, next) {
+router.get('/v2.0/nl-branch', function (req, res, next) {
   let businessAge = req.session.data['nl_age'];
   let postcode = req.session.data['nl_postcode'];
   let peopleCount = req.session.data['nl_count'];
