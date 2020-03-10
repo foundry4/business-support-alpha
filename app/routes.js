@@ -557,6 +557,7 @@ redirectToBranchV3 = function (res){
     stageIndex = 2;
   } 
     
+  businessProfile.stageIndex= stageIndex;
   businessProfile.stage= stage[stageIndex];
   businessProfile.stageText= stageText[stageIndex];
 
