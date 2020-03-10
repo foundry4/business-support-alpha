@@ -50,10 +50,10 @@ var countryData = {
 // create business object to store profile
 // TODO map out profile with properties
 var businessProfile = {
-  age: ages[2],
+  age: 2,
   size: 5,
   postcode: "",
-  country: "Scotland",
+  country: "England",
 };
 
 var interest = [

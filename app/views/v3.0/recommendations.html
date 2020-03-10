@@ -71,7 +71,7 @@ Finance and support for your business
     </ul>
 
     <section class="govuk-tabs__panel" id="early">
-      <h2 class="govuk-heading-l">Early Stage</h2>
+      <h2 class="govuk-heading-l">Early stage businesses</h2>
 
       <!-- <p class="govuk-body-l">
           Because [you’ve been trading for less than a year]/[you haven’t yet started trading], you could benefit from support with getting started.
@@ -91,7 +91,6 @@ Finance and support for your business
       <p class="govuk-body">
         We think you’ll be interested in the following services:
       </p>
-
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -116,8 +115,8 @@ Finance and support for your business
         </li>
       </ul>
 
-
       <h2 class="govuk-heading-m">Frequently asked questions</h2>
+
       <ul class="govuk-list govuk-list--bullet">
         <li>
           <strong>Which business set-up is right for me?</strong>
@@ -191,34 +190,97 @@ Finance and support for your business
 
 
     <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
-      <h2 class="govuk-heading-l">Mature {{ business.industry | replace("-", " ") }}</h2>
+      <h2 class="govuk-heading-l">Mature businesses</h2>
+<!-- 
+      <p class="govuk-body-l">
+        Because you’ve been trading for {{ business.age }} years and your turnover is about £{{ business.turnover }},
+        you could benefit from support with boosting your business.
+      </p>
+ -->
 
       <p class="govuk-body-l">
-        For businesses with a turnover of £{{ business.turnover }} that are over
-        {% if business.age<=2 %}
-        two years old,
-        {% else %}
-        {{ business.age }} years old,
-        {% endif %}
-        we're suggesting support for mature businesses.
+        Once you’ve been operating for a while, it becomes easy to stick to the processes you know and trust to produce results. 
+        But the outside world is always changing, and the success of your business depends on your ability to change with it. 
       </p>
 
-      <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+      <p class="govuk-body">
+        Perhaps your productivity could be better, achieving more with the same resources. 
+        It might be time to tap into a new market, or take on apprentices to bring fresh talent into the workforce. 
+        Whatever boost you choose, there are government-backed schemes to support you.
+      </p>
+
+      <p class="govuk-body">
+        We think you’ll be interested in the following services:
+      </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="" href="">Setting up a business</a></li>
-        <li><a class="" href="">Mentor</a></li>
-        <li><a class="" href="">BSH</a></li>
+        <li>
+          <strong>Productivity benchmarking from Be the Business</strong>
+          <br />
+          Productivity directly affects the performance of your business. 
+          See how your productivity compares with similar companies, and learn how to improve it.
+          <br />
+          <a href="https://www.bethebusiness.com/benchmark-your-business/" target="_blank">
+            Find out more
+          </a>
+        </li>
+        <br />
+        <li>
+          <strong>Exporting opportunities at great.gov.uk</strong>
+          <br />
+          Overseas buyers are looking for products and services from the UK. 
+          Use this tool to find the right export opportunities for your business.
+          <br />
+          <a href="https://www.great.gov.uk/export-opportunities/" target="_blank">
+            Find out more
+          </a>
+        </li>
+        <br />
+        <li>
+          <strong>Online masterclasses with Enterprise Nation</strong>
+          <br />
+          Subject-matter experts and successful entrepreneurs share their advice on topics such as upskilling staff and increasing sales. 
+          Browse a large library of online masterclasses.
+          <br />
+          <a href="https://www.enterprisenation.com/learn-something/#masterclasses" target="_blank">
+            Find out more
+          </a>
+        </li>
       </ul>
 
-      <p class="govuk-body">Grow your local network</p>
-
+      
+      <h2 class="govuk-heading-m">Boost your business with people</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a class="" href="">Local Growth Hub</a></li>
-      </ul>
-    </section>
+        <li>
+          <strong>Connect with a mentor</strong>
+          <br />
+          Mentorsme is a gateway for quality-assured mentoring organisations across the UK. 
+          Find a mentor with experience, skills and contacts that will benefit you and your business.
+          <br />
+          <a href="http://www.mentorsme.co.uk/" target="_blank">
+            Find out more
+          </a>
+        </li>
+        <br />
+        <li>
+          <strong>Employ an apprentice</strong>
+          <br />
+          Build a team of motivated, skilled individuals. 
+          The government offers financial support to small businesses offering apprenticeships. 
+          <br />
+          <a href="https://www.apprenticeships.gov.uk/employer/how-much-is-it-going-to-cost" target="_blank">
+            Find out more
+          </a>
+        </li>
+       </ul>
+ 
+      </section>
+
+
+
+
     <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
-      <h2 class="govuk-heading-l">Fast growing {{ business.industry | replace("-", " ") }}</h2>
+      <h2 class="govuk-heading-l">Fast growing businesses</h2>
 
       <p class="govuk-body-l">
         For businesses with a turnover greater than £200k pa that are growing rapidly, we're suggesting support for fast
