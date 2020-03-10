@@ -1,0 +1,129 @@
+<section class="govuk-tabs__panel " id="early">
+    <h2 class="govuk-heading-l">Early stage businesses</h2>
+    {% if business.stageIndex==0 %}
+    <p class="govuk-body">
+        Because you’re business is under three years old, you could benefit from support with getting started.
+      </p>
+    {% endif %}
+
+    <p class="govuk-body">
+      When you’re at the beginning of your business journey,
+      there’s a lot to think about.
+      From setting up operations legally and hiring the right people to drawing up a sensible business plan,
+      it’s easy for things to slip your mind
+    </p>
+
+    <p class="govuk-body">At this stage, help is available in many forms,
+      with government-funded services on hand to give you the best possible chance of success.
+    </p>
+
+    <p class="govuk-body">
+      We think you’ll be interested in the following services:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <strong>Financial support from Start Up Loans</strong>
+        <br />
+        The Start Up Loans scheme is backed by the government. It offers free mentoring and low-interest personal
+        loans of up to £25,000.
+        <br />
+        <a href="https://www.startuploans.co.uk/" target="_blank">
+          Find out more
+        </a>
+      </li>
+      <br />
+      <li>
+        <strong>Advice straight to your inbox from Enterprise Nation</strong>
+        <br />
+        Sign up for an email-only seven-day course, filled with practical advice and tips for starting your business.
+        <br />
+        <a href="https://www.enterprisenation.com/business-inspiration#course" target="_blank">
+          Find out more
+        </a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Frequently asked questions</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <strong>Which business set-up is right for me?</strong>
+        <br />
+        You could be a sole trader, a limited company or a partnership. Find the facts on setting up a business at
+        GOV.UK to ensure you’re operating legally.
+        <br />
+        <a href="https://www.gov.uk/set-up-business" target="_blank">
+          Find out more
+        </a>
+      </li>
+      <br />
+      <li>
+        <strong>Can I speak to somebody for more help?</strong>
+        <br />
+        {% if business.country=="England" %}
+        Business Support Helpline (England)
+        {% endif %}
+        {% if business.country=="Scotland" %}
+        Business Gateway (Scotland)
+        {% endif %}
+        {% if business.country=="Wales" %}
+        Business Wales Helpline
+        {% endif %}
+        {% if business.country=="Northern Ireland" %}
+        Invest Northern Ireland
+        {% endif %}
+
+
+        has a helpline that you can ring to speak to an advisor and get support with the
+        essentials.
+        <br />
+        <a href="{{ country.url }}" target="_blank">
+          Find out more
+        </a>
+      </li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m">Contact your local Growth Hub</h2>
+    <p>
+      Your local Growth Hub is {{ location.LEP }}. The Growth Hub can provide one-to-one support for your business,
+      free of charge.
+    </p>
+    <p>
+      Using the Growth Hub, you can:
+    </p>
+    <nav role="navigation" aria-labelledby="subsection-title">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <p>
+            Find sector-specific grants and funding available in your area, and receive guidance on how to apply
+            for them.
+          </p>
+
+        <li>
+          <p>
+            Access the right training and development services to improve your business.
+          </p>
+        </li>
+        <li>
+          <p>
+            Learn of local networking and business events and connect with your community.
+          </p>
+        </li>
+      </ul>
+    </nav>
+    <div>
+      <br/>
+      <h3 class="govuk-heading-m">What else are you looking for?</h3>
+      <p class="govuk-body">
+        <form id="main" action="" class="form" novalidate>
+          <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+            placeholder="" />
+          <button type="submit" class="govuk-button" id="submit">
+            >
+          </button>
+        </form>
+      </p>
+    </div>
+  </section>

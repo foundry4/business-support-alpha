@@ -1,0 +1,102 @@
+<section class="govuk-tabs__panel " id="mature">
+    <h2 class="govuk-heading-l">Mature businesses</h2>
+
+    {% if business.stageIndex==1 %}
+    <p class="govuk-body">
+      Because you’ve been trading for {{ business.age }} years and your turnover is about £{{ business.turnover }},
+      you could benefit from support with boosting your business.
+    </p>
+    {% endif %}
+
+
+    <p class="govuk-body">
+      Once you’ve been operating for a while, it becomes easy to stick to the processes you know and trust to produce results. 
+      But the outside world is always changing, and the success of your business depends on your ability to change with it. 
+    </p>
+
+    <p class="govuk-body">
+      Perhaps your productivity could be better, achieving more with the same resources. 
+      It might be time to tap into a new market, or take on apprentices to bring fresh talent into the workforce. 
+      Whatever boost you choose, there are government-backed schemes to support you.
+    </p>
+
+    <p class="govuk-body">
+      We think you’ll be interested in the following services:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <strong>Productivity benchmarking from Be the Business</strong>
+        <br />
+        Productivity directly affects the performance of your business. 
+        See how your productivity compares with similar companies, and learn how to improve it.
+        <br />
+        <a href="https://www.bethebusiness.com/benchmark-your-business/" target="_blank">
+          Find out more
+        </a>
+      </li>
+      <br />
+      <li>
+        <strong>Exporting opportunities at great.gov.uk</strong>
+        <br />
+        Overseas buyers are looking for products and services from the UK. 
+        Use this tool to find the right export opportunities for your business.
+        <br />
+        <a href="https://www.great.gov.uk/export-opportunities/" target="_blank">
+          Find out more
+        </a>
+      </li>
+      <br />
+      <li>
+        <strong>Online masterclasses with Enterprise Nation</strong>
+        <br />
+        Subject-matter experts and successful entrepreneurs share their advice on topics such as upskilling staff and increasing sales. 
+        Browse a large library of online masterclasses.
+        <br />
+        <a href="https://www.enterprisenation.com/learn-something/#masterclasses" target="_blank">
+          Find out more
+        </a>
+      </li>
+    </ul>
+
+    
+    <h2 class="govuk-heading-m">Boost your business with people</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <strong>Connect with a mentor</strong>
+        <br />
+        Mentorsme is a gateway for quality-assured mentoring organisations across the UK. 
+        Find a mentor with experience, skills and contacts that will benefit you and your business.
+        <br />
+        <a href="http://www.mentorsme.co.uk/" target="_blank">
+          Find out more
+        </a>
+      </li>
+      <br />
+      <li>
+        <strong>Employ an apprentice</strong>
+        <br />
+        Build a team of motivated, skilled individuals. 
+        The government offers financial support to small businesses offering apprenticeships. 
+        <br />
+        <a href="https://www.apprenticeships.gov.uk/employer/how-much-is-it-going-to-cost" target="_blank">
+          Find out more
+        </a>
+      </li>
+     </ul>
+
+
+     <div>
+      <br/>
+      <h3 class="govuk-heading-m">What else are you looking for?</h3>
+      <p class="govuk-body">
+        <form id="main" action="" class="form" novalidate>
+          <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+            placeholder="" />
+          <button type="submit" class="govuk-button" id="submit">
+            >
+          </button>
+        </form>
+      </p>
+    </div>
+    </section>

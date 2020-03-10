@@ -45,367 +45,48 @@ Finance and support for your business
     Improve the performance of your business
   </h1>
 
-
   <div class="govuk-tabs" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
 
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item ">
-        <a class="govuk-tabs__tab" href="#early">
-          Early Stage
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item ">
-        <a class="govuk-tabs__tab" href="#mature">
-          Mature
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item ">
-        <a class="govuk-tabs__tab" href="#fast">
-          Fast growing
-        </a>
-      </li>
-    </ul>
-
-
-    <section class="govuk-tabs__panel " id="early">
-      <h2 class="govuk-heading-l">Early stage businesses</h2>
       {% if business.stageIndex==0 %}
-      <p class="govuk-body">
-          Because you’re business is under three years old, you could benefit from support with getting started.
-        </p>
+      {% include "includes/tab_link_early.html" %}
+      {% include "includes/tab_link_mature.html" %}
+      {% include "includes/tab_link_fast.html" %}
       {% endif %}
-
-      <p class="govuk-body">
-        When you’re at the beginning of your business journey,
-        there’s a lot to think about.
-        From setting up operations legally and hiring the right people to drawing up a sensible business plan,
-        it’s easy for things to slip your mind
-      </p>
-
-      <p class="govuk-body">At this stage, help is available in many forms,
-        with government-funded services on hand to give you the best possible chance of success.
-      </p>
-
-      <p class="govuk-body">
-        We think you’ll be interested in the following services:
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <strong>Financial support from Start Up Loans</strong>
-          <br />
-          The Start Up Loans scheme is backed by the government. It offers free mentoring and low-interest personal
-          loans of up to £25,000.
-          <br />
-          <a href="https://www.startuploans.co.uk/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Advice straight to your inbox from Enterprise Nation</strong>
-          <br />
-          Sign up for an email-only seven-day course, filled with practical advice and tips for starting your business.
-          <br />
-          <a href="https://www.enterprisenation.com/business-inspiration#course" target="_blank">
-            Find out more
-          </a>
-        </li>
-      </ul>
-
-      <h2 class="govuk-heading-m">Frequently asked questions</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <strong>Which business set-up is right for me?</strong>
-          <br />
-          You could be a sole trader, a limited company or a partnership. Find the facts on setting up a business at
-          GOV.UK to ensure you’re operating legally.
-          <br />
-          <a href="https://www.gov.uk/set-up-business" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Can I speak to somebody for more help?</strong>
-          <br />
-          {% if business.country=="England" %}
-          Business Support Helpline (England)
-          {% endif %}
-          {% if business.country=="Scotland" %}
-          Business Gateway (Scotland)
-          {% endif %}
-          {% if business.country=="Wales" %}
-          Business Wales Helpline
-          {% endif %}
-          {% if business.country=="Northern Ireland" %}
-          Invest Northern Ireland
-          {% endif %}
-
-
-          has a helpline that you can ring to speak to an advisor and get support with the
-          essentials.
-          <br />
-          <a href="{{ country.url }}" target="_blank">
-            Find out more
-          </a>
-        </li>
-      </ul>
-
-
-      <h2 class="govuk-heading-m">Contact your local Growth Hub</h2>
-      <p>
-        Your local Growth Hub is {{ location.LEP }}. The Growth Hub can provide one-to-one support for your business,
-        free of charge.
-      </p>
-      <p>
-        Using the Growth Hub, you can:
-      </p>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            <p>
-              Find sector-specific grants and funding available in your area, and receive guidance on how to apply
-              for them.
-            </p>
-
-          <li>
-            <p>
-              Access the right training and development services to improve your business.
-            </p>
-          </li>
-          <li>
-            <p>
-              Learn of local networking and business events and connect with your community.
-            </p>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <br/>
-        <h3 class="govuk-heading-m">What else are you looking for?</h3>
-        <p class="govuk-body">
-          <form id="main" action="" class="form" novalidate>
-            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
-              placeholder="" />
-            <button type="submit" class="govuk-button" id="submit">
-              >
-            </button>
-          </form>
-        </p>
-      </div>
-    </section>
-
-
-
-    <section class="govuk-tabs__panel " id="mature">
-      <h2 class="govuk-heading-l">Mature businesses</h2>
 
       {% if business.stageIndex==1 %}
-      <p class="govuk-body">
-        Because you’ve been trading for {{ business.age }} years and your turnover is about £{{ business.turnover }},
-        you could benefit from support with boosting your business.
-      </p>
+      {% include "includes/tab_link_mature.html" %}
+      {% include "includes/tab_link_early.html" %}
+      {% include "includes/tab_link_fast.html" %}
       {% endif %}
 
-
-      <p class="govuk-body">
-        Once you’ve been operating for a while, it becomes easy to stick to the processes you know and trust to produce results. 
-        But the outside world is always changing, and the success of your business depends on your ability to change with it. 
-      </p>
-
-      <p class="govuk-body">
-        Perhaps your productivity could be better, achieving more with the same resources. 
-        It might be time to tap into a new market, or take on apprentices to bring fresh talent into the workforce. 
-        Whatever boost you choose, there are government-backed schemes to support you.
-      </p>
-
-      <p class="govuk-body">
-        We think you’ll be interested in the following services:
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <strong>Productivity benchmarking from Be the Business</strong>
-          <br />
-          Productivity directly affects the performance of your business. 
-          See how your productivity compares with similar companies, and learn how to improve it.
-          <br />
-          <a href="https://www.bethebusiness.com/benchmark-your-business/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Exporting opportunities at great.gov.uk</strong>
-          <br />
-          Overseas buyers are looking for products and services from the UK. 
-          Use this tool to find the right export opportunities for your business.
-          <br />
-          <a href="https://www.great.gov.uk/export-opportunities/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Online masterclasses with Enterprise Nation</strong>
-          <br />
-          Subject-matter experts and successful entrepreneurs share their advice on topics such as upskilling staff and increasing sales. 
-          Browse a large library of online masterclasses.
-          <br />
-          <a href="https://www.enterprisenation.com/learn-something/#masterclasses" target="_blank">
-            Find out more
-          </a>
-        </li>
-      </ul>
-
-      
-      <h2 class="govuk-heading-m">Boost your business with people</h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <strong>Connect with a mentor</strong>
-          <br />
-          Mentorsme is a gateway for quality-assured mentoring organisations across the UK. 
-          Find a mentor with experience, skills and contacts that will benefit you and your business.
-          <br />
-          <a href="http://www.mentorsme.co.uk/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Employ an apprentice</strong>
-          <br />
-          Build a team of motivated, skilled individuals. 
-          The government offers financial support to small businesses offering apprenticeships. 
-          <br />
-          <a href="https://www.apprenticeships.gov.uk/employer/how-much-is-it-going-to-cost" target="_blank">
-            Find out more
-          </a>
-        </li>
-       </ul>
- 
-
-       <div>
-        <br/>
-        <h3 class="govuk-heading-m">What else are you looking for?</h3>
-        <p class="govuk-body">
-          <form id="main" action="" class="form" novalidate>
-            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
-              placeholder="" />
-            <button type="submit" class="govuk-button" id="submit">
-              >
-            </button>
-          </form>
-        </p>
-      </div>
-      </section>
-
-
-
-
-    <section class="govuk-tabs__panel " id="fast">
-      <h2 class="govuk-heading-l">Fast growing businesses</h2>
       {% if business.stageIndex==2 %}
-      <p class="govuk-body">
-        Because your business is growing rapidly and has a turnover greater than £200k, 
-        you could benefit from services that support growing, scaling and expanding.
-      </p>
+      {% include "includes/tab_link_fast.html" %}
+      {% include "includes/tab_link_early.html" %}
+      {% include "includes/tab_link_mature.html" %}
       {% endif %}
+    </ul>
 
+    {% if business.stageIndex==0 %}
+    {% include "includes/section_early.html" %}
+    {% include "includes/section_mature.html" %}
+    {% include "includes/section_fast.html" %}
+    {% endif %}
 
-      <p class="govuk-body">
-        Growth is great for your business but it can create a lot of pressure. 
-        Your business needs to stay balanced in order to sustain any growth: 
-        you can’t serve ten times as many customers with the same number of products. 
-      </p>
+    {% if business.stageIndex==1 %}
+    {% include "includes/section_mature.html" %}
+    {% include "includes/section_early.html" %}
+    {% include "includes/section_fast.html" %}
+    {% endif %}
 
-      <p class="govuk-body">
-        During this phase, financial support may be what your business needs most. 
-        Other options include focusing on innovation and beginning to work with the public sector.
-      </p>
-
-      <p class="govuk-body">
-        We think you’ll be interested in the following services:
-      </p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <strong>Finance support from the British Business Bank</strong>
-          <br />
-          Equity crowdfunding or angel investor? Invoice financing or sector-specific grant? 
-          Use the Finance Hub to learn about finance options and understand which is best for your business.
-          <br />
-          <a href="https://www.british-business-bank.co.uk/finance-hub/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Public sector contract advice from AXA</strong>
-          <br />
-          The government is committed to awarding public sector contracts to small businesses, 
-          and AXA has guidance on how to research, price and write winning bids.
-          <br />
-          <a href="https://www.axa.co.uk/business-insurance/business-guardian-angel/sme-guide-to-landing-public-sector-contracts/" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Funding and loans from Innovate UK</strong>
-          <br />
-          Innovate UK is a government-backed agency that supports businesses with loans and funding worth up to £10 million. 
-          Read a detailed overview of how to apply
-          <br />
-          <a href="https://www.gov.uk/guidance/innovation-apply-for-a-funding-award" target="_blank">
-            Find out more
-          </a>
-        </li>
-        <br />
-        <li>
-          <strong>Mentorship programmes from Be the Business</strong>
-          <br />
-          A fast-growing business needs a proven mentor, 
-          and Be the Business works with companies such as McKinsey & Company, Amazon and EY. 
-          Benefit from a mentor’s experience, network and contacts.
-          <br />
-          <a href="https://www.bethebusiness.com/mentoring-for-growth/" target="_blank">
-            Find out more
-          </a>
-        </li>
-       </ul>
-
-
-
-
-
-       <div>
-         <br/>
-        <h3 class="govuk-heading-m">What else are you looking for?</h3>
-        <p class="govuk-body">
-          <form id="main" action="" class="form" novalidate>
-            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
-              placeholder="" />
-            <button type="submit" class="govuk-button" id="submit">
-              >
-            </button>
-          </form>
-        </p>
-      </div>
-
-
-
-
-
- 
-
-      
-    </section>
+    {% if business.stageIndex==2 %}
+    {% include "includes/section_fast.html" %}
+    {% include "includes/section_early.html" %}
+    {% include "includes/section_mature.html" %}
+    {% endif %}
 
   </div>
 

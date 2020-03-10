@@ -292,6 +292,12 @@ renderGrowthHubV3 = function (req, res, isGOV){
  */
 
 renderRecommendationsV3 = function (req, res, isGOV){
+  console.log(businessProfile.stageIndex);
+  // set a default stage index to render defult tabs directly
+  if(!businessProfile.stageIndex){
+    businessProfile.stageIndex=0;
+  }
+  
   res.render("v3.0/recommendations", {
     isGOVUK: isGOV,
     isLive: isLive,
@@ -562,7 +568,7 @@ redirectToBranchV3 = function (res){
   businessProfile.stage= stage[stageIndex];
   businessProfile.stageText= stageText[stageIndex];
 
-  res.redirect("recommendations#"+businessProfile.stage); 
+  res.redirect("recommendations"); 
 
 }
 
