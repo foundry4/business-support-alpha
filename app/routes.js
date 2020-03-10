@@ -115,24 +115,25 @@ var industry = [
 // https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/ukbusinessactivitysizeandlocation/2019
 // https://en.wikipedia.org/wiki/United_Kingdom_Standard_Industrial_Classification_of_Economic_Activities
 var industry = [
-  'Accommodation and food services',
-  'Agriculture forestry and fishing',
-  'Arts entertainment recreation and other services',
-  'Business administration and support services',
-  'Construction',
-  'Education',
-  'Finance and insurance',
-  'Health',
-  'Information and communication',
-  'Manufacturing',
-  'Mining quarrying and utilities',
-  'Motor trades',
-  'Production',
-  'Professional scientific and technical',
-  'Property',
-  'Public administration and defence',
-  'Retail',
-  'Wholesale'
+  '',
+  'accommodation and food',
+  'agriculture forestry and fishing',
+  'arts entertainment recreation',
+  'business administration and support',
+  'construction',
+  'education',
+  'finance and insurance',
+  'health',
+  'information and communication',
+  'manufacturing',
+  'mining quarrying and utilities',
+  'motor trades',
+  'production',
+  //'professional scientific and technical',
+  'property',
+  'public administration and defence',
+  'retail',
+  'wholesale'
   // 'Wholesale and retail repair; of motor vehicles',
 ];
 
