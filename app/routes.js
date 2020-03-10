@@ -111,7 +111,7 @@ var industry = [
   'wholesale-and-retail'
 ];
  */
-// ONS
+// ONS / Standard Industrial Classification of Economic Activities
 // https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/ukbusinessactivitysizeandlocation/2019
 // https://en.wikipedia.org/wiki/United_Kingdom_Standard_Industrial_Classification_of_Economic_Activities
 var industry = [
@@ -296,6 +296,7 @@ renderRecommendationsV3 = function (req, res, isGOV){
     isLive: isLive,
     location: hubLocation,
     business: businessProfile,
+    country:countryData[businessProfile.country],
     reason:reason,
     url:req.url
   });

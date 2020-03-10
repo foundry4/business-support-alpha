@@ -42,113 +42,211 @@ Finance and support for your business
 <div class="govuk-grid-row">
 
   <h1 class="govuk-heading-xl">
-   Improve the performance of your business
+    Improve the performance of your business
   </h1>
 
 
 
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <h2 class="govuk-tabs__title">
-        Contents
-      </h2>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
 
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#early">
-            Early Stage
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#early">
+          Early Stage
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#mature">
+          Mature
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#fast">
+          Fast growing
+        </a>
+      </li>
+    </ul>
+
+    <section class="govuk-tabs__panel" id="early">
+      <h2 class="govuk-heading-l">Early Stage</h2>
+
+      <!-- <p class="govuk-body-l">
+          Because [you’ve been trading for less than a year]/[you haven’t yet started trading], you could benefit from support with getting started.
+        </p> -->
+
+      <p class="govuk-body-l">
+        When you’re at the beginning of your business journey,
+        there’s a lot to think about.
+        From setting up operations legally and hiring the right people to drawing up a sensible business plan,
+        it’s easy for things to slip your mind
+      </p>
+
+      <p class="govuk-body">At this stage, help is available in many forms,
+        with government-funded services on hand to give you the best possible chance of success.
+      </p>
+
+      <p class="govuk-body">
+        We think you’ll be interested in the following services:
+      </p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <strong>Financial support from Start Up Loans</strong>
+          <br />
+          The Start Up Loans scheme is backed by the government. It offers free mentoring and low-interest personal
+          loans of up to £25,000.
+          <br />
+          <a href="https://www.startuploans.co.uk/" target="_blank">
+            Find out more
           </a>
         </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#mature">
-            Mature
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#fast">
-            Fast growing
+        <br />
+        <li>
+          <strong>Advice straight to your inbox from Enterprise Nation</strong>
+          <br />
+          Sign up for an email-only seven-day course, filled with practical advice and tips for starting your business.
+          <br />
+          <a href="https://www.enterprisenation.com/business-inspiration#course" target="_blank">
+            Find out more
           </a>
         </li>
       </ul>
 
-      <section class="govuk-tabs__panel" id="early">
-        <h2 class="govuk-heading-l">Early Stage {{ business.industry | replace("-", " ")}}</h2>
-        
-        <p class="govuk-body-l">
-         For young businesses, we're suggesting support for early stage businesses.
-        </p>
-        
-        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Setting up a business</a></li>
-          <li><a class="" href="">Mentor</a></li>
-          <li><a class="" href="">BSH</a></li>
-        </ul>
-        
-        <p class="govuk-body">Grow your local network</p>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Local Growth Hub</a></li>
-        </ul>
+
+      <h2 class="govuk-heading-m">Frequently asked questions</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <strong>Which business set-up is right for me?</strong>
+          <br />
+          You could be a sole trader, a limited company or a partnership. Find the facts on setting up a business at
+          GOV.UK to ensure you’re operating legally.
+          <br />
+          <a href="https://www.gov.uk/set-up-business" target="_blank">
+            Find out more
+          </a>
+        </li>
+        <br />
+        <li>
+          <strong>Can I speak to somebody for more help?</strong>
+          <br />
+          {% if business.country=="England" %}
+          Business Support Helpline (England)
+          {% endif %}
+          {% if business.country=="Scotland" %}
+          Business Gateway (Scotland)
+          {% endif %}
+          {% if business.country=="Wales" %}
+          Business Wales Helpline
+          {% endif %}
+          {% if business.country=="Northern Ireland" %}
+          Invest Northern Ireland
+          {% endif %}
 
 
-    
-      </section>
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
-        <h2 class="govuk-heading-l">Mature {{ business.industry | replace("-", " ") }}</h2>
+          has a helpline that you can ring to speak to an advisor and get support with the
+          essentials.
+          <br />
+          <a href="{{ country.url }}" target="_blank">
+            Find out more
+          </a>
+        </li>
+      </ul>
 
-        <p class="govuk-body-l">
-          For businesses with a turnover of £{{ business.turnover }} that are over
-          {% if business.age<=2 %}
-           two years old,
-           {% else %}
-           {{ business.age }} years old,
-           {% endif %}
-           we're suggesting support for mature businesses.
-        </p>
-        
-        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Setting up a business</a></li>
-          <li><a class="" href="">Mentor</a></li>
-          <li><a class="" href="">BSH</a></li>
-        </ul>
-        
-        <p class="govuk-body">Grow your local network</p>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Local Growth Hub</a></li>
-        </ul>
-      </section>
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
-        <h2 class="govuk-heading-l">Fast growing {{ business.industry | replace("-", " ") }}</h2>
 
-        <p class="govuk-body-l">
-          For businesses with a turnover greater than £200k pa that are growing rapidly, we're suggesting support for fast growing businesses.
-        </p>
-        
-        <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Setting up a business</a></li>
-          <li><a class="" href="">Mentor</a></li>
-          <li><a class="" href="">BSH</a></li>
-        </ul>
-        
-        <p class="govuk-body">Grow your local network</p>
- 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a class="" href="">Local Growth Hub</a></li>
-        </ul>
-      </section>
+      <h2 class="govuk-heading-m">Contact your local Growth Hub</h2>
+      <p>
+        Your local Growth Hub is {{ location.LEP }}. The Growth Hub can provide one-to-one support for your business,
+        free of charge.
+      </p>
+      <p>
+        Using the Growth Hub, you can:
+      </p>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ol class="govuk-list govuk-!-font-size-16">
+          <li>
+            <p>
+              1. Find sector-specific grants and funding available in your area, and receive guidance on how to apply
+              for them.
+            </p>
 
-    </div>
-    
+          <li>
+            <p>
+              2. Access the right training and development services to improve your business.
+            </p>
+          </li>
+          <li>
+            <p>
+              3. Learn of local networking and business events and connect with your community.
+            </p>
+          </li>
+        </ol>
+      </nav>
+
+    </section>
+
+
+
+    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
+      <h2 class="govuk-heading-l">Mature {{ business.industry | replace("-", " ") }}</h2>
+
+      <p class="govuk-body-l">
+        For businesses with a turnover of £{{ business.turnover }} that are over
+        {% if business.age<=2 %}
+        two years old,
+        {% else %}
+        {{ business.age }} years old,
+        {% endif %}
+        we're suggesting support for mature businesses.
+      </p>
+
+      <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="" href="">Setting up a business</a></li>
+        <li><a class="" href="">Mentor</a></li>
+        <li><a class="" href="">BSH</a></li>
+      </ul>
+
+      <p class="govuk-body">Grow your local network</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="" href="">Local Growth Hub</a></li>
+      </ul>
+    </section>
+    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
+      <h2 class="govuk-heading-l">Fast growing {{ business.industry | replace("-", " ") }}</h2>
+
+      <p class="govuk-body-l">
+        For businesses with a turnover greater than £200k pa that are growing rapidly, we're suggesting support for fast
+        growing businesses.
+      </p>
+
+      <h2 class="govuk-heading-m">Make sure you are operating legally</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="" href="">Setting up a business</a></li>
+        <li><a class="" href="">Mentor</a></li>
+        <li><a class="" href="">BSH</a></li>
+      </ul>
+
+      <p class="govuk-body">Grow your local network</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="" href="">Local Growth Hub</a></li>
+      </ul>
+    </section>
+
+  </div>
+
   <div>
-    <p class="govuk-body">What else are you looking for? 
+    <p class="govuk-body">What else are you looking for?
       <form id="main" action="" class="form" novalidate>
-        <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value="" placeholder=""/>
+        <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+          placeholder="" />
         <button type="submit" class="govuk-button" id="submit">
           >
         </button>
@@ -157,23 +255,25 @@ Finance and support for your business
   </div>
 
 
-    <div class="bookmark">
-   
-        <h5 class="govuk-heading-m">Sign up to our newsletter for {{ stage }} businesses</h5>
-        <form id="main" action="" class="form" novalidate>
-          <input class="govuk-input govuk-input--width-10" type="text" id="email" name="email" value="name@biz.co.uk" placeholder="name@biz.co.uk"/>
-          <br/>
-          <br/>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          </p>
+  <div class="bookmark">
 
-          <button type="submit" class="govuk-button" id="submit">
-            Subscribe
-          </button>
-        </form>
-   
-    </div>
+    <h5 class="govuk-heading-m">Sign up to our newsletter for {{ stage }} businesses</h5>
+    <form id="main" action="" class="form" novalidate>
+      <input class="govuk-input govuk-input--width-10" type="text" id="email" name="email" value="name@biz.co.uk"
+        placeholder="name@biz.co.uk" />
+      <br />
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+
+      <button type="submit" class="govuk-button" id="submit">
+        Subscribe
+      </button>
+    </form>
+
+  </div>
 
 
 </div>
@@ -184,7 +284,7 @@ Finance and support for your business
 
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">
-     <!--  Further recommendations -->
+      <!--  Further recommendations -->
     </h2>
   </div>
   <div class="govuk-grid-column-one-third">
@@ -195,5 +295,5 @@ Finance and support for your business
 
 
 {% block footer %}
-  {% include "includes/footer3.0.html" %}
+{% include "includes/footer3.0.html" %}
 {% endblock %}
