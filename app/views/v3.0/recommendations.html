@@ -46,31 +46,31 @@ Finance and support for your business
   </h1>
 
 
-
   <div class="govuk-tabs" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
 
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <li class="govuk-tabs__list-item {% if business.stageIndex==0 %}govuk-tabs__list-item--selected{% endif %}">
         <a class="govuk-tabs__tab" href="#early">
           Early Stage
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
+      <li class="govuk-tabs__list-item {% if business.stageIndex==1 %}govuk-tabs__list-item--selected{% endif %}">
         <a class="govuk-tabs__tab" href="#mature">
           Mature
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
+      <li class="govuk-tabs__list-item {% if business.stageIndex==2 %}govuk-tabs__list-item--selected{% endif %} ">
         <a class="govuk-tabs__tab" href="#fast">
           Fast growing
         </a>
       </li>
     </ul>
 
-    <section class="govuk-tabs__panel" id="early">
+
+    <section class="govuk-tabs__panel {% if business.stageIndex!==0 %}govuk-tabs__panel--hidden{% endif %}" id="early">
       <h2 class="govuk-heading-l">Early stage businesses</h2>
       {% if business.stageIndex==0 %}
       <p class="govuk-body">
@@ -185,12 +185,24 @@ Finance and support for your business
           </li>
         </ul>
       </nav>
-
+      <div>
+        <br/>
+        <h3 class="govuk-heading-m">What else are you looking for?</h3>
+        <p class="govuk-body">
+          <form id="main" action="" class="form" novalidate>
+            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+              placeholder="" />
+            <button type="submit" class="govuk-button" id="submit">
+              >
+            </button>
+          </form>
+        </p>
+      </div>
     </section>
 
 
 
-    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mature">
+    <section class="govuk-tabs__panel {% if business.stageIndex!==1 %}govuk-tabs__panel--hidden{% endif %}" id="mature">
       <h2 class="govuk-heading-l">Mature businesses</h2>
 
       {% if business.stageIndex==1 %}
@@ -277,12 +289,26 @@ Finance and support for your business
         </li>
        </ul>
  
+
+       <div>
+        <br/>
+        <h3 class="govuk-heading-m">What else are you looking for?</h3>
+        <p class="govuk-body">
+          <form id="main" action="" class="form" novalidate>
+            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+              placeholder="" />
+            <button type="submit" class="govuk-button" id="submit">
+              >
+            </button>
+          </form>
+        </p>
+      </div>
       </section>
 
 
 
 
-    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="fast">
+    <section class="govuk-tabs__panel  {% if business.stageIndex!==2 %}govuk-tabs__panel--hidden{% endif %}" id="fast">
       <h2 class="govuk-heading-l">Fast growing businesses</h2>
       {% if business.stageIndex==2 %}
       <p class="govuk-body">
@@ -358,7 +384,19 @@ Finance and support for your business
 
 
 
-
+       <div>
+         <br/>
+        <h3 class="govuk-heading-m">What else are you looking for?</h3>
+        <p class="govuk-body">
+          <form id="main" action="" class="form" novalidate>
+            <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
+              placeholder="" />
+            <button type="submit" class="govuk-button" id="submit">
+              >
+            </button>
+          </form>
+        </p>
+      </div>
 
 
 
@@ -371,30 +409,22 @@ Finance and support for your business
 
   </div>
 
-  <div>
-    <p class="govuk-body">What else are you looking for?
-      <form id="main" action="" class="form" novalidate>
-        <input class="govuk-input govuk-input--width-10" type="text" id="what_else" name="what_else" value=""
-          placeholder="" />
-        <button type="submit" class="govuk-button" id="submit">
-          >
-        </button>
-      </form>
-    </p>
-  </div>
+
 
 
   <div class="bookmark">
 
-    <h5 class="govuk-heading-m">Sign up to our newsletter for {{ stage }} businesses</h5>
+    <h5 class="govuk-heading-m">Subscribe to our business support newsletter</h5>
     <form id="main" action="" class="form" novalidate>
+      <p>
+        We'll only use this to send you business-related content.
+      </p>
       <input class="govuk-input govuk-input--width-10" type="text" id="email" name="email" value="name@business.co.uk"
         placeholder="name@business.co.uk" />
       <br />
       <br />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
+        Our monthly email highlights which new schemes and resources might be of use to businesses like yours. 
       </p>
 
       <button type="submit" class="govuk-button" id="submit">

@@ -546,9 +546,9 @@ h1.brand a {
 
 .bookmark {
     background-color: 
-    #24135f;
+    #f4f4f4;
     color:
-    #eee;
+    #333;
     word-break: break-word;
     border: 1px solid 
     #eee;
@@ -558,8 +558,15 @@ h1.brand a {
     text-align:left;
 }
 .bookmark .govuk-heading-m, .bookmark p{
-    color:#eee;
+    color:#333;
 }
+.govuk-button{
+    background:#1d70b8;
+}
+.govuk-button:hover{
+    background:#003078;
+}
+
 
 h5 {
     font-size: 1.5625rem;
