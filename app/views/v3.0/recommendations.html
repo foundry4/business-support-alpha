@@ -52,17 +52,17 @@ Finance and support for your business
     </h2>
 
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item {% if business.stageIndex==0 %}govuk-tabs__list-item--selected{% endif %}">
+      <li class="govuk-tabs__list-item ">
         <a class="govuk-tabs__tab" href="#early">
           Early Stage
         </a>
       </li>
-      <li class="govuk-tabs__list-item {% if business.stageIndex==1 %}govuk-tabs__list-item--selected{% endif %}">
+      <li class="govuk-tabs__list-item ">
         <a class="govuk-tabs__tab" href="#mature">
           Mature
         </a>
       </li>
-      <li class="govuk-tabs__list-item {% if business.stageIndex==2 %}govuk-tabs__list-item--selected{% endif %} ">
+      <li class="govuk-tabs__list-item ">
         <a class="govuk-tabs__tab" href="#fast">
           Fast growing
         </a>
@@ -70,7 +70,7 @@ Finance and support for your business
     </ul>
 
 
-    <section class="govuk-tabs__panel {% if business.stageIndex!==0 %}govuk-tabs__panel--hidden{% endif %}" id="early">
+    <section class="govuk-tabs__panel " id="early">
       <h2 class="govuk-heading-l">Early stage businesses</h2>
       {% if business.stageIndex==0 %}
       <p class="govuk-body">
@@ -202,7 +202,7 @@ Finance and support for your business
 
 
 
-    <section class="govuk-tabs__panel {% if business.stageIndex!==1 %}govuk-tabs__panel--hidden{% endif %}" id="mature">
+    <section class="govuk-tabs__panel " id="mature">
       <h2 class="govuk-heading-l">Mature businesses</h2>
 
       {% if business.stageIndex==1 %}
@@ -308,7 +308,7 @@ Finance and support for your business
 
 
 
-    <section class="govuk-tabs__panel  {% if business.stageIndex!==2 %}govuk-tabs__panel--hidden{% endif %}" id="fast">
+    <section class="govuk-tabs__panel " id="fast">
       <h2 class="govuk-heading-l">Fast growing businesses</h2>
       {% if business.stageIndex==2 %}
       <p class="govuk-body">
