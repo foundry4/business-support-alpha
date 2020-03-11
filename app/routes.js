@@ -103,7 +103,7 @@ var hubLocation = {
   url: "https://www.growthhub.london/",
   telephone: "01209 123 456",
   email: "hello@emmerdale.com",
-  interest : interest,
+  //interest : interest,
   blurb: `Examples of eligible businesses include: 
   <br/>
   retail,
@@ -333,7 +333,7 @@ if (postcode) {
             }
           }
           hubLocation.region = region;
-          hubLocation.interest = interest;
+          //hubLocation.interest = interest;
 
           // catch other countries
           if (businessProfile.country !== "England") {
