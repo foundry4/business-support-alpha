@@ -4,29 +4,8 @@ const request = require("request");
 const _ = require("underscore");
 
 const MYSOCIETY_API_URL = "https://mapit.mysociety.org/postcode/";
+// used to toggle the hotjar scripts to avoid tracking in devt
 const isLive = process.env.isLive;
-
-// landing page vars
-var ages = [
-  null,
-  "not started trading",
-  "been trading for under a year",
-  "been trading for 1-2 years",
-  "been trading for 2-5 years",
-  "been trading for over 5 years"
-];
-
-var selfDescription = [
-  "Efficient",
-  "Innovative",
-  "Traditional",
-  "Competitive",
-  "Stable",
-  "Profit-focused",
-  "Part of the community",
-  "Powered by people",
-  "Powered by technology"
-];
 
 var countryData = {
   "England":{
@@ -55,7 +34,7 @@ var businessProfile = {
   postcode: "",
   country: "England",
 };
-
+/* 
 var interest = [
   "leadership development",
   "investment potential",
@@ -67,7 +46,7 @@ var interest = [
   "business management",
   "financial management"
 ]
-
+ */
 // VERSION 3 CATEGORIES
 var supportTypes = [
   "Exporting",
@@ -89,28 +68,7 @@ var supportTypes = [
   "Apprentices",
   "Intellectual property"
 ]
-/* 
-  // INDUSTRY SELECT MENU
-var industry = [
-  'agriculture-and-food',
-  'business-and-finance',
-  'construction',
-  'education',
-  'health',
-  'hospitality-and-catering',
-  'information-technology-digital-and-creative',
-  'life-sciences',
-  'manufacturing',
-  'mining',
-  'real-estate-and-property',
-  'science-and-technology',
-  'service-industries',
-  'transport-and-distribution',
-  'travel-and-leisure',
-  'utilities-providers',
-  'wholesale-and-retail'
-];
- */
+
 // ONS / Standard Industrial Classification of Economic Activities
 // https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/ukbusinessactivitysizeandlocation/2019
 // https://en.wikipedia.org/wiki/United_Kingdom_Standard_Industrial_Classification_of_Economic_Activities
@@ -163,7 +121,7 @@ var hubLocation = {
 var stage = ["early", "mature", "fast"];
 var stageText = ["Early stage", "Mature", "Fast growing"];
 var stageIndex = 0;
-var reason = "";
+//var reason = "";
 
 
 // have archived previous versions of prototype to routesOld.js
@@ -182,39 +140,7 @@ router.get("/v3/", function (req, res, next) {
 router.get("/gov3/", function (req, res, next) {
   renderLandingPageV3(req, res, true);
 });
-/* 
-// pre-start
-router.get("/v3/pre-start", function (req, res, next) {
-  renderStartV3(req, res, false);
-});
-router.get("/gov3/pre-start", function (req, res, next) {
-  renderStartV3(req, res, true);
-});
 
-// small
-router.get("/v3/small", function (req, res, next) {
-  renderStartV3(req, res, false);
-});
-router.get("/gov3/small", function (req, res, next) {
-  renderStartV3(req, res, true);
-});
-
-// target: growth hub
-router.get("/v3/growth-hub", function (req, res, next) {
-  renderGrowthHubV3(req, res, false);
-});
-router.get("/gov3/growth-hub", function (req, res, next) {
-  renderGrowthHubV3(req, res, true);
-});
-
-// growth hub filter
-router.get("/v3/results", function (req, res, next) {
-  renderResultsV3(req, res, false);
-});
-router.get("/gov3/results", function (req, res, next) {
-  renderResultsV3(req, res, true);
-});
- */
 // recommendations
 router.get("/v3/recommendations", function (req, res, next) { 
   renderRecommendationsV3(req, res, false);
@@ -222,15 +148,9 @@ router.get("/v3/recommendations", function (req, res, next) {
 router.get("/gov3/recommendations", function (req, res, next) {
   renderRecommendationsV3(req, res, true);
 });
-/* 
-// country
-router.get("/v3/country", function (req, res, next) {
-  renderCountryV3(req, res, false);
-});
-router.get("/gov3/country", function (req, res, next) {
-  renderCountryV3(req, res, true);
-});
- */
+
+// TODO: remove the branch as it just redirect to results
+// need handle the postcode lookup
 // branch
 router.get("/v3/branch", function (req, res, next) {
   renderBranchesV3(req, res, false)
@@ -244,6 +164,7 @@ router.get("/gov3/branch", function (req, res, next) {
 //
 // VERSION 3
 // Render functions used to re-use templates with different styles
+// eg GOV.UK or Business Support
 //
 //////////////////////////////////////////////////////////////////
 
@@ -252,44 +173,19 @@ renderLandingPageV3 = function (req, res, isGOV){
     isGOVUK: isGOV,
     isLive: isLive,
     industry:industry,
-    interest: interest,
-    description: selfDescription,
     url:req.url
   });
 }
+
 /* 
-renderStartV3 = function (req, res, isGOV){
-  res.render("v3.0/pre-start", {
-    isGOVUK: isGOV,
-    isLive: isLive,
-    business: businessProfile,
-    location: hubLocation,
-    country:countryData[businessProfile.country],
-    url:req.url
-  });
-}
-
-renderCountryV3 = function (req, res, isGOV){
-  res.render("v3.0/country", {
-    isGOVUK: isGOV,
-      isLive: isLive,
-      business: businessProfile,
-      location: hubLocation,
-      country:countryData[businessProfile.country],
-      url:req.url
-    });
-}
-
-renderGrowthHubV3 = function (req, res, isGOV){
-  res.render("v3.0/growth-hub", {
-    isGOVUK: isGOV,
-    isLive: isLive,
-    business: businessProfile,
-    location: hubLocation,
-    url:req.url
-  });
-}
- */
+// TODO TIDY up extra data that isn't used
+Recommendation page vars actually used:
+location.LEP
+country.url
+business.age
+business.turnover
+business.stageIndex
+*/
 
 renderRecommendationsV3 = function (req, res, isGOV){
   console.log(businessProfile.stageIndex);
@@ -304,84 +200,12 @@ renderRecommendationsV3 = function (req, res, isGOV){
     location: hubLocation,
     business: businessProfile,
     country:countryData[businessProfile.country],
-    reason:reason,
+    //reason:reason,
     url:req.url
   });
 }
 
-/* 
-renderResultsV3 = function (req, res, isGOV){
-    var results = res.app.locals.data;
-    //get checkbox
-    var selfDescription = [];
-    
-    if (req._parsedUrl.query) {
-      params = req._parsedUrl.query.split("&");
-      var len = params.length;
-      // loop through params and split out type and values
-       for (var i = 0; i < len; i++) {
-         if(params[i].indexOf("nl_description")>-1){
-            var param = params[i].split("=");
-            if(param[1]!=="_unchecked"){
-              param[1] = param[1].split("+").join(" ");
-              param[1] = param[1].split("%2F").join("/");
-              selfDescription.push(param[1]);
-            }
-          }
-       }
-    }
-  
-    // do some crude filtering based on aims?
-    // eg reset the results arrays for non-applicable results?
-    var procurement = _.filter(results, function (item) { return item.category === "Procurement" });
-    var support = _.filter(results, function (item) { return item.category === "Business Support" });
-    var legal = _.filter(results, function (item) { return item.category === "Legal" });
-    var finance = _.filter(results, function (item) { return item.category === "Sources of Finance" });
-    var events = _.filter(results, function (item) { return item.category === "Events and Networking" });
-    var premises = _.filter(results, function (item) { return item.category === "Premises" });
-    
-    // get the description
-    var responses = [support, legal, finance, events, premises, procurement, support, legal, finance, events, premises];
-    var links = [ "business", "legal", "finance", "events", "premises", "procurement", "business", "legal", "finance", "events", "premises"];
-    var response = [];
-    var title = "";
-  
-    // loop through the description and populate results
-    if(selfDescription.length>0){
-      title = selfDescription[0];
-      for ( var i=0; i<selfDescription.length; i++){
-        response.push({name: selfDescription[i], result:responses[i], link: links[i]})
-        if(i>0){
-          if(i===selfDescription.length-1){
-            title += " and " + selfDescription[i];
-          }else{
-            title += ", " + selfDescription[i];
-          }
-        }
-      }
-    }else{
-      title = "No specific topic"
-    }
-  
-    // then pass these to the pages to render
-    res.render("v3.0/results", {
-      isGOVUK: isGOV,
-      isLive: isLive,
-      results: res.app.locals.data,
-      support: support,
-      legal: legal,
-      finance: finance,
-      events: events,
-      premises: premises,
-      procurement: procurement, 
-      location: hubLocation,
-      business: businessProfile,
-      description:title,
-      response:response,
-      url:req.url
-    });
-}
- */
+
 renderBranchesV3 = function (req, res, isGOV){
   console.log('render branch...');
   
@@ -554,13 +378,13 @@ redirectToBranchV3 = function (res){
   // stageIndex: 0, 1, 2
   // default  = steady
   stageIndex = 1;
-  reason = `you have ${businessProfile.size} staff`;
+  //reason = `you have ${businessProfile.size} staff`;
   
   if (businessProfile.age <= 2) {
     stageIndex = 0;
-    reason = "you are a young company";
+    //reason = "you are a young company";
   } else if (businessProfile.turnover > 200000 && businessProfile.change==='1') {
-    reason = "your turnover is greater tham £200k pa and you are growing rapidly";
+    //reason = "your turnover is greater tham £200k pa and you are growing rapidly";
     stageIndex = 2;
   } 
     
