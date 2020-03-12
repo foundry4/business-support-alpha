@@ -30,50 +30,53 @@ Business Support Finder
 			<h1 class="govuk-heading-xl">BUSINESS SUPPORT FINDER</h1>
 		</header>
 		<p class="landing">
-			Small businesses all over the UK are eligible for support from the government. 
+			Small businesses all over the UK are eligible for support from the government.
 		</p>
 		<p class="">
 			Growth looks different for every business; you might be launching a new market,
-			 upskilling your workforce, increasing your revenue – or something else entirely. 
-			The government is committed to providing small business owners with the tools they need to achieve their goals, for free.
+			upskilling your workforce, increasing your revenue – or something else entirely.
+			The government is committed to providing small business owners with the tools they need to achieve their
+			goals, for free.
 		</p>
 		<p class="">
-			No two businesses are the same, so no two businesses need the same support. 
-			View results tailored to your individual requirements and take the next step to growing your business today. 
+			No two businesses are the same, so no two businesses need the same support.
+			View results tailored to your individual requirements and take the next step to growing your business today.
 		</p>
 		<h1 class="govuk-heading-l">Tell us about your business</h1>
 		<div class="govuk">
 
 
-			<form method="get" id="nl-form" class="nl-form" action="branch">
+			<form method="get" id="nl-form" class="nl-form" 
+				{% if isGOVUK %}
+					action="../gov3/branch" 
+				{% else %}
+					action="../v3/branch" 
+				{% endif %}
+			>
 
 				<p>
 					My business is based in
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_postcode" name="nl_postcode" value="" placeholder=""
-						data-subline="Enter your full postcode,<br/> for example TR1 1XU." />,
-						<br />
-					and has been trading for 
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_age" name="nl_age" value="" placeholder=""
-						 /> years.
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_postcode" name="nl_postcode"
+						value="" placeholder="" data-subline="Enter your full postcode,<br/> for example TR1 1XU." />,
+					<br />
+					and has been trading for
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_age" name="nl_age" value=""
+						placeholder="" /> years.
 
 					<br />It employs
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_count" name="nl_count" value="" placeholder=""
-						data-subline="How many people work in the business?" />
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_count" name="nl_count" value=""
+						placeholder="" data-subline="How many people work in the business?" />
 					people,
 					<br />
 					and has an annual turnover of about £
-					<input class="govuk-input govuk-input--width-10" type="text" id="nl_turnover" name="nl_turnover" value="" placeholder=""
-						data-subline="How many people work in the business?" />
+					<input class="govuk-input govuk-input--width-10" type="text" id="nl_turnover" name="nl_turnover"
+						value="" placeholder="" data-subline="How many people work in the business?" />
 
-					<br />The business is in the 
-					<select class="govuk-select" name="selected_industry" >
+					<br />The business is in the
+					<select class="govuk-select" name="selected_industry">
 						{% for item in industry%}
-						<option value="{{ loop.index }}" 
-						{% if (selected_industry===item) %}
-						selected
-						{% endif %}
-						>
-						{{ item }}</option>
+						<option value="{{ loop.index }}" {% if (selected_industry===item) %} selected {% endif %}>
+							{{ item }}</option>
 						{% endfor %}
 					</select>
 					sector,
@@ -82,10 +85,10 @@ Business Support Finder
 						<option value="" selected></option>
 						<option value="1">growing rapidly</option>
 						<option value="2">growing steadily</option>
-						<option value="3" >keeping steady</option>
+						<option value="3">keeping steady</option>
 						<option value="4">winding down</option>
 					</select>.
-<!-- 
+					<!-- 
 					<br />
 					<br />
 					We are interested in  
@@ -136,5 +139,5 @@ Business Support Finder
 {% endblock %}
 
 {% block footer %}
-  {% include "includes/footer3.0.html" %}
+{% include "includes/footer3.0.html" %}
 {% endblock %}
